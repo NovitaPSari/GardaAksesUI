@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>CHK_SEND_SMS</name>
+   <tag></tag>
+   <elementGuidId>bc2c298e-0f84-4ba6-9109-17259ee92fbf</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;ClaimMV-0&quot;]/div[1]/div[5]/div[2]/div[1]/a2is-multi-check-dc/div[2]/div[1]/div/div/input</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;ClaimMV-0&quot;]/div[1]/div[5]/div[2]/div[1]/a2is-multi-check-dc/div[2]/div[1]/div/div/input</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/FRAME</value>
+   </webElementProperties>
+</WebElementEntity>

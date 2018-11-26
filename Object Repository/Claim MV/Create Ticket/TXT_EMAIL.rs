@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>TXT_EMAIL</name>
+   <tag></tag>
+   <elementGuidId>e140e662-197d-499b-8d70-9d0d95aeff09</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;SC1PA1-0&quot;]/div[1]/div[1]/a2is-textbox-wide-dc[2]/div[2]/div[1]/div/input</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;SC1PA1-0&quot;]/div[1]/div[1]/a2is-textbox-wide-dc[2]/div[2]/div[1]/div/input</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/FRAME</value>
+   </webElementProperties>
+</WebElementEntity>

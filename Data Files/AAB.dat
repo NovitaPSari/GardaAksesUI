@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>AAB</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>31048302-76ac-431f-af31-ea53da83f9cc</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://172.16.94.74;databaseName=AAB</dataSourceUrl>
+   <driver>DBData</driver>
+   <isInternalPath>false</isInternalPath>
+   <password>UGFzc3dvcmQ5NQ==</password>
+   <query>SELECT TOP 1 LTRIM(RTRIM(A.Report_No)) AS lkno,A.Claimee_Name,A.Claimee_Phone,A.Loss_Address 
+	,A.Driver_Name,A.Loss_Description, 
+	CONVERT(VARCHAR,B.Survey_Date,103) AS Survey_Date,B.PIC_Name,B.Area_Code,B.Region_Code,B.Remarks 
+FROM aab.dbo.Loss_Report A 
+	INNER JOIN aab.dbo.Survey B 
+		ON A.Report_No = b.Reference_No 
+WHERE A.Policy_No = '1700010726' 
+ORDER BY A.Input_date desc</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>sa</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

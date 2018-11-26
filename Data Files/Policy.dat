@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Policy</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>af5e6ee9-009b-4904-bc5f-f7a9b56c65e6</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://172.16.94.74;databaseName=AAB</dataSourceUrl>
+   <driver>DBData</driver>
+   <isInternalPath>false</isInternalPath>
+   <password>UGFzc3dvcmQ5NQ==</password>
+   <query>SELECT top 1 LTRIM(RTRIM(Policy_No)) AS policyno 
+FROM aab.dbo.policy 
+WHERE GETDATE() BETWEEN Period_From AND Period_To 
+AND Policy_No LIKE '17000%' 
+ORDER BY Effective_Date desc</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>sa</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

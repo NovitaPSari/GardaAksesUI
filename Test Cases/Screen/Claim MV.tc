@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Claim MV</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>435adfde-e499-400b-86eb-4d8cfaa9d2bd</testCaseGuid>
+   <variable>
+      <defaultValue>'Survey-in'</defaultValue>
+      <description></description>
+      <id>a8e5889b-7ac5-402c-b33f-66a8bddcf1e1</id>
+      <masked>false</masked>
+      <name>surveytype</name>
+   </variable>
+   <variable>
+      <defaultValue>'Garda Center'</defaultValue>
+      <description></description>
+      <id>112942ff-cf00-4720-89a2-cfa3238ed887</id>
+      <masked>false</masked>
+      <name>surveylocation</name>
+   </variable>
+</TestCaseEntity>
