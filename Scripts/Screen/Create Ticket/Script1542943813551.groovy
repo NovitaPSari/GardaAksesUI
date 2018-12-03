@@ -49,7 +49,7 @@ WebUI.delay(1)
 
 WebUI.click(findTestObject('Claim MV/Create Ticket/BTN_NEXT_1'))
 
-WebUI.delay(10)
+WebUI.delay(12)
 
 WebUI.click(findTestObject('Claim MV/Create Ticket/LST_CALLER_1'))
 

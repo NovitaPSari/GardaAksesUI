@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>EXP_SEARCH_BY</name>
+   <tag></tag>
+   <elementGuidId>455b2997-4ba6-4f5e-ae09-5bac4eca12d5</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;puPostalCodeContent-0&quot;]/div[1]/div/div/div[1]/div[1]/a2is-combo-wide-dc/div[2]/div[1]/div/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;puPostalCodeContent-0&quot;]/div[1]/div/div/div[1]/div[1]/a2is-combo-wide-dc/div[2]/div[1]/div/button</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/FRAME</value>
+   </webElementProperties>
+</WebElementEntity>

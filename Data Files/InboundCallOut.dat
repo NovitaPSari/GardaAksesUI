@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>InboundCallOut</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>461d5ada-621f-4ab9-9387-d37b2a045cdc</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://172.16.94.48;databaseName=GardaAkses</dataSourceUrl>
+   <driver>DBData</driver>
+   <isInternalPath>false</isInternalPath>
+   <password>UGFzc3dvcmQ5NQ==</password>
+   <query>SELECT TOP 1 B.TicketNo,B.ChassisNo,B.EngineNo,B.PolicyNo,B.DriverName,B.LocationAccicent AS LocationAccident,B.AccidentInformation,B.LastFURemark, 
+	B.WorkshopCode, B.CustomerOnLocation, B.PhoneNoOnLocation, B.PostalCode, B.SurveyTypeCode, B.SurveyAddress 
+FROM GardaAkses.GA.InBoundCall A 
+	INNER JOIN GardaAkses.GA.InBoundCallDetail B 
+		ON A.InBoundCallGuid = B.InBoundCallGuid 
+WHERE A.RowStatus = 0 
+AND A.CallerName = 'bte' 
+AND A.Email = 'bte@mail.com' 
+ORDER BY B.TicketNo DESC</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>sa</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

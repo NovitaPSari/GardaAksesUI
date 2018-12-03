@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>LST_SEARCH_BY</name>
+   <tag></tag>
+   <elementGuidId>ee2c1446-b118-484c-aa4b-e1b750ca02a4</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;puPostalCodeContent-0&quot;]/div[1]/div/div/div[1]/div[1]/a2is-combo-wide-dc/div[2]/div[1]/div/div/button[contains(text(),&quot;${searchby}&quot;)]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;puPostalCodeContent-0&quot;]/div[1]/div/div/div[1]/div[1]/a2is-combo-wide-dc/div[2]/div[1]/div/div/button[contains(text(),&quot;${searchby}&quot;)]</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/FRAME</value>
+   </webElementProperties>
+</WebElementEntity>

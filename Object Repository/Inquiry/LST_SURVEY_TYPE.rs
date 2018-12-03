@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>LST_SURVEY_TYPE</name>
+   <tag></tag>
+   <elementGuidId>b7ffb224-464c-4a9b-bc70-2164e3884f2e</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;InquiryTab-1&quot;]/div[1]/div[2]/a2is-combo-wide-dc[1]/div[2]/div[1]/div/div/button[contains(text(),&quot;${surveytype}&quot;)]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;InquiryTab-1&quot;]/div[1]/div[2]/a2is-combo-wide-dc[1]/div[2]/div[1]/div/div/button[contains(text(),&quot;${surveytype}&quot;)]</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/FRAME</value>
+   </webElementProperties>
+</WebElementEntity>

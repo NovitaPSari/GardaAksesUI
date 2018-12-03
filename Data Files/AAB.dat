@@ -14,10 +14,10 @@
 	,A.Driver_Name,A.Loss_Description, 
 	CONVERT(VARCHAR,B.Survey_Date,103) AS Survey_Date,B.PIC_Name,B.Area_Code,B.Region_Code,B.Remarks 
 FROM aab.dbo.Loss_Report A 
-	INNER JOIN aab.dbo.Survey B 
+	LEFT JOIN aab.dbo.Survey B 
 		ON A.Report_No = b.Reference_No 
-WHERE A.Policy_No = '1700010726' 
-ORDER BY A.Input_date desc</query>
+WHERE A.Claimee_Name = 'BTE' 
+ORDER BY A.Report_Date desc</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>sa</user>

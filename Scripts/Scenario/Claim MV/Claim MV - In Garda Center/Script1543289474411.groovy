@@ -26,3 +26,5 @@ WebUI.callTestCase(findTestCase('Screen/Choose Customer'), [:], FailureHandling.
 WebUI.callTestCase(findTestCase('Screen/Claim MV'), [('surveytype') : 'Survey-in', ('surveylocation') : 'Garda Center'], 
     FailureHandling.STOP_ON_FAILURE)
 
+WebUI.callTestCase(findTestCase('Screen/Logout'), [:], FailureHandling.STOP_ON_FAILURE)
+

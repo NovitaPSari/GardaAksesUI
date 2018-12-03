@@ -31,7 +31,7 @@ WebUI.delay(1)
 
 WebUI.click(findTestObject('Claim MV/Choose Customer/BTN_SEARCH'))
 
-WebUI.delay(15)
+WebUI.delay(20)
 
 WebUI.click(findTestObject('Claim MV/Choose Customer/LST_POLICY_NUMBER'))
 
@@ -39,7 +39,7 @@ WebUI.delay(1)
 
 WebUI.click(findTestObject('Claim MV/Choose Customer/BTN_NEXT'))
 
-WebUI.delay(5)
+WebUI.delay(10)
 
 WebUI.click(findTestObject('Claim MV/Choose Customer/BTN_FINISH'))
 
