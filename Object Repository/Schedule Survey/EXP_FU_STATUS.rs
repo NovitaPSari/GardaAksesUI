@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>EXP_FU_STATUS</name>
+   <tag></tag>
+   <elementGuidId>2172e194-f10c-48c7-bb19-4135fd162f59</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;PnlGeneral-0&quot;]/div[1]/div/a2is-combo-wide/div[2]/div[1]/div/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;PnlGeneral-0&quot;]/div[1]/div/a2is-combo-wide/div[2]/div[1]/div/button</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/FRAME</value>
+   </webElementProperties>
+</WebElementEntity>

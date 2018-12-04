@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>EXP_SURVEY_CATEGORY_TIME</name>
+   <name>TXT_REMARKS</name>
    <tag></tag>
-   <elementGuidId>dde7ad0e-fb69-49de-b899-a8cb78d2d93f</elementGuidId>
+   <elementGuidId>9e1664dc-a7a3-4c6b-9ea3-ece79d62aaab</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>/html[1]/body[1]/div[1]/div[4]/div[1]/a2is-sections[1]/div[2]/div[1]/div[1]/div[1]/a2is-sections[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/a2is-tabs[1]/div[2]/div[2]/div[1]/div[2]/div[2]/a2is-combo-wide-dc[1]/div[2]/div[1]/div[1]/button[1][count(. | //*[@ref_element = 'Object Repository/FRAME']) = count(//*[@ref_element = 'Object Repository/FRAME'])]</value>
+         <value>//*[@id=&quot;PnlGeneral-0&quot;]/div[1]/div/a2is-textarea-wide/div[2]/div[1]/div/textarea</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html[1]/body[1]/div[1]/div[4]/div[1]/a2is-sections[1]/div[2]/div[1]/div[1]/div[1]/a2is-sections[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/a2is-tabs[1]/div[2]/div[2]/div[1]/div[2]/div[2]/a2is-combo-wide-dc[1]/div[2]/div[1]/div[1]/button[1]</value>
+      <value>//*[@id=&quot;PnlGeneral-0&quot;]/div[1]/div/a2is-textarea-wide/div[2]/div[1]/div/textarea</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

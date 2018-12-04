@@ -206,7 +206,7 @@ else if (surveytype == 'Survey-out') {
 	WebUI.delay(1)
 	WebUI.click(findTestObject('Object Repository/Inquiry/BTN_DAY_SURVEY_OUT',[('day') : day]))
 	WebUI.delay(1)
-	WebUI.click(findTestObject('Object Repository/Inquiry/EXP_SURVEY_CATEGORY_TIME'))
+	WebUI.click(findTestObject('Inquiry/EXP_SURVEY_TIME'))
 	WebUI.delay(1)
 	WebUI.click(findTestObject('Object Repository/Inquiry/LST_SURVEY_CATEGORY_TIME'))
 	WebUI.delay(1)

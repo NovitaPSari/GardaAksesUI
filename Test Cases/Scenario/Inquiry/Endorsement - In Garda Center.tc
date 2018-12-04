@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Inquiry - Endorsement</name>
+   <name>Endorsement - In Garda Center</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>a9bb43ca-dac7-4bb5-ba9a-eedd068f0d4b</testCaseGuid>
+   <testCaseGuid>c3933b2b-d5cd-417f-8855-8f55c77b19ec</testCaseGuid>
 </TestCaseEntity>

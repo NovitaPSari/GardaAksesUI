@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Choose Customer Category</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>08a0fd8e-2f07-4d74-99f7-c24e26ba5279</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>1991b55b-f8c4-4eab-9a23-50386aa2933d</id>
+      <masked>false</masked>
+      <name>category</name>
+   </variable>
+</TestCaseEntity>

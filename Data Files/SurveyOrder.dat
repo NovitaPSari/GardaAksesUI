@@ -11,7 +11,7 @@
    <isInternalPath>false</isInternalPath>
    <password>UGFzc3dvcmQ5NQ==</password>
    <query>SELECT TOP 1 A.AreaCode AS SOAreaCode, A.SurveyAddress SOAddress, A.NameOnPolicy, A.ChassisNo, A.EngineNo, 
-	B.Area_Code AS SASAreaCode, B.ADDRESS AS SASAddress 
+	B.Area_Code AS SASAreaCode, B.ADDRESS AS SASAddress, A.CustomerOnLocation, A.PhoneNoOnLocation, A.Remark AS SORemarks, B.Remarks AS SASRemarks 
 FROM SurveyManagement.dbo.SurveyOrder A 
 	INNER JOIN AAB.dbo.Survey_Additional_Source B 
 		ON A.ReferenceNo = B.Reference_No AND A.ReferenceTypeCode = B.Reference_Type_Code 

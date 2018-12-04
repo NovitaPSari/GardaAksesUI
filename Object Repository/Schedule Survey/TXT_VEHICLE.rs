@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>TXT_VEHICLE</name>
+   <tag></tag>
+   <elementGuidId>8306ab63-9e5b-4d61-853d-6410d423b52a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;PnlScheduleSurvey-0&quot;]/div[1]/a2is-textbox-wide/div[2]/div[1]/div/input</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;PnlScheduleSurvey-0&quot;]/div[1]/a2is-textbox-wide/div[2]/div[1]/div/input</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/FRAME</value>
+   </webElementProperties>
+</WebElementEntity>

@@ -13,39 +13,21 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-GlobalVariable.policyno = findTestData("Policy").getValue(1, 1)
-
-WebUI.delay(1)
-
-WebUI.click(findTestObject('Choose Customer/EXP_SEARCH_BY_PARAMETER'))
-
-WebUI.delay(1)
-
-WebUI.click(findTestObject('Choose Customer/LST_SEARCH_BY_PARAMETER', [('parameter') : 'Policy Number']))
-
-WebUI.delay(1)
-
-WebUI.setText(findTestObject('Choose Customer/TXT_SEARCH_BY_INPUT'), GlobalVariable.policyno)
-
-WebUI.delay(1)
-
-WebUI.click(findTestObject('Choose Customer/BTN_SEARCH'))
-
-WebUI.delay(20)
-
-WebUI.click(findTestObject('Choose Customer/LST_POLICY_NUMBER'))
-
-WebUI.delay(1)
-
-WebUI.click(findTestObject('Choose Customer/BTN_NEXT'))
-
-WebUI.delay(10)
-
-WebUI.click(findTestObject('Choose Customer/BTN_FINISH'))
-
 WebUI.delay(2)
 
-WebUI.click(findTestObject('Choose Customer/BTN_YES'))
+if (category == 'Others') {
+    WebUI.click(findTestObject('Object Repository/Choose Customer/RDB_CATEGORY_OTHERS'))
+	WebUI.delay(2)
+	WebUI.click(findTestObject('Choose Customer/BTN_CATEGORY_NEXT'))
+	WebUI.delay(2)
+} else {
+    WebUI.click(findTestObject('Object Repository/Choose Customer/RDB_CATEGORY_PHOLDER'))
+	WebUI.delay(2)
+	WebUI.click(findTestObject('Choose Customer/BTN_CATEGORY_NEXT'))
+	WebUI.delay(2)
+	WebUI.callTestCase(findTestCase("Screen/Choose Customer"), [:], FailureHandling.STOP_ON_FAILURE)
+	WebUI.delay(2)
+}
 
-WebUI.delay(7)
+
 

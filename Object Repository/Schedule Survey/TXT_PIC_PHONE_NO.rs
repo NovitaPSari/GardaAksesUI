@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>TXT_PIC_PHONE_NO</name>
+   <tag></tag>
+   <elementGuidId>99823f91-550b-43d4-85d6-1e0f12948b33</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;PnlScheduleSurvey-0&quot;]/div[1]/div/div[2]/a2is-textbox-wide-dc[2]/div[2]/div[1]/div/input</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;PnlScheduleSurvey-0&quot;]/div[1]/div/div[2]/a2is-textbox-wide-dc[2]/div[2]/div[1]/div/input</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/FRAME</value>
+   </webElementProperties>
+</WebElementEntity>

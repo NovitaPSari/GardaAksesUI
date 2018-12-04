@@ -4,7 +4,7 @@
    <name>Garda Akses</name>
    <tag></tag>
    <UUID>9783237b-1d09-427f-a284-e7a9878f0d5e</UUID>
-   <migratedVersion>5.7.0</migratedVersion>
+   <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
    <sourceContent>
       <sourceFolderList>
@@ -18,6 +18,9 @@
          </systemFolderConfiguration>
          <systemFolderConfiguration>
             <url>Include/features</url>
+         </systemFolderConfiguration>
+         <systemFolderConfiguration>
+            <url>Include/config</url>
          </systemFolderConfiguration>
       </systemFolderList>
    </sourceContent>

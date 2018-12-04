@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>BTN_SURVEY_AREA</name>
+   <tag></tag>
+   <elementGuidId>63400757-2389-436a-8e62-7c1188141066</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;PnlScheduleSurvey-0&quot;]/div[1]/div/div[1]/a2is-textbox-wide-dc[4]/div[2]/div[1]/div/span/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//*[@id=&quot;PnlScheduleSurvey-0&quot;]/div[1]/div/div[1]/a2is-textbox-wide-dc[4]/div[2]/div[1]/div/span/button</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>ref_element</name>
+      <type>Main</type>
+      <value>Object Repository/FRAME</value>
+   </webElementProperties>
+</WebElementEntity>
