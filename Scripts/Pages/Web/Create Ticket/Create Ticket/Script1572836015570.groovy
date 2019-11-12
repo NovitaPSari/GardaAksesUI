@@ -24,7 +24,7 @@ WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - C
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Product', [('Product') : Product]))
 
-WebUI.delay(GlobalVariable.Delay0)
+not_run: WebUI.delay(GlobalVariable.Delay0)
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Channel Type'))
 
@@ -52,9 +52,9 @@ not_run: WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input
 
 not_run: WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Fax'), Fax)
 
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Next'))
-
 WebUI.delay(GlobalVariable.Delay1)
+
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Next'))
 
 if (GLType == 'Awal') {
     def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
@@ -69,13 +69,11 @@ if (GLType == 'Awal') {
 
     println(GlobalVariable.TicketIDLanjutan)
 } else {
-    GLType == 'Akhir'.call({ 
-            def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
+    def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
 
-            GlobalVariable.TicketIDAkhir = result.substring(10, 18)
+    GlobalVariable.TicketIDAkhir = result.substring(10, 18)
 
-            println(GlobalVariable.TicketIDAkhir)
-        })
+    println(GlobalVariable.TicketIDAkhir)
 }
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Close'))
