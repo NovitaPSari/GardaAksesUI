@@ -17,6 +17,8 @@ import org.openqa.selenium.Keys as Keys1
 import org.openqa.selenium.WebDriver as WebDriver
 import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.By as By
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 WebUI.delay(GlobalVariable.Delay2)
 
@@ -64,7 +66,7 @@ if (GLType == 'Awal') {
     } else if (StatusMember == '2') {
         WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Input - Member'), Member)
 
-        WebUI.delay(GlobalVariable.Delay0)
+        WebUI.delay(GlobalVariable.Delay1)
 
         WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Input - Member'), Member)
 
@@ -141,7 +143,7 @@ if (GLType == 'Awal') {
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Doctor/Button - Submit'))
 
-    if ((MemberStatus == 0) || (MemberStatus != 1)) {
+    if (MemberStatus == 0) {
         WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Appropriate RB Class'))
 
         WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Appropriate RB Class/Button - VVIP'))
@@ -164,11 +166,25 @@ if (GLType == 'Awal') {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Choose - GL Type', [('GLType') : GLType]))
 }
 
+if (Rujuk == 1) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Checkbox - Rujuk'))
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Reason'))
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Reason Rujuk/Choose - Reason'))
+}
+
+if (NPNFU == 1) {
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/CheckBox - Need Follow Up'))
+	
+}
+
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Process'))
 
-WebUI.verifyElementText(findTestObject('Pages/Web/Garda Akses/Claim/Summary/Text - Dijaminkan'), 'DIJAMINKAN')
+WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Summary/Text - Status', [('Status') : Status]), GlobalVariable.Delay3)
 
-WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Summary/Text - Summary'), GlobalVariable.Delay1)
+WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Summary/Text - Validasi', [('Validasi') : Validasi]), GlobalVariable.Delay3)
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Close'))
 
