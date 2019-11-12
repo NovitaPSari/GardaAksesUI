@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Text - Status</name>
+   <name>Button - Interupted Call</name>
    <tag></tag>
-   <elementGuidId>1146dcc5-c6c8-4214-b6fa-abee533dfca6</elementGuidId>
+   <elementGuidId>1d831b53-25d2-4de3-953e-ecbd672cd9b9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>${Summary}[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;CreateGL-0&quot;]//button[text() = 'Interupted Call']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>${Summary}</value>
+      <value>//*[@id=&quot;CreateGL-0&quot;]//button[text() = 'Interupted Call']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

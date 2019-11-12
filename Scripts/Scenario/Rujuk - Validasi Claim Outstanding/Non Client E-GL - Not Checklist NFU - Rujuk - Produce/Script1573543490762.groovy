@@ -41,8 +41,8 @@ def Fax = '021873627'
 //Claim//
 def MemberStatus = 0
 
-//Status Member 1 = Membuat Member baru. Kosongkan data member bila mengambil status 1
-//Status Member 2 = Mengambil data member yang sudah ada. Kosongkan data StatusMember, NewMemberType, NewMemberName, ClientName, EmployeeID, Year, Month, Classification, Gender
+//Summary Member 1 = Membuat Member baru. Kosongkan data member bila mengambil status 1
+//Summary Member 2 = Mengambil data member yang sudah ada. Kosongkan data StatusMember, NewMemberType, NewMemberName, ClientName, EmployeeID, Year, Month, Classification, Gender
 def StatusMember = '2'
 
 def NewMemberType = 'Employee'
@@ -81,13 +81,17 @@ def Rujuk = 0
 
 def Rujuk2 = 1
 
-def Status = GlobalVariable.Dijaminkan
+def Summary = GlobalVariable.Dijaminkan
 
 def Validasi = GlobalVariable.NPNFU
 
 def NPNFU = 0
 
 def NPNFU2 = 0
+
+def Status = 0
+
+def Status2 = 0
 
 //Update DB//
 if (StatusMember == '1') {
@@ -113,7 +117,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : Me
         , ('NewMemberType') : NewMemberType, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID
         , ('Year') : Year, ('Month') : Month, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member
         , ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID
-        , ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Status') : Status, ('Validasi') : Validasi, ('NPNFU') : NPNFU])
+        , ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU, ('Status') : Status])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Home/Home - Create Ticket'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -127,4 +131,4 @@ WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : Me
 	, ('NewMemberType') : NewMemberType, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID
 	, ('Year') : Year, ('Month') : Month, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member
 	, ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID
-	, ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk2, ('Status') : Status, ('Validasi') : Validasi, ('NPNFU') : NPNFU2])
+	, ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk2, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU2, ('Status') : Status])

@@ -79,4 +79,14 @@
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/span[6]'</initValue>
       <name>NPNFU</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \'PRE-ADMISSION\']'</initValue>
+      <name>SummaryPreAdmission</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/text()[7]'</initValue>
+      <name>ValidasiPreAdmission</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

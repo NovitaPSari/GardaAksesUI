@@ -44,9 +44,9 @@ def Fax = '021873627'
 //Claim//
 def MemberStatus = 1
 
-//Status Member 1 = Membuat Member baru. Kosongkan data member bila mengambil status 1
-//Status Member 2 = Mengambil data member yang sudah ada. Kosongkan data StatusMember, NewMemberType, NewMemberName, ClientName, EmployeeID, Year, Month, Classification, Gender
-def StatusMember = '2'
+//Summary Member 1 = Membuat Member baru. Kosongkan data member bila mengambil status 1
+//Summary Member 2 = Mengambil data member yang sudah ada. Kosongkan data StatusMember, NewMemberType, NewMemberName, ClientName, EmployeeID, Year, Month, Classification, Gender
+def StatusMember = '1'
 
 def NewMemberType = 'Employee'
 
@@ -72,6 +72,8 @@ def ProductType = 'Inpatient'
 
 def GLType1 = 'Awal'
 
+def GLType2 = 'Lanjutan'
+
 def DiagnosisID = 'A09 '
 
 def DiagnosisStatus = 'Initial Primary'
@@ -80,21 +82,25 @@ def DoctorName = 'Betsy Kalianda'
 
 def Rujuk = 0
 
-def Status = GlobalVariable.Dijaminkan
-
-def Validasi = GlobalVariable.ValidasiSukses
-
 def NPNFU = 0
 
 def NPNFU2 = 1
 
+def Status = 1
+
+def Status2 = 1
+
+def Summary = GlobalVariable.SummaryPreAdmission
+
+def Validasi = GlobalVariable.ValidasiPreAdmission
+
 //Update DB//
 if (StatusMember == '1') {
-def queryNewMemberName = 'UPDATE litt.dbo.masterid SET number = (SELECT number FROM litt.dbo.masterid WHERE id = \'Automation GA\')+1 WHERE id = \'Automation GA\''
+    def queryNewMemberName = 'UPDATE litt.dbo.masterid SET number = (SELECT number FROM litt.dbo.masterid WHERE id = \'Automation GA\')+1 WHERE id = \'Automation GA\''
 
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+    CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
-CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
+    CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
 }
 
 //Script//
@@ -103,13 +109,30 @@ WebUI.callTestCase(findTestCase('Pages/Web/Login/Login'), [('UserID') : UserID, 
 WebUI.callTestCase(findTestCase('Pages/Web/Home/Home - Create Ticket'), [:])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-		, ('ProviderName') : ProviderName, ('PhoneNumber') : PhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType1])
+        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+        , ('ProviderName') : ProviderName, ('PhoneNumber') : PhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType1])
 
 WebUI.callTestCase(findTestCase('Pages/Web/GL Inquiry/GL Inquiry'), [('GLType') : GLType1, ('Member') : Member])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember, ('NewMemberType') : NewMemberType
-	, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID, ('Year') : Year, ('Month') : Month
-	, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member, ('FamilyPhoneNo') : FamilyPhoneNo
-	, ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID, ('DiagnosisStatus') : DiagnosisStatus
-	, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Status') : Status, ('Validasi') : Validasi, ('NPNFU') : NPNFU])
+WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember
+        , ('NewMemberType') : NewMemberType, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID
+        , ('Year') : Year, ('Month') : Month, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member
+        , ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID
+        , ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi
+        , ('NPNFU') : NPNFU, ('Status') : Status])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Home/Home - Create Ticket'), [:])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+        , ('ProviderName') : ProviderName, ('PhoneNumber') : PhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType1])
+
+WebUI.callTestCase(findTestCase('Pages/Web/GL Inquiry/GL Inquiry'), [('TicketID') : GlobalVariable.TicketIDAwal, ('GLType') : GLType2])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember
+        , ('NewMemberType') : NewMemberType, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID
+        , ('Year') : Year, ('Month') : Month, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member
+        , ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID
+        , ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi
+        , ('NPNFU') : NPNFU, ('Status') : Status2])
+

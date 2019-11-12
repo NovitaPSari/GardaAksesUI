@@ -175,16 +175,22 @@ if (Rujuk == 1) {
 }
 
 if (NPNFU == 1) {
-	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/CheckBox - Need Follow Up'))
-	
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/CheckBox - Need Follow Up'))
 }
 
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Process'))
+if (Status == 1) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Pre-Admission'))
+} else if (Status == 2) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Interupted Call'))
+} else {
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Process'))
+}
 
-WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Summary/Text - Status', [('Status') : Status]), GlobalVariable.Delay3)
+WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Summary/Text - Status', [('Summary') : Summary]), 
+    GlobalVariable.Delay3, FailureHandling.STOP_ON_FAILURE)
 
-WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Summary/Text - Validasi', [('Validasi') : Validasi]), GlobalVariable.Delay3)
+WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Summary/Text - Validasi', [('Validasi') : Validasi]), 
+    GlobalVariable.Delay3, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Close'))
 

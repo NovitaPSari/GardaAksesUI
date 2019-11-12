@@ -81,13 +81,17 @@ def Rujuk = 0
 
 def Rujuk2 = 1
 
-def Status = GlobalVariable.TidakDijaminkan
+def Summary = GlobalVariable.TidakDijaminkan
 
 def Validasi = GlobalVariable.ValidasiClaimOutstanding
 
 def NPNFU = 0
 
 def NPNFU2 = 1
+
+def Status = 0
+
+def Status2 = 0
 
 //Update DB//
 if (StatusMember == '1') {
@@ -113,7 +117,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : Me
         , ('NewMemberType') : NewMemberType, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID
         , ('Year') : Year, ('Month') : Month, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member
         , ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID
-        , ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Status') : Status, ('Validasi') : Validasi])
+        , ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU, ('Status') : Status])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Home/Home - Create Ticket'), [:], FailureHandling.STOP_ON_FAILURE)
 
@@ -127,4 +131,4 @@ WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : Me
 	, ('NewMemberType') : NewMemberType, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID
 	, ('Year') : Year, ('Month') : Month, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member
 	, ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID
-	, ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Status') : Status, ('Validasi') : Validasi])
+	, ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU, ('Status') : Status])

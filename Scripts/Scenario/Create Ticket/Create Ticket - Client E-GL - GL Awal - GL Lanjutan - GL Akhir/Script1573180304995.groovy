@@ -82,13 +82,17 @@ def DoctorName = 'Betsy Kalianda'
 
 def Rujuk = 0
 
-def Status = GlobalVariable.Dijaminkan
+def Summary = GlobalVariable.Dijaminkan
 
 def Validasi = GlobalVariable.ValidasiSukses
 
 def NPNFU = 0
 
 def NPNFU2 = 1
+
+def Status = 0
+
+def Status2 = 0
 
 //Update DB//
 if (StatusMember == '1') {
@@ -114,7 +118,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : Me
         , ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID, ('Year') : Year, ('Month') : Month
         , ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member, ('FamilyPhoneNo') : FamilyPhoneNo
         , ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID, ('DiagnosisStatus') : DiagnosisStatus
-        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Status') : Status, ('Validasi') : Validasi, ('NPNFU') : NPNFU])
+        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU, ('Status') : Status])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Home/Home - Create Ticket'), [:])
 
@@ -124,7 +128,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Create Ticket/Create Ticket'), [('Con
 
 WebUI.callTestCase(findTestCase('Pages/Web/GL Inquiry/GL Inquiry'), [('TicketID') : GlobalVariable.TicketIDAwal, ('GLType') : GLType2])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember, ('GLType') : GLType2, ('Rujuk') : Rujuk, ('Status') : Status, ('Validasi') : Validasi, ('NPNFU') : NPNFU])
+WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember, ('GLType') : GLType2, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU, ('Status') : Status])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Home/Home - Create Ticket'), [:])
 
@@ -134,5 +138,5 @@ WebUI.callTestCase(findTestCase('Pages/Web/Create Ticket/Create Ticket'), [('Con
 
 WebUI.callTestCase(findTestCase('Pages/Web/GL Inquiry/GL Inquiry'), [('TicketID') : GlobalVariable.TicketIDLanjutan, ('GLType') : GLType3])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember, ('GLType') : GLType3, ('Rujuk') : Rujuk, ('Status') : Status, ('Validasi') : Validasi, ('NPNFU') : NPNFU])
+WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember, ('GLType') : GLType3, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU, ('Status') : Status])
 

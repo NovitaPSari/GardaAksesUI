@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Text - Status</name>
+   <name>Button - Pre-Admission</name>
    <tag></tag>
-   <elementGuidId>1146dcc5-c6c8-4214-b6fa-abee533dfca6</elementGuidId>
+   <elementGuidId>6f61ae91-ad43-417f-b4e8-10084fc8e437</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>${Summary}[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;CreateGL-0&quot;]//button[text() = 'Pre-Admission']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>${Summary}</value>
+      <value>//*[@id=&quot;CreateGL-0&quot;]//button[text() = 'Pre-Admission']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
