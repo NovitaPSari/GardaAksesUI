@@ -106,4 +106,46 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Not Rujuk - Not Produce</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>6123132c-4b8b-4feb-b8e2-4ba9db60f148</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/Interrupted Call - Client E-GL</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>e63e2597-120d-4c82-acc8-ee324045dad0</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/Interrupted Call - Non Client E-GL</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b426455a-e549-40c7-9763-ad4da663fd58</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/Pre Admission - Client E-GL</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>2bd9566a-530c-4ec2-9360-ade7f9e5bce5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/Pre Admission - Non Client E-GL</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b80b0142-78de-466e-91b0-5ef5fb4420ad</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/GL Awal - Client E-GL - NPNFU - Reject</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>904abcb6-14bf-4aa5-a155-4226eb750c7d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/GL Awal - Non Client E-GL - NPNFU - Reject</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>9052dcdd-3eae-4076-8e50-93d38d0d7737</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/GL Awal - Non Client E-GL - Produce</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>
