@@ -13,122 +13,154 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+//Login//
 def UserID = 'DNS'
-
 def Password = 'Password95'
 
 //Create Ticket//
 def ContactLine = 'Provider'
-
 def Product = 'Health'
-
-def ChannelType = 'WhatsApp'
-
-def ContactName = 'NBH'
-
+def ChannelType = 'Call'
+def ContactName = 'Automation Test'
 def ContactType = 'Farmasi'
-
 def ServiceType = 'Claim'
-
 def ProviderName = 'OJKSH00001'
+def ProviderName2 = 'OJKRP00008'
+def PhoneNumber = null
+def Email = null
+def Fax = null
 
-def PhoneNumber = '081233464072'
+//Inquiry//
+def SearchBy = null
+def SearchBy2 = 'TicketNo'
 
-def Email = 'nbh@gmail.com'
-
-def Fax = '021873627'
-
-//Claim//
-def MemberStatus = 0
-
-//Summary Member 1 = Membuat Member baru. Kosongkan data member bila mengambil status 1
-//Summary Member 2 = Mengambil data member yang sudah ada. Kosongkan data StatusMember, NewMemberType, NewMemberName, ClientName, EmployeeID, Year, Month, Classification, Gender
-def StatusMember = '2'
-
-def NewMemberType = 'Employee'
-
+//Claim
+//Member = Existing  / New / Check
+def Member = 'Existing'
+def Member2 = null
+def Member3 = null
+def Member4 = null
+def Member5 = null
+// MemberStatus = Non Client / Client
+def MemberStatus = 'Non Client'
+def MemberName = findTestData('MemberNameNonClient').getValue(1, 1)
+def NewMemberType = null
 def NewMemberName = findTestData('NewMemberName').getValue(1, 1)
-
-def ClientName = 'PT BANK PERMATA TBK'
-
-def EmployeeID = '78912'
-
-def Year = '1996'
-
-def Month = 'Aug'
-
-def Classification = 'Level 13-14A'
-
-def Gender = 'Male'
-
-def Member = findTestData('MemberNameNonClient').getValue(1, 1)
-
-def FamilyPhoneNo = '012387563928'
-
+//PT SHOWA INDONESIA MANUFACTURING // PT BANK PERMATA TBK
+def ClientName = 'PT SHOWA INDONESIA MANUFACTURING'
+def EmployeeID = null
+def Year = null
+def Month = null
+//Level 13-14A // Gol. V  / IP-1590 / Kls VIP
+def Classification = null
+def Gender = null
+def FamilyPhoneNo = '081214998614'
 def ProductType = 'Inpatient'
-
-def GLType1 = 'Awal'
-
-def GLType2 = 'Lanjutan'
-
-def DiagnosisID = 'A09 '
-
+def GLType = 'Awal'
+def GLType2 = 'Awal'
+def GLType3 = null
+def GLType4 = null
+def GLType5 = null
 def DiagnosisStatus = 'Initial Primary'
-
+def DiagnosisID = 'A09 '
 def DoctorName = 'Betsy Kalianda'
-
-def Rujuk = 0
-
-def Rujuk2 = 0
-
-def Summary = GlobalVariable.Dijaminkan
-
-def Validasi = GlobalVariable.NPNFU
-
-def NPNFU = 0
-
-def NPNFU2 = 0
-
-def Status = 0
-
-def Status2 = 0
+//Rujuk = yes / no
+def Rujuk = 'Yes'
+def Reason = null
+def TotalBilled = null
+def NPNFU = 'Yes'
+def Status = 'Process'
+def Status2 = 'Process'
+def Status3 = null
+def Status4 = null
+def Status5 = null
+def Summary = GlobalVariable.SummaryDijaminkan
+def Summary2 = GlobalVariable.SummaryTidakDijaminkan
+def Summary3 = null
+def Summary4 = null
+def Summary5 = null
+def Validasi = null
+def Validasi2 = null
+def Validasi3 = null
+def Validasi4 = null
+def Validasi5 = null
 
 //Update DB//
-if (StatusMember == '1') {
-    def queryNewMemberName = 'UPDATE litt.dbo.masterid SET number = (SELECT number FROM litt.dbo.masterid WHERE id = \'Automation GA\')+1 WHERE id = \'Automation GA\''
+if (Member == '1') {
+	def queryNewMemberName = 'UPDATE litt.dbo.masterid SET number = (SELECT number FROM litt.dbo.masterid WHERE id = \'Automation GA\')+1 WHERE id = \'Automation GA\''
 
-    CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+	CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
-    CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
+	CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
 }
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Login/Login'), [('UserID') : UserID, ('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Home/Home - Create Ticket'), [:])
+//==================== PHASE 1 ====================
 
-WebUI.callTestCase(findTestCase('Pages/Web/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('ProviderName') : ProviderName, ('PhoneNumber') : PhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType1])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
-WebUI.callTestCase(findTestCase('Pages/Web/GL Inquiry/GL Inquiry'), [('GLType') : GLType1, ('Member') : Member])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+		, ('ProviderName') : ProviderName, ('PhoneNumber') : PhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember
-        , ('NewMemberType') : NewMemberType, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID
-        , ('Year') : Year, ('Month') : Month, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member
-        , ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID
-        , ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU, ('Status') : Status])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('SearchBy') : SearchBy, ('GLType') : GLType, ('NewMemberName') : NewMemberName
+		, ('Member') : Member])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Home/Home - Create Ticket'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
+	[('Member') : Member,
+		('MemberStatus') : MemberStatus,
+		('MemberName') : MemberName,
+		('NewMemberType') : null,
+		('NewMemberName') : null,
+		('ClientName') : null,
+		('EmployeeID') : null,
+		('Year') : null,
+		('Month') : null,
+		('Classification') : null,
+		('FamilyPhoneNo') : FamilyPhoneNo,
+		('ProductType') : ProductType,
+		('GLType') : GLType ,
+		('DiagnosisStatus') : DiagnosisStatus,
+		('DiagnosisID') : DiagnosisID,
+		('DoctorName') : DoctorName,
+		('Rujuk') : null,
+		('NPNFU') : null,
+		('Status') : Status,
+		('Summary') : Summary,
+		('Validasi') : Validasi])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('ProviderName') : ProviderName, ('PhoneNumber') : PhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType2])
+//==================== PHASE 2 ====================
 
-WebUI.callTestCase(findTestCase('Pages/Web/GL Inquiry/GL Inquiry'), [('TicketID') : GlobalVariable.TicketIDAwal, ('GLType') : GLType1])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember
-	, ('NewMemberType') : NewMemberType, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID
-	, ('Year') : Year, ('Month') : Month, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member
-	, ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType1, ('DiagnosisID') : DiagnosisID
-	, ('DiagnosisStatus') : DiagnosisStatus, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk2, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU2, ('Status') : Status])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+		, ('ProviderName') : ProviderName2, ('PhoneNumber') : PhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType2])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('SearchBy') : SearchBy2, ('TicketID') : GlobalVariable.TicketIDAwal
+		, ('GLType') : GLType2, ('Member') : Member])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
+	[('Member') : Member,
+		('MemberStatus') : MemberStatus,
+		('MemberName') : MemberName,
+		('NewMemberType') : null,
+		('NewMemberName') : null,
+		('ClientName') : null,
+		('EmployeeID') : null,
+		('Year') : null,
+		('Month') : null,
+		('Classification') : null,
+		('FamilyPhoneNo') : FamilyPhoneNo,
+		('ProductType') : ProductType,
+		('GLType') : GLType ,
+		('DiagnosisStatus') : DiagnosisStatus,
+		('DiagnosisID') : DiagnosisID,
+		('DoctorName') : DoctorName,
+		('Rujuk') : null,
+		('NPNFU') : null,
+		('Status') : Status,
+		('Summary') : Summary2,
+		('Validasi') : Validasi2])

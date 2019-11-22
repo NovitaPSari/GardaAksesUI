@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//span[text() = 'Ticket No']//parent::label//parent::div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[text() = 'Ticket No']//parent::label//parent::div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//span[text() = 'Ticket No']//parent::label//parent::div//input</value>
+      <value>//*[text() = 'Ticket No']//parent::label//parent::div//input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

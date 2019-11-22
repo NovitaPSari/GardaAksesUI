@@ -45,39 +45,24 @@
       <name>Delay0</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
-      <description></description>
+      <description>Popup Message Bila status Produce</description>
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \'DIJAMINKAN\']'</initValue>
-      <name>Dijaminkan</name>
+      <name>SummaryDijaminkan</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \' TIDAK DIJAMINKAN\']'</initValue>
-      <name>TidakDijaminkan</name>
+      <name>SummaryTidakDijaminkan</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[text() = \' sesuai dengan ketentuan perusahaan.\']'</initValue>
-      <name>ValidasiSukses</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//span[text() = \'- Terdapat claim outstanding pada MemberNo ini\']'</initValue>
-      <name>ValidasiClaimOutstanding</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'https://172.16.94.5/gardaakses'</initValue>
+      <initValue>'https://172.16.94.4/gardaakses'</initValue>
       <name>URLGardaAkses5</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/text()[5]'</initValue>
-      <name>TelahDiProses</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/span[6]'</initValue>
-      <name>NPNFU</name>
+      <initValue>'//*[text() = \' telah diproses dan akan segera difollow-up oleh tim kami.\']'</initValue>
+      <name>SummaryNPNFU</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -86,7 +71,17 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/text()[7]'</initValue>
-      <name>ValidasiPreAdmission</name>
+      <initValue>'//*[text() = \'Interrupted Call\']'</initValue>
+      <name>SummaryInterruptedCall</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://172.16.94.4/gardaakses'</initValue>
+      <name>URLGardaAkses4</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'//b[text() = \'MANUAL REJECT\']'</initValue>
+      <name>SummaryManualReject</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -10,8 +10,7 @@
    <driver>DBData</driver>
    <isInternalPath>false</isInternalPath>
    <password>UGFzc3dvcmQ5NQ==</password>
-   <query>SELECT ID +' '+ NUMBER AS NewMemberName FROM masterid
-WHERE id = 'Automation GA'</query>
+   <query>SELECT Name  +' '+ Number AS NewMemberName FROM GardaAkses_MasterID WHERE Name = 'Automation GA'</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>sa</user>

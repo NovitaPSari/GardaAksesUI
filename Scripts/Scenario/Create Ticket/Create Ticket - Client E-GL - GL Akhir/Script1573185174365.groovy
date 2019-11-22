@@ -15,105 +15,127 @@ import internal.GlobalVariable as GlobalVariable
 
 //Login//
 def UserID = 'DNS'
-
 def Password = 'Password95'
 
 //Create Ticket//
 def ContactLine = 'Provider'
-
 def Product = 'Health'
-
 def ChannelType = 'Call'
-
-def ContactName = 'NBH'
-
+def ContactName = 'Automation Test'
 def ContactType = 'Farmasi'
-
 def ServiceType = 'Claim'
-
 def ProviderName = 'OJKSH00001'
+def PhoneNumber = null
+def Email = null
+def Fax = null
 
-def PhoneNumber = '081233464072'
+//Inquiry//
+def SearchBy = 'TicketNo'
+def SearchBy2 = 'TicketNo'
+def SearchBy3 = 'TicketNo'
 
-def Email = 'nbh@gmail.com'
-
-def Fax = '021873627'
-
-//Claim//
-def MemberStatus = 1
-
-//Status Member 1 = Membuat Member baru. Kosongkan data member bila mengambil status 1
-//Status Member 2 = Mengambil data member yang sudah ada. Kosongkan data StatusMember, NewMemberType, NewMemberName, ClientName, EmployeeID, Year, Month, Classification, Gender
-def StatusMember = '2'
-
-def NewMemberType = 'Employee'
-
+//Claim
+//Member = Existing  / New / Check
+def Member = 'Existing'
+def Member2 = null
+def Member3 = null
+def Member4 = null
+def Member5 = null
+// MemberStatus = Non Client / Client
+def MemberStatus = 'Client'
+def MemberName = findTestData('MemberNameClient').getValue(1, 1)
+def NewMemberType = null
 def NewMemberName = findTestData('NewMemberName').getValue(1, 1)
-
-def ClientName = 'PT BANK PERMATA TBK'
-
-def EmployeeID = '78912'
-
-def Year = '1996'
-
-def Month = 'Aug'
-
-def Classification = 'Level 13-14A'
-
-def Gender = 'Male'
-
-def Member = findTestData('MemberNameClient').getValue(1, 1)
-
-def FamilyPhoneNo = '012387563928'
-
+//PT SHOWA INDONESIA MANUFACTURING // PT BANK PERMATA TBK // ASURANSI ASTRA BUANA
+def ClientName = 'ASURANSI ASTRA BUANA'
+def EmployeeID = null
+def Year = null
+def Month = null
+//Level 13-14A // Gol. V  / IP-1590 / Kls VIP
+def Classification = null
+def Gender = null
+def FamilyPhoneNo = '081214998614'
 def ProductType = 'Inpatient'
-
-def GLType1 = 'Awal'
-
+def GLType = 'Awal'
+def GLType2 = 'Lanjutan'
 def GLType3 = 'Akhir'
-
-def DiagnosisID = 'A09 '
-
 def DiagnosisStatus = 'Initial Primary'
-
+def DiagnosisID = 'A09 '
 def DoctorName = 'Betsy Kalianda'
-
-def Rujuk = 0
-
-def Summary = GlobalVariable.Dijaminkan
-
-def Validasi = GlobalVariable.ValidasiSukses
-
-def NPNFU = 0
-
-def NPNFU2 = 1
-
-def Status = 0
-
-def Status2 = 0
+//Rujuk = yes / no
+def Rujuk = null
+def Reason = null
+def TotalBilled = '3000000'
+def NPNFU = null
+def NPNFU2 = null
+def NPNFU3 = null
+def NPNFU4 = null
+def NPNFU5 = null
+def Status = 'Process'
+def Status2 = null
+def Status3 = null
+def Status4 = null
+def Status5 = null
+def Summary = GlobalVariable.SummaryDijaminkan
+def Summary2 = null
+def Summary3 = null
+def Summary4 = null
+def Summary5 = null
+def Validasi = null
+def Validasi2 = null
+def Validasi3 = null
+def Validasi4 = null
+def Validasi5 = null
 
 //Update DB//
-if (StatusMember == '1') { 
-def queryNewMemberName = 'UPDATE litt.dbo.masterid SET number = (SELECT number FROM litt.dbo.masterid WHERE id = \'Automation GA\')+1 WHERE id = \'Automation GA\''
+if (Member == 'New') {
+	def queryNewMemberName = 'UPDATE litt.dbo.masterid SET number = (SELECT number FROM litt.dbo.masterid WHERE id = \'Automation GA\')+1 WHERE id = \'Automation GA\''
 
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+	CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
-CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
+	CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
 }
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Home/Home - Create Ticket'), [:])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-		, ('ProviderName') : ProviderName, ('PhoneNumber') : PhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType1])
+ 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
+	[('UserID') : UserID,
+		('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/GL Inquiry/GL Inquiry'), [('GLType') : GLType1, ('Member') : Member])
+//==================== PHASE 1 ====================
 
-WebUI.callTestCase(findTestCase('Pages/Web/Claim/Claim'), [('MemberStatus') : MemberStatus, ('StatusMember') : StatusMember, ('NewMemberType') : NewMemberType
-	, ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID, ('Year') : Year, ('Month') : Month
-	, ('Classification') : Classification, ('Gender') : Gender, ('Member') : Member, ('FamilyPhoneNo') : FamilyPhoneNo
-	, ('ProductType') : ProductType, ('GLType') : GLType3, ('DiagnosisID') : DiagnosisID, ('DiagnosisStatus') : DiagnosisStatus
-	, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Summary') : Summary, ('Validasi') : Validasi, ('NPNFU') : NPNFU, ('Status') : Status])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
+	[('ContactLine') : ContactLine,
+		('Product') : Product,
+		('ChannelType') : ChannelType,
+		('ContactName') : ContactName,
+		('ContactType') : ContactType,
+		('ServiceType') : ServiceType,
+		('ProviderName') : ProviderName,
+		('GLType') : GLType])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'),
+	[('GLType') : GLType,
+		('TicketID') : null,
+		('NewMemberName') : null])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
+	[('Member') : Member,
+		('MemberStatus') : MemberStatus,
+		('MemberName') : MemberName,
+		('FamilyPhoneNo') : FamilyPhoneNo,
+		('ProductType') : ProductType,
+		('GLType') : GLType3,
+		('DiagnosisStatus') : DiagnosisStatus,
+		('DiagnosisID') : DiagnosisID,
+		('DoctorName') : DoctorName,
+		('TotalBilled') : TotalBilled,
+		('Rujuk') : null,
+		('NPNFU') : null,
+		('Status') : Status,
+		('Summary') : Summary,
+		('Validasi') : Validasi])
