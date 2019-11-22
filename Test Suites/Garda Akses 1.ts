@@ -104,7 +104,7 @@
       <guid>8625bc6d-2bbb-4a55-8c6b-7531c9519c83</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Scenario/Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Not Rujuk - Not Produce</testCaseId>
+      <testCaseId>Test Cases/Scenario/Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Not Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>6123132c-4b8b-4feb-b8e2-4ba9db60f148</guid>
@@ -147,5 +147,23 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/Add New Membership E-GL/GL Awal - Non Client E-GL - Produce</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>df851e6b-818d-43c5-8254-68c50bdb65ec</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/GL Akhir - Client E-GL - NPNFU - Reject</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>94166fd0-fb95-4542-9c7f-ed62d4de5022</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/GL Akhir - Non Client E-GL - NPNFU - Reject</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ddbabd69-2859-4ed4-a836-78d05cfd0b89</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Add New Membership E-GL/GL Akhir - Non Client E-GL - Produce</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

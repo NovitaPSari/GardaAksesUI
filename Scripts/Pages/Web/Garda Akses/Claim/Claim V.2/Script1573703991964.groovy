@@ -105,9 +105,17 @@ if (Member == 'Existing') {
 //	if (InformationMemberMember == true) {
 //		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - X'))
 //	}
+//	
+//    WebUI.verifyElementNotPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Add New Member/Text - New Member Name', 
+//            [('NewMemberName') : NewMemberName]), GlobalVariable.Delay1)
 	
-    WebUI.verifyElementNotPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Add New Member/Text - New Member Name', 
-            [('NewMemberName') : NewMemberName]), GlobalVariable.Delay1)
+	def ExistingNewMemberName = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Input - New Member Name'),'value')
+	
+	println 'Ini existing new member ' + ExistingNewMemberName
+	
+	println 'Ini Membernya ' + NewMemberName
+	
+	WebUI.verifyMatch(ExistingNewMemberName, NewMemberName, false)
 	
 	WebUI.delay(GlobalVariable.Delay1)
 

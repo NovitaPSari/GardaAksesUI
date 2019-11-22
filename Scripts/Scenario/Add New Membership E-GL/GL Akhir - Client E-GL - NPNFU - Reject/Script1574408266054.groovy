@@ -2,7 +2,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -12,8 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 //Login//
 def UserID = 'DNS'
@@ -42,18 +42,18 @@ def Member = 'Existing'
 def Member2 = 'New'
 def Member3 = 'Check'
 // MemberStatus = Non Client / Client
-def MemberStatus = 'Non Client'
+def MemberStatus = 'Client'
 def NewMemberType = 'Employee'
 def MemberName = findTestData('MemberNameClient').getValue(1, 1)
 def NewMemberName = findTestData('NewMemberName').getValue(1, 1)
 //NewMemberName =
 //PT SHOWA INDONESIA MANUFACTURING // PT BANK PERMATA TBK
-def ClientName = 'PT SHOWA INDONESIA MANUFACTURING'
+def ClientName = 'PT BANK PERMATA TBK'
 def EmployeeID = findTestData('NewEmployeeID').getValue(1, 1)
 def Year = '1996'
 def Month = 'Aug'
 //Level 13-14A // Gol. V  / IP-1590 / Kls VIP
-def Classification = 'Gol. V  / IP-1590 / Kls VIP'
+def Classification = 'Level 13-14A'
 def Gender = 'Male'
 def FamilyPhoneNo = '081214998614'
 def ProductType = 'Inpatient'
@@ -62,7 +62,7 @@ def GLType2 = 'Lanjutan'
 def GLType3 = 'Akhir'
 def Date = new Date()
 def DiagnosisStatus = 'Initial Primary'
-def DiagnosisID = 'A09 '
+def DiagnosisID = 'A15 '
 def DoctorName = 'Betsy Kalianda'
 //Rujuk = yes / no
 def Rujuk = 'No'
@@ -73,8 +73,8 @@ def Status = 'Process'
 def Status2 = 'Reject'
 def Status3 = 'InteruptedCall'
 def Status4 = 'PreAdmission'
-def Summary = GlobalVariable.SummaryInterruptedCall
-def Summary2 = null
+def Summary = GlobalVariable.SummaryNPNFU
+def Summary2 = GlobalVariable.SummaryManualReject
 def Summary3 = null
 def Validasi = null
 def Validasi2 = null
@@ -97,17 +97,17 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID'
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
-	[('ContactLine') : ContactLine,
-		('Product') : Product,
-		('ChannelType') : ChannelType,
-		('ContactName') : ContactName,
-		('ContactType') : ContactType,
-		('ServiceType') : ServiceType,
-		('ProviderName') : ProviderName,
-		('PhoneNumber') : PhoneNumber,
-		('Email') : Email,
-		('Fax') : Fax,
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), 
+	[('ContactLine') : ContactLine, 
+		('Product') : Product, 
+		('ChannelType') : ChannelType, 
+		('ContactName') : ContactName, 
+		('ContactType') : ContactType, 
+		('ServiceType') : ServiceType, 
+		('ProviderName') : ProviderName, 
+		('PhoneNumber') : PhoneNumber, 
+		('Email') : Email, 
+		('Fax') : Fax, 
 		('GLType') : GLType])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'),
@@ -129,18 +129,18 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
 		('MemberName') : MemberName,
 		('FamilyPhoneNo') : FamilyPhoneNo,
 		('ProductType') : ProductType,
-		('GLType') : GLType ,
+		('GLType') : GLType3,
 		('DiagnosisStatus') : DiagnosisStatus,
 		('DiagnosisID') : DiagnosisID,
 		('DoctorName') : DoctorName,
+		('TotalBilled') : TotalBilled,
 		('Rujuk') : null,
 		('NPNFU') : null,
-		('Status') : Status3,
+		('Status') : Status,
 		('Summary') : Summary,
 		('Validasi') : Validasi])
 
 //==================== PHASE 2 ====================
-
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
@@ -172,10 +172,47 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
 		('DiagnosisStatus') : null,
 		('DiagnosisID') : null,
 		('DoctorName') : null,
+		('ClientName') : ClientName,
+		('Rujuk') : null,
+		('NPNFU') : null,
+		('Status') : Status2,
+		('Summary') : Summary2,
+		('Validasi') : Validasi])
+
+//==================== PHASE 3 ====================
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
+	[('ContactLine') : ContactLine,
+		('Product') : Product,
+		('ChannelType') : ChannelType,
+		('ContactName') : ContactName,
+		('ContactType') : ContactType,
+		('ServiceType') : ServiceType,
+		('ProviderName') : ProviderName,
+		('PhoneNumber') : PhoneNumber,
+		('Email') : Email,
+		('Fax') : Fax,
+		('GLType') : GLType3])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), 
+	[('TicketID') : GlobalVariable.TicketIDAwal, 
+		('GLType') : GLType2, 
+		('Member') : Member])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
+	[('Member') : Member3,
+		('MemberStatus') : null,
+		('NewMemberName') : NewMemberName,
+		('MemberName') : null,
+		('FamilyPhoneNo') : null,
+		('ProductType') : null,
+		('GLType') : null ,
+		('DiagnosisStatus') : null,
+		('DiagnosisID') : null,
+		('DoctorName') : null,
 		('Rujuk') : null,
 		('NPNFU') : null,
 		('Status') : null,
 		('Summary') : null,
 		('Validasi') : null])
-
-//==================== PHASE 3 ====================

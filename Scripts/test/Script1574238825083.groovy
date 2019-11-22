@@ -15,29 +15,35 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-def AppropriateRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Appropriate RB Class'), 'value')
+def AppropriateRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Appropriate RB Class'), 
+    'value')
 
-println (AppropriateRBClass)
+println(AppropriateRBClass)
 
 //Appropriate RB Class
-if (MemberStatus == 'Non Client' || AppropriateRBClass == '') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Appropriate RB Class'))
+if ((MemberStatus == 'Non Client') || (AppropriateRBClass == '')) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Appropriate RB Class'))
 
-	WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Appropriate RB Class/Button - Room Class'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Appropriate RB Class/Button - Room Class'))
 
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Appropriate RB Class/Button - Choose'))
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Appropriate RB Class/Button - Choose'))
 } else {
-	WebUI.delay(0)
+    WebUI.delay(0)
 }
 
 //Treatment RB Class
-if (MemberStatus == 'Non Client' || AppropriateRBClass == '') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Treatment RB Class'))
+if ((MemberStatus == 'Non Client') || (AppropriateRBClass == '')) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Treatment RB Class'))
 
-	WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Treatment RB Class/Button - Room Class'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Treatment RB Class/Button - Room Class'))
 
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Treatment RB Class/Button - Choose'))
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Treatment RB Class/Button - Choose'))
 } else {
-	WebUI.delay(0)
+    WebUI.delay(0)
 }
+
+WebUI.verifyElementAttributeValue(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Input - New Member Name'), 
+    'textInput', 'value', GlobalVariable.Delay1)
+
+
 
