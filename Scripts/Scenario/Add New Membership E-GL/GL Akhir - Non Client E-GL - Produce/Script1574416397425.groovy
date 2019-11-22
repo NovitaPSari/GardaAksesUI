@@ -2,7 +2,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -12,10 +11,11 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-//Login//
+//Login
 def UserID = 'DNS'
 def Password = 'Password95'
 
@@ -68,17 +68,19 @@ def DoctorName = 'Betsy Kalianda'
 def Rujuk = 'No'
 def Reason = 'Yes'
 def TotalBilled = '3000000'
-def NPNFU = 'Yess'
+def NPNFU = 'Yes'
 def Status = 'Process'
 def Status2 = 'Reject'
 def Status3 = 'InteruptedCall'
 def Status4 = 'PreAdmission'
-def Summary = GlobalVariable.SummaryInterruptedCall
+def Summary = GlobalVariable.SummaryDijaminkan
 def Summary2 = null
 def Summary3 = null
 def Validasi = null
 def Validasi2 = null
 def Validasi3 = null
+
+//
 
 def queryNewMemberName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation GA\')+1 WHERE Name = \'Automation GA\''
 
@@ -129,18 +131,18 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
 		('MemberName') : MemberName,
 		('FamilyPhoneNo') : FamilyPhoneNo,
 		('ProductType') : ProductType,
-		('GLType') : GLType ,
+		('GLType') : GLType3,
 		('DiagnosisStatus') : DiagnosisStatus,
 		('DiagnosisID') : DiagnosisID,
-		('DoctorName') : DoctorName,
+		('DoctorName') : DoctorName, 
+		('TotalBilled') : TotalBilled,
 		('Rujuk') : null,
 		('NPNFU') : null,
-		('Status') : Status3,
+		('Status') : Status,
 		('Summary') : Summary,
 		('Validasi') : Validasi])
 
 //==================== PHASE 2 ====================
-
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),

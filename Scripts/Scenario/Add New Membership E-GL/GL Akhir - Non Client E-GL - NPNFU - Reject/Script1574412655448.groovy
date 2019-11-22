@@ -2,7 +2,6 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -12,8 +11,9 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 //Login//
 def UserID = 'DNS'
@@ -62,23 +62,25 @@ def GLType2 = 'Lanjutan'
 def GLType3 = 'Akhir'
 def Date = new Date()
 def DiagnosisStatus = 'Initial Primary'
-def DiagnosisID = 'A09 '
+def DiagnosisID = 'A15 '
 def DoctorName = 'Betsy Kalianda'
 //Rujuk = yes / no
 def Rujuk = 'No'
 def Reason = 'Yes'
 def TotalBilled = '3000000'
-def NPNFU = 'Yess'
+def NPNFU = 'Yes'
 def Status = 'Process'
 def Status2 = 'Reject'
 def Status3 = 'InteruptedCall'
 def Status4 = 'PreAdmission'
-def Summary = GlobalVariable.SummaryInterruptedCall
-def Summary2 = null
+def Summary = GlobalVariable.SummaryNPNFU
+def Summary2 = GlobalVariable.SummaryManualReject
 def Summary3 = null
 def Validasi = null
 def Validasi2 = null
 def Validasi3 = null
+
+//
 
 def queryNewMemberName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation GA\')+1 WHERE Name = \'Automation GA\''
 
@@ -129,18 +131,18 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
 		('MemberName') : MemberName,
 		('FamilyPhoneNo') : FamilyPhoneNo,
 		('ProductType') : ProductType,
-		('GLType') : GLType ,
+		('GLType') : GLType3,
 		('DiagnosisStatus') : DiagnosisStatus,
 		('DiagnosisID') : DiagnosisID,
-		('DoctorName') : DoctorName,
+		('DoctorName') : DoctorName, 
+		('TotalBilled') : TotalBilled,
 		('Rujuk') : null,
-		('NPNFU') : null,
-		('Status') : Status3,
+		('NPNFU') : NPNFU,
+		('Status') : Status,
 		('Summary') : Summary,
 		('Validasi') : Validasi])
 
 //==================== PHASE 2 ====================
-
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
@@ -172,10 +174,47 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
 		('DiagnosisStatus') : null,
 		('DiagnosisID') : null,
 		('DoctorName') : null,
+		('ClientName') : ClientName,
+		('Rujuk') : null,
+		('NPNFU') : null,
+		('Status') : Status2,
+		('Summary') : Summary2,
+		('Validasi') : Validasi])
+
+//==================== PHASE 3 ====================
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
+	[('ContactLine') : ContactLine,
+		('Product') : Product,
+		('ChannelType') : ChannelType,
+		('ContactName') : ContactName,
+		('ContactType') : ContactType,
+		('ServiceType') : ServiceType,
+		('ProviderName') : ProviderName,
+		('PhoneNumber') : PhoneNumber,
+		('Email') : Email,
+		('Fax') : Fax,
+		('GLType') : GLType3])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'),
+	[('TicketID') : GlobalVariable.TicketIDAwal,
+		('GLType') : GLType2,
+		('Member') : Member])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
+	[('Member') : Member3,
+		('MemberStatus') : null,
+		('NewMemberName') : NewMemberName,
+		('MemberName') : null,
+		('FamilyPhoneNo') : null,
+		('ProductType') : null,
+		('GLType') : null ,
+		('DiagnosisStatus') : null,
+		('DiagnosisID') : null,
+		('DoctorName') : null,
 		('Rujuk') : null,
 		('NPNFU') : null,
 		('Status') : null,
 		('Summary') : null,
 		('Validasi') : null])
-
-//==================== PHASE 3 ====================
