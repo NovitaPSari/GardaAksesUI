@@ -29,17 +29,17 @@ def ChannelType = 'Call' //Bebas
 
 def ContactName = findTestData('ContactName').getValue(1, 1)
 
-def ContactType = 'Teman' //Bebas
+def ContactType = 'Saudara' //Bebas
 
-def ServiceType = 'Inquiry'
+def ServiceType = 'Complaint'
 
 def InterruptedCall = null //Yes or Null
 
-def CustomerPhone = '081240722346'
-
 def GenderCT = 'Male'
 
-def ProviderName = null
+def CustomerPhone = '081240722346'
+
+def ProviderName = 'OJKSH00001'
 
 def ProviderPhoneNumber = null
 
@@ -60,22 +60,24 @@ def Remarks = 'Currently testing by Automation. Thanks. Regards - Me'
 
 def NeedFollowUp = null
 
-def ButtonDirection = 'Process'
+def ButtonDirection1 = 'Back'
+
+def ButtonDirection2 = 'Process'
+
+def ExitConfirmation1 = 'No'
+
+def ExitConfirmation2 = 'Puas'
+
+def ExitConfirmation3 = null
+
+def Comment = null
 
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
 
-//def queryNewMemberName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation GA\')+1 WHERE Name = \'Automation GA\''
-
-//def queryNewEmployeeID = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'EmployeeID\')+1 WHERE Name = \'EmployeeID\''
-
 CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
 CustomKeywords.'querySQL.update.execute'(queryContactName)
-
-//CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
-
-//CustomKeywords.'querySQL.update.execute'(queryNewEmployeeID)
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -87,7 +89,12 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ButtonDirection') : ButtonDirection1])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Verify Create Ticket'), [('ContactName') : ContactName])
+
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
         , ('ContactLine') : ContactLine, ('Product') : Product, ('ProviderName') : ProviderName2, ('SubServiceType') : SubServiceType
-        , ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('ButtonDirection') : ButtonDirection])
+        , ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('ButtonDirection') : ButtonDirection2, ('ExitConfirmation1') : ExitConfirmation1
+        , ('ExitConfirmation2') : ExitConfirmation2, ('ExitConfirmation3') : ExitConfirmation3, ('Comment') : Comment])
 

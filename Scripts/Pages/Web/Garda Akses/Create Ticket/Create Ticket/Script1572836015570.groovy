@@ -156,3 +156,29 @@ WebUI.delay(GlobalVariable.Delay1)
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Next'))
 
+if (InterruptedCall == 'Yes') {
+	if (GLType == 'Awal') {
+		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+		
+		GlobalVariable.TicketIDAwal = result.substring(22, 30)
+	
+		println(GlobalVariable.TicketIDAwal)
+	} else if (GLType == 'Lanjutan') {
+		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+	
+		GlobalVariable.TicketIDLanjutan = result.substring(22, 30)
+	
+		println(GlobalVariable.TicketIDLanjutan)
+	} else {
+		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+	
+		GlobalVariable.TicketIDAkhir = result.substring(22, 30)
+	
+		println(GlobalVariable.TicketIDAkhir)
+	}
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Interrupted Close'))
+} else {
+	WebUI.delay(0)
+}
+

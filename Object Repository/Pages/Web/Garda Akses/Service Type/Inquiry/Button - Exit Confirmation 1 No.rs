@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Back</name>
+   <name>Button - Exit Confirmation 1 No</name>
    <tag></tag>
-   <elementGuidId>816e3372-3a2c-4dab-b1e6-5d97d1ce1e5d</elementGuidId>
+   <elementGuidId>527c602c-9a81-4a7f-a5ca-4e7005c7c1f4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;MedicoreSection1-0&quot;]//button[text() = 'Back'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;porposeCheckSatisfaction&quot;][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;MedicoreSection1-0&quot;]//button[text() = 'Back']</value>
+      <value>//*[@id=&quot;porposeCheckSatisfaction&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

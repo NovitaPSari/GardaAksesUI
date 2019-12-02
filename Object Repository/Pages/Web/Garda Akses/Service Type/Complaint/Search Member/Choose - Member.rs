@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Back</name>
+   <name>Choose - Member</name>
    <tag></tag>
-   <elementGuidId>816e3372-3a2c-4dab-b1e6-5d97d1ce1e5d</elementGuidId>
+   <elementGuidId>b12786e5-8bb5-4b93-9abc-a2c13da72c7e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;MedicoreSection1-0&quot;]//button[text() = 'Back'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]/div[1]/div[4]/a2is-datatable/div[2]/div/table/tbody/tr[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;MedicoreSection1-0&quot;]//button[text() = 'Back']</value>
+      <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]/div[1]/div[4]/a2is-datatable/div[2]/div/table/tbody/tr[1]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

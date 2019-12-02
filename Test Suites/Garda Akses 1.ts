@@ -166,4 +166,34 @@
       <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Not Rujuk - Produce</testCaseId>
    </testCaseLink>
+   <testCaseLink>
+      <guid>bdec3467-69e8-4f41-a569-2daa1ee03497</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/010. Customer Health - Inquiry - Interrupted Call</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b112e02c-797c-45be-8807-9621f80566e4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/011. Customer Health - Inquiry</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6b7a7b90-4c92-40c3-b853-3ca784dc30d6</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/012. Customer Health - Inquiry - Tidak Puas</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8bc02031-4102-437b-8266-e2ec694b2bdf</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/013. Customer Health - Inquiry - Multiple Service Type</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ad9aa626-a7a6-4682-b389-796ee838862d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/014. Customer Health - Inquiry - Multiple Service Type - Tidak Puas</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>

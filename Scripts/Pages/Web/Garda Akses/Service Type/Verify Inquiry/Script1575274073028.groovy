@@ -15,7 +15,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-if (ButtonDirection == 'Process') {
+if (ButtonDirection == 'Back') {
 	//Member Name
 	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Member Name'), MemberName)
 	
@@ -63,7 +63,7 @@ if (ButtonDirection == 'Process') {
 	WebUI.delay(0)
 }
 
-if (ButtonDirection == 'Process') {
+if (ButtonDirection == 'Back') {
 	WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Text - Get Ticket Number'))
 	
 	def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Text - Get Ticket Number'))
@@ -77,16 +77,13 @@ if (ButtonDirection == 'Process') {
 		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 Yes'))
 	} else if (ExitConfirmation1 == 'No') {
 		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 No'))
+	}
 	
 	//Exit Confirmation 2 - Sebelum mengakhiri percakapan, boleh kami dibantu untuk pertanyaan penutup yaitu Apakah Bapak/Ibu PUAS dengan informasi yang telah saya berikan?
 	if (ExitConfirmation2 == 'Puas') {
 		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Puas'))
 	} else if (ExitConfirmation2 == 'Tidak Puas') {
 		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Tidak Puas'))
-		
-		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Exit Confirmation 3 Add Comment'), Comment)
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 3 Ok'))
 	}
 	
 	//Exit Confirmation 3
@@ -101,9 +98,6 @@ if (ButtonDirection == 'Process') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
-	
-	println result
-	}
 } else {
 	WebUI.delay(0)
 }
