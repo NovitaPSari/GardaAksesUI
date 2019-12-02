@@ -17,6 +17,8 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 WebUI.delay(GlobalVariable.Delay3)
 
+WebUI.delay(GlobalVariable.Delay3)
+
 //Contact Line
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Contact Line', [('ContactLine') : ContactLine]))
 
@@ -41,36 +43,59 @@ WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Service
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Service Type', [('ServiceType') : ServiceType]))
 
-//Customer Phone
-if (ContactLine == 'Customer' && Product == 'Health' || ContactLine == 'Customer' && Product == 'Non Health') {
-	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Phone'), CustomerPhone)
+//Interrupted Contact
+if (InterruptedCall == 'Yes') {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Check Box - Interrupted Contact'))
 } else {
 	WebUI.delay(0)
 }
 
+//Customer Phone
+if (InterruptedCall == null) {
+	if (ContactLine == 'Customer' && Product == 'Health' || ContactLine == 'Customer' && Product == 'Non Health') {
+		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Phone'), CustomerPhone)
+	} else {
+		WebUI.delay(0)
+	}
+} else {
+		WebUI.delay(0)
+}
+
 //Gender
-if (ContactLine == 'Customer' && Product == 'Health' || ContactLine == 'Customer' && Product == 'Non Health') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Radio Button - Customer Gender'), GenderCT)
+if (InterruptedCall == null) {
+	if (ContactLine == 'Customer' && Product == 'Health' || ContactLine == 'Customer' && Product == 'Non Health') {
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Radio Button - Customer Gender', [('GenderCT') : GenderCT]))
+	} else {
+		WebUI.delay(0)
+	}
 } else {
 	WebUI.delay(0)
 }
 
 //Provider Name
-if (ContactLine == 'Provider' && Product == 'Health' || ContactLine == 'Provider' && Product == 'Non Health') {
-	WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
-	
-	WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Provider Name', [('ProviderName') : ProviderName]))
+if (InterruptedCall != null && ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Approval Tindakan/Terapi/Obat' || InterruptedCall != null && ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Inquiry' || InterruptedCall == null) {
+	if (ContactLine == 'Provider' && Product == 'Health' || ContactLine == 'Provider' && Product == 'Non Health') {
+		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
+		
+		WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Provider Name', [('ProviderName') : ProviderName]))
+	} else {
+		WebUI.delay(0)
+	}
 } else {
 	WebUI.delay(0)
 }
 
 //Phone Number
-if (ContactLine == 'Provider' && Product == 'Health' || ContactLine == 'Provider' && Product == 'Non Health') {
-	
-	def CheckPhoneNumber = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'),'value')
-	
-	if (CheckPhoneNumber == '') {
-		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), PhoneNumber)
+if (InterruptedCall == null) {
+	if (ContactLine == 'Provider' && Product == 'Health' || ContactLine == 'Provider' && Product == 'Non Health') {
+		
+		def CheckPhoneNumber = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'),'value')
+		
+		if (CheckPhoneNumber == '') {
+			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), ProviderPhoneNumber)
+		} else {
+			WebUI.delay(0)
+		}
 	} else {
 		WebUI.delay(0)
 	}
@@ -79,12 +104,16 @@ if (ContactLine == 'Provider' && Product == 'Health' || ContactLine == 'Provider
 }
 
 //Email
-if (ContactLine == 'Provider' && Product == 'Health') {
-	
-	def CheckEmail = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'),'value')
-	
-	if (CheckEmail == '') {
-		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'), Email)
+if (InterruptedCall == null) {
+	if (ContactLine == 'Provider' && Product == 'Health') {
+		
+		def CheckEmail = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'),'value')
+		
+		if (CheckEmail == '') {
+			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'), Email)
+		} else {
+			WebUI.delay(0)
+		}
 	} else {
 		WebUI.delay(0)
 	}
@@ -93,12 +122,16 @@ if (ContactLine == 'Provider' && Product == 'Health') {
 }
 
 //Fax
-if (ContactLine == 'Provider' && Product == 'Health') {
-	
-	def CheckFax = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Fax'),'value')
-	
-	if (CheckFax == '') {
-		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Fax'), Fax)
+if (InterruptedCall == null) {
+	if (ContactLine == 'Provider' && Product == 'Health') {
+		
+		def CheckFax = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Fax'),'value')
+		
+		if (CheckFax == '') {
+			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Fax'), Fax)
+		} else {
+			WebUI.delay(0)
+		}
 	} else {
 		WebUI.delay(0)
 	}
@@ -110,28 +143,57 @@ WebUI.delay(GlobalVariable.Delay1)
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Next'))
 
-//Store Ticket ID
-if (GLType == 'Awal') {
-    def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-
-    GlobalVariable.TicketIDAwal = result.substring(10, 18)
-
-    println(GlobalVariable.TicketIDAwal)
-} else if (GLType == 'Lanjutan') {
-    def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-
-    GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
-
-    println(GlobalVariable.TicketIDLanjutan)
-} else {
-    def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-
-    GlobalVariable.TicketIDAkhir = result.substring(10, 18)
-
-    println(GlobalVariable.TicketIDAkhir)
-}
-
-WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Close'))
-
+////Store Ticket ID
+//if (ContactLine == 'Customer' && Product == 'Non Health' || ContactLine == 'Provider' && Product == 'Health' || ContactLine == 'Provider' && Product == 'Non Health') {
+//	if (InterruptedCall == null) {
+//		if (GLType == 'Awal') {
+//		    def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
+//		
+//		    GlobalVariable.TicketIDAwal = result.substring(10, 18)
+//		
+//		    println(GlobalVariable.TicketIDAwal)
+//		} else if (GLType == 'Lanjutan') {
+//		    def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
+//		
+//		    GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
+//		
+//		    println(GlobalVariable.TicketIDLanjutan)
+//		} else {
+//		    def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
+//		
+//		    GlobalVariable.TicketIDAkhir = result.substring(10, 18)
+//		
+//		    println(GlobalVariable.TicketIDAkhir)
+//		}
+//		
+//		WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
+//		
+//		WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Close'))
+//	} else {
+//		if (GLType == 'Awal') {
+//			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+//			
+//			GlobalVariable.TicketIDAwal = result.substring(22, 30)
+//		
+//			println(GlobalVariable.TicketIDAwal)
+//		} else if (GLType == 'Lanjutan') {
+//			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+//		
+//			GlobalVariable.TicketIDLanjutan = result.substring(22, 30)
+//		
+//			println(GlobalVariable.TicketIDLanjutan)
+//		} else {
+//			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+//		
+//			GlobalVariable.TicketIDAkhir = result.substring(22, 30)
+//		
+//			println(GlobalVariable.TicketIDAkhir)
+//		}
+//		
+//		WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+//		
+//		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Interrupted Close'))
+//	}
+//} else {
+//	WebUI.delay(0)
+//}
