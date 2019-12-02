@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[text() = '${Gender}']//parent::div//input</value>
+         <value>//*[text() = '${GenderCT}']//parent::div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[text() = '${Gender}']//parent::div//input</value>
+      <value>//*[text() = '${GenderCT}']//parent::div//input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

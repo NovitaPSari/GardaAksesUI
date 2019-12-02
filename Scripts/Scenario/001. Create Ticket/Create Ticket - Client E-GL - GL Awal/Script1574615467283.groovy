@@ -24,6 +24,7 @@ def ChannelType = 'Call'
 def ContactName = findTestData('ContactName').getValue(1, 1)
 def ContactType = 'Farmasi'
 def ServiceType = 'Claim'
+def InterruptedCall = null //Yes or null
 def GenderCT = null
 def CustomerPhone = null
 def ProviderName = 'OJKSH00001'
@@ -47,7 +48,7 @@ def Member5 = null
 def MemberStatus = 'Client'
 def MemberName = findTestData('MemberNameClient').getValue(1, 1)
 def NewMemberType = null
-def NewMemberName = findTestData('NewMemberName').getValue(1, 1)
+def NewMemberName = findTestData('ParameterPolicyNo').getValue(1, 1)
 //PT SHOWA INDONESIA MANUFACTURING // PT BANK PERMATA TBK
 def ClientName = null
 def EmployeeID = null
@@ -120,12 +121,13 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 		('ContactName') : ContactName, 
 		('ContactType') : ContactType, 
 		('ServiceType') : ServiceType, 
-		('CustomerPhone') : CustomerPhone,
-		('GenderCT') : GenderCT,
+		('InterruptedCall') : InterruptedCall, 
+		('CustomerPhone') : CustomerPhone, 
+		('GenderCT') : GenderCT, 
 		('ProviderName') : ProviderName, 
-		('ProviderPhoneNumber') : ProviderPhoneNumber,
-		('Email') : Email,
-		('Fax') : Fax,
+		('ProviderPhoneNumber') : ProviderPhoneNumber, 
+		('Email') : Email, 
+		('Fax') : Fax, 
 		('GLType') : GLType])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), 
@@ -133,13 +135,13 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'),
 		('TicketID') : null,
 		('NewMemberName') : null])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'), 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), 
 	[('Member') : Member, 
 		('MemberStatus') : MemberStatus, 
 		('MemberName') : MemberName,
 		('FamilyPhoneNo') : FamilyPhoneNo, 
 		('ProductType') : ProductType, 
-		('GLType') : GLType , 
+		('GLType') : GLType, 
 		('DiagnosisStatus') : DiagnosisStatus, 
 		('DiagnosisID') : DiagnosisID, 
 		('DoctorName') : DoctorName, 
@@ -147,4 +149,5 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
 		('NPNFU') : null,
 		('Status') : Status, 
 		('Summary') : Summary, 
-		('Validasi') : Validasi])
+		('Validasi') : Validasi,
+		('InterruptedCall') : InterruptedCall])

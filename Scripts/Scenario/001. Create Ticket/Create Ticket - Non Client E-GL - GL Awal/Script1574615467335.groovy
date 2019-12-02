@@ -24,6 +24,7 @@ def ChannelType = 'Call'
 def ContactName = findTestData('ContactName').getValue(1, 1)
 def ContactType = 'Farmasi'
 def ServiceType = 'Claim'
+def InterruptedCall = null //Yes or null
 def GenderCT = null
 def CustomerPhone = null
 def ProviderName = 'OJKSH00001'
@@ -47,7 +48,7 @@ def Member5 = null
 def MemberStatus = 'Non Client'
 def MemberName = findTestData('MemberNameNonClient').getValue(1, 1)
 def NewMemberType = null
-def NewMemberName = findTestData('NewMemberName').getValue(1, 1)
+def NewMemberName = findTestData('ParameterPolicyNo').getValue(1, 1)
 //PT SHOWA INDONESIA MANUFACTURING // PT BANK PERMATA TBK
 def ClientName = 'PT SHOWA INDONESIA MANUFACTURING'
 def EmployeeID = null
@@ -113,27 +114,29 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), 
-	[('ContactLine') : ContactLine, 
-		('Product') : Product, 
-		('ChannelType') : ChannelType, 
-		('ContactName') : ContactName, 
-		('ContactType') : ContactType, 
-		('ServiceType') : ServiceType, 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
+	[('ContactLine') : ContactLine,
+		('Product') : Product,
+		('ChannelType') : ChannelType,
+		('ContactName') : ContactName,
+		('ContactType') : ContactType,
+		('ServiceType') : ServiceType,
+		('InterruptedCall') : InterruptedCall,
 		('CustomerPhone') : CustomerPhone,
 		('GenderCT') : GenderCT,
-		('ProviderName') : ProviderName, 
+		('ProviderName') : ProviderName,
 		('ProviderPhoneNumber') : ProviderPhoneNumber,
 		('Email') : Email,
 		('Fax') : Fax,
-		('GLType') : GLType])
+		('GLType') : GLType,
+		('InterruptedCall') : InterruptedCall])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), 
 	[('GLType') : GLType,
 		('TicketID') : null,
 		('NewMemberName') : null])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'), 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), 
 	[('Member') : Member, 
 		('MemberStatus') : MemberStatus, 
 		('MemberName') : MemberName,
@@ -147,4 +150,5 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Claim/Claim V.2'),
 		('NPNFU') : null,
 		('Status') : Status, 
 		('Summary') : Summary, 
-		('Validasi') : Validasi])
+		('Validasi') : Validasi,
+		('InterruptedCall') : InterruptedCall])

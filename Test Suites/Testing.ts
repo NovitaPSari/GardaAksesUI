@@ -133,37 +133,73 @@
    <testCaseLink>
       <guid>b1c845c7-ce50-4fef-8871-6a10d34e3070</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Client E-GL - Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>bda44b42-eb05-48b0-93ff-a7cf1b7dff41</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Client E-GL - Not Rujuk - Reject</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>1024c206-5752-453b-980f-f3dcfffea893</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Checklist NFU - Rujuk - NPNFU</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>a3a7ccaa-4c98-4d18-89fa-d59335d00688</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Checklist NFU - Not Rujuk - NPNFU</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>e49fc0a4-f978-4995-a0fa-256e1be68866</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>72bc5895-686e-4a72-9d36-b82896464716</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Not Rujuk - Produce</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a5247fee-28ce-43b9-8fad-567311453af7</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/010. Customer Health - Inquiry - Interrupted Call</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7efa0324-ac55-41a4-ba7f-19e904b0057d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/069. Provider Health - APTTO - Interrupted Call</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>38a55de4-c42d-4320-ac33-8570f77e2dd4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/092. Provider Health - Inquiry - Interrupted Call</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1f25fba0-fa82-4c15-8aaa-d9c1961bc495</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/Flow Lurus - Customer Health - Inquiry</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>9942d437-1e74-4ed2-becf-d83da7f694bf</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/Flow Lurus - Provider Health - APTTO</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>54569cfc-f64f-4321-93a8-788141959fd9</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/Flow Lurus - Provider Health - Inquiry</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
