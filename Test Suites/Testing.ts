@@ -185,12 +185,6 @@
       <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/092. Provider Health - Inquiry - Interrupted Call</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>1f25fba0-fa82-4c15-8aaa-d9c1961bc495</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
-      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/Flow Lurus - Customer Health - Inquiry</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>9942d437-1e74-4ed2-becf-d83da7f694bf</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>

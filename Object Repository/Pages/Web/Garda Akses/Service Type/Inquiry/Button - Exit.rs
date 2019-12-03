@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;P1-0&quot;]//button[text() = 'Exit']</value>
+         <value>//*[@id=&quot;MedicoreSection1-0&quot;]//button[text() = 'Exit'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;P1-0&quot;]//button[text() = 'Exit']</value>
+      <value>//*[@id=&quot;MedicoreSection1-0&quot;]//button[text() = 'Exit']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

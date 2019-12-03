@@ -99,16 +99,6 @@ if (Member == 'Existing') {
 } else if (Member == 'Check') {
 	WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Add New Member'))
 
-//	def InformationMemberMember = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Information'),
-//		GlobalVariable.Delay1)
-//	
-//	if (InformationMemberMember == true) {
-//		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - X'))
-//	}
-//	
-//    WebUI.verifyElementNotPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Add New Member/Text - New Member Name', 
-//            [('NewMemberName') : NewMemberName]), GlobalVariable.Delay1)
-	
 	def ExistingNewMemberName = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Input - New Member Name'),'value')
 	
 	println 'Ini existing new member ' + ExistingNewMemberName

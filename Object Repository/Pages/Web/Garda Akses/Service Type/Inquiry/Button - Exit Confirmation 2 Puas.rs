@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Contact Name</name>
+   <name>Button - Exit Confirmation 2 Puas</name>
    <tag></tag>
-   <elementGuidId>a5410f1c-ae3e-449a-953d-4e3e609deb95</elementGuidId>
+   <elementGuidId>dae19188-3d34-4529-8bc2-893809039f0f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;CT.txtcontactnameautocomplete-list&quot;]/div[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;satisfied&quot;][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;CT.txtcontactnameautocomplete-list&quot;]/div</value>
+      <value>//*[@id=&quot;satisfied&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

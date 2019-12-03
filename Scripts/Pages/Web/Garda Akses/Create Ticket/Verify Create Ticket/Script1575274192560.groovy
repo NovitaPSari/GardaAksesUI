@@ -12,14 +12,17 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-WebUI.openBrowser(GlobalVariable.URLGardaAkses4)
+WebUI.delay(GlobalVariable.Delay0)
 
-WebUI.maximizeWindow()
+//Contact Name
+def ExistingContactName = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Contact Name'),'value')
 
-WebUI.setText(findTestObject('Pages/Web/Garda Akses/Login/Input User ID'), UserID)
+WebUI.verifyEqual(ExistingContactName, ContactName)
 
-WebUI.setText(findTestObject('Pages/Web/Garda Akses/Login/Input Password'), Password)
+WebUI.delay(GlobalVariable.Delay1)
 
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Login/Button Masuk'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Next'))
 
