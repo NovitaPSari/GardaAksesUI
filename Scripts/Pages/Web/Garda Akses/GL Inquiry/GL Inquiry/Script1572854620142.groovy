@@ -23,7 +23,7 @@ if (GLType == 'Awal') {
 
     WebUI.waitForElementPresent(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'), GlobalVariable.Delay3)
 	
-	WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
+//	WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
 
     WebUI.doubleClick(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
 } else {

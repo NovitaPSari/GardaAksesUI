@@ -88,6 +88,8 @@ if ((((((InterruptedCall != null) && (ContactLine == 'Provider')) && (Product ==
 (InterruptedCall == null)) {
     if (((ContactLine == 'Provider') && (Product == 'Health')) || ((ContactLine == 'Provider') && (Product == 'Non Health'))) {
         WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
+		
+		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
 
         WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Provider Name', [('ProviderName') : ProviderName]))
     } else {

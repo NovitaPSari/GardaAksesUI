@@ -108,7 +108,7 @@ def DiagnosisID = 'A09 '
 def DoctorName = 'Betsy Kalianda'
 
 //Rujuk = yes / no
-def Rujuk = 'Yes'
+def Rujuk = null
 
 def Reason = null
 
@@ -149,17 +149,9 @@ def Validasi5 = null
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
 
-def queryNewMemberName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation GA\')+1 WHERE Name = \'Automation GA\''
-
-def queryNewEmployeeID = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'EmployeeID\')+1 WHERE Name = \'EmployeeID\''
-
 CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
 CustomKeywords.'querySQL.update.execute'(queryContactName)
-
-CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
-
-CustomKeywords.'querySQL.update.execute'(queryNewEmployeeID)
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -181,9 +173,10 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'),
         , ('GLType') : GLType, ('DiagnosisStatus') : DiagnosisStatus, ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName
         , ('Rujuk') : null, ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
 
+//==================== PHASE 2 ====================
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
+        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName2
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('SearchBy') : SearchBy2, ('TicketID') : GlobalVariable.TicketIDAwal
@@ -193,5 +186,5 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'),
         , ('MemberName') : MemberName, ('NewMemberType') : null, ('NewMemberName') : null, ('ClientName') : null, ('EmployeeID') : null
         , ('Year') : null, ('Month') : null, ('Classification') : null, ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType
         , ('GLType') : GLType, ('DiagnosisStatus') : DiagnosisStatus, ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName
-        , ('Rujuk') : null, ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary2, ('Validasi') : Validasi2, ('InterruptedCall') : InterruptedCall])
+        , ('Rujuk') : Rujuk, ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary2, ('Validasi') : Validasi2, ('InterruptedCall') : InterruptedCall])
 
