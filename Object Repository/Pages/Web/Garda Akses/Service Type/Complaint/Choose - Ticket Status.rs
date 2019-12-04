@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Complaint Category - Copy</name>
+   <name>Choose - Ticket Status</name>
    <tag></tag>
-   <elementGuidId>4c701894-3d92-403d-a7b5-5b4c6de10f18</elementGuidId>
+   <elementGuidId>d782d418-2e1f-4d31-8e4c-e7fdad7f1c7f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;select2-jhl8-results&quot;]/li[text() = '${Complaint Category}']</value>
+         <value>//*[@role=&quot;tree&quot;]/li[text() = '${TicketStatus}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;select2-jhl8-results&quot;]/li[text() = '${Complaint Category}']</value>
+      <value>//*[@role=&quot;tree&quot;]/li[text() = '${TicketStatus}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

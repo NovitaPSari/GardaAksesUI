@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Member</name>
+   <name>Button - Complaint Inquiry Exit</name>
    <tag></tag>
-   <elementGuidId>b12786e5-8bb5-4b93-9abc-a2c13da72c7e</elementGuidId>
+   <elementGuidId>c33aa8a6-0c2a-47b5-a9af-a3b2de848a31</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]//table//tbody//tr[1][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;ComplaintTrackingSection-0&quot;]//button[text() = 'Exit'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]//table//tbody//tr[1]</value>
+      <value>//*[@id=&quot;ComplaintTrackingSection-0&quot;]//button[text() = 'Exit']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

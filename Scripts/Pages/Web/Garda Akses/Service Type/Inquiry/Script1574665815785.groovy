@@ -55,22 +55,22 @@ if (ButtonDirection == 'Process') {
 //Button Direction
 if (ButtonDirection == 'Process') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Process'))
-} else if (ButtonDirection == 'Back') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Back'))
-} else if (ButtonDirection == 'Exit') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit'))
-} else {
-	WebUI.delay(0)
-}
-
-if (ButtonDirection == 'Process') {
+	
 	WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Text - Get Ticket Number'))
 	
-	def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Text - Get Ticket Number'))
-	
-	GlobalVariable.TicketIDAwal = result.substring(10, 18)
-	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - OK'))
+	if (ExitConfirmation1 == 'Yes') {
+		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Text - Get Ticket Number'))
+		
+		GlobalVariable.TicketIDAwal = result.substring(10, 18)
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - OK'))
+	} else if (ExitConfirmation1 == 'No') {
+		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Text - Get Ticket Number'))
+		
+		GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - OK'))
+	}
 	
 	//Exit Confirmation 1 - Apakah ada hal lain yang dapat dibantu, Pak/Bu?
 	if (ExitConfirmation1 == 'Yes') {
@@ -104,6 +104,16 @@ if (ButtonDirection == 'Process') {
 	
 	println result
 	}
+} else if (ButtonDirection == 'Back') {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Back'))
+} else if (ButtonDirection == 'Exit') {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit'))
+} else {
+	WebUI.delay(0)
+}
+
+if (ButtonDirection == 'Process') {
+
 } else {
 	WebUI.delay(0)
 }

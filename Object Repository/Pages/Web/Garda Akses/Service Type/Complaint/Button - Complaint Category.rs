@@ -7,7 +7,8 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;select2-jhl8-container&quot;]</value>
+         <value>//*[@id=&quot;select2-6cau-container&quot;]
+//*[@id=&quot;select2-muky-container&quot;][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +18,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;select2-jhl8-container&quot;]</value>
+      <value>//*[@id=&quot;pnlComplaint-0&quot;]//span[text() = 'Complaint Category']/parent::label/parent::div/div/div/span/span/span/span[@title=&quot;Please select....&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

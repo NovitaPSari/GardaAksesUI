@@ -50,7 +50,7 @@ def Fax = null
 def GLType = 'Awal'
 
 //Inquiry//
-def MemberName = findTestData('MemberNameAll').getValue(1, 1)
+def MemberName = findTestData('MemberNoAll').getValue(1, 1)
 
 def ProviderName2 = 'OJKSH00001'
 
@@ -102,22 +102,8 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 		('Fax') : Fax,
 		('GLType') : GLType])
 
-////Script//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-//        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-//        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-//        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ButtonDirection') : ButtonDirection1])
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Verify Create Ticket'), [('ContactName') : ContactName])
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
-//        , ('ContactLine') : ContactLine, ('Product') : Product, ('ProviderName') : ProviderName2, ('SubServiceType') : SubServiceType
-//        , ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('ButtonDirection') : ButtonDirection2, ('ExitConfirmation1') : ExitConfirmation1
-//        , ('ExitConfirmation2') : ExitConfirmation2, ('ExitConfirmation3') : ExitConfirmation3, ('Comment') : Comment])
-//
+println(GlobalVariable.TicketIDAwal)
+
+println(GlobalVariable.TicketIDLanjutan)
+
+println(GlobalVariable.TicketIDAkhir)

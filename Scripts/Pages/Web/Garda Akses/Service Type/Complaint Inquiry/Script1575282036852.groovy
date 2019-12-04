@@ -15,9 +15,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
+if (VerifyTicket == 'Yes') {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Complaint/Button - Complaint Inquiry Back'))
+} else {
+WebUI.delay(0)
+}
+
 if (NewComplaint == 'Yes') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Complaint/Button - New Complaint'))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Complaint/Button - Complaint Inquiry New Complaint'))
 } else {
 	WebUI.delay(0)
 }
-

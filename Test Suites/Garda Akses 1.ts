@@ -167,6 +167,60 @@
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Not Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
+      <guid>3d44d07f-d097-4587-8471-2945669f3285</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/001. Customer Health - Complaint - Interrupted Call</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>58046718-b377-4547-ae25-5077287a0f24</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/002. Customer Health - Complaint</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7b60de92-aae6-413a-b06e-f02592e67ad1</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/003. Customer Health - Complaint - Not Satisfied</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>327118f2-fad0-4cff-b531-8326fa84a42d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/004. Customer Health - Complaint - Check Inquiry Complaint</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>9547f51e-d769-4c89-8a19-a13603d9b859</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/005. Customer Health - Complaint - Check Inquiry Complaint - Not Satisfied</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f54e1c24-f8ad-463c-b28a-767d0c6460d1</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/006. Customer Health - Complaint - Multiple Service Type</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>37274f33-4811-4603-b7ff-b28d4bc5b9f5</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/007. Customer Health - Complaint - Multiple Service Type - Not Satisfied</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>cecbcea3-abc8-4579-aefd-87427845c14f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/008. Customer Health - Complaint - Check Inquiry Complaint - Multiple Service Type</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>28e7dca8-9947-4662-889f-67e02fe00cdc</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/009. Customer Health - Complaint - Check Inquiry Complaint - Multiple Service Type - Not Satisfied</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
       <guid>bdec3467-69e8-4f41-a569-2daa1ee03497</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

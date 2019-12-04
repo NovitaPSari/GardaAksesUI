@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Member</name>
+   <name>Choose - Complaint Sub Category</name>
    <tag></tag>
-   <elementGuidId>b12786e5-8bb5-4b93-9abc-a2c13da72c7e</elementGuidId>
+   <elementGuidId>4c701894-3d92-403d-a7b5-5b4c6de10f18</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]//table//tbody//tr[1][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@role=&quot;tree&quot;]/li[text() = '${ComplaintSubCategory}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]//table//tbody//tr[1]</value>
+      <value>//*[@role=&quot;tree&quot;]/li[text() = '${ComplaintSubCategory}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

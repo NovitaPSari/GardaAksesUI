@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;select2-jhl8-results&quot;]/li[text() = '${Complaint Category}']</value>
+         <value>//*[@role=&quot;tree&quot;]/li[text() = '${ComplaintCategory}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;select2-jhl8-results&quot;]/li[text() = '${Complaint Category}']</value>
+      <value>//*[@role=&quot;tree&quot;]/li[text() = '${ComplaintCategory}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

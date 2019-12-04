@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Member</name>
+   <name>Button - Complaint Inquiry New Complaint</name>
    <tag></tag>
-   <elementGuidId>b12786e5-8bb5-4b93-9abc-a2c13da72c7e</elementGuidId>
+   <elementGuidId>573d70b4-7cd6-48a1-acfd-9b0909ad63ef</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]//table//tbody//tr[1][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;divDtComplaintTrackingGardaMedika&quot;]/div[1]/div/a2is-datatable/div[2]/div/div/button</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]//table//tbody//tr[1]</value>
+      <value>//*[@id=&quot;divDtComplaintTrackingGardaMedika&quot;]/div[1]/div/a2is-datatable/div[2]/div/div/button</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
