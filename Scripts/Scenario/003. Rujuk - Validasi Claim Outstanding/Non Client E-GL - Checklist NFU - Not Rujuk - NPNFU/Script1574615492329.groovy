@@ -149,17 +149,9 @@ def Validasi5 = null
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
 
-def queryNewMemberName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation GA\')+1 WHERE Name = \'Automation GA\''
-
-def queryNewEmployeeID = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'EmployeeID\')+1 WHERE Name = \'EmployeeID\''
-
 CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
 CustomKeywords.'querySQL.update.execute'(queryContactName)
-
-CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
-
-CustomKeywords.'querySQL.update.execute'(queryNewEmployeeID)
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -181,9 +173,10 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'),
         , ('GLType') : GLType, ('DiagnosisStatus') : DiagnosisStatus, ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName
         , ('Rujuk') : null, ('NPNFU') : NPNFU, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
 
+//==================== PHASE 2 ====================
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
+        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName2
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType2])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('SearchBy') : SearchBy2, ('TicketID') : GlobalVariable.TicketIDAwal

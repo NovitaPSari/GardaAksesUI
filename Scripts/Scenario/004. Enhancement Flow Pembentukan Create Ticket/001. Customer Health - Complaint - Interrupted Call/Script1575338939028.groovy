@@ -33,7 +33,7 @@ def ContactType = 'Saudara' //Bebas
 
 def ServiceType = 'Complaint'
 
-def InterruptedCall = null //Yes or Null
+def InterruptedCall = 'Yes' //Yes or Null
 
 def GenderCT = 'Male'
 
@@ -80,21 +80,44 @@ CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Passwo
 CustomKeywords.'querySQL.update.execute'(queryContactName)
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
+	[('UserID') : UserID,
+		('Password') : Password])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
+	[('ContactLine') : ContactLine,
+		('Product') : Product,
+		('ChannelType') : ChannelType,
+		('ContactName') : ContactName,
+		('ContactType') : ContactType,
+		('ServiceType') : ServiceType,
+		('InterruptedCall') : InterruptedCall,
+		('CustomerPhone') : CustomerPhone,
+		('GenderCT') : GenderCT,
+		('ProviderName') : ProviderName,
+		('ProviderPhoneNumber') : ProviderPhoneNumber,
+		('Email') : Email,
+		('Fax') : Fax,
+		('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ButtonDirection') : ButtonDirection1])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Verify Create Ticket'), [('ContactName') : ContactName])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
-        , ('ContactLine') : ContactLine, ('Product') : Product, ('ProviderName') : ProviderName2, ('SubServiceType') : SubServiceType
-        , ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('ButtonDirection') : ButtonDirection2, ('ExitConfirmation1') : ExitConfirmation1
-        , ('ExitConfirmation2') : ExitConfirmation2, ('ExitConfirmation3') : ExitConfirmation3, ('Comment') : Comment])
-
+////Script//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+//        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+//        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
+//        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ButtonDirection') : ButtonDirection1])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Verify Create Ticket'), [('ContactName') : ContactName])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
+//        , ('ContactLine') : ContactLine, ('Product') : Product, ('ProviderName') : ProviderName2, ('SubServiceType') : SubServiceType
+//        , ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('ButtonDirection') : ButtonDirection2, ('ExitConfirmation1') : ExitConfirmation1
+//        , ('ExitConfirmation2') : ExitConfirmation2, ('ExitConfirmation3') : ExitConfirmation3, ('Comment') : Comment])
+//

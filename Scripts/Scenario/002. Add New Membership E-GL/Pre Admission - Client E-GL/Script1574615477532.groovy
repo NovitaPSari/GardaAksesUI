@@ -67,7 +67,7 @@ def NewMemberType = 'Employee'
 
 def MemberName = findTestData('MemberNameClient').getValue(1, 1)
 
-def NewMemberName = findTestData('ParameterPolicyNo').getValue(1, 1)
+def NewMemberName = findTestData('NewMemberName').getValue(1, 1)
 
 //NewMemberName =
 //PT SHOWA INDONESIA MANUFACTURING // PT BANK PERMATA TBK
