@@ -101,8 +101,6 @@ if (ButtonDirection == 'Process') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
-	
-	println result
 	}
 } else if (ButtonDirection == 'Back') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Back'))
