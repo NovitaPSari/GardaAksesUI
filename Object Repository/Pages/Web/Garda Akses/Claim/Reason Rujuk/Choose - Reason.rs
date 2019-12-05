@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;textareaContainer&quot;]/a2is-combo/div/div/div/div/button[2][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;textareaContainer&quot;]//span[text() = 'Reason']//parent::label//parent::div//div//button[2][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;textareaContainer&quot;]/a2is-combo/div/div/div/div/button[2]</value>
+      <value>//*[@id=&quot;textareaContainer&quot;]//span[text() = 'Reason']//parent::label//parent::div//div//button[2]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

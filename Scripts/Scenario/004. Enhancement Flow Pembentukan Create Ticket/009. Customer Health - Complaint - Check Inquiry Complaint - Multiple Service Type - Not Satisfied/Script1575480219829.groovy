@@ -129,7 +129,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Complaint'),
 		('TicketStatus') : TicketStatus,
 		('ButtonDirection') : ButtonDirection2,
 		('MultipleServiceType') : MultipleServiceType,
-		('ExitConfirmation1') : null,
+		('ExitConfirmation1') : ExitConfirmation1,
 		('ExitConfirmation2') : ExitConfirmation2, 
 		('Comment') : Comment,
 		('ExitConfirmation3') : ExitConfirmation3])

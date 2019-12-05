@@ -164,28 +164,28 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID'
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('InterruptedCall') : InterruptedCall])
+		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+		, ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
+		, ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType, ('TicketID') : null
-        , ('NewMemberName') : null])
+		, ('NewMemberName') : null])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : Member, ('MemberStatus') : MemberStatus
-        , ('MemberName') : MemberName, ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType
-        , ('DiagnosisStatus') : DiagnosisStatus, ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName, ('Rujuk') : null
-        , ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi])
+		, ('MemberName') : MemberName, ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType
+		, ('DiagnosisStatus') : DiagnosisStatus, ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName, ('Rujuk') : null
+		, ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
 
+//==================== PHASE 2 ====================
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType2])
+		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+		, ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
+		, ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType2])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType3, ('TicketID') : GlobalVariable.TicketIDAwal
-        , ('NewMemberName') : null])
+		, ('NewMemberName') : null])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : null, ('MemberStatus') : null
-        , ('MemberName') : null, ('FamilyPhoneNo') : null, ('ProductType') : null, ('GLType') : GLType3, ('DiagnosisStatus') : null
-        , ('DiagnosisID') : null, ('ClientName') : null, ('DoctorName') : null, ('TotalBilled') : TotalBilled, ('Rujuk') : null
-        , ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
-
+		, ('MemberName') : null, ('FamilyPhoneNo') : null, ('ProductType') : null, ('GLType') : GLType3, ('DiagnosisStatus') : null
+		, ('DiagnosisID') : null, ('ClientName') : null, ('DoctorName') : null, ('TotalBilled') : TotalBilled, ('Rujuk') : null
+		, ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])

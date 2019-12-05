@@ -69,9 +69,9 @@ def MemberName = findTestData('MemberNameClient').getValue(1, 1)
 
 def NewMemberName = findTestData('NewMemberName').getValue(1, 1)
 
-//NewMemberName =
-//PT SHOWA INDONESIA MANUFACTURING // PT BANK PERMATA TBK
-def ClientName = 'PT BANK PERMATA '
+//NewMemberName 
+//PT SHOWA INDONESIA MANUFACTURING // ASURANSI ASTRA BUANA
+def ClientName = 'ASURANSI ASTRA BUANA'
 
 def EmployeeID = findTestData('NewEmployeeID').getValue(1, 1)
 
@@ -79,8 +79,8 @@ def Year = '1996'
 
 def Month = 'Aug'
 
-//Level 13-14A // Gol. V  / IP-1590 / Kls VIP
-def Classification = 'Level 13-14A'
+//Gol 4 NJBS 100% // Gol. V  / IP-1590 / Kls VIP
+def Classification = 'Gol 4 NJBS 100%'
 
 def Gender = 'Male'
 
