@@ -31,7 +31,7 @@ def ContactName = findTestData('ContactName').getValue(1, 1)
 
 def ContactType = 'Saudara' //Bebas
 
-def ServiceType = 'Inquiry'
+def ServiceType = 'Complaint'
 
 def InterruptedCall = null //Yes or Null
 
@@ -49,26 +49,33 @@ def Fax = null
 
 def GLType = 'Awal'
 
-//Inquiry//
-def MemberName = findTestData('MemberNoAll').getValue(1, 1)
+//Inquiry Complaint//
+def VerifyTicket = 'Yes'
 
-def ProviderName2 = 'OJKSH00001'
+def NewComplaint = 'Yes'
 
-def SubServiceType = 'MCU'
+//Complaint//
+def MemberNo = findTestData('MemberNoAll').getValue(1, 1)
 
-def Remarks = 'Currently testing by Automation. Thanks. Regards - Me'
+def ComplaintCategory = 'Aplikasi'
 
-def NeedFollowUp = null
+def ComplaintSubCategory = 'Aplikasi Medcare'
 
-def ButtonDirection1 = 'Back'
+def ComplaintSubCategory2 = 'HR Akses'
 
-def ButtonDirection2 = 'Process'
+def ComplaintDescription = 'Currently testing by Automation. Thanks. Regards - Me'
 
-def ExitConfirmation1 = 'Yes'
+def TicketStatus = 'Need FU - CMU'
 
-def ExitConfirmation12 = 'No'
+def ButtonDirection = 'Back'
 
-def ExitConfirmation2 = 'Tidak Puas'
+def ButtonDirection2 = 'Save'
+
+def MultipleServiceType = null
+
+def ExitConfirmation1 = 'No'
+
+def ExitConfirmation2 = 'Puas'
 
 def ExitConfirmation3 = null
 
@@ -91,18 +98,37 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ButtonDirection') : ButtonDirection1])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Complaint Inquiry'), [('VerifyTicket') : VerifyTicket
+        , ('NewComplaint') : null])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Verify Create Ticket'), [('ContactName') : ContactName])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
-        , ('ContactLine') : ContactLine, ('Product') : Product, ('ProviderName') : ProviderName2, ('SubServiceType') : SubServiceType
-        , ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('ButtonDirection') : ButtonDirection2, ('ExitConfirmation1') : ExitConfirmation1
-        , ('ExitConfirmation2') : ExitConfirmation2, ('ExitConfirmation3') : ExitConfirmation3, ('Comment') : Comment])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Complaint Inquiry'), [('VerifyTicket') : null, ('NewComplaint') : NewComplaint])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Verify Create Ticket'), [('ContactName') : ContactName])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Complaint'), 
+	[('NewComplaint') : NewComplaint, 
+		('MemberNo') : MemberNo, 
+		('ComplaintCategory') : ComplaintCategory,
+		('ComplaintSubCategory') : ComplaintSubCategory,
+		('ComplaintDescription') : ComplaintDescription,
+		('TicketStatus') : TicketStatus,
+		('ButtonDirection') : ButtonDirection,
+		('MultipleServiceType') : MultipleServiceType,
+		('ExitConfirmation1') : ExitConfirmation1,
+		('ExitConfirmation2') : ExitConfirmation2,
+		('ExitConfirmation3') : ExitConfirmation3])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
-	, ('ContactLine') : ContactLine, ('Product') : Product, ('ProviderName') : ProviderName2, ('SubServiceType') : SubServiceType
-	, ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('ButtonDirection') : ButtonDirection2, ('ExitConfirmation1') : ExitConfirmation12
-	, ('ExitConfirmation2') : ExitConfirmation2, ('ExitConfirmation3') : ExitConfirmation3, ('Comment') : Comment])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Complaint Inquiry'), [('VerifyTicket') : null, ('NewComplaint') : NewComplaint])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Complaint'),
+	[('NewComplaint') : NewComplaint,
+		('MemberNo') : MemberNo,
+		('ComplaintCategory') : ComplaintCategory,
+		('ComplaintSubCategory') : ComplaintSubCategory,
+		('ComplaintDescription') : ComplaintDescription,
+		('TicketStatus') : TicketStatus,
+		('ButtonDirection') : ButtonDirection2,
+		('MultipleServiceType') : MultipleServiceType,
+		('ExitConfirmation1') : ExitConfirmation1,
+		('ExitConfirmation2') : ExitConfirmation2,
+		('ExitConfirmation3') : ExitConfirmation3])

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Member</name>
+   <name>Text - Get Ticket Number</name>
    <tag></tag>
-   <elementGuidId>b12786e5-8bb5-4b93-9abc-a2c13da72c7e</elementGuidId>
+   <elementGuidId>d8e9b969-a7d6-420b-8f1d-31b009ea1be4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]//table//tbody//tr[1][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;D_a2is_Modal_Txt&quot;][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;PopUpSearchMemberInfo-0&quot;]//table//tbody//tr[1]</value>
+      <value>//*[@id=&quot;D_a2is_Modal_Txt&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

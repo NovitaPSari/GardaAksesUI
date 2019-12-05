@@ -50,7 +50,7 @@ def Fax = '1500112'
 def GLType = 'Awal'
 
 //Inquiry//
-def MemberName = findTestData('MemberNameAll').getValue(1, 1)
+def MemberName = findTestData('MemberNoAll').getValue(1, 1)
 
 def SubServiceType = 'Approve Tindakan/Terapi/Obat'
 

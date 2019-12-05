@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - New Complaint</name>
+   <name>Button - Save</name>
    <tag></tag>
-   <elementGuidId>573d70b4-7cd6-48a1-acfd-9b0909ad63ef</elementGuidId>
+   <elementGuidId>b19e0c7b-d2e6-4e84-a6d8-afdab8dcbdfe</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;divDtComplaintTrackingGardaMedika&quot;]/div[1]/div/a2is-datatable/div[2]/div/div/button</value>
+         <value>//*[@id=&quot;NewComplaintSection-0&quot;]//button[text() = 'Save']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;divDtComplaintTrackingGardaMedika&quot;]/div[1]/div/a2is-datatable/div[2]/div/div/button</value>
+      <value>//*[@id=&quot;NewComplaintSection-0&quot;]//button[text() = 'Save']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

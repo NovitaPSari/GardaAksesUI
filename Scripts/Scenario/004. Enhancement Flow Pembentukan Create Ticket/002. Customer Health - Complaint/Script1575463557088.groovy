@@ -21,7 +21,7 @@ def UserID = 'DNS'
 def Password = 'Password95'
 
 //Create Ticket//
-def ContactLine = 'Provider'
+def ContactLine = 'Customer'
 
 def Product = 'Health'
 
@@ -29,53 +29,64 @@ def ChannelType = 'Call' //Bebas
 
 def ContactName = findTestData('ContactName').getValue(1, 1)
 
-def ContactType = 'Dokter' //Bebas
+def ContactType = 'Saudara' //Bebas
 
-def ServiceType = 'Claim'
+def ServiceType = 'Complaint'
 
 def InterruptedCall = null //Yes or Null
 
-def GenderCT = null
+def GenderCT = 'Male'
 
-def CustomerPhone = null
+def CustomerPhone = '081240722346'
 
 def ProviderName = 'OJKSH00001'
 
-def ProviderPhoneNumber = '081310954818'
+def ProviderPhoneNumber = null
 
-def Email = 'automationtest.ga@gmail.com'
+def Email = null
 
-def Fax = '1500112'
+def Fax = null
 
 def GLType = 'Awal'
 
-//Inquiry//
-def MemberName = findTestData('MemberNoAll').getValue(1, 1)
+//Inquiry Complaint//
+def VerifyTicket = 'Yes'
 
-def SubServiceType = 'Approve Tindakan/Terapi/Obat'
+def NewComplaint = 'Yes'
 
-def Remarks = 'Currently testing by Automation. Thanks. Regards - Me'
+//Complaint//
+def MemberNo = findTestData('MemberNoAll').getValue(1, 1)
 
-def NeedFollowUp = null
+def ComplaintCategory = 'Aplikasi'
 
-def Back = null
+def ComplaintSubCategory = 'Aplikasi Medcare'
 
-def Proses = 'Yes'
+def ComplaintSubCategory2 = 'HR Akses'
+
+def ComplaintDescription = 'Currently testing by Automation. Thanks. Regards - Me'
+
+def TicketStatus = 'Need FU - CMU'
+
+def ButtonDirection = 'Back'
+
+def ButtonDirection2 = 'Save'
+
+def MultipleServiceType = null
+
+def ExitConfirmation1 = 'No'
+
+def ExitConfirmation2 = 'Puas'
+
+def ExitConfirmation3 = null
+
+def Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
 
-def queryNewMemberName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation GA\')+1 WHERE Name = \'Automation GA\''
-
-def queryNewEmployeeID = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'EmployeeID\')+1 WHERE Name = \'EmployeeID\''
-
 CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
 CustomKeywords.'querySQL.update.execute'(queryContactName)
-
-CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
-
-CustomKeywords.'querySQL.update.execute'(queryNewEmployeeID)
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -87,6 +98,22 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Approval Tindakan Terapi Obat'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
-        , ('SubServiceType') : SubServiceType, ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('Back') : Back, ('Proses') : Proses], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Complaint Inquiry'), [('VerifyTicket') : VerifyTicket
+        , ('NewComplaint') : null])
 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Verify Create Ticket'), [('ContactName') : ContactName])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Complaint Inquiry'), [('VerifyTicket') : null, ('NewComplaint') : NewComplaint])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Complaint'), 
+	[('NewComplaint') : NewComplaint, 
+		('MemberNo') : MemberNo, 
+		('ComplaintCategory') : ComplaintCategory,
+		('ComplaintSubCategory') : ComplaintSubCategory,
+		('ComplaintDescription') : ComplaintDescription,
+		('TicketStatus') : TicketStatus,
+		('ButtonDirection') : ButtonDirection2,
+		('MultipleServiceType') : MultipleServiceType,
+		('ExitConfirmation1') : ExitConfirmation1,
+		('ExitConfirmation2') : ExitConfirmation2,
+		('ExitConfirmation3') : ExitConfirmation3])

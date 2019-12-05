@@ -50,7 +50,7 @@ def Fax = null
 def GLType = 'Awal'
 
 //Inquiry//
-def MemberName = findTestData('MemberNameAll').getValue(1, 1)
+def MemberName = findTestData('MemberNoAll').getValue(1, 1)
 
 def ProviderName2 = 'OJKSH00001'
 
