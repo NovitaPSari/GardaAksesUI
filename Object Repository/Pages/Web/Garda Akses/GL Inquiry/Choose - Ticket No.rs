@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;GLInquiry-0&quot;]/div[1]/a2is-datatable/div[2]/div/table/tbody/tr[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;GLInquiry-0&quot;]/div[1]/a2is-datatable/div[2]/div/table/tbody/tr[1][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;GLInquiry-0&quot;]/div[1]/a2is-datatable/div[2]/div/table/tbody/tr</value>
+      <value>//*[@id=&quot;GLInquiry-0&quot;]/div[1]/a2is-datatable/div[2]/div/table/tbody/tr[1]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

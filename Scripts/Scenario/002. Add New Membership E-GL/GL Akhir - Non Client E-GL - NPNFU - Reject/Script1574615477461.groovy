@@ -164,9 +164,10 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'),
         , ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID, ('Year') : Year, ('Month') : Month
         , ('Classification') : Classification, ('Gender') : Gender, ('MemberStatus') : MemberStatus, ('MemberName') : MemberName
         , ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType3, ('DiagnosisStatus') : DiagnosisStatus
-        , ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName, ('TotalBilled') : TotalBilled, ('Rujuk') : null, ('NPNFU') : NPNFU
-        , ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi])
+        , ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName, ('Rujuk') : null, ('TotalBilled') : TotalBilled, ('NPNFU') : NPNFU,  ('Status') : Status4
+        , ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
 
+//==================== PHASE 2 ==================== 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
@@ -180,6 +181,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'),
         , ('DiagnosisStatus') : null, ('DiagnosisID') : null, ('DoctorName') : null, ('ClientName') : ClientName, ('Rujuk') : null
         , ('NPNFU') : null, ('Status') : Status2, ('Summary') : Summary2, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
 
+//==================== PHASE 3 ====================
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
