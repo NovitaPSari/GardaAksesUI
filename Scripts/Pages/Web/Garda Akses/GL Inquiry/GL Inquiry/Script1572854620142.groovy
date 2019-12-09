@@ -13,7 +13,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.delay(GlobalVariable.Delay1)
+WebUI.delay(GlobalVariable.Delay3)
+
 if (GLType == 'Awal') {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Button - Create New GL')) //    WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
 } else if ((GLType == 'Lanjutan') || (GLType == 'Akhir')) {
@@ -22,6 +23,8 @@ if (GLType == 'Awal') {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Button - Search'))
 
     WebUI.waitForElementPresent(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'), GlobalVariable.Delay3)
+	
+	WebUI.delay(GlobalVariable.Delay3)	
 	
 //	WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
 

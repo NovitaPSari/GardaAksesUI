@@ -49,19 +49,19 @@
    <testCaseLink>
       <guid>87f814c9-398b-41fb-81ea-dc2bab8b861c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Non Client E-GL - GL Awal - GL Lanjutan</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>eeb15a4f-7a60-44c2-a56e-611aea7e0b73</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Non Client E-GL - GL Awal - GL Lanjutan - GL Akhir</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>fedcaee9-0332-416f-b490-277a5b4c99a1</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Non Client E-GL - GL Awal - GL Akhir</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -73,31 +73,31 @@
    <testCaseLink>
       <guid>4393ea46-39d5-4de0-a370-2a7f54ee801c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/Interrupted Call - Client E-GL</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>48603cd1-54b6-46b8-98f2-2a5ee59c0d61</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/Interrupted Call - Non Client E-GL</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>4ab8a10e-e4f5-464e-a558-cf2e7be3f189</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/Pre Admission - Client E-GL</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>46783040-6670-4096-a61e-89f3e7862bd3</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/Pre Admission - Non Client E-GL</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>dba6d66b-5370-41c9-ae85-bc1eb61b48e4</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/GL Akhir - Client E-GL - NPNFU - Reject</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -127,7 +127,7 @@
    <testCaseLink>
       <guid>9de75ab8-156a-4203-a9ea-ce05a3be2ac1</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/GL Awal - Non Client E-GL - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -157,7 +157,7 @@
    <testCaseLink>
       <guid>e49fc0a4-f978-4995-a0fa-256e1be68866</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>

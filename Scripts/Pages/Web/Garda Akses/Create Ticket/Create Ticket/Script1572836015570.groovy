@@ -99,6 +99,9 @@ if ((((((InterruptedCall != null) && (ContactLine == 'Provider')) && (Product ==
     WebUI.delay(0)
 }
 
+
+WebUI.delay(GlobalVariable.Delay1)
+
 //Phone Number
 if (InterruptedCall == null) {
     if (((ContactLine == 'Provider') && (Product == 'Health')) || ((ContactLine == 'Provider') && (Product == 'Non Health'))) {
