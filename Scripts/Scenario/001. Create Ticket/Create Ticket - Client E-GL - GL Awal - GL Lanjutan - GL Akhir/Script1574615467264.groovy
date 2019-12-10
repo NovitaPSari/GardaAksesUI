@@ -18,10 +18,9 @@ def UserID = 'DNS'
 
 def Password = 'Password95'
 
-//Create Ticket//
-def ContactLine = 'Provider'
-
 def Product = 'Health'
+
+def ContactLine = 'Provider'
 
 def ChannelType = 'Call'
 
@@ -185,10 +184,22 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType2, ('TicketID') : GlobalVariable.TicketIDAwal
         , ('NewMemberName') : null])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : null, ('MemberStatus') : null
-        , ('MemberName') : null, ('FamilyPhoneNo') : null, ('ProductType') : null, ('GLType') : GLType2, ('DiagnosisStatus') : null
-        , ('DiagnosisID') : null, ('DoctorName') : null, ('Rujuk') : null, ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary
-        , ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), 
+	[('Member') : null, 
+		('MemberStatus') : null
+        , ('MemberName') : null, 
+		('FamilyPhoneNo') : null, 
+		('ProductType') : null, 
+		('GLType') : GLType2, 
+		('DiagnosisStatus') : null
+        , ('DiagnosisID') : null, 
+		('DoctorName') : null, 
+		('Rujuk') : null, 
+		('NPNFU') : null, 
+		('Status') : Status, //Process
+		('Summary') : Summary
+        , ('Validasi') : Validasi, 
+		('InterruptedCall') : InterruptedCall])
 
 //==================== PHASE 3 ====================
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
@@ -203,10 +214,3 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'),
         , ('MemberName') : null, ('FamilyPhoneNo') : null, ('ProductType') : null, ('GLType') : GLType3, ('DiagnosisStatus') : null
         , ('DiagnosisID') : null, ('ClientName') : null, ('DoctorName') : null, ('TotalBilled') : TotalBilled, ('Rujuk') : null
         , ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
-
-println(GlobalVariable.TicketIDAwal)
-
-println(GlobalVariable.TicketIDLanjutan)
-
-println(GlobalVariable.TicketIDAkhir)
-
