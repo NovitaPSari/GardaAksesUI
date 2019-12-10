@@ -20,7 +20,7 @@ import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.By as By
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-WebUI.delay(GlobalVariable.Delay2)
+WebUI.delay(GlobalVariable.Delay3)
 
 //Popup Member Belum Termapping
 def InformationMember = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Information'), 
@@ -294,56 +294,58 @@ if ((((Status == 'PreAdmission') || (Status == 'InteruptedCall')) || (Status == 
 }
 
 //Store Ticket ID
-if (Member == 'Existing' || Member == 'New' ||Member == 'Check') {
-	if (InterruptedCall == null) {
-		if (GLType == 'Awal') {
-			def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-		
-			GlobalVariable.TicketIDAwal = result.substring(10, 18)
-		
-			println(GlobalVariable.TicketIDAwal)
-		} else if (GLType == 'Lanjutan') {
-			def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-		
-			GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
-		
-			println(GlobalVariable.TicketIDLanjutan)
-		} else {
-			def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-		
-			GlobalVariable.TicketIDAkhir = result.substring(10, 18)
-		
-			println(GlobalVariable.TicketIDAkhir)
-		}
-		
-		WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-		
-		WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Close'))
-	} else {
+if (GLType == 'Awal' || GLType == 'Lanjutan' || GLType == 'Akhir' || Member == 'Existing' || Member == 'New') {
+//	if (Member == 'Existing' || Member == 'New') {
+		if (InterruptedCall == null) {
 			if (GLType == 'Awal') {
-				def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
-				
-				GlobalVariable.TicketIDAwal = result.substring(22, 30)
+				def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
+			
+				GlobalVariable.TicketIDAwal = result.substring(10, 18)
 			
 				println(GlobalVariable.TicketIDAwal)
 			} else if (GLType == 'Lanjutan') {
-				def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+				def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
 			
-				GlobalVariable.TicketIDLanjutan = result.substring(22, 30)
+				GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
 			
 				println(GlobalVariable.TicketIDLanjutan)
 			} else {
-				def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+				def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
 			
-				GlobalVariable.TicketIDAkhir = result.substring(22, 30)
+				GlobalVariable.TicketIDAkhir = result.substring(10, 18)
 			
 				println(GlobalVariable.TicketIDAkhir)
 			}
 			
-			WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+			WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
 			
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Interrupted Close'))
-		}
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Close'))
+		} else {
+				if (GLType == 'Awal') {
+					def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+					
+					GlobalVariable.TicketIDAwal = result.substring(22, 30)
+				
+					println(GlobalVariable.TicketIDAwal)
+				} else if (GLType == 'Lanjutan') {
+					def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+				
+					GlobalVariable.TicketIDLanjutan = result.substring(22, 30)
+				
+					println(GlobalVariable.TicketIDLanjutan)
+				} else {
+					def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+				
+					GlobalVariable.TicketIDAkhir = result.substring(22, 30)
+				
+					println(GlobalVariable.TicketIDAkhir)
+				}
+				
+				WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
+				
+				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Interrupted Close'))
+			}
+//		}
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Tidak Hal Lain Yang di Bantu'))
 	
@@ -352,34 +354,14 @@ if (Member == 'Existing' || Member == 'New' ||Member == 'Check') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
-} else {
-		if (GLType == 'Awal') {
-			def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-		
-			GlobalVariable.TicketIDAwal = result.substring(10, 18)
-		
-			println(GlobalVariable.TicketIDAwal)
-		} else if (GLType == 'Lanjutan') {
-			def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-		
-			GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
-		
-			println(GlobalVariable.TicketIDLanjutan)
-		} else {
-			def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
-		
-			GlobalVariable.TicketIDAkhir = result.substring(10, 18)
-		
-			println(GlobalVariable.TicketIDAkhir)
-		}
-		
-		WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Close'))
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Tidak Hal Lain Yang di Bantu'))
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Puas'))
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
-	}
+} else if (Status == 'Reject' || Status == 'PreAdmission' ){
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Tidak Hal Lain Yang di Bantu'))
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Puas'))
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
+} else if (Member == 'Check') {
+	WebUI.delay(0)
+}
