@@ -22,6 +22,8 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 WebUI.delay(GlobalVariable.Delay3)
 
+WebUI.delay(GlobalVariable.Delay3)
+
 //Popup Member Belum Termapping
 def InformationMember = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Information'), 
     GlobalVariable.Delay1)
@@ -40,6 +42,8 @@ if (Member == 'Existing') {
     WebUI.delay(GlobalVariable.Delay1)
 
     WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Input - Member'), MemberName)
+	
+	WebUI.delay(GlobalVariable.Delay0)
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Choose - Member', [('MemberName') : MemberName]))
 
@@ -62,6 +66,8 @@ if (Member == 'Existing') {
 	WebUI.delay(GlobalVariable.Delay0)
 
     WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Input - Client Name'), ClientName)
+	
+	WebUI.delay(GlobalVariable.Delay0)
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Choose - Client Name'))
 
@@ -190,20 +196,24 @@ if (DiagnosisStatus != null) {
 }
 
 //Account Manager
-println (Status)
-if (Status == 'Reject') {
-    if (ClientName == 'PT BANK PERMATA TBK' || ClientName == 'ASURANSI ASTRA BUANA') {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Account Manager'))
-
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Account Manager/Choose - Account Manager'))
-
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Account Manager/Button - Submit'))
-    } else if (ClientName == 'PT SHOWA INDONESIA MANUFACTURING') {
-        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Input - Account Manager'), 'Mba Mbe')
-    }
-} else {
-    WebUI.delay(0)
-}
+//def AccountManager = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Input - Account Manager'), GlobalVariable.Delay0)
+//if (AccountManager == true) {
+	if (Status == 'Reject') {
+	    if (ClientName == 'PT BANK PERMATA TBK' || ClientName == 'ASURANSI ASTRA BUANA') {
+	        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Account Manager'))
+	
+	        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Account Manager/Choose - Account Manager'))
+	
+	        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Account Manager/Button - Submit'))
+	    } else if (ClientName == 'PT SHOWA INDONESIA MANUFACTURING') {
+	        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Input - Account Manager'), 'Mba Mbe')
+	    }
+	} else {
+	    WebUI.delay(0)
+	}
+//} else {
+//    WebUI.delay(0)
+//}
 
 //Doctor
 if (DoctorName != null) {
