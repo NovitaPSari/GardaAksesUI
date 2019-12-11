@@ -109,19 +109,19 @@
    <testCaseLink>
       <guid>0ea6eb76-aff0-4fca-85b1-084f5a18cdb0</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/GL Akhir - Non Client E-GL - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>2da1bc6f-ffed-4de8-a7e9-507c0fe3863d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/GL Awal - Client E-GL - NPNFU - Reject</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>4b80ae2e-4e0a-49ab-90c0-6fd0dc3320f3</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/GL Awal - Non Client E-GL - NPNFU - Reject</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -145,7 +145,7 @@
    <testCaseLink>
       <guid>1024c206-5752-453b-980f-f3dcfffea893</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Checklist NFU - Rujuk - NPNFU</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -157,13 +157,13 @@
    <testCaseLink>
       <guid>e49fc0a4-f978-4995-a0fa-256e1be68866</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>72bc5895-686e-4a72-9d36-b82896464716</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Not Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
