@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>010. Create Ticket - Provider Health Inquiry - SMS</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c02a4563-92a8-458c-8029-4564f92e2282</testCaseGuid>
+</TestCaseEntity>

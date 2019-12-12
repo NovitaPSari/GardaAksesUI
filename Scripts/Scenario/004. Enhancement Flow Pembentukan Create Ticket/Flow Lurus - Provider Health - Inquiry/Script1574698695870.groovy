@@ -52,30 +52,28 @@ def GLType = 'Awal'
 //Inquiry//
 def MemberName = findTestData('MemberNoAll').getValue(1, 1)
 
-def SubServiceType = 'MCU'
+def SubServiceType = 'Lainnya'
 
 def Remarks = 'Currently testing by Automation. Thanks. Regards - Me'
 
 def NeedFollowUp = null
 
-def Back = null
+def Action = 'Proses'
 
-def Proses = 'Yes'
+def MultipleServiceType = null
+
+def ExitConfirmation1 = 'No'
+
+def ExitConfirmation2 = 'Puas'
+
+def ExitConfirmation3 = null
 
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
 
-def queryNewMemberName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation GA\')+1 WHERE Name = \'Automation GA\''
-
-def queryNewEmployeeID = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'EmployeeID\')+1 WHERE Name = \'EmployeeID\''
-
 CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
 CustomKeywords.'querySQL.update.execute'(queryContactName)
-
-CustomKeywords.'querySQL.update.execute'(queryNewMemberName)
-
-CustomKeywords.'querySQL.update.execute'(queryNewEmployeeID)
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -89,5 +87,5 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
         , ('ContactLine') : ContactLine, ('Product') : Product, ('SubServiceType') : SubServiceType, ('Remarks') : Remarks
-        , ('NeedFollowUp') : NeedFollowUp, ('Back') : Back, ('Proses') : Proses], FailureHandling.STOP_ON_FAILURE)
-
+        , ('NeedFollowUp') : NeedFollowUp, ('Action') : Action, MultipleServiceType : MultipleServiceType
+		,'ExitConfirmation1' : ExitConfirmation1, 'ExitConfirmation2' : ExitConfirmation2, 'ExitConfirmation3' : ExitConfirmation3], FailureHandling.STOP_ON_FAILURE)
