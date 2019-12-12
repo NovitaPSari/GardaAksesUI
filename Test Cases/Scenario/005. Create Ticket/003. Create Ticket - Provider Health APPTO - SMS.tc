@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>003. Create Ticket - Provider Health APPTO - SMS</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>af72a36e-e728-4d82-88b1-bfb0a31a7860</testCaseGuid>
+</TestCaseEntity>

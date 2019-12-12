@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>011. Create Ticket - Provider Health Inquiry - Email</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e8aa57aa-01d8-4b7b-a82c-e2c40d76a789</testCaseGuid>
+</TestCaseEntity>

@@ -139,6 +139,20 @@ if (InterruptedCall == null) {
     WebUI.delay(0)
 }
 
+if (ContactLine == 'Customer' && Product == 'Health' && ServiceType == 'Inquiry' || 
+	ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Inquiry') {
+	def CheckEmail2 = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'),
+		'value')
+	if (CheckEmail2 != '') {
+		WebUI.clearText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'))
+	} else {
+		WebUI.delay(0)
+	}	
+} else {
+	WebUI.delay(0)
+}
+
 //Fax
 if (InterruptedCall == null) {
     if ((ContactLine == 'Provider') && (Product == 'Health')) {
