@@ -103,7 +103,7 @@
    <testCaseLink>
       <guid>27cb0b99-d26b-4e69-a251-a179fef53b0f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/GL Akhir - Non Client E-GL - NPNFU - Reject</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -249,5 +249,155 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/014. Customer Health - Inquiry - Multiple Service Type - Tidak Puas</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6079a289-2bdd-4c7d-8f61-ab90a780cacf</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/001. Create Ticket - Provider Health APPTO - Call</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>06b6633d-a46e-4076-b0dd-d7de0165c9bf</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/002. Create Ticket - Provider Health APPTO - WhatsApp</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>8e0fe336-7270-4f18-b0dc-8f5771165d7a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/003. Create Ticket - Provider Health APPTO - SMS</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>372259e7-8823-4f76-9241-fe3bc6867d1d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/004. Create Ticket - Provider Health APPTO - Email</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>74e4be74-5b2d-4238-8ffe-1261db68d2c4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/005. Create Ticket - Provider Health APPTO - Chatbot</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>64cf9894-a163-495c-a8b5-6f5f669c4f3a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/006. Create Ticket - Provider Health APPTO - Live Chat</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>e8a62b80-dc1e-457b-be86-6c0ea6a75adf</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/007. Create Ticket - Provider Health APPTO - WebSite</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>d510e1ba-2596-40e9-895b-29d991f0eda9</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/008. Create Ticket - Provider Health Inquiry - Call</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>97cf1234-b381-4d8b-b111-ed99388dc98b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/009. Create Ticket - Provider Health Inquiry - WhatsApp</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ab7c62c6-9899-4c2a-bbc0-796e7431d4fb</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/010. Create Ticket - Provider Health Inquiry - SMS</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f78ad6cb-408f-41a9-8fed-bf95c117afbf</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/011. Create Ticket - Provider Health Inquiry - Email</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>db425188-d343-43d5-afdf-19a348d089ac</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/012. Create Ticket - Provider Health Inquiry - Chatbot</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>2271fcf4-54cc-4841-83db-0e4cd08ef339</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/013. Create Ticket - Provider Health Inquiry - Live Chat</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>259f0366-4703-43a6-b6b7-ff079c73c35e</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/014. Create Ticket - Provider Health Inquiry - WebSite</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f7c8a297-4480-4bce-aff9-5edb70cfa683</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/015. Create Ticket - Customer Health Inquiry - Call</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>e3be1904-89bd-4e3a-b97e-57cd6da59a1f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/016. Create Ticket - Customer Health Inquiry - WhatsApp</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>9fe6483d-24a9-4baa-9cf1-3a11575cd654</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/017. Create Ticket - Customer Health Inquiry - SMS</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>3a967d2a-1f28-431f-8b60-148279ee4d9a</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/018. Create Ticket - Customer Health Inquiry - Walk In</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6b4962a2-0914-4689-96dc-109dd617aaee</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/019. Create Ticket - Customer Health Inquiry - Email</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1649a2e3-5938-47f5-a547-ecc9dcce115d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/020. Create Ticket - Customer Health Inquiry - Twitter</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f3d6015f-2e11-4205-a270-83c79385767d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/021. Create Ticket - Customer Health Inquiry - Facebook</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ee0dfb70-8a1a-494c-a391-84bcfd992974</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/022. Create Ticket - Customer Health Inquiry - Instagram</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ea5478be-f772-40bb-9b2a-e572002370e0</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/023. Create Ticket - Customer Health Inquiry - Media Masa</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>58b0796c-7136-4d83-8a43-351bf92c97a7</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/024. Create Ticket - Customer Health Inquiry - Surat</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>393a58d2-38fd-48d5-b979-cb7cf3d447e4</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/025. Create Ticket - Customer Health Inquiry - Lembaga</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

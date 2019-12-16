@@ -89,11 +89,11 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ButtonDirection') : ButtonDirection1])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Prrovider - Inquiry'), [('ButtonDirection') : ButtonDirection1])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Verify Create Ticket'), [('ContactName') : ContactName])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Prrovider - Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
         , ('ContactLine') : ContactLine, ('Product') : Product, ('ProviderName') : ProviderName2, ('SubServiceType') : SubServiceType
         , ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('ButtonDirection') : ButtonDirection2, ('ExitConfirmation1') : ExitConfirmation1
         , ('ExitConfirmation2') : ExitConfirmation2, ('ExitConfirmation3') : ExitConfirmation3, ('Comment') : Comment])
