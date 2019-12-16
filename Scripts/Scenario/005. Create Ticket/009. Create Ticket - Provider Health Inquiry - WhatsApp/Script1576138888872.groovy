@@ -33,9 +33,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 //Login//
-def UserID = 'DNS'
+def UserID = 'RKP'
 
-def Password = 'Password95'
+def Password = 'P@ssw0rd'
 
 //Create Ticket//
 def ContactLine = 'Provider'
@@ -48,7 +48,7 @@ def ContactName = findTestData('ContactName').getValue(1, 1)
 
 def ContactType = 'Lainnya' //Bebas
 
-def ServiceType = 'Inquiry'
+def ServiceType = 'Claim'
 
 def InterruptedCall = null //Yes or Null
 

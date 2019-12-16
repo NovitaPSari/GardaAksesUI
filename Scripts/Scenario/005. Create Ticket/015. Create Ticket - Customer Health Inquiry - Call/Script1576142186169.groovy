@@ -42,7 +42,7 @@ def ProviderName = 'OJKSH00001'
 
 def ProviderPhoneNumber = null
 
-def Email = null
+def Email = 'automationtest@asuransiastra.com'
 
 def Fax = null
 
@@ -94,7 +94,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Prrovider - Inquiry'), 
 	[('MemberName') : MemberName, 
 		('ContactLine') : ContactLine, 
 		('Product') : Product, 

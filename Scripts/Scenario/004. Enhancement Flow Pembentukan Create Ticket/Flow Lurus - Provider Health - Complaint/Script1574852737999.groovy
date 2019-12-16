@@ -87,7 +87,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Prrovider - Inquiry'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
         , ('ContactLine') : ContactLine, ('Product') : Product, ('SubServiceType') : SubServiceType, ('Remarks') : Remarks
         , ('NeedFollowUp') : NeedFollowUp, ('Back') : Back, ('Proses') : Proses], FailureHandling.STOP_ON_FAILURE)
 

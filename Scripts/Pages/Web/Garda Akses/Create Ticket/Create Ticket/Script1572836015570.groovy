@@ -122,33 +122,73 @@ if (InterruptedCall == null) {
 }
 
 //Email
-if (InterruptedCall == null) {
-    if ((ContactLine == 'Provider') && (Product == 'Health')) {
-        def CheckEmail = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'), 
-            'value')
+if (ContactLine == 'Provider') {
+	if (InterruptedCall == null) {
+	    def CheckEmail = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Email Provider'), 
+	        'value')
+	
+	    if (CheckEmail == '') {
+	        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Email Provider'), Email)
+	    } else {
+	        WebUI.delay(0)
+	    }
+	} else {
+	    WebUI.delay(0)
+	}
 
-        if (CheckEmail == '') {
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'), Email)
-        } else {
-            WebUI.delay(0)
-        }
-    } else {
-        WebUI.delay(0)
-    }
-} else {
-    WebUI.delay(0)
-}
-
-if (ContactLine == 'Customer' && Product == 'Health' && ServiceType == 'Inquiry' || 
-	ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
-	ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Inquiry') {
-	def CheckEmail2 = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'),
-		'value')
-	if (CheckEmail2 != '') {
-		WebUI.clearText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email'))
+	if (ChannelType != 'Email') {
+		if (ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+			ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Inquiry' || 
+			ContactLine == 'Customer' && Product == 'Health' && ServiceType == 'Inquiry') {
+			def CheckEmail2 = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Email Provider'),
+				'value')
+			if (CheckEmail2 != '') {
+				WebUI.clearText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Email Provider'))
+			} else {
+				WebUI.delay(0)
+			}	
+		} else {
+			WebUI.delay(0)
+		}
 	} else {
 		WebUI.delay(0)
-	}	
+	}
+} else if (ContactLine == 'Customer') {
+	if (InterruptedCall == null) {
+		def CheckEmail = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email Customer'),
+			'value')
+		
+		if (CheckEmail == '') {
+			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email Customer'), Email)
+		} else {
+			WebUI.delay(0)
+		}
+	} else {
+		WebUI.delay(0)
+	}
+	
+	if (ChannelType != 'Email') {
+		if (ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+			ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Inquiry' ||
+			ContactLine == 'Customer' && Product == 'Health' && ServiceType == 'Inquiry') {
+			def CheckEmail2 = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email Customer'),
+				'value')
+			if (CheckEmail2 != '') {
+				WebUI.clearText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email Customer'))
+			} else {
+				WebUI.delay(0)
+			}
+		} else {
+			WebUI.delay(0)
+		}
+	} else {
+		WebUI.delay(0)
+	}
+}
+
+//Social Media Account  
+if (ChannelType == 'Twitter' || ChannelType == 'Facebook' || ChannelType == 'Instagram' || ChannelType == 'Media Masa' || ChannelType == 'Surat') {
+	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Social Media Account'), SocialMediaAccount)
 } else {
 	WebUI.delay(0)
 }
@@ -200,4 +240,3 @@ if (InterruptedCall == 'Yes') {
 } else {
 	WebUI.delay(0)
 }
-
