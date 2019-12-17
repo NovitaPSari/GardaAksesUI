@@ -15,7 +15,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.delay(GlobalVariable.Delay1)
+WebUI.delay(GlobalVariable.Delay3)
 
 //Product
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Button - Product'))
@@ -24,4 +24,61 @@ WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type
 
 //Category
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Button - Category'))
+
+WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Choose - Category', [('Category') : Categorys]))
+
+//FU Status
+WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Button - FU Status'))
+
+WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Choose - FU Status', [('FUStatus') : FUStatus]))
+
+//FU Remarks
+WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Input - FU Remarks'), FURemarks)
+
+//Button Direction
+if (Action == 'Save') {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Button - Save'))
+	
+	WebUI.delay(GlobalVariable.Delay1)
+	
+	if (MultipleServiceType == 'Yes') {
+		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Text - Ticket Number'))
+		
+		GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Button - Ok'))
+	} else {
+		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Text - Ticket Number'))
+		
+		GlobalVariable.TicketIDAwal = result.substring(10, 18)
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Button - Ok'))
+	}
+	
+	//Exit Confirmation 1 - Apakah ada hal lain yang dapat dibantu, Pak/Bu?
+	if (ExitConfirmation1 == 'Yes') {
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 Yes'))
+	} else {
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 No'))
+		
+		//Exit Confirmation 2 - Sebelum mengakhiri percakapan, boleh kami dibantu untuk pertanyaan penutup yaitu Apakah Bapak/Ibu PUAS dengan informasi yang telah saya berikan?
+		if (ExitConfirmation2 == 'Puas') {
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Puas'))
+		} else {
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Tidak Puas'))
+			
+			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Exit Confirmation 3 Add Comment'), Comment)
+			
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 3 Ok'))
+		}
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
+	}
+} else if (Action == 'Back') {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Back'))
+} else {
+	WebUI.delay(0)
+}
 

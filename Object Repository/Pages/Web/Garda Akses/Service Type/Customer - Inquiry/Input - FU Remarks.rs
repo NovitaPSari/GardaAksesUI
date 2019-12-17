@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Product</name>
+   <name>Input - FU Remarks</name>
    <tag></tag>
-   <elementGuidId>410d26c1-ea93-4207-a822-b5359a767fb4</elementGuidId>
+   <elementGuidId>50e15c9e-653d-48d7-a88c-f41157e39b28</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;P1-0&quot;]//span[text() = 'Product']//parent::label//parent::div/div/div/button[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;General-0&quot;]//span[text() = 'FU Remarks']/parent::label/parent::div/div/div/textarea</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;P1-0&quot;]//span[text() = 'Product']//parent::label//parent::div/div/div/button</value>
+      <value>//*[@id=&quot;General-0&quot;]//span[text() = 'FU Remarks']/parent::label/parent::div/div/div/textarea</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

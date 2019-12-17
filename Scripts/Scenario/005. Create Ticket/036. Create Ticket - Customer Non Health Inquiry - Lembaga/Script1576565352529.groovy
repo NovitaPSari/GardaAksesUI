@@ -17,18 +17,19 @@ import internal.GlobalVariable as GlobalVariable
 
 //Login//
 def UserID = 'DNS'
+
 def Password = 'Password95'
 
 //Create Ticket//
 def ContactLine = 'Customer'
 
-def Product = 'Health'
+def Product = 'Non Health'
 
-def ChannelType = 'Twitter' //Bebas
+def ChannelType = 'Lembaga' //Bebas
 
 def ContactName = findTestData('ContactName').getValue(1, 1)
 
-def ContactType = 'Teman' //Bebas
+def ContactType = 'Saudara' //Bebas
 
 def ServiceType = 'Inquiry'
 
@@ -50,18 +51,23 @@ def Fax = null
 
 def GLType = 'Awal'
 
+//Choose Customer
+def ChooseCategoryCustomer = 'Policy Holder / Relatives' // Policy Holder / Relatives or Others
+
+def SearchBy = 'Policy Number'
+
+def Parameter = findTestData('ParameterPolicyNo').getValue(4, 1)
+
 //Inquiry//
-def MemberName = findTestData('MemberNoAll').getValue(1, 1)
+def ProductI = 'Garda Oto'
 
-def ProviderName2 = 'OJKSH00001'
+def Category = 'Others'
 
-def SubServiceType = 'Quotation'
+def FUStatus = 'On Progress'
 
-def Remarks = 'Currently testing by Automation. Thanks. Regards - Me'
+def FURemarks = 'Currently testing by Automation. Thanks. Regards - Me'
 
-def NeedFollowUp = null
-
-def Action = 'Proses'
+def Action = 'Save'
 
 def MultipleServiceType = null
 
@@ -85,31 +91,25 @@ CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Passwo
 CustomKeywords.'querySQL.update.execute'(queryContactName)
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
-	[('UserID') : UserID,
-		('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, 
-		'SocialMediaAccount' : SocialMediaAccount, 
-		('Fax') : Fax, ('GLType') : GLType])
+        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, 'SocialMediaAccount' : SocialMediaAccount, ('Fax') : Fax, ('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Prrovider - Inquiry'), 
-	[('MemberName') : MemberName, 
-		('ContactLine') : ContactLine, 
-		('Product') : Product, 
-		('ProviderName') : ProviderName2, 
-		('SubServiceType') : SubServiceType, 
-		('Remarks') : Remarks, 
-		('NeedFollowUp') : NeedFollowUp, 
-		'MultipleServiceType' : MultipleServiceType,
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Choose Customer/Choose Customer'), [('ChooseCategoryCustomer') : ChooseCategoryCustomer
+        , ('SearchBy') : SearchBy, ('Parameter') : Parameter], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Customer - Inquiry'), 
+	['Product': ProductI,
+		'Categorys' : Category,
+		'FUStatus' : FUStatus,
+		'FURemarks' : FURemarks,
 		'Action' : Action,
-		('ButtonDirection') : ButtonDirection2, 
-		('ExitConfirmation1') : ExitConfirmation1, 
-		('ExitConfirmation2') : ExitConfirmation2, 
-		('ExitConfirmation3') : ExitConfirmation3, 
-		('Comment') : Comment])
+		'MultipleServiceType' : MultipleServiceType,
+		'ExitConfirmation1' : ExitConfirmation1,
+		'ExitConfirmation2' : ExitConfirmation2])
+
