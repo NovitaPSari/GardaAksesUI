@@ -29,7 +29,7 @@ def GenderCT = null
 def CustomerPhone = null
 def ProviderName = 'OJKSH00001'
 def ProviderPhoneNumber = null
-def Email = null
+def Email = 'rsuryaningati@asuransiastra.com'
 def Fax = null
 
 //Inquiry//

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>test</name>
+   <name>Test 502 Server Error</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>6853925f-93a7-4d75-acea-662293b35f9c</testCaseGuid>
+   <testCaseGuid>f6c25cfa-37a5-4913-b699-3dbacd724fb7</testCaseGuid>
 </TestCaseEntity>

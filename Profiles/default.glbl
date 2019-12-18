@@ -6,6 +6,11 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>3</initValue>
+      <name>Delay0</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>5</initValue>
       <name>Delay1</name>
    </GlobalVariableEntity>
@@ -21,8 +26,23 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>'https://172.16.94.4/gardaakses'</initValue>
+      <name>URLGardaAkses4</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://172.16.94.5/gardaakses'</initValue>
+      <name>URLGardaAkses5</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>'https://gen5-qc.asuransiastra.com/gardaakses'</initValue>
       <name>URLGardaAksesQC</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://gardaakses.asuransiastra.com/gardaakses'</initValue>
+      <name>URLGardaAksesProduction</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -41,8 +61,13 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>3</initValue>
-      <name>Delay0</name>
+      <initValue>''</initValue>
+      <name>TicketID4</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>TicketID5</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Popup Message Bila status Produce</description>
@@ -53,11 +78,6 @@
       <description></description>
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \' TIDAK DIJAMINKAN\']'</initValue>
       <name>SummaryTidakDijaminkan</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'https://172.16.94.5/gardaakses'</initValue>
-      <name>URLGardaAkses5</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -73,11 +93,6 @@
       <description></description>
       <initValue>'//*[text() = \'Interrupted Call\']'</initValue>
       <name>SummaryInterruptedCall</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'https://172.16.94.4/gardaakses'</initValue>
-      <name>URLGardaAkses4</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
