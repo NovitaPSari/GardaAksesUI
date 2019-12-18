@@ -14,8 +14,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 //Login//
-def UserID = 'MIG'
-def Password = 'P@ssw0rd'
+def UserID = 'DNS'
+def Password = 'Password95'
 
 //Create Ticket//
 def ContactLine = 'Provider'

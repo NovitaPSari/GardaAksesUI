@@ -29,7 +29,7 @@ def GenderCT = null
 def CustomerPhone = null
 def ProviderName = 'OJKSH00001'
 def ProviderPhoneNumber = null
-def Email = null
+def Email = 'rsuryaningati@asuransiastra.com'
 def Fax = null
 
 //Inquiry//
@@ -40,10 +40,7 @@ def SearchBy3 = 'TicketNo'
 //Claim
 //Member = Existing  / New / Check
 def Member = 'Existing'
-def Member2 = null
-def Member3 = null
-def Member4 = null
-def Member5 = null
+
 // MemberStatus = Non Client / Client
 def MemberStatus = 'Client'
 def MemberName = findTestData('MemberNameClient').getValue(1, 1)
@@ -65,7 +62,9 @@ def GLType3 = null
 def GLType4 = null
 def GLType5 = null
 def DiagnosisStatus = 'Initial Primary'
+def Diagnosis = 2
 def DiagnosisID = 'A09 '
+def DiagnosisID2 = 'A09 '
 def DoctorName = 'Betsy Kalianda'
 //Rujuk = yes / no
 def Rujuk = null
@@ -127,7 +126,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'),
 		('TicketID') : null,
 		('NewMemberName') : null])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), 
 	[('Member') : Member, 
 		('MemberStatus') : MemberStatus, 
 		('MemberName') : MemberName,
