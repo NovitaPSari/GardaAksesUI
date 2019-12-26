@@ -93,7 +93,7 @@ def ProductType = 'Inpatient'
 
 def GLType = 'Awal'
 
-def GLType2 = 'Lanjutan'
+def GLType2 = 'Revisi'
 
 def GLType3 = 'Akhir'
 

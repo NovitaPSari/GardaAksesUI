@@ -314,9 +314,9 @@ if (GLType == 'Awal' || GLType == 'Lanjutan' || GLType == 'Akhir' || Member == '
 			} else if (GLType == 'Lanjutan') {
 				def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
 			
-				GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
+				GlobalVariable.TicketIDRevisi = result.substring(10, 18)
 			
-				println(GlobalVariable.TicketIDLanjutan)
+				println(GlobalVariable.TicketIDRevisi)
 			} else {
 				def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
 			
@@ -338,9 +338,9 @@ if (GLType == 'Awal' || GLType == 'Lanjutan' || GLType == 'Akhir' || Member == '
 				} else if (GLType == 'Lanjutan') {
 					def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
 				
-					GlobalVariable.TicketIDLanjutan = result.substring(22, 30)
+					GlobalVariable.TicketIDRevisi = result.substring(22, 30)
 				
-					println(GlobalVariable.TicketIDLanjutan)
+					println(GlobalVariable.TicketIDRevisi)
 				} else {
 					def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
 				

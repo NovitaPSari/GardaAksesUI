@@ -20,9 +20,7 @@ import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.By as By
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-WebUI.delay(GlobalVariable.Delay3)
-
-WebUI.delay(GlobalVariable.Delay3)
+WebUI.delay(GlobalVariable.Delay5)
 
 //Popup Member Belum Termapping
 def InformationMember = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Information'), 
@@ -135,7 +133,7 @@ if (ProductType != null) {
 }
 
 //GL Type
-if (((GLType == 'Awal') || (GLType == 'Lanjutan')) || (GLType == 'Akhir')) {
+if (((GLType == 'Awal') || (GLType == 'Revisi')) || (GLType == 'Akhir')) {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - GL Type'))
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Choose - GL Type', [('GLType') : GLType]))
@@ -304,7 +302,7 @@ if ((((Status == 'PreAdmission') || (Status == 'InteruptedCall')) || (Status == 
 }
 
 //Store Ticket ID
-if (GLType == 'Awal' || GLType == 'Lanjutan' || GLType == 'Akhir' || Member == 'Existing' || Member == 'New') {
+if (GLType == 'Awal' || GLType == 'Revisi' || GLType == 'Akhir' || Member == 'Existing' || Member == 'New') {
 //	if (Member == 'Existing' || Member == 'New') {
 		if (InterruptedCall == null) {
 			if (GLType == 'Awal') {
@@ -313,12 +311,12 @@ if (GLType == 'Awal' || GLType == 'Lanjutan' || GLType == 'Akhir' || Member == '
 				GlobalVariable.TicketIDAwal = result.substring(10, 18)
 			
 				println(GlobalVariable.TicketIDAwal)
-			} else if (GLType == 'Lanjutan') {
+			} else if (GLType == 'Revisi') {
 				def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
 			
-				GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
+				GlobalVariable.TicketIDRevisi = result.substring(10, 18)
 			
-				println(GlobalVariable.TicketIDLanjutan)
+				println(GlobalVariable.TicketIDRevisi)
 			} else {
 				def result = WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
 			
@@ -337,12 +335,12 @@ if (GLType == 'Awal' || GLType == 'Lanjutan' || GLType == 'Akhir' || Member == '
 					GlobalVariable.TicketIDAwal = result.substring(22, 30)
 				
 					println(GlobalVariable.TicketIDAwal)
-				} else if (GLType == 'Lanjutan') {
+				} else if (GLType == 'Revisi') {
 					def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
 				
-					GlobalVariable.TicketIDLanjutan = result.substring(22, 30)
+					GlobalVariable.TicketIDRevisi = result.substring(22, 30)
 				
-					println(GlobalVariable.TicketIDLanjutan)
+					println(GlobalVariable.TicketIDRevisi)
 				} else {
 					def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
 				

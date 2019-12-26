@@ -44,7 +44,7 @@ if (Action == 'Save') {
 	if (MultipleServiceType == 'Yes') {
 		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Text - Ticket Number'))
 		
-		GlobalVariable.TicketIDLanjutan = result.substring(10, 18)
+		GlobalVariable.TicketIDRevisi = result.substring(10, 18)
 		
 		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Button - Ok'))
 	} else {

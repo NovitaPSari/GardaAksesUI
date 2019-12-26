@@ -62,7 +62,7 @@ if (Action == 'Proses') {
 	if (MultipleServiceType == 'Yes') {
 		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
 		
-		GlobalVariable.TicketIDLanjutan = result.substring(9, 17)
+		GlobalVariable.TicketIDRevisi = result.substring(9, 17)
 		
 		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
 	} else {

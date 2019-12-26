@@ -26,8 +26,6 @@ public class update {
 
 	private static Connection connection = null;
 
-
-
 	//Establishing a connection to the DataBase
 	@Keyword
 

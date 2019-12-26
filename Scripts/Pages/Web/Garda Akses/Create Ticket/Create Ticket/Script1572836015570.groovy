@@ -15,9 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-WebUI.delay(GlobalVariable.Delay3)
-
-WebUI.delay(GlobalVariable.Delay3)
+WebUI.delay(GlobalVariable.Delay5)
 
 //Contact Line
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Contact Line', [('ContactLine') : ContactLine]))
@@ -90,6 +88,8 @@ if ((((((InterruptedCall != null) && (ContactLine == 'Provider')) && (Product ==
         WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
 		
 		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
+		
+		WebUI.delay(GlobalVariable.Delay0)
 
         WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Provider Name', [('ProviderName') : ProviderName]))
     } else {
@@ -222,12 +222,12 @@ if (InterruptedCall == 'Yes') {
 		GlobalVariable.TicketIDAwal = result.substring(22, 30)
 	
 		println(GlobalVariable.TicketIDAwal)
-	} else if (GLType == 'Lanjutan') {
+	} else if (GLType == 'Revisi') {
 		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
 	
-		GlobalVariable.TicketIDLanjutan = result.substring(22, 30)
+		GlobalVariable.TicketIDRevisi = result.substring(22, 30)
 	
-		println(GlobalVariable.TicketIDLanjutan)
+		println(GlobalVariable.TicketIDRevisi)
 	} else {
 		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
 	
