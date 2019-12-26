@@ -26,6 +26,16 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>20</initValue>
+      <name>Delay4</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>25</initValue>
+      <name>Delay5</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>'https://172.16.94.4/gardaakses'</initValue>
       <name>URLGardaAkses4</name>
    </GlobalVariableEntity>
@@ -52,7 +62,7 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
-      <name>TicketIDLanjutan</name>
+      <name>TicketIDRevisi</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>

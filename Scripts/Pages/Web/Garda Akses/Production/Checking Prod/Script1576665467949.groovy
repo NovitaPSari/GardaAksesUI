@@ -41,17 +41,25 @@ if (HealthNotCollapsed == true) {
 }
 
 //GL Inquiry
+WebUI.delay(GlobalVariable.Delay3)
+
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Button - Create New GL'))
 
 //Claim
+WebUI.delay(GlobalVariable.Delay3)
+
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Cancel'))
 
 //GL Inquiry
+WebUI.delay(GlobalVariable.Delay3)
+
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Button - Close'))
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Please Confirm/Button - Yes, Close Application'))
 
 //Verify Create Ticket
+WebUI.delay(GlobalVariable.Delay3)
+
 def GeneralNotCollapsed = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Home/Button - General Not Collapsed'), GlobalVariable.Delay0)
 
 if (GeneralNotCollapsed == true) {
@@ -63,6 +71,8 @@ if (GeneralNotCollapsed == true) {
 }
 
 //Create Ticket
+WebUI.delay(GlobalVariable.Delay3)
+
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Exit'))
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Please Confirm/Button - Yes, Close Application'))

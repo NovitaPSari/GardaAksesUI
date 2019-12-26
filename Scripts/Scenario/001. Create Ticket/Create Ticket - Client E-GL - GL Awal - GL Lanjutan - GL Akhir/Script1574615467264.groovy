@@ -92,7 +92,7 @@ def ProductType = 'Inpatient'
 
 def GLType = 'Awal'
 
-def GLType2 = 'Lanjutan'
+def GLType2 = 'Revisi'
 
 def GLType3 = 'Akhir'
 
@@ -207,7 +207,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType3])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType3, ('TicketID') : GlobalVariable.TicketIDLanjutan
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType3, ('TicketID') : GlobalVariable.TicketIDRevisi
         , ('NewMemberName') : null])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : null, ('MemberStatus') : null
