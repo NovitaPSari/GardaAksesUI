@@ -174,7 +174,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType2])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('TicketID') : GlobalVariable.TicketIDAwal
-        , ('GLType') : GLType2, ('Member') : Member])
+        , ('GLType') : GLType2, ('NewMemberName') : NewMemberName])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : Member3, ('MemberStatus') : null
         , ('NewMemberName') : NewMemberName, ('MemberName') : null, ('FamilyPhoneNo') : null, ('ProductType') : null, ('GLType') : null

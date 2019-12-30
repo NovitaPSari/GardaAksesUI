@@ -87,6 +87,8 @@ if ((((((InterruptedCall != null) && (ContactLine == 'Provider')) && (Product ==
     if (((ContactLine == 'Provider') && (Product == 'Health')) || ((ContactLine == 'Provider') && (Product == 'Non Health'))) {
         WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
 		
+		WebUI.delay(GlobalVariable.Delay0)
+		
 		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
 		
 		WebUI.delay(GlobalVariable.Delay0)
@@ -99,8 +101,7 @@ if ((((((InterruptedCall != null) && (ContactLine == 'Provider')) && (Product ==
     WebUI.delay(0)
 }
 
-
-WebUI.delay(GlobalVariable.Delay1)
+WebUI.delay(GlobalVariable.Delay2)
 
 //Phone Number
 if (InterruptedCall == null) {

@@ -20,7 +20,7 @@ import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.By as By
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-WebUI.delay(GlobalVariable.Delay5)
+WebUI.delay(GlobalVariable.Delay7)
 
 //Popup Member Belum Termapping
 def InformationMember = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Information'), 
@@ -156,9 +156,11 @@ if (DiagnosisStatus != null) {
 
     WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Diagnosis/Input - Diagnosis ID'), DiagnosisID)
 
-    WebUI.delay(GlobalVariable.Delay1)
+    WebUI.delay(GlobalVariable.Delay2)
 
     WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Diagnosis/Input - Diagnosis ID'), DiagnosisID)
+	
+	WebUI.delay(GlobalVariable.Delay2)
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Diagnosis/Choose - Diagnosis ID'))
 
@@ -186,7 +188,7 @@ if (DiagnosisStatus != null) {
     
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Diagnosis/Button - Choose'))
 	
-	WebUI.delay(GlobalVariable.Delay1)
+	WebUI.delay(GlobalVariable.Delay2)
 
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Diagnosis/Button - Submit'))
 } else {

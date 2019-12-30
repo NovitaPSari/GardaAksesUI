@@ -154,13 +154,6 @@ def Validasi4 = null
 
 def Validasi5 = null
 
-//Query DB
-def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
-
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
-
-CustomKeywords.'querySQL.update.execute'(queryContactName)
-
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
@@ -170,6 +163,13 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
+
+//Query DB
+def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
+
+CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+
+CustomKeywords.'querySQL.update.execute'(queryContactName)
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType, ('TicketID') : null
         , ('NewMemberName') : null])
