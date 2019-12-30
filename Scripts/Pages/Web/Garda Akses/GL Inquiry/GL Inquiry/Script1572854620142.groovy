@@ -13,7 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.delay(GlobalVariable.Delay5)
+WebUI.delay(GlobalVariable.Delay6)
 
 if (GLType == 'Awal') {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Button - Create New GL')) //    WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
@@ -33,6 +33,8 @@ if (GLType == 'Awal') {
 	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Input - Member Name'), NewMemberName)
 
 	WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Button - Search'))
+	
+	WebUI.delay(GlobalVariable.Delay5)
 
 	WebUI.waitForElementPresent(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'), GlobalVariable.Delay3)
 	
