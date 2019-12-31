@@ -20,16 +20,9 @@ import org.openqa.selenium.WebElement as WebElement
 import org.openqa.selenium.By as By
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-//int y = OnLoop
-//
-//int i = 1
-//
-//for (a = i; a <= y; a++) {}
+WebUI.delay(GlobalVariable.Delay6)
 
-
-WebUI.delay(GlobalVariable.Delay3)
-
-//Verify Button Create e-GL
+//Button Health
 def HealthNotCollapsed = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button - Health Not Collapsed'), GlobalVariable.Delay0)
 
 if (HealthNotCollapsed == true) {
@@ -40,25 +33,20 @@ if (HealthNotCollapsed == true) {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create e-GL'))
 }
 
-//GL Inquiry
-WebUI.delay(GlobalVariable.Delay3)
+WebUI.delay(GlobalVariable.Delay6)
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Button - Create New GL'))
 
-//Claim
-WebUI.delay(GlobalVariable.Delay3)
+WebUI.delay(GlobalVariable.Delay6)
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Cancel'))
-
-//GL Inquiry
-WebUI.delay(GlobalVariable.Delay3)
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Button - Close'))
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Please Confirm/Button - Yes, Close Application'))
 
-//Verify Create Ticket
-WebUI.delay(GlobalVariable.Delay3)
+//Button General
+WebUI.delay(GlobalVariable.Delay6)
 
 def GeneralNotCollapsed = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Home/Button - General Not Collapsed'), GlobalVariable.Delay0)
 
@@ -70,8 +58,7 @@ if (GeneralNotCollapsed == true) {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create Ticket'))
 }
 
-//Create Ticket
-WebUI.delay(GlobalVariable.Delay3)
+WebUI.delay(GlobalVariable.Delay6)
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Exit'))
 

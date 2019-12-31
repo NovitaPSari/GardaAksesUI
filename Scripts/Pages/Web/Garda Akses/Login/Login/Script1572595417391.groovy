@@ -13,7 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser(GlobalVariable.URLGardaAkses4)
+WebUI.openBrowser(GlobalVariable.URLGardaAksesProduction)
 
 WebUI.maximizeWindow()
 
@@ -22,3 +22,4 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Login/Input User ID'), UserI
 WebUI.setText(findTestObject('Pages/Web/Garda Akses/Login/Input Password'), Password)
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Login/Button Masuk'))
+
