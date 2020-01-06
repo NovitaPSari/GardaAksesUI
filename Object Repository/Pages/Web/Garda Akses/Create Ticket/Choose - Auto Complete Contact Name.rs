@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Autocomplete Contact Name</name>
+   <name>Choose - Auto Complete Contact Name</name>
    <tag></tag>
    <elementGuidId>17f59088-db1f-4789-a313-dd3f17a913b6</elementGuidId>
    <selectorCollection>

@@ -31,11 +31,11 @@ WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Channel
 //Contact Name
 WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Contact Name'), ContactName)
 
-def AutoComplete = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Autocomplete Contact Name'), 
+def AutoComplete = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Auto Complete Contact Name'), 
     GlobalVariable.Delay1)
 
-if (AutoComplete == true){
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Choose - Autocomplete Contact Name'))
+if (AutoComplete == true) {
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Auto Complete Contact Name'))
 } else {
     WebUI.delay(0)
 }
@@ -57,187 +57,186 @@ if (InterruptedCall == 'Yes') {
     WebUI.delay(0)
 }
 
+//========================= Start Customer =========================
+
 //Customer Phone
-if (InterruptedCall == null) {
-    if (((ContactLine == 'Customer') && (Product == 'Health')) || ((ContactLine == 'Customer') && (Product == 'Non Health'))) {
-        WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Phone'), CustomerPhone)
-    } else {
-        WebUI.delay(0)
-    }
+if (ContactLine == 'Customer' && ChannelType == 'Call' ||
+	ContactLine == 'Customer' && ChannelType == 'WhatsApp' ||
+	ContactLine == 'Customer' && ChannelType == 'SMS' ||
+	ContactLine == 'Customer' && ChannelType == 'Walk In' ||
+	ContactLine == 'Customer' && ChannelType == 'Email' ||
+	ContactLine == 'Customer' && ChannelType == 'Twitter' ||
+	ContactLine == 'Customer' && ChannelType == 'Facebook' ||
+	ContactLine == 'Customer' && ChannelType == 'Instagram' ||
+	ContactLine == 'Customer' && ChannelType == 'Media Masa' ||
+	ContactLine == 'Customer' && ChannelType == 'Surat') {
+	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Phone'), CustomerPhone)
 } else {
-    WebUI.delay(0)
+	WebUI.delay(0)
 }
 
-//Gender
-if (InterruptedCall == null) {
-    if (((ContactLine == 'Customer') && (Product == 'Health')) || ((ContactLine == 'Customer') && (Product == 'Non Health'))) {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Radio Button - Customer Gender', 
-                [('GenderCT') : GenderCT]))
-    } else {
-        WebUI.delay(0)
-    }
+//Customer Email
+if (ContactLine == 'Customer' && ChannelType == 'Email') {
+	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Email'), CustomerEmail)
 } else {
-    WebUI.delay(0)
+	WebUI.delay(0)
 }
+
+//Customer Social Media Account
+if (ContactLine == 'Customer' && ChannelType == 'Twitter' ||
+	ContactLine == 'Customer' && ChannelType == 'Facebook' ||
+	ContactLine == 'Customer' && ChannelType == 'Instagram' ||
+	ContactLine == 'Customer' && ChannelType == 'Media Masa' ||
+	ContactLine == 'Customer' && ChannelType == 'Surat') {
+	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Social Media'), CustomerSocialMedia)
+} else {
+	WebUI.delay(0)
+}
+
+//Customer Gender
+if (ContactLine == 'Customer' && ChannelType == 'Call' ||
+	ContactLine == 'Customer' && ChannelType == 'WhatsApp' ||
+	ContactLine == 'Customer' && ChannelType == 'SMS' ||
+	ContactLine == 'Customer' && ChannelType == 'Walk In' ||
+	ContactLine == 'Customer' && ChannelType == 'Email' ||
+	ContactLine == 'Customer' && ChannelType == 'Twitter' ||
+	ContactLine == 'Customer' && ChannelType == 'Facebook' ||
+	ContactLine == 'Customer' && ChannelType == 'Instagram' ||
+	ContactLine == 'Customer' && ChannelType == 'Media Masa' ||
+	ContactLine == 'Customer' && ChannelType == 'Surat') {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Customer Gender'), CustomerGender)
+} else {
+	WebUI.delay(0)
+}
+
+//========================== End Customer ==========================
+
+//========================= Start Provider =========================
 
 //Provider Name
-if ((((((InterruptedCall != null) && (ContactLine == 'Provider')) && (Product == 'Health')) && (ServiceType == 'Approval Tindakan/Terapi/Obat')) || 
-((((InterruptedCall != null) && (ContactLine == 'Provider')) && (Product == 'Health')) && (ServiceType == 'Inquiry'))) || 
-(InterruptedCall == null)) {
-    if (((ContactLine == 'Provider') && (Product == 'Health')) || ((ContactLine == 'Provider') && (Product == 'Non Health'))) {
-        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
-		
-		WebUI.delay(GlobalVariable.Delay0)
-		
-		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
-		
-		WebUI.delay(GlobalVariable.Delay0)
-
-        WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Provider Name', [('ProviderName') : ProviderName]))
-    } else {
-        WebUI.delay(0)
-    }
-} else {
-    WebUI.delay(0)
-}
-
-WebUI.delay(GlobalVariable.Delay2)
-
-//Phone Number
-if (InterruptedCall == null) {
-    if (((ContactLine == 'Provider') && (Product == 'Health')) || ((ContactLine == 'Provider') && (Product == 'Non Health'))) {
-        def CheckPhoneNumber = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), 
-            'value')
-
-        if (CheckPhoneNumber == '') {
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), 
-                ProviderPhoneNumber)
-        } else {
-            WebUI.delay(0)
-        }
-    } else {
-        WebUI.delay(0)
-    }
-} else {
-    WebUI.delay(0)
-}
-
-//Email
-if (ContactLine == 'Provider') {
-	if (InterruptedCall == null) {
-	    def CheckEmail = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Email Provider'), 
-	        'value')
+if (ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Call' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'WhatsApp' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'SMS' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Email' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Chatbot' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Live chat' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Website' && ServiceType == 'Complaint') {
+	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
 	
-	    if (CheckEmail == '') {
-	        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Email Provider'), Email)
-	    } else {
-	        WebUI.delay(0)
-	    }
-	} else {
-	    WebUI.delay(0)
-	}
-
-	if (ChannelType != 'Email') {
-		if (ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
-			ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Inquiry' || 
-			ContactLine == 'Customer' && Product == 'Health' && ServiceType == 'Inquiry') {
-			def CheckEmail2 = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Email Provider'),
-				'value')
-			if (CheckEmail2 != '') {
-				WebUI.clearText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Email Provider'))
-			} else {
-				WebUI.delay(0)
-			}	
-		} else {
-			WebUI.delay(0)
-		}
-	} else {
-		WebUI.delay(0)
-	}
-} else if (ContactLine == 'Customer') {
-	if (InterruptedCall == null) {
-		def CheckEmail = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email Customer'),
-			'value')
-		
-		if (CheckEmail == '') {
-			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email Customer'), Email)
-		} else {
-			WebUI.delay(0)
-		}
-	} else {
-		WebUI.delay(0)
-	}
+	WebUI.delay(GlobalVariable.Delay0)
 	
-	if (ChannelType != 'Email') {
-		if (ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
-			ContactLine == 'Provider' && Product == 'Health' && ServiceType == 'Inquiry' ||
-			ContactLine == 'Customer' && Product == 'Health' && ServiceType == 'Inquiry') {
-			def CheckEmail2 = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email Customer'),
-				'value')
-			if (CheckEmail2 != '') {
-				WebUI.clearText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Email Customer'))
-			} else {
-				WebUI.delay(0)
-			}
-		} else {
-			WebUI.delay(0)
-		}
-	} else {
-		WebUI.delay(0)
-	}
-}
-
-//Social Media Account  
-if (ChannelType == 'Twitter' || ChannelType == 'Facebook' || ChannelType == 'Instagram' || ChannelType == 'Media Masa' || ChannelType == 'Surat') {
-	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Social Media Account'), SocialMediaAccount)
+	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Choose - Auto Complete Provider Name'))
 } else {
 	WebUI.delay(0)
 }
 
-//Fax
-if (InterruptedCall == null) {
-    if ((ContactLine == 'Provider') && (Product == 'Health')) {
-        def CheckFax = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Fax'), 
-            'value')
-
-        if (CheckFax == '') {
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Fax'), Fax)
-        } else {
-            WebUI.delay(0)
-        }
-    } else {
-        WebUI.delay(0)
-    }
+//Provider Phone Number
+if (ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Inquiry' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Call' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'WhatsApp' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'SMS' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Email' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Chatbot' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Live chat' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Non Health' && ChannelType == 'Website' && ServiceType == 'Complaint') {
+	def ValueProviderPhoneNumber = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), 'value')
+	
+	if (ValueProviderPhoneNumber == '') {
+		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), GlobalVariable.ProviderPhoneNumber)
+	} else {
+		WebUI.delay(0)
+	}
 } else {
-    WebUI.delay(0)
+WebUI.delay(0)
 }
 
-WebUI.delay(GlobalVariable.Delay1)
-
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Next'))
-
-if (InterruptedCall == 'Yes') {
-	if (GLType == 'Awal') {
-		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
-		
-		GlobalVariable.TicketIDAwal = result.substring(22, 30)
+//Provider Email
+if (ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Approval Tindakan/Terapi/Obat' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Claim' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Call' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'WhatsApp' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'SMS' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Chatbot' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Live chat' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Website' && ServiceType == 'Complaint' ||
+	ContactLine == 'Provider' && Product == 'Health' && ChannelType == 'Email' && ServiceType == 'Inquiry') {
+	def ValueProviderEmail = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Email'), 'value')
 	
-		println(GlobalVariable.TicketIDAwal)
-	} else if (GLType == 'Revisi') {
-		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
-	
-		GlobalVariable.TicketIDRevisi = result.substring(22, 30)
-	
-		println(GlobalVariable.TicketIDRevisi)
+	if (ValueProviderEmail == '') {
+		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Email'), GlobalVariable.ProviderEmail)
 	} else {
-		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
-	
-		GlobalVariable.TicketIDAkhir = result.substring(22, 30)
-	
-		println(GlobalVariable.TicketIDAkhir)
+		WebUI.delay(0)
 	}
-	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Interrupted Close'))
 } else {
 	WebUI.delay(0)
 }
+
+//========================== End Provider ==========================
+
+//Next
+WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Next')) 
+
