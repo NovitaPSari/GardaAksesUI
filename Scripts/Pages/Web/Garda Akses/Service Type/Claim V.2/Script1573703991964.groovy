@@ -133,6 +133,8 @@ if (ProductType != null) {
 }
 
 //GL Type
+WebUI.delay(GlobalVariable.Delay1)
+
 if (((GLType == 'Awal') || (GLType == 'Revisi')) || (GLType == 'Akhir')) {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - GL Type'))
 

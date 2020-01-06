@@ -28,8 +28,6 @@ def InterruptedCall = null //Yes or null
 def GenderCT = null
 def CustomerPhone = null
 def ProviderName = 'OJKSH00001'
-def ProviderPhoneNumber = null
-def Email = null
 def Fax = null
 
 //Inquiry//
@@ -97,10 +95,7 @@ CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Passwo
 
 CustomKeywords.'querySQL.update.execute'(queryContactName)
 
-//Script//
-
-
- 
+//Script// 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
 	[('UserID') : UserID,
 		('Password') : Password])
@@ -120,8 +115,6 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 		('CustomerPhone') : CustomerPhone,
 		('GenderCT') : GenderCT,
 		('ProviderName') : ProviderName,
-		('ProviderPhoneNumber') : ProviderPhoneNumber,
-		('Email') : Email,
 		('Fax') : Fax,
 		('GLType') : GLType])
 

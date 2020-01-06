@@ -119,4 +119,14 @@
       <initValue>'//b[text() = \'MANUAL REJECT\']'</initValue>
       <name>SummaryManualReject</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'081280704570'</initValue>
+      <name>ProviderPhoneNumber</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'ehu@beyond.asuransi.astra.co.id'</initValue>
+      <name>ProviderEmail</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Input - Email Customer</name>
+   <name>Input - Customer Social Media</name>
    <tag></tag>
-   <elementGuidId>9d7539ab-6980-44fd-84e6-e604df31a465</elementGuidId>
+   <elementGuidId>7d3b522f-7bbf-4071-8752-eccf6f2ca443</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;CEmail&quot;]//span[contains(text(), 'Email')]/parent::label/parent::div/div/div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;CSosMed&quot;]//span[contains(text(), 'Social Media Account')]/parent::label/parent::div/div/div/input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;CEmail&quot;]//span[contains(text(), 'Email')]/parent::label/parent::div/div/div/input</value>
+      <value>//*[@id=&quot;CSosMed&quot;]//span[contains(text(), 'Social Media Account')]/parent::label/parent::div/div/div/input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

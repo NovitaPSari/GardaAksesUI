@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Provider Name</name>
+   <name>Input - Customer Email</name>
    <tag></tag>
-   <elementGuidId>32712f5e-8b96-4b3d-9efb-5ff834cd82fb</elementGuidId>
+   <elementGuidId>9d7539ab-6980-44fd-84e6-e604df31a465</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;CT.txtprovidernameautocomplete-list&quot;]/div[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;CEmail&quot;]//span[contains(text(), 'Email')]/parent::label/parent::div/div/div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;CT.txtprovidernameautocomplete-list&quot;]/div</value>
+      <value>//*[@id=&quot;CEmail&quot;]//span[contains(text(), 'Email')]/parent::label/parent::div/div/div/input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

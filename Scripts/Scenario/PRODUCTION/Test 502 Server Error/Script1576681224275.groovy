@@ -18,7 +18,7 @@ import internal.GlobalVariable as GlobalVariable
 //Login//
 def UserID = 'ANT'
 
-def Password = 'P@ssword1721'
+def Password = 'MHSUC33hkPmqhm0hsfzEIg=='
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 

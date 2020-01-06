@@ -22,22 +22,50 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 WebUI.delay(GlobalVariable.Delay6)
 
+def PopUpError = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - 13142 Error Detected'), 
+    GlobalVariable.Delay0)
+
+if (PopUpError == true) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+} else {
+    WebUI.delay(0)
+}
+
 //Button Health
-def HealthNotCollapsed = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button - Health Not Collapsed'), GlobalVariable.Delay0)
+def HealthNotCollapsed = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button - Health Not Collapsed'), 
+    GlobalVariable.Delay0)
 
 if (HealthNotCollapsed == true) {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Health'))
-	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create e-GL'))
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Health'))
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create e-GL'))
 } else {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create e-GL'))
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create e-GL'))
 }
 
 WebUI.delay(GlobalVariable.Delay6)
 
+def PopUpError2 = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - 13142 Error Detected'), 
+    GlobalVariable.Delay0)
+
+if (PopUpError2 == true) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+} else {
+    WebUI.delay(0)
+}
+
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Button - Create New GL'))
 
 WebUI.delay(GlobalVariable.Delay6)
+
+def PopUpError3 = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - 13142 Error Detected'), 
+    GlobalVariable.Delay0)
+
+if (PopUpError3 == true) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+} else {
+    WebUI.delay(0)
+}
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Cancel'))
 
@@ -48,18 +76,38 @@ WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/P
 //Button General
 WebUI.delay(GlobalVariable.Delay6)
 
-def GeneralNotCollapsed = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Home/Button - General Not Collapsed'), GlobalVariable.Delay0)
+def PopUpError4 = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - 13142 Error Detected'), 
+    GlobalVariable.Delay0)
+
+if (PopUpError4 == true) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+} else {
+    WebUI.delay(0)
+}
+
+def GeneralNotCollapsed = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Home/Button - General Not Collapsed'), 
+    GlobalVariable.Delay0)
 
 if (GeneralNotCollapsed == true) {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button General'))
-	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create Ticket'))
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button General'))
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create Ticket'))
 } else {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create Ticket'))
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create Ticket'))
 }
 
 WebUI.delay(GlobalVariable.Delay6)
 
+def PopUpError5 = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - 13142 Error Detected'), 
+    GlobalVariable.Delay0)
+
+if (PopUpError5 == true) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+} else {
+    WebUI.delay(0)
+}
+
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Exit'))
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Please Confirm/Button - Yes, Close Application'))
+
