@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Date</name>
+   <name>Popup - Member Belum Ter-Mapping</name>
    <tag></tag>
-   <elementGuidId>e8990002-e412-49b1-8d3b-945099b01931</elementGuidId>
+   <elementGuidId>0bca8b44-8710-425a-b457-8c018dd3560a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>/html/body/div[6]/div/div[1]/table/tbody/tr[1]/td[5][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;D_a2is_Modal_Txt&quot;]/b[text() = 'belum ter-mapping']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html/body/div[6]/div/div[1]/table/tbody/tr[1]/td[5]</value>
+      <value>//*[@id=&quot;D_a2is_Modal_Txt&quot;]/b[text() = 'belum ter-mapping']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

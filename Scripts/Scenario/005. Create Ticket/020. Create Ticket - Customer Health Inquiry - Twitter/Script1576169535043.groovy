@@ -98,7 +98,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 		'SocialMediaAccount' : SocialMediaAccount, 
 		('Fax') : Fax, ('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Prrovider - Inquiry'), 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Inquiry'), 
 	[('MemberName') : MemberName, 
 		('ContactLine') : ContactLine, 
 		('Product') : Product, 

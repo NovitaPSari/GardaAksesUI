@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Gender</name>
+   <name>Choose - Month</name>
    <tag></tag>
-   <elementGuidId>57496a4d-b02b-48c7-83fc-11a8fd1cebc4</elementGuidId>
+   <elementGuidId>85eb4a8b-a872-497f-a26c-a374e4ba0300</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//input[@type = &quot;radio&quot;]//following-sibling::span[text() = '${Gender}']</value>
+         <value>/html/body/div[6]/div/div[2]/table/tbody/tr/td/span[text() = '${Month}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//input[@type = &quot;radio&quot;]//following-sibling::span[text() = '${Gender}']</value>
+      <value>/html/body/div[6]/div/div[2]/table/tbody/tr/td/span[text() = '${Month}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

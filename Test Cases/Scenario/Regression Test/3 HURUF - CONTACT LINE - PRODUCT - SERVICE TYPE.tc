@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>002. 2 Diagnoas - Tidak Ada Reject Message</name>
+   <name>3 HURUF - CONTACT LINE - PRODUCT - SERVICE TYPE</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>e7f83977-2ac8-49f9-9606-40a53cac2a28</testCaseGuid>
+   <testCaseGuid>4cb97ff4-b3b8-4ad4-9596-d883a2de131c</testCaseGuid>
 </TestCaseEntity>

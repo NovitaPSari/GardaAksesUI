@@ -95,7 +95,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Prrovider - Inquiry'), 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Inquiry'), 
 	[('MemberName') : MemberName, 
 		('ContactLine') : ContactLine, 
 		('Product') : Product, 

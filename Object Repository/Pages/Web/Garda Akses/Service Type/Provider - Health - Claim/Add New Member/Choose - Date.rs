@@ -3,11 +3,11 @@
    <description></description>
    <name>Choose - Date</name>
    <tag></tag>
-   <elementGuidId>e8990002-e412-49b1-8d3b-945099b01931</elementGuidId>
+   <elementGuidId>9e196feb-01be-46dd-9249-d13d9a8a55c8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>/html/body/div[6]/div/div[1]/table/tbody/tr[1]/td[5][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>/html/body/div[6]/div/div[1]/table/tbody//td[@class = &quot;day&quot; and text() = ${Date}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html/body/div[6]/div/div[1]/table/tbody/tr[1]/td[5]</value>
+      <value>/html/body/div[6]/div/div[1]/table/tbody//td[@class = &quot;day&quot; and text() = ${Date}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
