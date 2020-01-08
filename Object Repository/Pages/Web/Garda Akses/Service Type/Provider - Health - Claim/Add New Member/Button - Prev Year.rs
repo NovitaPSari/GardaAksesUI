@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Input - Member</name>
+   <name>Button - Prev Year</name>
    <tag></tag>
-   <elementGuidId>150d51c5-51eb-4ed6-b0de-384afafae308</elementGuidId>
+   <elementGuidId>e5b386af-83ce-4964-8126-916eb6c0ddf2</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//input[@id=&quot;PatientInformation.MemberName&quot;]</value>
+         <value>/html/body/div[6]/div/div[2]/table/thead/tr/th[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//input[@id=&quot;PatientInformation.MemberName&quot;]</value>
+      <value>/html/body/div[6]/div/div[2]/table/thead/tr/th[1]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

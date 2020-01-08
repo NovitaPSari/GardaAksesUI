@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Date</name>
+   <name>Button - Submit</name>
    <tag></tag>
-   <elementGuidId>e8990002-e412-49b1-8d3b-945099b01931</elementGuidId>
+   <elementGuidId>583d6355-9fee-4343-8cf5-7e0fe2e5a07c</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>XPATH</key>
+      </entry>
+      <entry>
          <key>BASIC</key>
-         <value>/html/body/div[6]/div/div[1]/table/tbody/tr[1]/td[5][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;popUpAddNewMembership-0&quot;]//button[text() = 'Submit'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +20,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html/body/div[6]/div/div[1]/table/tbody/tr[1]/td[5]</value>
+      <value>//*[@id=&quot;popUpAddNewMembership-0&quot;]//button[text() = 'Submit']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

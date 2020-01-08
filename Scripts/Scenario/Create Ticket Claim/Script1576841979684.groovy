@@ -70,7 +70,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 		('Fax') : Fax,
 		('GLType') : GLType])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'),
-	[('GLType') : GLType,
-		('TicketID') : null,
-		('NewMemberName') : null])
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'),
+//	[('GLType') : GLType,
+//		('TicketID') : null,
+//		('NewMemberName') : null])

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Month</name>
+   <name>Input - Member</name>
    <tag></tag>
-   <elementGuidId>85eb4a8b-a872-497f-a26c-a374e4ba0300</elementGuidId>
+   <elementGuidId>150d51c5-51eb-4ed6-b0de-384afafae308</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>/html/body/div[6]/div/div[2]/table/tbody/tr/td//span[@class=&quot;month&quot; and text() = '${Month}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;PatientInformation-0&quot;]//span[text() = 'Member']/parent::label/parent::div/div/div/input[@id=&quot;PatientInformation.MemberName&quot;][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html/body/div[6]/div/div[2]/table/tbody/tr/td//span[@class=&quot;month&quot; and text() = '${Month}']</value>
+      <value>//*[@id=&quot;PatientInformation-0&quot;]//span[text() = 'Member']/parent::label/parent::div/div/div/input[@id=&quot;PatientInformation.MemberName&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

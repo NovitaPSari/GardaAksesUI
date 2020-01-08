@@ -26,13 +26,13 @@ if (CheckNewMember == 1) {
 	if (MemberStatus == 0) {
 				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - X'))
 				
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Add New Member'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Add New Member'))
 	
-				WebUI.verifyElementNotPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Add New Member/Text - New Member Name', [('NewMemberName') : NewMemberName]), GlobalVariable.Delay1)
+				WebUI.verifyElementNotPresent(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Text - New Member Name', [('NewMemberName') : NewMemberName]), GlobalVariable.Delay1)
 	} else {
-	WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Add New Member'))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Add New Member'))
 	
-	WebUI.verifyElementNotPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Add New Member/Text - New Member Name', [('NewMemberName') : NewMemberName]), GlobalVariable.Delay1)
+	WebUI.verifyElementNotPresent(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Text - New Member Name', [('NewMemberName') : NewMemberName]), GlobalVariable.Delay1)
 	
 	if (MemberStatus == 0) {
 		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - X'))
@@ -42,27 +42,27 @@ if (CheckNewMember == 1) {
 	if (Status != 3) {
 		if (GLType == 'Awal') {
 			if (StatusMember == '1') {
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Add New Member'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Add New Member'))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - New Member Type'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Button - New Member Type'))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Choose - New Member Type', [('NewMemberType') : NewMemberType]))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Choose - New Member Type', [('NewMemberType') : NewMemberType]))
 		
-				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Input - New Member Name'), NewMemberName)
+				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Input - New Member Name'), NewMemberName)
 		
-				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Input - Client Name'), ClientName)
+				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Input - Client Name'), ClientName)
 		
-				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Input - Client Name'), ClientName)
+				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Input - Client Name'), ClientName)
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Choose - Client Name'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Choose - Client Name'))
 		
-				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Input - Employee ID'), EmployeeID)
+				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Input - Employee ID'), EmployeeID)
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Date Picker'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Button - Date Picker'))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Month Year'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Button - Month Year'))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Year'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Button - Year'))
 		
 				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Prev Year'))
 		
@@ -70,27 +70,27 @@ if (CheckNewMember == 1) {
 		
 				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Choose - Year', [('Year') : Year]))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Choose - Month', [('Month') : Month]))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Choose - Month', [('Month') : Month]))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Choose - Date'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Choose - Date'))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Classification'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Button - Classification'))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Choose - Classification', [('Classification') : Classification]))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Choose - Classification', [('Classification') : Classification]))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Gender', [('Gender') : Gender]))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Button - Gender', [('Gender') : Gender]))
 		
-				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Submit'))
+				WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Add New Member/Button - Submit'))
 				
 				if (MemberStatus == 0) {
 					WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - X'))
 					}
 			} else if (StatusMember == '2') {
-				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Input - Member'), Member)
+				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Input - Member'), Member)
 		
 				WebUI.delay(GlobalVariable.Delay1)
 		
-				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Input - Member'), Member)
+				WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Input - Member'), Member)
 		
 				WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Choose - Member'))
 		
@@ -99,17 +99,17 @@ if (CheckNewMember == 1) {
 				}
 			}
 			
-			WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Input - Phone No'), FamilyPhoneNo)
+			WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Input - Patient, Family Phone No'), FamilyPhoneNo)
 		
-			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Product Type'))
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Product Type'))
 		
-			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Choose - Product Type', [('ProductType') : ProductType]))
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Choose - Product Type', [('ProductType') : ProductType]))
 		
-			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - GL Type'))
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - GL Type'))
 		
-			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Choose - GL Type', [('GLType') : GLType]))
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Choose - GL Type', [('GLType') : GLType]))
 		
-			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Diagnosis'))
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Diagnosis'))
 		
 			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Diagnosis/Button - Status'))
 		
@@ -174,13 +174,13 @@ if (CheckNewMember == 1) {
 				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Treatment RB Class/Button - Choose'))
 			}
 		} else if (GLType == 'Lanjutan') {
-			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - GL Type'))
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - GL Type'))
 		
-			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Choose - GL Type', [('GLType') : GLType]))
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Choose - GL Type', [('GLType') : GLType]))
 		} else if (GLType == 'Akhir') {
-			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - GL Type'))
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - GL Type'))
 		
-			WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Choose - GL Type', [('GLType') : GLType]))
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Choose - GL Type', [('GLType') : GLType]))
 		} else {
 			WebUI.delay(GlobalVariable.Delay0)
 		}

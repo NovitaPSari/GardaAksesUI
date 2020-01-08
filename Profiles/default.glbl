@@ -129,4 +129,9 @@
       <initValue>'ehu@beyond.asuransi.astra.co.id'</initValue>
       <name>ProviderEmail</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'081245708070'</initValue>
+      <name>PatientFamilyPhoneNo</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>
