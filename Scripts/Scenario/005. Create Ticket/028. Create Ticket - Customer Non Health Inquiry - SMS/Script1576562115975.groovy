@@ -49,6 +49,8 @@ def Fax = null
 
 def GLType = 'Awal'
 
+def ActionCT = 'Next'
+
 //Choose Customer
 def ChooseCategoryCustomer = 'Policy Holder / Relatives' // Policy Holder / Relatives or Others
 
@@ -95,8 +97,8 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
+        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('CustomerGender') : GenderCT, ('ProviderName') : ProviderName
+        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Choose Customer/Choose Customer'), [('ChooseCategoryCustomer') : ChooseCategoryCustomer
         , ('SearchBy') : SearchBy, ('Parameter') : Parameter], FailureHandling.STOP_ON_FAILURE)

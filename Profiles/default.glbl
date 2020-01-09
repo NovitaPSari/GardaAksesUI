@@ -82,6 +82,21 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
+      <name>TicketID1</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>TicketID2</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>TicketID3</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
       <name>TicketID4</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

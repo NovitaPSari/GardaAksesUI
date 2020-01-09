@@ -50,6 +50,8 @@ def Fax = null
 
 def GLType = 'Awal'
 
+def ActionCT = 'Next'
+
 //Inquiry//
 def MemberName = findTestData('MemberNoAll').getValue(1, 1)
 
@@ -93,10 +95,10 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
+        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('CustomerGender') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, 
 		'SocialMediaAccount' : SocialMediaAccount, 
-		('Fax') : Fax, ('GLType') : GLType])
+		('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Inquiry'), 
 	[('MemberName') : MemberName, 

@@ -61,7 +61,7 @@ if (InterruptedCall == 'Yes') {
 
 //========================= Start Customer =========================
 //Customer Phone
-if (((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || 
+if ((((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || 
 	((ContactLine == 'Customer') && (ChannelType == 'WhatsApp'))) || 
 	((ContactLine == 'Customer') && (ChannelType == 'SMS'))) || 
 	((ContactLine == 'Customer') && (ChannelType == 'Walk In'))) || 
@@ -70,15 +70,16 @@ if (((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) ||
 	((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || 
 	((ContactLine == 'Customer') && (ChannelType == 'Instagram'))) || 
 	((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Surat'))) {
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Phone'), CustomerPhone)
+	((ContactLine == 'Customer') && (ChannelType == 'Surat'))) ||
+	((ContactLine == 'Customer') && (ChannelType == 'Lembaga'))) {
+    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Phone'), GlobalVariable.ProviderPhoneNumber)
 } else {
     WebUI.delay(0)
 }
 
 //Customer Email
 if ((ContactLine == 'Customer') && (ChannelType == 'Email')) {
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Email'), CustomerEmail)
+    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Email'), GlobalVariable.ProviderEmail)
 } else {
     WebUI.delay(0)
 }
@@ -96,7 +97,7 @@ if ((((((ContactLine == 'Customer') && (ChannelType == 'Twitter')) ||
 }
 
 //Customer Gender
-if (((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || 
+if ((((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || 
 	((ContactLine == 'Customer') && (ChannelType == 'WhatsApp'))) || 
 	((ContactLine == 'Customer') && (ChannelType == 'SMS'))) || 
 	((ContactLine == 'Customer') && (ChannelType == 'Walk In'))) || 
@@ -105,7 +106,8 @@ if (((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) ||
 	((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || 
 	((ContactLine == 'Customer') && (ChannelType == 'Instagram'))) || 
 	((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Surat'))) {
+	((ContactLine == 'Customer') && (ChannelType == 'Surat'))) ||
+	((ContactLine == 'Customer') && (ChannelType == 'Lembaga'))) {
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Customer Gender', [('CustomerGender') : CustomerGender]))
 } else {
     WebUI.delay(0)

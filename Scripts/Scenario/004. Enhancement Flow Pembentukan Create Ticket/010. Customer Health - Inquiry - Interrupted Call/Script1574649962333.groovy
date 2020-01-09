@@ -27,13 +27,14 @@ def ContactName = findTestData('ContactName').getValue(1, 1)
 def ContactType = 'Saudara' //Bebas
 def ServiceType = 'Inquiry'
 def InterruptedCall = 'Yes' //Yes or Null
-def GenderCT = null
+def GenderCT = 'Male'
 def CustomerPhone = null
 def ProviderName = 'OJKSH00001'
 def ProviderPhoneNumber = null
 def Email = null
 def Fax = null
 def GLType = 'Awal'
+def ActionCT = 'Next'
 
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
@@ -66,9 +67,9 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 		('ServiceType') : ServiceType,
 		('InterruptedCall') : InterruptedCall,
 		('CustomerPhone') : CustomerPhone,
-		('GenderCT') : GenderCT,
+		('CustomerGender') : GenderCT,
 		('ProviderName') : ProviderName,
 		('ProviderPhoneNumber') : ProviderPhoneNumber,
 		('Email') : Email,
 		('Fax') : Fax,
-		('GLType') : GLType])
+		('GLType') : GLType, ('Action') : ActionCT])

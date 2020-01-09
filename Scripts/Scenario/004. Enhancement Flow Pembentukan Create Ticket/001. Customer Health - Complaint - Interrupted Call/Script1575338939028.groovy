@@ -23,11 +23,11 @@ def Password = 'Password95'
 //Create Ticket//
 def ContactLine = 'Customer'
 
-def Product = 'Health'
-
 def ChannelType = 'Call' //Bebas
 
 def ContactName = findTestData('ContactName').getValue(1, 1)
+
+def Product = 'Health'
 
 def ContactType = 'Saudara' //Bebas
 
@@ -48,6 +48,8 @@ def Email = null
 def Fax = null
 
 def GLType = 'Awal'
+
+def ActionCT = 'Next'
 
 //Inquiry//
 def MemberName = findTestData('MemberNoAll').getValue(1, 1)
@@ -80,30 +82,11 @@ CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Passwo
 CustomKeywords.'querySQL.update.execute'(queryContactName)
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
-	[('UserID') : UserID,
-		('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
-	[('ContactLine') : ContactLine,
-		('Product') : Product,
-		('ChannelType') : ChannelType,
-		('ContactName') : ContactName,
-		('ContactType') : ContactType,
-		('ServiceType') : ServiceType,
-		('InterruptedCall') : InterruptedCall,
-		('CustomerPhone') : CustomerPhone,
-		('CustomerGender') : GenderCT,
-		('ProviderName') : ProviderName,
-		('ProviderPhoneNumber') : ProviderPhoneNumber,
-		('Email') : Email,
-		('Fax') : Fax,
-		('GLType') : GLType])
-
-println(GlobalVariable.TicketIDAwal)
-
-println(GlobalVariable.TicketIDRevisi)
-
-println(GlobalVariable.TicketIDAkhir)
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('CustomerGender') : GenderCT, ('ProviderName') : ProviderName
+        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
