@@ -18,32 +18,22 @@ def UserID = 'DNS'
 
 def Password = 'Password95'
 
+//Home//
+def Menu = 'General'
+
+def SubMenu = 'Create Ticket'
+
+
 //Create Ticket//
 def ContactLine = 'Provider'
-
 def Product = 'Health'
-
 def ChannelType = 'Call'
-
 def ContactName = findTestData('ContactName').getValue(1, 1)
-
 def ContactType = 'Farmasi'
-
 def ServiceType = 'Claim'
-
 def InterruptedCall = null //Yes or null
-
-def GenderCT = null
-
-def CustomerPhone = null
-
 def ProviderName = 'OJKSH00001'
-
-def ProviderPhoneNumber = null
-
-def Email = null
-
-def Fax = null
+def Action = 'Next'
 
 //Inquiry//
 def SearchBy = 'TicketNo'
@@ -157,12 +147,18 @@ def Validasi5 = null
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), 
+	[('ContactLine') : ContactLine, 
+		('Product') : Product, 
+		('ChannelType') : ChannelType, 
+		('ContactName') : ContactName, 
+		('ContactType') : ContactType, 
+		('ServiceType') : ServiceType, 
+		('InterruptedCall') : InterruptedCall, 
+		('ProviderName') : ProviderName, 
+		('Action') : Action,])
 
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
