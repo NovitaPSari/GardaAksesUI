@@ -31,6 +31,7 @@ def ProviderName = 'OJKSH00001'
 def ProviderPhoneNumber = null
 def Email = null
 def Fax = null
+def ActionCT = 'Next'
 
 //Inquiry//
 def SearchBy = 'TicketNo'

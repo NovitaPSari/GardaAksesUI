@@ -45,6 +45,8 @@ def Email = null
 
 def Fax = null
 
+def ActionCT = 'Next'
+
 //Inquiry//
 def SearchBy = 'TicketNo'
 
@@ -166,7 +168,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
 		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
 		, ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-		, ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType])
+		, ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType, ('TicketID') : null
 		, ('NewMemberName') : null])
