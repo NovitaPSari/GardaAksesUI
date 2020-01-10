@@ -29,6 +29,7 @@ def GenderCT = null
 def CustomerPhone = null
 def ProviderName = 'OJKSH00001'
 def Fax = null
+def ActionCT = 'Next'
 
 //Inquiry//
 def SearchBy = 'TicketNo'
@@ -116,7 +117,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 		('GenderCT') : GenderCT,
 		('ProviderName') : ProviderName,
 		('Fax') : Fax,
-		('GLType') : GLType])
+		('GLType') : GLType, ('Action') : ActionCT])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'),
 	[('GLType') : GLType,

@@ -45,6 +45,8 @@ def Email = null
 
 def Fax = null
 
+def ActionCT = 'Next'
+
 //Inquiry//
 def SearchBy = 'TicketNo'
 

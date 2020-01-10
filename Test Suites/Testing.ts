@@ -19,13 +19,13 @@
    <testCaseLink>
       <guid>015d906e-5f4f-434c-8f93-aaab0f888531</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Client E-GL - GL Awal - GL Lanjutan</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>7a4de616-b693-41ff-9e55-689d95ac9d0d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Client E-GL - GL Awal - GL Lanjutan - GL Akhir</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -37,61 +37,61 @@
    <testCaseLink>
       <guid>5ab03ff6-5b86-4484-8862-3872dbc5d767</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Client E-GL - GL Awal - GL Akhir</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>cbecd423-bcbf-4763-8a2b-62ff1d1c58c4</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Non Client E-GL - GL Awal</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>87f814c9-398b-41fb-81ea-dc2bab8b861c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Non Client E-GL - GL Awal - GL Lanjutan</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>eeb15a4f-7a60-44c2-a56e-611aea7e0b73</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Non Client E-GL - GL Awal - GL Lanjutan - GL Akhir</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>fedcaee9-0332-416f-b490-277a5b4c99a1</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Non Client E-GL - GL Awal - GL Akhir</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>c35bfd34-e2a5-4689-9377-96c4d8219c6c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/001. Create Ticket/Create Ticket - Non Client E-GL - GL Akhir</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>4393ea46-39d5-4de0-a370-2a7f54ee801c</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/Interrupted Call - Client E-GL</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>48603cd1-54b6-46b8-98f2-2a5ee59c0d61</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/Interrupted Call - Non Client E-GL</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>4ab8a10e-e4f5-464e-a558-cf2e7be3f189</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/Pre Admission - Client E-GL</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>46783040-6670-4096-a61e-89f3e7862bd3</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/002. Add New Membership E-GL/Pre Admission - Non Client E-GL</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -133,13 +133,13 @@
    <testCaseLink>
       <guid>b1c845c7-ce50-4fef-8871-6a10d34e3070</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Client E-GL - Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>bda44b42-eb05-48b0-93ff-a7cf1b7dff41</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Client E-GL - Not Rujuk - Reject</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -157,13 +157,13 @@
    <testCaseLink>
       <guid>e49fc0a4-f978-4995-a0fa-256e1be68866</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>72bc5895-686e-4a72-9d36-b82896464716</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/003. Rujuk - Validasi Claim Outstanding/Non Client E-GL - Not Checklist NFU - Not Rujuk - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -175,50 +175,50 @@
    <testCaseLink>
       <guid>58046718-b377-4547-ae25-5077287a0f24</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/002. Customer Health - Complaint</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>7b60de92-aae6-413a-b06e-f02592e67ad1</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/003. Customer Health - Complaint - Not Satisfied</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>327118f2-fad0-4cff-b531-8326fa84a42d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/004. Customer Health - Complaint - Check Inquiry Complaint</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>9547f51e-d769-4c89-8a19-a13603d9b859</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/005. Customer Health - Complaint - Check Inquiry Complaint - Not Satisfied</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f54e1c24-f8ad-463c-b28a-767d0c6460d1</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/006. Customer Health - Complaint - Multiple Service Type</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>37274f33-4811-4603-b7ff-b28d4bc5b9f5</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/007. Customer Health - Complaint - Multiple Service Type - Not Satisfied</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>cecbcea3-abc8-4579-aefd-87427845c14f</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/008. Customer Health - Complaint - Check Inquiry Complaint - Multiple Service Type</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>28e7dca8-9947-4662-889f-67e02fe00cdc</guid>
+      <guid>2f663fed-9fcc-4484-b254-b8d346052bb9</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/009. Customer Health - Complaint - Check Inquiry Complaint - Multiple Service Type - Not Satisfied</testCaseId>
+      <isRun>false</isRun>
+      <testCaseId>Test Cases/Scenario/005. Create Ticket/036. Create Ticket - Customer Non Health Inquiry - Lembaga</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>bdec3467-69e8-4f41-a569-2daa1ee03497</guid>
@@ -295,13 +295,13 @@
    <testCaseLink>
       <guid>d510e1ba-2596-40e9-895b-29d991f0eda9</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/008. Create Ticket - Provider Health Inquiry - Call</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>97cf1234-b381-4d8b-b111-ed99388dc98b</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/009. Create Ticket - Provider Health Inquiry - WhatsApp</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -367,31 +367,31 @@
    <testCaseLink>
       <guid>1649a2e3-5938-47f5-a547-ecc9dcce115d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/020. Create Ticket - Customer Health Inquiry - Twitter</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f3d6015f-2e11-4205-a270-83c79385767d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/021. Create Ticket - Customer Health Inquiry - Facebook</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>ee0dfb70-8a1a-494c-a391-84bcfd992974</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/022. Create Ticket - Customer Health Inquiry - Instagram</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>ea5478be-f772-40bb-9b2a-e572002370e0</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/023. Create Ticket - Customer Health Inquiry - Media Masa</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>58b0796c-7136-4d83-8a43-351bf92c97a7</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/024. Create Ticket - Customer Health Inquiry - Surat</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -433,37 +433,37 @@
    <testCaseLink>
       <guid>cf7a2a74-9699-40d7-a4f8-1ac295613443</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/031. Create Ticket - Customer Non Health Inquiry - Twitter</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>2f6f861e-67b8-4ba1-8527-e64f1593fd91</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/032. Create Ticket - Customer Non Health Inquiry - Facebook</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>836e6252-f5da-4812-83ce-c2bd19069665</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/033. Create Ticket - Customer Non Health Inquiry - Instagram</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>0bbb1e42-e8af-4a82-98f4-e079ccfbb9ff</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/034. Create Ticket - Customer Non Health Inquiry - Media Masa</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>c980cda7-c844-4c7c-aa66-f09e9c74321d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/005. Create Ticket/035. Create Ticket - Customer Non Health Inquiry - Surat</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>2f663fed-9fcc-4484-b254-b8d346052bb9</guid>
+      <guid>28e7dca8-9947-4662-889f-67e02fe00cdc</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>false</isRun>
-      <testCaseId>Test Cases/Scenario/005. Create Ticket/036. Create Ticket - Customer Non Health Inquiry - Lembaga</testCaseId>
+      <testCaseId>Test Cases/Scenario/004. Enhancement Flow Pembentukan Create Ticket/009. Customer Health - Complaint - Check Inquiry Complaint - Multiple Service Type - Not Satisfied</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
