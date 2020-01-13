@@ -17,49 +17,43 @@ import internal.GlobalVariable as GlobalVariable
 
 //Login//
 def UserID = 'DNS'
+
 def Password = 'Password95'
 
 //Home//
 def Menu = 'General'
+
 def SubMenu = 'Create Ticket'
 
 //Create Ticket//
 def ContactLine = 'Customer'
+
 def Product = 'Non Health'
+
 def ChannelType = 'Call'
+
 def ContactName = findTestData('ContactName').getValue(1, 1)
+
 def ContactType = 'Teman'
+
 def ServiceType = 'Cancellation'
+
 def InterruptedCall = null //Yes or null
+
 def ProviderName = 'OJKSH00001'
+
 def CustomerGender = 'Male'
-def Action = 'Next'
+
+def ActionCreateTicket = 'Next'
 
 //Choose Customer//
 def ChooseCategoryCustomer = 'Policy Holder / Relatives'
+
+def ActionChooseCustomer1 = 'Next'
+
 def SearchBy = 'Customer Name'
-def Parameter = ''
 
-//Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
-	[('UserID') : UserID,
-		('Password') : Password])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'),
-	[('Menu') : Menu,
-		('SubMenu') : SubMenu])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
-	[('ContactLine') : ContactLine,
-		('Product') : Product,
-		('ChannelType') : ChannelType,
-		('ContactName') : ContactName,
-		('ContactType') : ContactType,
-		('ServiceType') : ServiceType,
-		('InterruptedCall') : InterruptedCall,
-		('ProviderName') : ProviderName,
-		('CustomerGender') : CustomerGender,
-		('Action') : Action,])
+def Parameter = 'Joni'
 
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
@@ -68,4 +62,17 @@ CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Passwo
 
 CustomKeywords.'querySQL.update.execute'(queryContactName)
 
-WebUI.callTestCase(null, null)
+//Script//
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+        , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('CustomerGender') : CustomerGender, ('Action') : ActionCreateTicket])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Choose Customer/Choose Customer'), 
+	[('ChooseCategoryCustomer') : ChooseCategoryCustomer, 
+		('Action') : ActionChooseCustomer1,
+		('SearchBy') : SearchBy,
+		('Parameter') : Parameter])
