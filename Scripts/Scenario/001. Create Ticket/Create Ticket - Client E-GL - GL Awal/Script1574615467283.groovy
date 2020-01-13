@@ -15,12 +15,10 @@ import internal.GlobalVariable as GlobalVariable
 
 //Login//
 def UserID = 'DNS'
-
 def Password = 'Password95'
 
 //Home//
 def Menu = 'General'
-
 def SubMenu = 'Create Ticket'
 
 

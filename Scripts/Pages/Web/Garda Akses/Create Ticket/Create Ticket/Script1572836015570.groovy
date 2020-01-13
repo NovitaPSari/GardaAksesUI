@@ -200,7 +200,9 @@ if ((((((((((((((((((((((((((((((((((((((ContactLine == 'Provider') && (Product 
 	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) ||
 	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) ||
 	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) {
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), GlobalVariable.ProviderPhoneNumber)
+	 WebUI.clearText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'))
+	 
+	 WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), GlobalVariable.ProviderPhoneNumber)
 } else {
     WebUI.delay(0)
 }
@@ -222,6 +224,8 @@ if (((((((((((((((((((ContactLine == 'Provider') && (Product == 'Health')) && (C
 	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) || 
 	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) || 
 	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Inquiry'))) {
+	WebUI.clearText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Email'))
+	
     WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Email'), GlobalVariable.ProviderEmail)
 } else {
     WebUI.delay(0)

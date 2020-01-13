@@ -20,7 +20,7 @@ import internal.GlobalVariable as GlobalVariable
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Radio Button - Category', [('ChooseCategoryCustomer') : ChooseCategoryCustomer]))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Next'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Button - Action', [('Action') : Action]))
 
 //Choose Customer 2
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Search By'))
@@ -33,7 +33,7 @@ WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Custo
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Choose Customer'))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Next'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Button - Action'))
 
 //Choose Customer 3
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Policy Summary'))
