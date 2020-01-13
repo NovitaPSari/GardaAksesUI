@@ -24,29 +24,23 @@ def Menu = 'General'
 def SubMenu = 'Create Ticket'
 
 //Create Ticket//
-def ContactLine = 'Customer'
-def Product = 'Non Health'
+def ContactLine = 'Provider'
+def Product = 'Health'
 def ChannelType = 'Call'
 def ContactName = findTestData('ContactName').getValue(1, 1)
-def ContactType = 'Teman'
-def ServiceType = 'Cancellation'
+def ContactType = 'Lainnya'
+def ServiceType = 'Approval Tindakan/Terapi/Obat'
 def InterruptedCall = null //Yes or null
 def ProviderName = 'OJKSH00001'
-def CustomerGender = 'Male'
 def Action = 'Next'
 
-//Choose Customer//
-def ChooseCategoryCustomer = 'Policy Holder / Relatives'
-def SearchBy = 'Customer Name'
-def Parameter = ''
-
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
-	[('UserID') : UserID,
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), 
+	[('UserID') : UserID, 
 		('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'),
-	[('Menu') : Menu,
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), 
+	[('Menu') : Menu, 
 		('SubMenu') : SubMenu])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
@@ -58,7 +52,6 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 		('ServiceType') : ServiceType,
 		('InterruptedCall') : InterruptedCall,
 		('ProviderName') : ProviderName,
-		('CustomerGender') : CustomerGender,
 		('Action') : Action,])
 
 //Query DB
@@ -67,5 +60,3 @@ def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number F
 CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
 CustomKeywords.'querySQL.update.execute'(queryContactName)
-
-WebUI.callTestCase(null, null)
