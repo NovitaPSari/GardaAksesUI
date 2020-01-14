@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Room Class</name>
+   <name>Button - Ignore</name>
    <tag></tag>
-   <elementGuidId>e4542df7-cf9e-4abe-8501-7111b8823620</elementGuidId>
+   <elementGuidId>355fbada-9bc8-47b5-bf54-01576674bb8d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;ProviderRoomBoardInfoPopUpSection-0&quot;]//span[text() = 'STANDARD'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;D_a2is_Modal_Btn&quot;]/button[text() = 'Ignore']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;ProviderRoomBoardInfoPopUpSection-0&quot;]//span[text() = 'STANDARD']</value>
+      <value>//*[@id=&quot;D_a2is_Modal_Btn&quot;]/button[text() = 'Ignore']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

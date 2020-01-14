@@ -31,6 +31,16 @@ WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Cus
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Search'))
 
+def PopUpError = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Error - Ooops'), GlobalVariable.Delay7)
+
+if (PopUpError == true) {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Ooops, something just went wrong/Button - Ignore'))
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Search'))
+} else {
+	WebUI.delay(0)
+}
+
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Choose Customer'))
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Button - Action'))

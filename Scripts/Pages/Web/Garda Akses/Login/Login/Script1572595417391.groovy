@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-WebUI.openBrowser(GlobalVariable.URLGardaAksesQC)
+WebUI.openBrowser(GlobalVariable.URLGardaAkses4)
 
 WebUI.maximizeWindow()
 

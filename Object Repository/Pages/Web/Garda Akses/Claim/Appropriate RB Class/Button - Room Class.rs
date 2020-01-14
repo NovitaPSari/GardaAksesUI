@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;ProviderRoomBoardAppropriateInfoPopUpSection-0&quot;]/div[1]/div/div[1]/a2is-datatable/div[2]/div/table/tbody/tr[3]/td[2][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;ProviderRoomBoardAppropriateInfoPopUpSection-0&quot;]//span[text() = 'STANDARD'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;ProviderRoomBoardAppropriateInfoPopUpSection-0&quot;]/div[1]/div/div[1]/a2is-datatable/div[2]/div/table/tbody/tr[3]/td[2]</value>
+      <value>//*[@id=&quot;ProviderRoomBoardAppropriateInfoPopUpSection-0&quot;]//span[text() = 'STANDARD']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
