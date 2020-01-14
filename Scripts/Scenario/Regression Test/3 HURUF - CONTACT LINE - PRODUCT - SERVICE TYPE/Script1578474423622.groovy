@@ -53,7 +53,7 @@ def ActionChooseCustomer1 = 'Next'
 
 def SearchBy = 'Customer Name'
 
-def Parameter = 'Joni'
+def Parameter = 'Teguh'
 
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''

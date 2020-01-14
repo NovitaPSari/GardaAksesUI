@@ -34,6 +34,13 @@ def InterruptedCall = null //Yes or null
 def ProviderName = 'OJKSH00001'
 def Action = 'Next'
 
+//Query DB
+def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
+
+CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+
+CustomKeywords.'querySQL.update.execute'(queryContactName)
+
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), 
 	[('UserID') : UserID, 
@@ -53,10 +60,3 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 		('InterruptedCall') : InterruptedCall,
 		('ProviderName') : ProviderName,
 		('Action') : Action,])
-
-//Query DB
-def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
-
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
-
-CustomKeywords.'querySQL.update.execute'(queryContactName)

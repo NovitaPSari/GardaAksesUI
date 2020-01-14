@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Room Class</name>
+   <name>Choose - Reason Special Condition</name>
    <tag></tag>
-   <elementGuidId>e4542df7-cf9e-4abe-8501-7111b8823620</elementGuidId>
+   <elementGuidId>7c0ea3dd-64ca-4a74-8b58-436026944928</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;ProviderRoomBoardInfoPopUpSection-0&quot;]//span[text() = 'STANDARD'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;PatientInformation-0&quot;]//button[text() = '${ReasonSpecialCondition}']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;ProviderRoomBoardInfoPopUpSection-0&quot;]//span[text() = 'STANDARD']</value>
+      <value>//*[@id=&quot;PatientInformation-0&quot;]//button[text() = '${ReasonSpecialCondition}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
