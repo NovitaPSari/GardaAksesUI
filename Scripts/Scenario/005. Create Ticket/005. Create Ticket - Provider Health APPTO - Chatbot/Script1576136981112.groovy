@@ -106,5 +106,5 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Approval Tindakan Terapi Obat'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
-        , ('SubServiceType') : SubServiceType, ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('Action') : Action, MultipleServiceType : MultipleServiceType
-		,'ExitConfirmation1' : ExitConfirmation1, 'ExitConfirmation2' : ExitConfirmation2, 'ExitConfirmation3' : ExitConfirmation3], FailureHandling.STOP_ON_FAILURE)
+        , ('SubServiceType') : SubServiceType, ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, 
+		('Action') : Action, MultipleServiceType : MultipleServiceType, 'ExitConfirmation1' : ExitConfirmation1, 'ExitConfirmation2' : ExitConfirmation2, 'ExitConfirmation3' : ExitConfirmation3], FailureHandling.STOP_ON_FAILURE)

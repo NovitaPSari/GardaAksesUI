@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Input - Contact Name</name>
+   <name>Input - Medical Treatment</name>
    <tag></tag>
-   <elementGuidId>66bf107f-173e-4f2a-bf33-fb503ccbd74b</elementGuidId>
+   <elementGuidId>5fdd88ab-084b-4133-9467-890ae0ff216c</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;CTContactName&quot;]//span[text() = 'Contact Name*']/parent::label/parent::div/div/div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
+         <value>//*[@id=&quot;MdcMedicalTreatment&quot;]//span[text() = 'Medical Treatment']/parent::label/parent::div/div/div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -20,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;CTContactName&quot;]//span[text() = 'Contact Name*']/parent::label/parent::div/div/div/input</value>
+      <value>//*[@id=&quot;MdcMedicalTreatment&quot;]//span[text() = 'Medical Treatment']/parent::label/parent::div/div/div/input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

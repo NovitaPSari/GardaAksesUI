@@ -17,21 +17,21 @@ import internal.GlobalVariable as GlobalVariable
 
 
 //Member Name
-WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Input - Member Name'), MemberName)
+WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Member Name'), MemberName)
 
-WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Input - Member Name'), MemberName)
+WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Member Name'), MemberName)
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Member Name', [('MemberName') : MemberName]))
 
 //Sub Service Type
 WebUI.delay(GlobalVariable.Delay1)
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - Sub Service Type'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Sub Service Type'))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
 
 //Remarks
-WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Input - Remarks'), Remarks)
+WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Remarks'), Remarks)
 
 //Need Follow Up
 if (NeedFollowUp == 'Yes') {

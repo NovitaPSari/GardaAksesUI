@@ -24,13 +24,8 @@ def ContactName = findTestData('ContactName').getValue(1, 1)
 def ContactType = 'Farmasi'
 def ServiceType = 'Claim'
 def InterruptedCall = null //Yes or null
-def GenderCT = null
-def CustomerPhone = null
 def ProviderName = 'OJKSH00001'
-def ProviderPhoneNumber = null
-def Email = null
-def Fax = null
-def ActionCT = 'Next'
+def Action = 'Next'
 
 //Inquiry//
 def SearchBy = 'TicketNo'
