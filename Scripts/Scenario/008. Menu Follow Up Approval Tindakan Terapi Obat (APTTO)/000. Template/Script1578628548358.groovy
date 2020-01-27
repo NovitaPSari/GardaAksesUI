@@ -14,13 +14,14 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.testdata.DBData as DBData
 
 //Login//
 def UserID = 'DNS'
 
 def Password = 'Password95'
 
-//Home//
+//Home
 def Menu = 'General'
 
 def SubMenu = 'Create Ticket'
@@ -45,29 +46,55 @@ def ProviderName = 'OJKSH00001'
 def Action = 'Next'
 
 //Service Type
-def MemberName = findTestData('MemberNameClient').getValue(1, 1)
+//def MemberName = findTestData('MemberNameClient').getValue(1, 1)
+//def MemberName = findTestData('MemberNameNonClient').getValue(1, 1)
+def MemberName = 'NBH - Member Baru'
 
 def SubServiceType = 'Approve Tindakan/Terapi/Obat'
 
-def MedicalTreatment = 'Ronsen'
+def MedicalTreatment = 'Rontgen'
 
 def Remarks = 'Currently testing by Automation. Thanks. Regards - Me'
 
-def NeedFollowUp = null
+def NeedFollowUp = 'Yes'
 
 def PatientPhoneNumber = GlobalVariable.ProviderPhoneNumber
 
 def ActionST = 'Proses'
 
-def MultipleServiceType = null
+//Exit Confirmation
+def ECAction1 = 'Tidak'
 
-def ExitConfirmation1 = 'No'
+def ECAction2 = 'Puas'
 
-def ExitConfirmation2 = 'Puas'
+//Home
+def Menu2 = 'General'
 
-def ExitConfirmation3 = null
+def SubMenu2 = 'Follow Up'
 
-//Query DB
+//Follow UP Ticket Away
+def StatusFUTA = 'Pray'
+
+//Follow UP Ticket
+def StatusFUT = 'Available'
+
+//Follow Up APTTO
+
+def PIC = 'Doctor'
+
+def DoctorName = 'Irna Putri Perdana'
+
+def Confirmation = 'Need Confirmation Letter'
+
+def Mandatory = 'No'
+
+def ConfirmationLetterType = 'Benjolan'
+
+def RemarksFUA = 'Currently testing by Automation. Thanks. Regards - Me'
+
+def ActionAC = 'Save'
+
+////Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
 
 CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
@@ -83,15 +110,46 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
         , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : Action])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO'), 
-	[('MemberName') : MemberName, 
-		('SubServiceType') : SubServiceType, 
-		('MedicalTreatment') : MedicalTreatment, 
-		('Remarks') : Remarks, 
-		('NeedFollowUp') : NeedFollowUp, 
-		('PatientPhoneNumber') : PatientPhoneNumber,
-		('Action') : ActionST, 
-		'MultipleServiceType' : MultipleServiceType, 
-		'ExitConfirmation1' : ExitConfirmation1, 
-		'ExitConfirmation2' : ExitConfirmation2, 
-		'ExitConfirmation3' : ExitConfirmation3])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO'), [('MemberName') : MemberName
+        , ('SubServiceType') : SubServiceType, ('MedicalTreatment') : MedicalTreatment, ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp
+        , ('PatientPhoneNumber') : PatientPhoneNumber, ('Action') : ActionST])
+//
+def TRID = findTestData('CheckTRID').getValue(1, 1)
+
+println(TRID)
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+        , ('ECAction2') : ECAction2])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), [('Menu') : Menu2, ('SubMenu') : SubMenu2])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Ticket Follow Up - Away'), [('Status') : StatusFUTA])
+
+DBData CheckPICTicket_1 = findTestData('Check PIC Ticket')
+
+CheckPICTicket_1.query = CheckPICTicket_1.query.replace('999', TRID)
+
+CheckPICTicket_1.fetchedData = CheckPICTicket_1.fetchData()
+
+def FollowUpTicketHistoryID = CheckPICTicket_1.getValue(1, 1)
+
+println(FollowUpTicketHistoryID)
+
+def UpdatePICTicket = ('UPDATE  ContactCenter.FollowUpTicketHistory SET UserID = \'DNS\' WHERE FollowUpTicketHistoryID = \'' + 
+FollowUpTicketHistoryID) + '\''
+
+CustomKeywords.'querySQL.update.connectDB'('172.16.94.70', 'SEA', 'sa', 'Password95')
+
+CustomKeywords.'querySQL.update.execute'(UpdatePICTicket)
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Ticket Follow Up'), [('Status') : StatusFUT])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up APTTO'), 
+	[('PIC') : PIC,
+		('TRID') : TRID,
+		('DoctorName') : DoctorName,
+		('Confirmation') : Confirmation,
+		('Mandatory') : Mandatory,
+		('ConfirmationLetterType') : ConfirmationLetterType,
+		('RemarksFUA') : RemarksFUA,
+		('ActionAC') : ActionAC])

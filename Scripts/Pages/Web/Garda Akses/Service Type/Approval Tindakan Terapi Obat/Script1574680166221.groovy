@@ -45,7 +45,7 @@ if (NeedFollowUp == 'Yes') {
 
 //Action
 if (Action == 'Proses') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - Process'))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
 	
 	WebUI.delay(GlobalVariable.Delay1)
 	

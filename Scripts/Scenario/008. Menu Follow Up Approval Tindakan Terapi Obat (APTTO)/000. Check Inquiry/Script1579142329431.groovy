@@ -20,68 +20,32 @@ def UserID = 'DNS'
 
 def Password = 'Password95'
 
+//Home//
+def Menu = 'General'
+
+def SubMenu = 'Create Ticket'
+
 //Create Ticket//
-def ContactLine = 'Customer'
+def ContactLine = 'Provider'
 
-def Product = 'Non Health'
+def Product = 'Health'
 
-def ChannelType = 'Call' //Bebas
+def ChannelType = 'Call'
 
 def ContactName = findTestData('ContactName').getValue(1, 1)
 
-def ContactType = 'Saudara' //Bebas
+def ContactType = 'Lainnya'
 
 def ServiceType = 'Inquiry'
 
-def InterruptedCall = null //Yes or Null
-
-def GenderCT = 'Male'
-
-def CustomerPhone = '081240722346'
+def InterruptedCall = null //Yes or null
 
 def ProviderName = 'OJKSH00001'
 
-def ProviderPhoneNumber = null
+def Action = 'Next'
 
-def Email = 'automationtest@asuransiastra.com'
-
-def Fax = null
-
-def GLType = 'Awal'
-
-def ActionCT = 'Next'
-
-//Choose Customer
-def ChooseCategoryCustomer = 'Policy Holder / Relatives' // Policy Holder / Relatives or Others
-
-def SearchBy = 'Policy Number'
-
-def Parameter = findTestData('ParameterPolicyNo').getValue(4, 1)
-
-//Inquiry//
-def ProductI = 'Garda Oto'
-
-def Category = 'Others'
-
-def FUStatus = 'On Progress'
-
-def FURemarks = 'Currently testing by Automation. Thanks. Regards - Me'
-
-def Action = 'Save'
-
-def MultipleServiceType = null
-
-def ButtonDirection1 = 'Back'
-
-def ButtonDirection2 = 'Process'
-
-def ExitConfirmation1 = 'No'
-
-def ExitConfirmation2 = 'Puas'
-
-def ExitConfirmation3 = null
-
-def Comment = null
+//Service Type
+def MemberName = '3733 - A/00098641 - ALAN APRI NALDO - PT. ASTRA OTOPARTS'
 
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
@@ -93,22 +57,11 @@ CustomKeywords.'querySQL.update.execute'(queryContactName)
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('CustomerGender') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
+        , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : Action])
 
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Choose Customer/Choose Customer'), [('ChooseCategoryCustomer') : ChooseCategoryCustomer
-//        , ('SearchBy') : SearchBy, ('Parameter') : Parameter], FailureHandling.STOP_ON_FAILURE)
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Customer - Inquiry'), 
-//	['Product': ProductI,
-//		'Categorys' : Category,
-//		'FUStatus' : FUStatus,
-//		'FURemarks' : FURemarks,
-//		'Action' : Action,
-//		'MultipleServiceType' : MultipleServiceType,
-//		'ExitConfirmation1' : ExitConfirmation1,
-//		'ExitConfirmation2' : ExitConfirmation2])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Inquiry'), [('MemberName') : MemberName], 
+    FailureHandling.STOP_ON_FAILURE)

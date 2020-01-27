@@ -15,92 +15,71 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.delay(GlobalVariable.Delay3)
+WebUI.delay(GlobalVariable.Delay1)
 
 //========== History & Membership ==========
-
 //========== Approval Tindakan/Terapi/Obat ==========
 //Member Name
-WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Member Name'), MemberName)
+WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Member Name'), 
+    MemberName)
 
-WebUI.delay(GlobalVariable.Delay2)
+WebUI.delay(GlobalVariable.Delay1)
 
-WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Member Name'), MemberName)
+WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Member Name'), 
+    MemberName)
 
-WebUI.delay(GlobalVariable.Delay2)
+WebUI.delay(GlobalVariable.Delay1)
 
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Member Name', [('MemberName') : MemberName]))
+def MemberNameSuggestion = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Member Name', 
+        [('MemberName') : MemberName]), GlobalVariable.Delay1)
 
-WebUI.delay(GlobalVariable.Delay5)
+if (MemberNameSuggestion == true) {
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Member Name', 
+        [('MemberName') : MemberName]))
 
-//Sub Service Type
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Sub Service Type'))
-
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
-
-WebUI.delay(GlobalVariable.Delay2)
-
-//Medical Treatment
-WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Medical Treatment'), MedicalTreatment)
-
-//Remarks
-WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Remarks'), Remarks)
-
-//Need Follow Up
-if (NeedFollowUp == 'Yes') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Check Box - Need Follow Up'))
+WebUI.delay(GlobalVariable.Delay1)
 } else {
 	WebUI.delay(0)
 }
 
+//Sub Service Type
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Sub Service Type'))
+
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Sub Service Type', 
+        [('SubServiceType') : SubServiceType]))
+
+WebUI.delay(GlobalVariable.Delay2)
+
+//Medical Treatment
+WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Medical Treatment'), 
+    MedicalTreatment)
+
+//Remarks
+WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Remarks'), 
+    Remarks)
+
+//Need Follow Up
+if (NeedFollowUp == 'Yes') {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Check Box - Need Follow Up'))
+} else {
+    WebUI.delay(0)
+}
+
 //Patient Phone Number
-WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Patient Phone Number'), PatientPhoneNumber)
+WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Patient Phone Number'), 
+    PatientPhoneNumber)
 
-
-//MAKE SURE THIS CODE BELOW
 //Action
 if (Action == 'Proses') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - Process'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
 	
-	WebUI.delay(GlobalVariable.Delay1)
 	
-	if (MultipleServiceType == 'Yes') {
-		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
-		
-		GlobalVariable.TicketIDRevisi = result.substring(9, 17)
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-	} else {
-		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
-		
-		GlobalVariable.TicketIDAwal = result.substring(9, 17)
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-	}
 	
-	//Exit Confirmation 1 - Apakah ada hal lain yang dapat dibantu, Pak/Bu?
-	if (ExitConfirmation1 == 'Yes') {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 Yes'))
-	} else {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 No'))
-		
-		//Exit Confirmation 2 - Sebelum mengakhiri percakapan, boleh kami dibantu untuk pertanyaan penutup yaitu Apakah Bapak/Ibu PUAS dengan informasi yang telah saya berikan?
-		if (ExitConfirmation2 == 'Puas') {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Puas'))
-		} else {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Tidak Puas'))
-			
-			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Exit Confirmation 3 Add Comment'), Comment)
-			
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 3 Ok'))
-		}
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
-	}
-} else if (Back == 'Yes') {
-	WebUI.click(findTestObject('null'))
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - OK'))
+} else if (Action == 'Back') {
+    WebUI.click()
+} else if (Action == 'Exit') {
+    WebUI.click()
 } else {
 	WebUI.delay(0)
 }
