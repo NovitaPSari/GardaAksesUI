@@ -15,7 +15,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.delay(GlobalVariable.Delay3)
+WebUI.delay(GlobalVariable.Delay0)
+
+WebUI.dismissAlert()
 
 def SubMenuNotPresent = WebUI.verifyElementNotPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button - Sub Menu', ['SubMenu' : SubMenu]), GlobalVariable.Delay3)
 

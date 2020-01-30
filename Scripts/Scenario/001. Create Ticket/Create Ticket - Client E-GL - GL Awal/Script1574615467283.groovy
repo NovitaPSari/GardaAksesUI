@@ -104,43 +104,13 @@ def TotalBilled = null
 
 def NPNFU = null
 
-def NPNFU2 = null
-
-def NPNFU3 = null
-
-def NPNFU4 = null
-
-def NPNFU5 = null
-
 def Status = 'Process'
 
-def Status2 = null
-
-def Status3 = null
-
-def Status4 = null
-
-def Status5 = null
-
 def Summary = GlobalVariable.SummaryDijaminkan
-
-def Summary2 = null
-
-def Summary3 = null
-
-def Summary4 = null
-
-def Summary5 = null
 
 def Validasi = null
 
 def Validasi2 = null
-
-def Validasi3 = null
-
-def Validasi4 = null
-
-def Validasi5 = null
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -172,4 +142,3 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'),
         , ('MemberName') : MemberName, ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType
         , ('DiagnosisStatus') : DiagnosisStatus, ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName, ('Rujuk') : null
         , ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
-

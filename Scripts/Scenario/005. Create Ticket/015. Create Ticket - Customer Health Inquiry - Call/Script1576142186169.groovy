@@ -28,7 +28,7 @@ def ChannelType = 'Call' //Bebas
 
 def ContactName = findTestData('ContactName').getValue(1, 1)
 
-def ContactType = 'Saudara' //Bebas
+def ContactType = 'Teman' //Bebas
 
 def ServiceType = 'Inquiry'
 
@@ -77,14 +77,7 @@ def ExitConfirmation3 = null
 
 def Comment = null
 
-//Query DB
-def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
-
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
-
-CustomKeywords.'querySQL.update.execute'(queryContactName)
-
-//Script//
+//Script
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
 	[('UserID') : UserID,
 		('Password') : Password])
@@ -96,6 +89,12 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('CustomerGender') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
 
+//Query DB
+def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
+CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+CustomKeywords.'querySQL.update.execute'(queryContactName)
+
+//Script
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Inquiry'), 
 	[('MemberName') : MemberName, 
 		('ContactLine') : ContactLine, 

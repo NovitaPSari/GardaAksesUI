@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Parameter Search By</name>
+   <name>Input - Username</name>
    <tag></tag>
-   <elementGuidId>b439e347-e86d-4d50-8ac6-7d6ca815ee8e</elementGuidId>
+   <elementGuidId>84b7c158-1c2e-4ba4-b507-ff2f9c717c77</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//label[text() = ' Search by']//parent::div//following-sibling::div/a2is-combo-wide-nc/div[2]/div/div/div/button[text() = '${SearchBy}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//input[@id=&quot;TUseId&quot;][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +20,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//label[text() = ' Search by']//parent::div//following-sibling::div/a2is-combo-wide-nc/div[2]/div/div/div/button[text() = '${SearchBy}']</value>
+      <value>//input[@id=&quot;TUseId&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

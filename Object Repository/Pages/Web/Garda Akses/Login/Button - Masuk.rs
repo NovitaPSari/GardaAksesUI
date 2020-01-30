@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Search By</name>
+   <name>Button - Masuk</name>
    <tag></tag>
-   <elementGuidId>d4851982-7c9e-4091-9343-0ca868d46e5a</elementGuidId>
+   <elementGuidId>540dd8e7-e3ce-4497-a7da-48452f515448</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//label[text() = ' Search by']//parent::div//following-sibling::div/a2is-combo-wide-nc/div[2]/div/div/button</value>
+         <value>//*[@id=&quot;FSigIn&quot;]/button[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +20,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//label[text() = ' Search by']//parent::div//following-sibling::div/a2is-combo-wide-nc/div[2]/div/div/button</value>
+      <value>//*[@id=&quot;FSigIn&quot;]/button</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Input User ID</name>
+   <name>Button - Exit</name>
    <tag></tag>
-   <elementGuidId>84b7c158-1c2e-4ba4-b507-ff2f9c717c77</elementGuidId>
+   <elementGuidId>c821aff1-af58-424d-b50e-c14991207fd2</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//input[@id=&quot;TUseId&quot;][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value></value>
+         <value>//button[text() = 'Exit'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -21,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//input[@id=&quot;TUseId&quot;]</value>
+      <value>//button[text() = 'Exit']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

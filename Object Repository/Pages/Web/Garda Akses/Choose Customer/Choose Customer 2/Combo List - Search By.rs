@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Action</name>
+   <name>Combo List - Search By</name>
    <tag></tag>
-   <elementGuidId>c821aff1-af58-424d-b50e-c14991207fd2</elementGuidId>
+   <elementGuidId>b439e347-e86d-4d50-8ac6-7d6ca815ee8e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;SD1-0&quot;]//button[(@style=&quot;margin-left: 10px;&quot;) and text() = '${Action}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//label[text() = ' Search by']//parent::div//following-sibling::div/a2is-combo-wide-nc/div[2]/div/div/div/button[text() = '${SearchBy}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;SD1-0&quot;]//button[(@style=&quot;margin-left: 10px;&quot;) and text() = '${Action}']</value>
+      <value>//label[text() = ' Search by']//parent::div//following-sibling::div/a2is-combo-wide-nc/div[2]/div/div/div/button[text() = '${SearchBy}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

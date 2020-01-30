@@ -15,7 +15,7 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-WebUI.delay(GlobalVariable.Delay5)
+WebUI.delay(GlobalVariable.Delay2)
 
 //Contact Line
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Contact Line', [('ContactLine') : ContactLine]))
@@ -247,6 +247,10 @@ if ((((((((((((((((((((((((((ContactLine == 'Provider') && (Product == 'Health')
 } else {
     WebUI.delay(0)
 }
+
+//Provider Fax
+//if 
+
 
 //========================== End Provider ==========================
 //Action

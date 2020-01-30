@@ -39,10 +39,6 @@ def SearchBy3 = 'TicketNo'
 //Claim
 //Member = Existing  / New / Check
 def Member = 'Existing'
-def Member2 = null
-def Member3 = null
-def Member4 = null
-def Member5 = null
 // MemberStatus = Non Client / Client
 def MemberStatus = 'Client'
 def MemberName = findTestData('MemberNameClient').getValue(1, 1)
@@ -69,25 +65,9 @@ def Rujuk = null
 def Reason = null
 def TotalBilled = '3000000'
 def NPNFU = null
-def NPNFU2 = null
-def NPNFU3 = null
-def NPNFU4 = null
-def NPNFU5 = null
 def Status = 'Process'
-def Status2 = null
-def Status3 = null
-def Status4 = null
-def Status5 = null
 def Summary = GlobalVariable.SummaryDijaminkan
-def Summary2 = null
-def Summary3 = null
-def Summary4 = null
-def Summary5 = null
 def Validasi = null
-def Validasi2 = null
-def Validasi3 = null
-def Validasi4 = null
-def Validasi5 = null
 
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''

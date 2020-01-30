@@ -149,4 +149,9 @@
       <initValue>'081245708070'</initValue>
       <name>PatientFamilyPhoneNo</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://gen5-qc.asuransiastra.com/gardaakses'</initValue>
+      <name>URLGardaAkses</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

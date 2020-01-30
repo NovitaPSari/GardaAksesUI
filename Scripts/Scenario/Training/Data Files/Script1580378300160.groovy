@@ -12,16 +12,34 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-WebUI.openBrowser(GlobalVariable.URLGardaAksesQC)
 
-WebUI.maximizeWindow()
+//ArrayList TestData = findTestData("trainingKatalon").getAllData()
+//
+//println ((TestData[0])[0] + " saya adalah " + (TestData[1])[1])
 
-WebUI.setText(findTestObject('Pages/Web/Garda Akses/Login/Input - Username'), UserID)
+def TestVariable1 = findTestData("trainingKatalon").getValue(2, 2)
 
-WebUI.setText(findTestObject('Pages/Web/Garda Akses/Login/Input - Password'), Password)
+println TestVariable1
 
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Login/Button - Masuk'))
+def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = Number+1 WHERE Name = \'Automation Tester\''
 
+CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+
+CustomKeywords.'querySQL.update.execute'(queryContactName)
+
+String Value = a
+
+def query2 = 'UPDATE GardaAkses_MasterID SET Number = Number+1 WHERE Name = \'Automation Tester\''
+
+CustomKeywords.'querySQL.update.connectDB'('172.16.94.70', 'litt', 'sa', 'Password95')
+
+CustomKeywords.'querySQL.update.execute'(query2)
+
+def TestVariable2 = findTestData("trainingKatalon").getValue(2, 2)
+
+String Value2 = a
+
+
+
+println TestVariable2

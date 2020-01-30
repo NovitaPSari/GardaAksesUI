@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Exit</name>
+   <name>Input - Password</name>
    <tag></tag>
-   <elementGuidId>2826dcc3-93be-483a-b43c-68ace7d4c112</elementGuidId>
+   <elementGuidId>db4edb45-d4ec-473b-a8d3-cf80a8226a2a</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;SD1-0&quot;]//button[text() = 'Exit'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//input[@id=&quot;TPassw&quot;][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +20,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;SD1-0&quot;]//button[text() = 'Exit']</value>
+      <value>//input[@id=&quot;TPassw&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
