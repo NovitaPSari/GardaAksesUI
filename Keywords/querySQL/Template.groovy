@@ -22,7 +22,7 @@ import java.sql.Statement
 import java.sql.Connection
 //import com.mysql.jdbc.Connection
 
-public class update {
+public class Template {
 
 	private static Connection connection = null;
 

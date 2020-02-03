@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Exit</name>
+   <name>Button - Back</name>
    <tag></tag>
-   <elementGuidId>c821aff1-af58-424d-b50e-c14991207fd2</elementGuidId>
+   <elementGuidId>bd5add69-c101-4317-b2d8-f5c246e40f5d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;SD1-0&quot;]//button[text() = 'Exit'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;SD1-0&quot;]//button[text() = 'Back']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;SD1-0&quot;]//button[text() = 'Exit']</value>
+      <value>//*[@id=&quot;SD1-0&quot;]//button[text() = 'Back']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

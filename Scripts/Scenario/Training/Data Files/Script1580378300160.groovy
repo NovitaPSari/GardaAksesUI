@@ -24,17 +24,17 @@ println TestVariable1
 
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = Number+1 WHERE Name = \'Automation Tester\''
 
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+CustomKeywords.'querySQL.Template.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
-CustomKeywords.'querySQL.update.execute'(queryContactName)
+CustomKeywords.'querySQL.Template.execute'(queryContactName)
 
 String Value = a
 
 def query2 = 'UPDATE GardaAkses_MasterID SET Number = Number+1 WHERE Name = \'Automation Tester\''
 
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.70', 'litt', 'sa', 'Password95')
+CustomKeywords.'querySQL.Template.connectDB'('172.16.94.70', 'litt', 'sa', 'Password95')
 
-CustomKeywords.'querySQL.update.execute'(query2)
+CustomKeywords.'querySQL.Template.execute'(query2)
 
 def TestVariable2 = findTestData("trainingKatalon").getValue(2, 2)
 

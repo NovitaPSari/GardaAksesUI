@@ -21,9 +21,11 @@ import internal.GlobalVariable as GlobalVariable
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 1/Radio Button - Category', [('ChooseCategoryCustomer') : ChooseCategoryCustomer]))
 
 if (ActionCC1 == 'Next') {	
-	findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 1/Button - Next')	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 1/Button - Next'))	
+} else if (ActionCC1 == 'Back') {	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 1/Button - Back'))
 } else if (ActionCC1 == 'Exit') {	
-	findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 1/Button - Exit')
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 1/Button - Exit'))
 }
 
 //Choose Customer 2
@@ -35,7 +37,7 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Custo
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Search'))
 
-def PopUpError = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Alert - Ooops'), GlobalVariable.Delay7)
+def PopUpError = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Alert - Ooops'), GlobalVariable.Delay3)
 
 if (PopUpError == true) {
 	WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Ooops, something just went wrong/Button - Ignore'))
@@ -47,20 +49,27 @@ if (PopUpError == true) {
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Choose Customer'))
 
-if (ActionCC2 == 'Next') {
-	findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Next')
-} else if (ActionCC2 == 'Exit') {
-	findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Exit')
+if (ActionCC2 == 'Next') {	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Next'))	
+} else if (ActionCC2 == 'Back') {	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Back'))
+} else if (ActionCC2 == 'Exit') {	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Exit'))
 }
 
-
 //Choose Customer 3
+/*
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Policy Summary'))
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose - Policy Summary'))
+*/
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Finish'))
+WebUI.delay(GlobalVariable.Delay1)
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Customer/Button - Yes Save Customer'))
+if (ActionCC3 == 'Finish') {
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 3/Button - Finish'))
+	
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 3/Button - Yes Save Customer'))
+} else if (ActionCC3 == 'Back') {
 
-
+}

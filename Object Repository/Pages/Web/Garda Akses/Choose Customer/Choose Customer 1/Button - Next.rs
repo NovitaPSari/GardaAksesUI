@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//button[text() = 'Next'][1]</value>
+         <value>//*[@id=&quot;SD1-0&quot;]//button[text() = 'Next'][1][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//button[text() = 'Next'][1]</value>
+      <value>//*[@id=&quot;SD1-0&quot;]//button[text() = 'Next'][1]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

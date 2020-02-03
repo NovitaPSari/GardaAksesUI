@@ -97,9 +97,9 @@ def ActionAC = 'Save'
 ////Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
 
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+CustomKeywords.'querySQL.Template.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
-CustomKeywords.'querySQL.update.execute'(queryContactName)
+CustomKeywords.'querySQL.Template.execute'(queryContactName)
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -138,9 +138,9 @@ println(FollowUpTicketHistoryID)
 def UpdatePICTicket = ('UPDATE  ContactCenter.FollowUpTicketHistory SET UserID = \'DNS\' WHERE FollowUpTicketHistoryID = \'' + 
 FollowUpTicketHistoryID) + '\''
 
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.70', 'SEA', 'sa', 'Password95')
+CustomKeywords.'querySQL.Template.connectDB'('172.16.94.70', 'SEA', 'sa', 'Password95')
 
-CustomKeywords.'querySQL.update.execute'(UpdatePICTicket)
+CustomKeywords.'querySQL.Template.execute'(UpdatePICTicket)
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Ticket Follow Up'), [('Status') : StatusFUT])
 

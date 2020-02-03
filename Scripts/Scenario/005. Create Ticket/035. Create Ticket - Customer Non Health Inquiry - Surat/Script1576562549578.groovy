@@ -53,12 +53,18 @@ def GLType = 'Awal'
 
 def ActionCT = 'Next'
 
+def ActionCC3 = 'Finish'
+
 //Choose Customer
 def ChooseCategoryCustomer = 'Policy Holder / Relatives' // Policy Holder / Relatives or Others
+
+def ActionCC1 = 'Next'
 
 def SearchBy = 'Policy Number'
 
 def Parameter = findTestData('ParameterPolicyNo').getValue(4, 1)
+
+def ActionCC2  = 'Next'
 
 //Inquiry//
 def ProductI = 'Garda Oto'
@@ -88,9 +94,9 @@ def Comment = null
 //Query DB
 def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
 
-CustomKeywords.'querySQL.update.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
+CustomKeywords.'querySQL.Template.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
 
-CustomKeywords.'querySQL.update.execute'(queryContactName)
+CustomKeywords.'querySQL.Template.execute'(queryContactName)
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -102,8 +108,13 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('CustomerGender') : GenderCT, ('ProviderName') : ProviderName
         , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, 'SocialMediaAccount' : SocialMediaAccount, ('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Choose Customer/Choose Customer'), [('ChooseCategoryCustomer') : ChooseCategoryCustomer
-        , ('SearchBy') : SearchBy, ('Parameter') : Parameter], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Choose Customer/Choose Customer'), 
+	[('ChooseCategoryCustomer') : ChooseCategoryCustomer, 
+		('ActionCC1') : ActionCC1,
+		('SearchBy') : SearchBy, 
+		('Parameter') : Parameter,
+		('ActionCC2') : ActionCC2,
+		('ActionCC3') : ActionCC3 ])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Customer - Inquiry'), 
 	['Product': ProductI,

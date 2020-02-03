@@ -13,7 +13,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.delay(GlobalVariable.Delay2)
+WebUI.delay(GlobalVariable.Delay4)
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Home/Button General'))
 

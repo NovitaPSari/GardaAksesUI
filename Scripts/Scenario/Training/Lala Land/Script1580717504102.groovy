@@ -15,8 +15,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-//CustomKeywords.'training.Katalon.loginGen5'('https://gen5-qc.asuransiastra.com/gardaakses', 'DNS', 'Password95')
+def cobaCoba(String lalala, String yeyeye ) {
+	WebUI.setText(lalala)
+	WebUI.setText(yeyeye)
+	WebUI.click(masuk)	
+}
 
-String GardaAkses = CustomKeywords.'training.Katalon.select'('garuda','garuda')
+cobaCoba('YIH','P@ssw0rd')
 
-println GardaAkses
+//def hitung(int lalala, int yeyeye) {
+//	int c = lalala + yeyeye
+//	return c
+//}
+//
+//int hasil = hitung(1,2)
+//
+//println(hasil)
