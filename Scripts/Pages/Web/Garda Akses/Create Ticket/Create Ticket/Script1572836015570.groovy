@@ -15,42 +15,31 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-WebUI.delay(GlobalVariable.Delay3)
+CustomKeywords.'gardaAkses.General.waitProcessingCommand'()
 
 //Contact Line
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Contact Line', [('ContactLine') : ContactLine]))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Contact Line', [('Value') : ContactLine]))
 
 //Product
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Product', [('Product') : Product]))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Product', [('Value') : Product]))
 
 //Channel Type
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Channel Type'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Combo - Channel Type'))
 
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Channel Type', [('ChannelType') : ChannelType]))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Combo List - Channel Type', [('Value') : ChannelType]))
 
 //Contact Name
-WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Contact Name'), ContactName)
-
-def AutoComplete = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Auto Complete Contact Name'), 
-    GlobalVariable.Delay1)
-
-if (AutoComplete == true) {
-	WebUI.delay(GlobalVariable.Delay0)
-	
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Auto Complete Contact Name'))
-} else {
-    WebUI.delay(0)
-}
+WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Contact Name'), ContactName)
 
 //Contact Type
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Contact Type'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Combo - Contact Type'))
 
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Contact Type', [('ContactType') : ContactType]))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Combo List - Contact Type', [('Value') : ContactType]))
 
 //Service Type
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Service Type'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Combo - Service Type'))
 
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Choose - Service Type', [('ServiceType') : ServiceType]))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Combo List - Service Type', [('Value') : ServiceType]))
 
 //Interrupted Contact
 if (InterruptedCall == 'Yes') {
@@ -61,45 +50,33 @@ if (InterruptedCall == 'Yes') {
 
 //========================= Start Customer =========================
 //Customer Phone
-if ((((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || 
-	((ContactLine == 'Customer') && (ChannelType == 'WhatsApp'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'SMS'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Walk In'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Email'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Twitter'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Instagram'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Surat'))) ||
-	((ContactLine == 'Customer') && (ChannelType == 'Lembaga'))) {
+if ((((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || ((ContactLine == 'Customer') && (ChannelType == 
+'WhatsApp'))) || ((ContactLine == 'Customer') && (ChannelType == 'SMS'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Walk In'))) || ((ContactLine == 'Customer') && (ChannelType == 'Email'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Twitter'))) || ((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Instagram'))) || ((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Surat'))) || ((ContactLine == 'Customer') && (ChannelType == 'Lembaga'))) {
     WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Phone'), GlobalVariable.ProviderPhoneNumber)
 } else {
     WebUI.delay(0)
 }
 
 //Customer Email
-if ((((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || 
-	((ContactLine == 'Customer') && (ChannelType == 'WhatsApp'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'SMS'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Walk In'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Email'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Twitter'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Instagram'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Surat'))) ||
-	((ContactLine == 'Customer') && (ChannelType == 'Lembaga'))) {
+if ((((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || ((ContactLine == 'Customer') && (ChannelType == 
+'WhatsApp'))) || ((ContactLine == 'Customer') && (ChannelType == 'SMS'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Walk In'))) || ((ContactLine == 'Customer') && (ChannelType == 'Email'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Twitter'))) || ((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Instagram'))) || ((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Surat'))) || ((ContactLine == 'Customer') && (ChannelType == 'Lembaga'))) {
     WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Email'), GlobalVariable.ProviderEmail)
 } else {
     WebUI.delay(0)
 }
 
 //Customer Social Media Account
-if ((((((ContactLine == 'Customer') && (ChannelType == 'Twitter')) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Instagram'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Surat'))) {
+if ((((((ContactLine == 'Customer') && (ChannelType == 'Twitter')) || ((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || 
+((ContactLine == 'Customer') && (ChannelType == 'Instagram'))) || ((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || 
+((ContactLine == 'Customer') && (ChannelType == 'Surat'))) {
     WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Customer Social Media'), 
         CustomerSocialMedia)
 } else {
@@ -107,159 +84,160 @@ if ((((((ContactLine == 'Customer') && (ChannelType == 'Twitter')) ||
 }
 
 //Customer Gender
-if ((((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || 
-	((ContactLine == 'Customer') && (ChannelType == 'WhatsApp'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'SMS'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Walk In'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Email'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Twitter'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Instagram'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || 
-	((ContactLine == 'Customer') && (ChannelType == 'Surat'))) ||
-	((ContactLine == 'Customer') && (ChannelType == 'Lembaga'))) {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Customer Gender', [('CustomerGender') : CustomerGender]))
+if ((((((((((((ContactLine == 'Customer') && (ChannelType == 'Call')) || ((ContactLine == 'Customer') && (ChannelType == 
+'WhatsApp'))) || ((ContactLine == 'Customer') && (ChannelType == 'SMS'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Walk In'))) || ((ContactLine == 'Customer') && (ChannelType == 'Email'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Twitter'))) || ((ContactLine == 'Customer') && (ChannelType == 'Facebook'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Instagram'))) || ((ContactLine == 'Customer') && (ChannelType == 'Media Masa'))) || ((ContactLine == 'Customer') && (ChannelType == 
+'Surat'))) || ((ContactLine == 'Customer') && (ChannelType == 'Lembaga'))) {
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Customer Gender', [('Value') : CustomerGender]))
 } else {
     WebUI.delay(0)
 }
-//========================== End Customer ==========================
 
+//========================== End Customer ==========================
 //========================= Start Provider =========================
 //Provider Name
-if ((((((((((((((((((((((((((((((((((((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Approval Tindakan/Terapi/Obat')) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Inquiry'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Inquiry'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Inquiry'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Inquiry'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Inquiry'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Inquiry'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Inquiry'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Call')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Email')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) {
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
-
-    WebUI.delay(GlobalVariable.Delay0)
-
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
-	
-	WebUI.delay(GlobalVariable.Delay0)
-
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Choose - Auto Complete Provider Name'))
+if ((((((((((((((((((((((((((((((((((((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && 
+(ServiceType == 'Approval Tindakan/Terapi/Obat')) || ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 
+'WhatsApp')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'SMS')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || ((((ContactLine == 'Provider') && 
+(Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || ((((ContactLine == 
+'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Claim'))) || ((((ContactLine == 
+'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Claim'))) || ((((ContactLine == 
+'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && 
+(Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'Email')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'Chatbot')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'Live chat')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'Website')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Call')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Email')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Website')) && (ServiceType == 'Complaint'))) {
+    CustomKeywords.'gardaAkses.CreateTicket.ProviderName'(ProviderName)
 } else {
     WebUI.delay(0)
 }
 
 //Provider Phone Number
-if ((((((((((((((((((((((((((((((((((((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Approval Tindakan/Terapi/Obat')) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
- 	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-  	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-   	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
- 	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-  	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Claim'))) ||
-   	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Claim'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Claim'))) ||
- 	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Claim'))) ||
-  	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Claim'))) ||
-   	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Claim'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Claim'))) ||
- 	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Complaint'))) ||
-  	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) ||
-   	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Complaint'))) ||
- 	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) ||
-  	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) ||
-   	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Inquiry'))) ||
- 	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Inquiry'))) ||
-  	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Inquiry'))) ||
-   	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Inquiry'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Inquiry'))) ||
- 	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Inquiry'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Inquiry'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Call')) && (ServiceType == 'Complaint'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Email')) && (ServiceType == 'Complaint'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) ||
-	 ((((ContactLine == 'Provider') && (Product == 'Non Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) {
-	 WebUI.clearText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'))
-	 
-	 WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), GlobalVariable.ProviderPhoneNumber)
+if ((((((((((((((((((((((((((((((((((((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && 
+(ServiceType == 'Approval Tindakan/Terapi/Obat')) || ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 
+'WhatsApp')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'SMS')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || ((((ContactLine == 'Provider') && 
+(Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || ((((ContactLine == 
+'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Claim'))) || ((((ContactLine == 
+'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Claim'))) || ((((ContactLine == 
+'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && 
+(Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 
+'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'Email')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'Chatbot')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'Live chat')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && 
+(ChannelType == 'Website')) && (ServiceType == 'Inquiry'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Call')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Email')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) || ((((ContactLine == 'Provider') && (Product == 'Non Health')) && 
+(ChannelType == 'Website')) && (ServiceType == 'Complaint'))) {
+	def PhoneNumber = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'), 'Value')
+	
+	if (PhoneNumber == '') {
+		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Phone Number'),
+				GlobalVariable.ProviderPhoneNumber)
+	} else {
+    	WebUI.delay(0)
+	}    
 } else {
     WebUI.delay(0)
 }
 
 //Provider Email
-if ((((((((((((((((((((((((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Approval Tindakan/Terapi/Obat')) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Claim'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) || 
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Inquiry'))) ||
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) ||
-	((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) {
-	WebUI.clearText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Email'))
+if ((((((((((((((((((((((((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 
+'Approval Tindakan/Terapi/Obat')) || ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && 
+(ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && 
+(ServiceType == 'Claim'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 
+'Claim'))) || ((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Claim'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Claim'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Claim'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Claim'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Complaint'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Complaint'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Complaint'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Complaint'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Complaint'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Complaint'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Complaint'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Inquiry'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Call')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'WhatsApp')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'SMS')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Email')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Chatbot')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Live chat')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) || 
+((((ContactLine == 'Provider') && (Product == 'Health')) && (ChannelType == 'Website')) && (ServiceType == 'Approval Tindakan/Terapi/Obat'))) {
+    
+	def EmailProvider = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Email'), 'value')
 	
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Email'), GlobalVariable.ProviderEmail)
+	if (EmailProvider == '') {
+		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Email'), GlobalVariable.ProviderEmail)
+	} else {
+	WebUI.delay(0)
+	}	
 } else {
     WebUI.delay(0)
 }
 
 //Provider Fax
-//if 
-
+if ((ContactLine == 'Provider') && (Product == 'Health')) {
+    WebUI.clearText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Provider Fax'))
+} else {
+    WebUI.delay(0)
+}
 
 //========================== End Provider ==========================
 //Action
-if (Action == 'Next') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Next'))
-} else if (Action == 'Exit') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Exit'))
-} else {
-	WebUI.delay(0)
-}
-
+//if (Action == 'Next') {
+//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Next'))
+//} else if (Action == 'Exit') {
+//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Exit'))
+//} else {
+//    WebUI.delay(0)
+//}
 

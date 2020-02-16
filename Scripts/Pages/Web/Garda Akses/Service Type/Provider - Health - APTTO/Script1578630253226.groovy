@@ -69,17 +69,15 @@ if (NeedFollowUp == 'Yes') {
 WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Patient Phone Number'), 
     PatientPhoneNumber)
 
-//Action
-if (Action == 'Proses') {
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
-	
-	
-	
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - OK'))
-} else if (Action == 'Back') {
-    WebUI.click()
-} else if (Action == 'Exit') {
-    WebUI.click()
-} else {
-	WebUI.delay(0)
-}
+////Action
+//if (Action == 'Proses') {
+//    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
+//	
+//	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - OK'))
+//} else if (Action == 'Back') {
+//    WebUI.click()
+//} else if (Action == 'Exit') {
+//    WebUI.click()
+//} else {
+//	WebUI.delay(0)
+//}

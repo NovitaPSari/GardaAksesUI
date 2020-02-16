@@ -15,9 +15,20 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.delay(GlobalVariable.Delay0)
 
-WebUI.dismissAlert()
+//def AlertPresent = WebUI.verifyElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button - Menu', ['Menu' : Menu]))
+//
+//if (!AlertPresent) {
+//	WebUI.dismissAlert()
+//} else {
+//	WebUI.delay(0)
+//}
+//
+//WebUI.delay(GlobalVariable.Delay0)
+
+//WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Text - Screen ARCWFMN01'), GlobalVariable.Delay7)
+
+CustomKeywords.'gardaAkses.PopUp.TrayCTI'()
 
 def SubMenuNotPresent = WebUI.verifyElementNotPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button - Sub Menu', ['SubMenu' : SubMenu]), GlobalVariable.Delay3)
 

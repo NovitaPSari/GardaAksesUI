@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;popUpAddNewMembership-0&quot;]//span[text() = 'Gender']/parent::label/parent::div/div/div/div/span[text() = '${Gender}']/parent::div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;popUpAddNewMembership-0&quot;]//span[text() = 'Gender']/parent::label/parent::div/div/div/div/span[text() = '${Value}']/parent::div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;popUpAddNewMembership-0&quot;]//span[text() = 'Gender']/parent::label/parent::div/div/div/div/span[text() = '${Gender}']/parent::div/input</value>
+      <value>//*[@id=&quot;popUpAddNewMembership-0&quot;]//span[text() = 'Gender']/parent::label/parent::div/div/div/div/span[text() = '${Value}']/parent::div/input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

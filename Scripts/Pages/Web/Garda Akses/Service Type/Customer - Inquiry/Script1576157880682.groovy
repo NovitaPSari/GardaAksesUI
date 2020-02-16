@@ -15,7 +15,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.delay(GlobalVariable.Delay3)
+CustomKeywords.'gardaAkses.ProcessingCommand.waitProcessingCommand'()
 
 //Product
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Customer - Inquiry/Button - Product'))

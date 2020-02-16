@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>005. Create Ticket - Provider Health Claim - Client E-GL - GL Akhir - Produce</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bcb793da-0c18-412a-bb2b-7745ac155eb8</testCaseGuid>
+</TestCaseEntity>

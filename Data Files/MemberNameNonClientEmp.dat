@@ -10,7 +10,56 @@
    <driver>DBData</driver>
    <isInternalPath>false</isInternalPath>
    <password>UGFzc3dvcmQ5NQ==</password>
-   <query>SELECT TOP 1 RTRIM(LTRIM(c.MemberNo)) AS DataID , UPPER(CONCAT(c.EmpID, SPACE(1), RTRIM(LTRIM(c.MemberNo)), SPACE(1), c.Name, SPACE(1), a.Name)) AS RawData , UPPER(CONCAT(RTRIM(c.EmpID), SPACE(1), '-', SPACE(1), RTRIM(LTRIM(c.MemberNo)), SPACE(1), '-', SPACE(1), RTRIM(c.Name), SPACE(1), '-', SPACE(1), RTRIM(a.Name))) AS DataDescription , NULL AS DataTerm , 'MEMBER' AS DataType , 'CREATEGL' AS DataModule , 0 AS RowStatus , 'JOBSQL' AS CreatedBy , GETDATE() AS CreatedDate , 'JOBSQL' AS ModifiedBy , GETDATE() AS ModifiedDate FROM profile a INNER JOIN policy b ON a.id = b.clientid INNER JOIN policy_member c ON b.pno = c.pno INNER JOIN Policy_Member_Plan PMP ON b.PNO = PMP.PNO AND c.MNO = PMP.MNO AND PMP.ExcludeF = 0 LEFT JOIN Policy_Plan_Schedule PPS ON PPS.PNO = C.PNO AND pmp.PPlan = PPS.PPlan AND pmp.BAmount = PPS.BAmount INNER JOIN Policy_Classification PC ON B.PNO = PC.PNO AND C.CLASSNO = PC.CLASSNO INNER JOIN PPlan PP ON PMP.PPlan = PP.PPlan INNER JOIN Product Pr ON PP.ProductID = Pr.ProductID LEFT JOIN ( SELECT DISTINCT pm.memberno FROM claimh ch INNER JOIN policy_member pm ON ch.MNO = pm.MNo WHERE   CAST(GETDATE() AS DATE) BETWEEN start AND finish ) X ON X.MemberNo = C.MemberNo LEFT JOIN TREATMENTROOMMODEL TRM ON TRM.CLIENTID = B.CLIENTID WHERE B.PStatus &lt;> 'O' AND C.MemberNo &lt;> '' AND B.EffectiveDate >= '2013-01-01' AND CAST(GETDATE() AS DATE) BETWEEN c.PDate AND C.PPDate AND b.RenewalDate >= CAST(GETDATE() - 14 AS DATE) AND X.MemberNo IS NULL AND TRM.CLIENTID IS NULL AND pr.ProductType = 'IP' AND a.Name LIKE '%PT Astra International Tbk' AND c.Membership = '1. Emp' GROUP BY c.MemberNo , c.Name , c.EmpID , a.Name</query>
+   <query>SELECT TOP 1
+        UPPER(CONCAT(RTRIM(c.EmpID), SPACE(1), '-', SPACE(1),
+                     RTRIM(LTRIM(c.MemberNo)), SPACE(1), '-', SPACE(1),
+                     RTRIM(c.Name), SPACE(1), '-', SPACE(1), RTRIM(a.Name))) AS DataDescription ,
+        c.EmpID AS EmployeeID ,
+        c.MemberNo AS MemberNo ,
+        c.NAME AS MemberName ,
+        a.Name AS ClientName ,
+        NULL AS DataTerm ,
+        'MEMBER' AS DataType ,
+        'CREATEGL' AS DataModule ,
+        0 AS RowStatus ,
+        'JOBSQL' AS CreatedBy ,
+        GETDATE() AS CreatedDate ,
+        'JOBSQL' AS ModifiedBy ,
+        GETDATE() AS ModifiedDate
+FROM    profile a
+        INNER JOIN policy b ON a.id = b.clientid
+        INNER JOIN policy_member c ON b.pno = c.pno
+        INNER JOIN Policy_Member_Plan PMP ON b.PNO = PMP.PNO
+                                             AND c.MNO = PMP.MNO
+                                             AND PMP.ExcludeF = 0
+        LEFT JOIN Policy_Plan_Schedule PPS ON PPS.PNO = C.PNO
+                                              AND pmp.PPlan = PPS.PPlan
+                                              AND pmp.BAmount = PPS.BAmount
+        INNER JOIN Policy_Classification PC ON B.PNO = PC.PNO
+                                               AND C.CLASSNO = PC.CLASSNO
+        INNER JOIN PPlan PP ON PMP.PPlan = PP.PPlan
+        INNER JOIN Product Pr ON PP.ProductID = Pr.ProductID
+        LEFT JOIN ( SELECT DISTINCT
+                            pm.memberno
+                    FROM    claimh ch
+                            INNER JOIN policy_member pm ON ch.MNO = pm.MNo
+                    WHERE   CAST(GETDATE() AS DATE) BETWEEN start AND finish
+                  ) X ON X.MemberNo = C.MemberNo
+        LEFT JOIN TREATMENTROOMMODEL TRM ON TRM.CLIENTID = B.CLIENTID
+WHERE   B.PStatus &lt;> 'O'
+        AND C.MemberNo &lt;> ''
+        AND B.EffectiveDate >= '2013-01-01'
+        AND CAST(GETDATE() AS DATE) BETWEEN c.PDate AND C.PPDate
+        AND b.RenewalDate >= CAST(GETDATE() - 14 AS DATE)
+        AND X.MemberNo IS NULL
+        AND TRM.CLIENTID IS NULL
+        AND pr.ProductType = 'IP'
+        AND a.Name LIKE '%PT Astra International Tbk'
+        AND c.Membership = '1. Emp'
+GROUP BY c.MemberNo ,
+        c.Name ,
+        c.EmpID ,
+        a.Name</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>sa</user>

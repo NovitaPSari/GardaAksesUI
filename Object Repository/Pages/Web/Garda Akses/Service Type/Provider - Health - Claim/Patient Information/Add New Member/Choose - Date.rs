@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>/html/body/div[6]/div/div[1]/table/tbody//td[@class = &quot;day&quot; and text() = ${Date}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>/html/body/div[8]/div/div[1]/table/tbody/tr[1]/td[@class = &quot;day&quot; and text() = '${Date}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html/body/div[6]/div/div[1]/table/tbody//td[@class = &quot;day&quot; and text() = ${Date}']</value>
+      <value>/html/body/div[8]/div/div[1]/table/tbody/tr[1]/td[@class = &quot;day&quot; and text() = '${Date}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

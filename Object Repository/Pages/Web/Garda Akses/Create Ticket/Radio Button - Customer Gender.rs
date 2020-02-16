@@ -3,11 +3,11 @@
    <description></description>
    <name>Radio Button - Customer Gender</name>
    <tag></tag>
-   <elementGuidId>f8a80203-cfcb-4ec5-ab20-6c300aba4b2a</elementGuidId>
+   <elementGuidId>1a33e653-02f9-4d4f-aa84-b34972f41209</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[text() = '${GenderCT}']//parent::div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;CGender&quot;]//span[text() = '${Value}']/parent::div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[text() = '${GenderCT}']//parent::div//input</value>
+      <value>//*[@id=&quot;CGender&quot;]//span[text() = '${Value}']/parent::div/input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

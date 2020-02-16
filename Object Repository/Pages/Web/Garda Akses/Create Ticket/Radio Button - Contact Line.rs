@@ -6,12 +6,11 @@
    <elementGuidId>6ac548c5-d6be-43ef-b7c3-d0c0578cf0e3</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value>//span[text() = '${ContactLine}']//parent::div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <key>XPATH</key>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value></value>
+         <key>BASIC</key>
+         <value>//span[text() = '${Value}']//parent::div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -21,7 +20,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//span[text() = '${ContactLine}']//parent::div//input</value>
+      <value>//span[text() = '${Value}']//parent::div//input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

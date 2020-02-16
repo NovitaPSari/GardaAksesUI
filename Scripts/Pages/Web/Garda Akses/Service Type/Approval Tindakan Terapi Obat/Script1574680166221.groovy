@@ -30,6 +30,9 @@ WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
 
+//Medical Treatment
+WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Medical Treatment'), MedicalTreatment)
+
 //Remarks
 WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Remarks'), Remarks)
 
@@ -40,50 +43,16 @@ if (NeedFollowUp == 'Yes') {
 	WebUI.delay(0)
 }
 
-//Back
-
 
 //Action
 if (Action == 'Proses') {
+
 	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
 	
-	WebUI.delay(GlobalVariable.Delay1)
+	CustomKeywords.'gardaAkses.GetTicketID.ProviderHealthAPPTO'(Phase)
 	
-	if (MultipleServiceType == 'Yes') {
-		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
-		
-		GlobalVariable.TicketIDRevisi = result.substring(9, 17)
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-	} else {
-		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
-		
-		GlobalVariable.TicketIDAwal = result.substring(9, 17)
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-	}
-	
-	//Exit Confirmation 1 - Apakah ada hal lain yang dapat dibantu, Pak/Bu?
-	if (ExitConfirmation1 == 'Yes') {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 Yes'))
-	} else {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 No'))
-		
-		//Exit Confirmation 2 - Sebelum mengakhiri percakapan, boleh kami dibantu untuk pertanyaan penutup yaitu Apakah Bapak/Ibu PUAS dengan informasi yang telah saya berikan?
-		if (ExitConfirmation2 == 'Puas') {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Puas'))
-		} else {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Tidak Puas'))
-			
-			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Exit Confirmation 3 Add Comment'), Comment)
-			
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 3 Ok'))
-		}
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
-	}
+	WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1, ('ECAction2') : ECAction2])
+																									
 } else if (Back == 'Yes') {
 	WebUI.click(findTestObject('null'))
 } else {

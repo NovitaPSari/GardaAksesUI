@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>/html/body/div[6]/div/div[2]/table/thead/tr/th[2]</value>
+         <value>/html/body/div[8]/div/div[2]/table/thead/tr/th[2][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html/body/div[6]/div/div[2]/table/thead/tr/th[2]</value>
+      <value>/html/body/div[8]/div/div[2]/table/thead/tr/th[2]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

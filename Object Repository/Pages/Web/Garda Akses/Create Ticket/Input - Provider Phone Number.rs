@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;CT.ProviderPhone&quot;]//span[contains(text(), 'Phone Number*')]/parent::label/parent::div/div/div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;CT.ProviderPhone&quot;]//span[contains(text(), 'Phone Number')]/parent::label/parent::div/div/div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;CT.ProviderPhone&quot;]//span[contains(text(), 'Phone Number*')]/parent::label/parent::div/div/div/input</value>
+      <value>//*[@id=&quot;CT.ProviderPhone&quot;]//span[contains(text(), 'Phone Number')]/parent::label/parent::div/div/div/input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

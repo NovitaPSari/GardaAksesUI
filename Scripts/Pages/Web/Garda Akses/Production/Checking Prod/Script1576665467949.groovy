@@ -26,7 +26,7 @@ def PopUpError = WebUI.verifyElementPresent(findTestObject('Object Repository/Pa
     GlobalVariable.Delay0)
 
 if (PopUpError == true) {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+    WebUI.click(findTestObject('null'))
 } else {
     WebUI.delay(0)
 }
@@ -49,12 +49,12 @@ def PopUpError2 = WebUI.verifyElementPresent(findTestObject('Object Repository/P
     GlobalVariable.Delay0)
 
 if (PopUpError2 == true) {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+    WebUI.click(findTestObject('null'))
 } else {
     WebUI.delay(0)
 }
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Button - Create New GL'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Button - New GL'))
 
 WebUI.delay(GlobalVariable.Delay6)
 
@@ -62,7 +62,7 @@ def PopUpError3 = WebUI.verifyElementPresent(findTestObject('Object Repository/P
     GlobalVariable.Delay0)
 
 if (PopUpError3 == true) {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+    WebUI.click(findTestObject('null'))
 } else {
     WebUI.delay(0)
 }
@@ -80,7 +80,7 @@ def PopUpError4 = WebUI.verifyElementPresent(findTestObject('Object Repository/P
     GlobalVariable.Delay0)
 
 if (PopUpError4 == true) {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+    WebUI.click(findTestObject('null'))
 } else {
     WebUI.delay(0)
 }
@@ -102,7 +102,7 @@ def PopUpError5 = WebUI.verifyElementPresent(findTestObject('Object Repository/P
     GlobalVariable.Delay0)
 
 if (PopUpError5 == true) {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Ignore'))
+    WebUI.click(findTestObject('null'))
 } else {
     WebUI.delay(0)
 }

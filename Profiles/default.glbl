@@ -107,12 +107,12 @@
    <GlobalVariableEntity>
       <description>Popup Message Bila status Produce</description>
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \'DIJAMINKAN\']'</initValue>
-      <name>SummaryDijaminkan</name>
+      <name>ValidasiDijaminkan</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \' TIDAK DIJAMINKAN\']'</initValue>
-      <name>SummaryTidakDijaminkan</name>
+      <name>ValidasiTidakDijaminkan</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -122,7 +122,7 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \'PRE-ADMISSION\']'</initValue>
-      <name>SummaryPreAdmission</name>
+      <name>ValidasiPreAdmission</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
@@ -148,10 +148,5 @@
       <description></description>
       <initValue>'081245708070'</initValue>
       <name>PatientFamilyPhoneNo</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'https://gen5-qc.asuransiastra.com/gardaakses'</initValue>
-      <name>URLGardaAkses</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

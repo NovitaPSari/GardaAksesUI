@@ -14,6 +14,6 @@
       <guid>21818558-3978-4507-a18c-e051cec44c52</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Scenario/PRODUCTION/Test 502 Server Error</testCaseId>
+      <testCaseId>Test Cases/Scenario/Production/Test 502 Server Error</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

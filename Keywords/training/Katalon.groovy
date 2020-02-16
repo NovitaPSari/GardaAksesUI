@@ -21,44 +21,43 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
 
 public class Katalon {
-	
+
 	@Keyword
 	def loginGen5 (String URL, String Username, String Password) {
 		WebUI.openBrowser(URL)
-		
+
 		WebUI.maximizeWindow()
-		
+
 		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Login/Input - Username'), Username)
-		
+
 		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Login/Input - Password'), Password)
-		
+
 		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Login/Button - Masuk'))
-		
+
 		WebUI.delay(GlobalVariable.Delay0)
-		
+
 		WebUI.dismissAlert()
 	}
-	
+
 	@Keyword
 	def select(hbt, hbt2){
-		ArrayList animal = ["singa","burung","ikan","anjing","garuda","paus"]
-		ArrayList habitat = ["darat","udara","air"]
-	   
+		ArrayList animal = ["singa", "burung", "ikan", "anjing", "garuda", "paus"]
+		ArrayList habitat = ["darat", "udara", "air"]
+
 		if (hbt == "singa" && hbt2 == "anjing"){
 			String res = habitat[0]
-		   
+
 			return res
 		} else if ((hbt == "burung" && hbt2 == "garuda") || (hbt == "garuda" && hbt2 == "burung")) {
 			String res = habitat[1]
-		   
+
 			return res
 		} else {
 			String res = habitat[2]
-		   
+
 			return res
 		}
 	}
-	
 }
 
 

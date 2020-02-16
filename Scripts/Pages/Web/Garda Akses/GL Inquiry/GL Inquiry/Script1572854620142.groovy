@@ -16,19 +16,19 @@ import internal.GlobalVariable as GlobalVariable
 WebUI.delay(GlobalVariable.Delay2)
 
 if (GLType == 'Awal') {
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Button - Create New GL')) //    WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Button - New GL')) //    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No'))
 } else if ((GLType == 'Revisi') || (GLType == 'Akhir')) {
-    WebUI.setText(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Input - Ticket No'), TicketID)
+    WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Input - Ticket No'), TicketID)
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Button - Search'))
 
-    WebUI.waitForElementPresent(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'), GlobalVariable.Delay3)
+    WebUI.waitForElementPresent(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No'), GlobalVariable.Delay3)
 	
 	WebUI.delay(GlobalVariable.Delay5)
 	
-//	WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
+//	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No'))
 
-    WebUI.doubleClick(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
+    WebUI.doubleClick(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No'))
 } else {
 	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Input - Member Name'), NewMemberName)
 
@@ -36,10 +36,10 @@ if (GLType == 'Awal') {
 	
 	WebUI.delay(GlobalVariable.Delay5)
 
-	WebUI.waitForElementPresent(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'), GlobalVariable.Delay3)
+	WebUI.waitForElementPresent(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No'), GlobalVariable.Delay3)
 	
-	WebUI.click(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No'))
 
-	WebUI.doubleClick(findTestObject('Pages/Web/Garda Akses/GL Inquiry/Choose - Ticket No'))
+	WebUI.doubleClick(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No'))
 }
 

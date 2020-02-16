@@ -22,5 +22,14 @@ import internal.GlobalVariable
 
 public class Query {
 
-	
+	DefaultQuery defaultQuery = new DefaultQuery()
+
+	@Keyword
+	def QueryContactName () {
+		def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
+
+		defaultQuery.connectDB('172.16.94.48', 'litt', 'sa', 'Password95')
+
+		defaultQuery.execute(queryContactName)
+	}
 }

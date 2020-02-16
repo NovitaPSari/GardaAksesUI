@@ -164,19 +164,19 @@ if (DiagnosisStatus != null) {
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Button - Diagnosis'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Diagnosis/Button - Status'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/Combo - Status'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Diagnosis/Choose - Status', [('DiagnosisStatus') : DiagnosisStatus]))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/List - Status', [('DiagnosisStatus') : DiagnosisStatus]))
 
-    WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Diagnosis/Input - Diagnosis ID'), DiagnosisID)
-
-    WebUI.delay(GlobalVariable.Delay2)
-
-    WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Diagnosis/Input - Diagnosis ID'), DiagnosisID)
+    WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/Input - Diagnosis ID'), DiagnosisID)
 
     WebUI.delay(GlobalVariable.Delay2)
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Diagnosis/Choose - Diagnosis ID'))
+    WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/Input - Diagnosis ID'), DiagnosisID)
+
+    WebUI.delay(GlobalVariable.Delay2)
+
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/Select - Diagnosis ID'))
 
     WebUI.delay(GlobalVariable.Delay2)
 
@@ -195,16 +195,16 @@ if (DiagnosisStatus != null) {
     int i = 1
 
     for (a = i; a <= yes; a++) {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Diagnosis/Radio Button - Yes', [('i') : a]))
+        WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/Radio Button - Yes', [('i') : a]))
 
         WebUI.delay(1)
     }
     
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Diagnosis/Button - Choose'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/Button - Choose'))
 
     WebUI.delay(GlobalVariable.Delay2)
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Diagnosis/Button - Submit'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/Button - Submit'))
 } else {
     WebUI.delay(0)
 }
@@ -233,7 +233,7 @@ if (Status == 'Reject') {
 if (DoctorName != null) {
     WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Page Claim'), GlobalVariable.Delay1)
 
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Input - Doctor Name'), DoctorName)
+    WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Doctor/Input - Doctor Name'), DoctorName)
 } else {
     WebUI.delay(0)
 }
@@ -254,11 +254,11 @@ def AppropriateRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pa
     'value')
 
 if (AppropriateRBClass == '') {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Appropriate RB Class'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Look Up - Appropriate RB Class'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Appropriate RB Class/Button - Room Class'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Appropriate RB Class/Select - Appropriate RB Class'))
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Appropriate RB Class/Button - Choose'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Appropriate RB Class/Button - Choose'))
 } else {
     WebUI.delay(0)
 }
@@ -268,11 +268,11 @@ def TreatmentRBClass = WebUI.getAttribute(findTestObject('Object Repository/Page
     'value')
 
 if (TreatmentRBClass == '') {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Treatment RB Class'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Look Up - Treatment RB Class'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Treatment RB Class/Button - Room Class'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Treatment RB Class/Select - Treatment RB Class'))
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Treatment RB Class/Button - Choose'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Treatment RB Class/Button - Choose'))
 } else {
     WebUI.delay(0)
 }
@@ -286,7 +286,7 @@ if (NPNFU == 'Yes') {
 
 //TotalBilled
 if (GLType == 'Akhir') {
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Input - Total Billed'), TotalBilled)
+    WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Total Billed'), TotalBilled)
 } else {
     WebUI.delay(0)
 }
@@ -299,7 +299,7 @@ if (GLType == 'Akhir') {
 //} else if (Status == 'Reject') {
 //    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Reject'))
 //} else if (Status == 'Process') {
-//    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Process'))
+//    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'))
 //} else {
 //    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Cancel'))
 //}
@@ -311,12 +311,12 @@ if (GLType == 'Akhir') {
 //
 //    WebUI.delay(GlobalVariable.Delay2)
 //
-//    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Close'))
+//    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
 //	
 //	def PopUpSummary = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Summary'), GlobalVariable.Delay3)
 //	
 //	if (PopUpSummary == true) {
-//		WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Button - Close'))
+//		WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
 //	} else {
 //		WebUI.delay(0)
 //	}
@@ -351,7 +351,7 @@ if (GLType == 'Akhir') {
 //        
 //        WebUI.getText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Text - Ticket ID'))
 //
-//        WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Button - Close'))
+//        WebUI.click(findTestObject('null'))
 //    } else {
 //        if (GLType == 'Awal') {
 //            def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
@@ -375,7 +375,7 @@ if (GLType == 'Akhir') {
 //        
 //        WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Text - Interrupted Ticket ID'))
 //
-//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Interrupted Close'))
+//        WebUI.click(findTestObject('null'))
 //    }
 //    
 //    //		}
