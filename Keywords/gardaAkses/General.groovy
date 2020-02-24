@@ -32,7 +32,7 @@ public class General {
 	@Keyword
 	def Boolean waitProcessingCommand(){
 
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Alert - Processing Command'), 60)
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Alert - Processing Command'), 10)
 
 		Integer stale = 0
 		int countTO

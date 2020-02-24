@@ -27,6 +27,8 @@ if (ECAction1 == 'Ya') {
         WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Exit Confirmation/Button - OK'))
 
         WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Exit Confirmation/Button - OK'))
+		
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Button - Exit'), 20)
 
         CustomKeywords.'gardaAkses.General.waitProcessingCommand'()
 

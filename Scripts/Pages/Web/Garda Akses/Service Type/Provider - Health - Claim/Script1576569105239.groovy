@@ -157,6 +157,8 @@ WebUI.delay(5)
 
 WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/Input - Diagnosis ID'), DiagnosisID)
 
+WebUI.delay(5)
+
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Diagnosis/Select - Diagnosis ID'))
 
 CustomKeywords.'gardaAkses.General.waitProcessingCommand'()
@@ -297,13 +299,13 @@ if (ActionGL == 'Cancel') {
 } else if (ActionGL == 'Pre-Admission') {
 	
 } else if (ActionGL == 'Process') {
+	WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'), 5)
+	
+	WebUI.delay(10)
+	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'))
 	
-	CustomKeywords.'gardaAkses.General.waitProcessingCommand'()
-	
-	WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', [('Value') : Validasi]))
-	
-	WebUI.verifyelement
+	WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', [('Value') : Validasi]))	
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
 	

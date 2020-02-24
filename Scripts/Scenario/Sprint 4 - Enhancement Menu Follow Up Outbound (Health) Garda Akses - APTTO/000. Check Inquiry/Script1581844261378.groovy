@@ -63,5 +63,5 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
         , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : Action])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Inquiry'), [('MemberName') : MemberName], 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry'), [('MemberName') : MemberName], 
     FailureHandling.STOP_ON_FAILURE)

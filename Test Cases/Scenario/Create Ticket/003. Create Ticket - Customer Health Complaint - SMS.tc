@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>003. Create Ticket - Customer Health Complaint - SMS</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dfb3842a-35f1-4358-acd9-9afe94801504</testCaseGuid>
+</TestCaseEntity>

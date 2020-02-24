@@ -23,39 +23,15 @@ import internal.GlobalVariable
 public class GetTicketID {
 
 	@Keyword
-	def ProviderHealthAPPTO (String Phase) {
-		if (Phase == '1') {
-			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
+	def ProviderHealthAPPTO () {
+		
+		def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
 
-			GlobalVariable.TicketID1 = result.substring(9, 17)
+		GlobalVariable.TicketID1 = result.substring(9, 17)
 
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-		} else if (Phase == '2') {
-			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
-
-			GlobalVariable.TicketID2 = result.substring(9, 17)
-
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-		} else if (Phase == '3') {
-			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
-
-			GlobalVariable.TicketID3 = result.substring(9, 17)
-
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-		} else if (Phase == '4') {
-			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
-
-			GlobalVariable.TicketID4 = result.substring(9, 17)
-
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-		} else if (Phase == '5') {
-			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
-
-			GlobalVariable.TicketID5 = result.substring(9, 17)
-
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-		}
-	}
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
+		
+}
 
 	@Keyword
 	def ProviderHealthClaim (String Phase) {

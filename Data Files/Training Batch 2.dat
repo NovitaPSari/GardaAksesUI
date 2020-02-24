@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>Training Batch 2</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>b2a1136e-dcb1-4cb7-a318-b5fed4355c52</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://172.16.94.48;databaseName=LiTT</dataSourceUrl>
+   <driver>DBData</driver>
+   <isInternalPath>false</isInternalPath>
+   <password>UGFzc3dvcmQ5NQ==</password>
+   <query>SELECT * FROM dbo.GardaAkses_MasterID</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>sa</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

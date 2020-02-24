@@ -33,40 +33,33 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 //Login//
-def UserID = 'MIG'
+String UserID = 'DNS'
 
-def Password = 'P@ssw0rd'
+String Password = 'Password95'
+
+//Home
+String Menu = 'General'
+
+String SubMenu = 'Create Ticket'
 
 //Create Ticket//
-def ContactLine = 'Provider'
+String ContactLine = 'Provider'
 
-def Product = 'Health'
+String Product = 'Health'
 
-def ChannelType = 'Call' //Bebas
+String ChannelType = 'Call'
 
-def ContactName = findTestData('ContactName').getValue(1, 1)
+String ContactName = findTestData('ContactName').getValue(1, 1)
 
-def ContactType = 'Lainnya' //Bebas
+String ContactType = 'Lainnya'
 
-def ServiceType = 'Claim'
+String ServiceType = 'Inquiry'
 
-def InterruptedCall = null //Yes or Null
+String InterruptedCall = 'No'
 
-def GenderCT = null
+String ProviderName = 'OJKSH00001'
 
-def CustomerPhone = null
-
-def ProviderName = 'OJKSH00001'
-
-def ProviderPhoneNumber = '081310954818'
-
-def Email = 'automationtest.ga@gmail.com'
-
-def Fax = '1500112'
-
-def GLType = 'Awal'
-
-def ActionCT = 'Next'
+String ActionCT = 'Next'
 
 //Inquiry//
 def MemberName = findTestData('MemberNoAll').getValue(1, 1)
@@ -77,33 +70,29 @@ def Remarks = 'Currently testing by Automation. Thanks. Regards - Me'
 
 def NeedFollowUp = null
 
-def Action = 'Proses'
-
-def MultipleServiceType = null
-
-def ExitConfirmation1 = 'No'
-
-def ExitConfirmation2 = 'Puas'
-
-def ExitConfirmation3 = null
-
-
-//Query DB
-def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
-
-CustomKeywords.'querySQL.DefaultQuery.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
-
-CustomKeywords.'querySQL.DefaultQuery.execute'(queryContactName)
+def Action = 'Process'
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), 
+	[('UserID') : UserID
+		, ('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), 
+	[('Menu') : Menu
+		, ('SubMenu') : SubMenu])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('CustomerGender') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), 
+	[('ContactLine') : ContactLine
+		, ('Product') : Product
+        , ('ChannelType') : ChannelType
+		, ('ContactName') : ContactName
+		, ('ContactType') : ContactType
+		, ('ServiceType') : ServiceType
+        , ('InterruptedCall') : InterruptedCall
+		, ('ProviderName') : ProviderName
+		, ('Action') : ActionCT])
+
+CustomKeywords.'querySQL.Query.QueryContactName'()
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Approval Tindakan Terapi Obat'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
         , ('SubServiceType') : SubServiceType, ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('Action') : Action, MultipleServiceType : MultipleServiceType

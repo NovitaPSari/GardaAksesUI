@@ -58,7 +58,7 @@ def Remarks = 'Currently testing by Automation. Thanks. Regards - Me'
 
 def NeedFollowUp = 'Yes'
 
-def PatientPhoneNumber = GlobalVariable.ProviderPhoneNumber
+def PatientPhoneNumber = GlobalVariable.PhoneNumber
 
 def ActionST = 'Proses'
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>VerifikasiDataTicketProviderHealthClaim</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>be304778-b717-459e-b30f-caf0b2e91a52</dataFileGUID>
+   <dataSourceUrl></dataSourceUrl>
+   <driver>DBData</driver>
+   <isInternalPath>false</isInternalPath>
+   <password>UGFzc3dvcmQ5NQ==</password>
+   <query>SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), '-', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), '-', SPACE(1),  RTRIM(LTRIM(MemberNo)), SPACE(1), '-', SPACE(1), RTRIM(MemberName), SPACE(1), '-', SPACE(1), RTRIM(ClientName))) AS MemberName, GLType AS GLType, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = '_TicketID_'</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>sa</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

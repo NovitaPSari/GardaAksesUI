@@ -137,16 +137,31 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>'081280704570'</initValue>
-      <name>ProviderPhoneNumber</name>
+      <name>PhoneNumber</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'ehu@beyond.asuransi.astra.co.id'</initValue>
-      <name>ProviderEmail</name>
+      <name>Email</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
       <initValue>'081245708070'</initValue>
       <name>PatientFamilyPhoneNo</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'0211500112'</initValue>
+      <name>FaxNumber</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'172401'</initValue>
+      <name>ExtNumber</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'@lifeatasuransiastra'</initValue>
+      <name>SocialMedia</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

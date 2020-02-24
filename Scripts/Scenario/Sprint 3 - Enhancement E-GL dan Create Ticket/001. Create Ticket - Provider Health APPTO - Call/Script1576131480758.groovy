@@ -33,9 +33,14 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 //Login//
-def UserID = 'DNS'
+String UserID = 'DNS'
 
-def Password = 'Password95'
+String Password = 'Password95'
+
+//Home
+String Menu = 'General'
+
+String SubMenu = 'Create Ticket'
 
 //Create Ticket//
 def ContactLine = 'Provider'
@@ -50,42 +55,31 @@ def ContactType = 'Lainnya' //Bebas
 
 def ServiceType = 'Approval Tindakan/Terapi/Obat'
 
-def InterruptedCall = null //Yes or Null
+String InterruptedCall = 'No'
 
-def GenderCT = null
+String ProviderName = 'OJKSH00001'
 
-def CustomerPhone = null
-
-def ProviderName = 'OJKSH00001'
-
-def ProviderPhoneNumber = '081310954818'
-
-def Email = 'automationtest.ga@gmail.com'
-
-def Fax = '1500112'
-
-def GLType = 'Awal'
-
-def ActionCT = 'Next'
+String ActionCT = 'Next'
 
 //Inquiry//
 def MemberName = findTestData('MemberNoAll').getValue(1, 1)
 
 def SubServiceType = 'Approve Tindakan/Terapi/Obat'
 
+String MedicalTreatment = 'Rongen'
+
 def Remarks = 'Currently testing by Automation. Thanks. Regards - Me'
 
 def NeedFollowUp = null
 
-def Action = 'Proses'
+def ActionAPTTO = 'Process'
 
-def MultipleServiceType = null
+//Exit Confirmation
+String ECAction1 = 'Tidak'
 
-def ExitConfirmation1 = 'No'
+String ECAction2 = 'Puas'
 
-def ExitConfirmation2 = 'Puas'
-
-def ExitConfirmation3 = null
+String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
 
 //Query DB
@@ -98,13 +92,16 @@ CustomKeywords.'querySQL.DefaultQuery.execute'(queryContactName)
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('CustomerGender') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('Action') : ActionCT])
+        , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Approval Tindakan Terapi Obat'), [('ServiceType') : ServiceType, ('MemberName') : MemberName
-        , ('SubServiceType') : SubServiceType, ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('Action') : Action, MultipleServiceType : MultipleServiceType
-		,'ExitConfirmation1' : ExitConfirmation1, 'ExitConfirmation2' : ExitConfirmation2, 'ExitConfirmation3' : ExitConfirmation3], FailureHandling.STOP_ON_FAILURE)
+        , ('SubServiceType') : SubServiceType, ('MedicalTreatment') : MedicalTreatment, ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp, ('ActionAPTTO') : ActionAPTTO], FailureHandling.STOP_ON_FAILURE)
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'),
+	[('ECAction1') : ECAction1
+		, ('ECAction2') : ECAction2
+		, ('Comment') : Comment])

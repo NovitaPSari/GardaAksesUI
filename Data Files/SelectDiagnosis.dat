@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>SelectDiagnosis</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>8230cf12-bf3e-4957-9988-d10b7169fb9a</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://172.16.94.70;databaseName=SEA</dataSourceUrl>
+   <driver>DBData</driver>
+   <isInternalPath>false</isInternalPath>
+   <password>UGFzc3dvcmQ5NQ==</password>
+   <query>SELECT p.ClientID, pro.Name, pde.DiagnosisCategoryID, pde.Coverage, pde.IsNeedConfirmation, pde.Payer, dc.Description, dcd.Diagnosis FROM dbo.PolicyDiagnosisExclusion pde JOIN DiagnosisCategory dc ON pde.DiagnosisCategoryID = dc.DiagnosisCategoryID JOIN DiagnosisCategoryDiagnosis dcd ON dc.diagnosiscategoryid = dcd.diagnosiscategoryid AND dcd.IsActive = 1 JOIN Policy p ON pde.opno = p.opno AND GETDATE() BETWEEN p.effectivedate AND p.renewaldate JOIN Profile pro ON p.ClientID = pro.ID WHERE coverage = '_Coverage _' AND p.ClientID IN ( '_ClientID_' ) GROUP BY p.ClientID, pro.Name, pde.DiagnosisCategoryID, pde.Coverage, pde.IsNeedConfirmation, pde.Payer, dc.Description, dcd.Diagnosis</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>sa</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

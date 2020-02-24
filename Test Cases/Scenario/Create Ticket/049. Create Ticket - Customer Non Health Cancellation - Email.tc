@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>049. Create Ticket - Customer Non Health Cancellation - Email</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>fd50c840-edcc-4fb2-8a99-480467b13914</testCaseGuid>
+</TestCaseEntity>

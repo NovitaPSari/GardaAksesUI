@@ -95,7 +95,7 @@ CustomKeywords.'querySQL.DefaultQuery.connectDB'('172.16.94.48', 'litt', 'sa', '
 CustomKeywords.'querySQL.DefaultQuery.execute'(queryContactName)
 
 //Script
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Inquiry'), 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry'), 
 	[('MemberName') : MemberName, 
 		('ContactLine') : ContactLine, 
 		('Product') : Product, 

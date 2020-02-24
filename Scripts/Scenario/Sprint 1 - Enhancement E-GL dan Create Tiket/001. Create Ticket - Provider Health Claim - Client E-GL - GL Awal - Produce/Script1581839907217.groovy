@@ -66,7 +66,7 @@ String SpecialConditionReason = ''
 
 String StatusDiagnosa = 'Initial Primary'
 
-String DiagnosisID = 'A09'
+String DiagnosisID = 'S76'
 
 String DoctorName = 'Automation Doctor - Me'
 

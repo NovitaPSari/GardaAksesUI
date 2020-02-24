@@ -14,205 +14,150 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 //Login//
-def UserID = 'DNS'
+String UserID = 'DNS'
 
-def Password = 'Password95'
+String Password = 'Password95'
 
-def Product = 'Health'
+//Home
+String Menu = 'General'
 
-def ContactLine = 'Provider'
+String SubMenu = 'Create Ticket'
 
-def ChannelType = 'Call'
+//Create Ticket//
+String ContactLine = 'Provider'
 
-def ContactName = findTestData('ContactName').getValue(1, 1)
+String Product = 'Health'
 
-def ContactType = 'Farmasi'
+String ChannelType = 'Call'
 
-def ServiceType = 'Claim'
+String ContactName = findTestData('ContactName').getValue(1, 1)
 
-def InterruptedCall = null //Yes or null
+String ContactType = 'Farmasi'
 
-def GenderCT = null
+String ServiceType = 'Claim'
 
-def CustomerPhone = null
+String InterruptedCall = 'No'
 
-def ProviderName = 'OJKSH00001 '
+String ProviderName = 'OJKSH00001'
 
-def ProviderPhoneNumber = null
-
-def Email = null
-
-def Fax = null
-
-def ActionCT = 'Next'
+String ActionCT = 'Next'
 
 //Inquiry//
-def SearchBy = 'TicketNo'
-
-def SearchBy2 = 'TicketNo'
-
-def SearchBy3 = 'TicketNo'
+String Phase = '1'
 
 //Claim
-//Member = Existing  / New / Check
-def Member = 'Existing'
+String Member = 'Existing' //Member = Existing  / New / Check
 
-def Member2 = null
+String MemberName = findTestData('MemberNameClient').getValue(1, 1)
 
-def Member3 = null
+String ProductType = 'Inpatient'
 
-def Member4 = null
+String GLType = 'Awal'
 
-def Member5 = null
+String GLType2 = 'Revisi'
 
-// MemberStatus = Non Client / Client
-def MemberStatus = 'Client'
+String GLType3 = 'Akhir'
 
-def MemberName = findTestData('MemberNameClient').getValue(1, 1)
+String EditTreatmentPeriodStart = 'No'
 
-def NewMemberType = null
+String EditTreatmentPeriodEnd = 'No'
 
-def NewMemberName = findTestData('ParameterPolicyNo').getValue(1, 1)
+String SpecialCondition = 'No'
 
-//PT SHOWA INDONESIA MANUFACTURING // PT BANK PERMATA TBK // ASURANSI ASTRA BUANA
-def ClientName = 'ASURANSI ASTRA BUANA'
+String SpecialConditionReason = ''
 
-def EmployeeID = null
+String StatusDiagnosa = 'Initial Primary'
 
-def Year = null
+String StatusDiagnosa_2 = 'Initial Secondary'
 
-def Month = null
+String DiagnosisID = 'A09 DIARRHOEA AND GASTROENTERITIS OF PRESUMED INFECTIOUS ORIGIN'
 
-//Level 13-14A // Gol. V  / IP-1590 / Kls VIP
-def Classification = null
+String DoctorName = 'Automation Doctor - Me'
 
-def Gender = null
+String Rujuk = 'No'
 
-def FamilyPhoneNo = '081214998614'
+String Reason = ''
 
-def ProductType = 'Inpatient'
+String RoomOptionAvailability = 'On Plan'
 
-def GLType = 'Awal'
+String TotalBilled = '1000000'
 
-def GLType2 = 'Revisi'
+String NewDocument = 'No'
 
-def GLType3 = 'Akhir'
+String EditDocument = 'No'
 
-def DiagnosisStatus = 'Initial Primary'
+String DeleteDocument = 'No'
 
-def DiagnosisID = 'A09 '
+String ActionGL = 'Process'
 
-def DoctorName = 'Betsy Kalianda'
+String Validasi = GlobalVariable.ValidasiDijaminkan
 
-//Rujuk = yes / no
-def Rujuk = null
+//Exit Confirmation
+String ECAction1 = 'Tidak'
 
-def Reason = null
+String ECAction2 = 'Puas'
 
-def TotalBilled = '3000000'
-
-def NPNFU = null
-
-def NPNFU2 = null
-
-def NPNFU3 = null
-
-def NPNFU4 = null
-
-def NPNFU5 = null
-
-def Status = 'Process'
-
-def Status2 = null
-
-def Status3 = null
-
-def Status4 = null
-
-def Status5 = null
-
-def Summary = GlobalVariable.ValidasiDijaminkan
-
-def Summary2 = null
-
-def Summary3 = null
-
-def Summary4 = null
-
-def Summary5 = null
-
-def Validasi = null
-
-def Validasi2 = null
-
-def Validasi3 = null
-
-def Validasi4 = null
-
-def Validasi5 = null
-
-//Query DB
-def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation Tester\')+1 WHERE Name = \'Automation Tester\''
-
-CustomKeywords.'querySQL.DefaultQuery.connectDB'('172.16.94.48', 'litt', 'sa', 'Password95')
-
-CustomKeywords.'querySQL.DefaultQuery.execute'(queryContactName)
+String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
 //==================== PHASE 1 ====================
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName, ('ProviderPhoneNumber') : ProviderPhoneNumber
-        , ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType, ('InterruptedCall') : InterruptedCall, ('GLType') : GLType, ('Action') : ActionCT])
+        , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType, ('TicketID') : null
-        , ('NewMemberName') : null])
+CustomKeywords.'querySQL.Query.QueryContactName'()
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : Member, ('MemberStatus') : MemberStatus
-        , ('MemberName') : MemberName, ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType
-        , ('DiagnosisStatus') : DiagnosisStatus, ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName, ('Rujuk') : null
-        , ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '1'])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
+        , ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+        , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa, ('DiagnosisID') : DiagnosisID
+        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('SpecialConditionReason') : SpecialConditionReason
+        , ('RoomOptionAvailability') : RoomOptionAvailability, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument
+        , ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL, ('Validasi') : Validasi, ('Phase') : '1'])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+        , ('ECAction2') : ECAction2, ('Comment') : Comment])
 
 //==================== PHASE 2 ====================
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
+
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('Action') : ActionCT])
+        , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType2, ('TicketID') : GlobalVariable.TicketIDAwal
-        , ('NewMemberName') : null])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '2'])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), 
-	[('Member') : null, 
-		('MemberStatus') : null
-        , ('MemberName') : null, 
-		('FamilyPhoneNo') : null, 
-		('ProductType') : null, 
-		('GLType') : GLType2, 
-		('DiagnosisStatus') : null
-        , ('DiagnosisID') : null, 
-		('DoctorName') : null, 
-		('Rujuk') : null, 
-		('NPNFU') : null, 
-		('Status') : Status, //Process
-		('Summary') : Summary
-        , ('Validasi') : Validasi, 
-		('InterruptedCall') : InterruptedCall])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
+        , ('ProductType') : ProductType, ('GLType') : GLType2, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+        , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa_2, ('DiagnosisID') : DiagnosisID
+        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('SpecialConditionReason') : SpecialConditionReason
+        , ('RoomOptionAvailability') : RoomOptionAvailability, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument
+        , ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL, ('Validasi') : Validasi, ('Phase') : '2'])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+        , ('ECAction2') : ECAction2, ('Comment') : Comment])
 
 //==================== PHASE 3 ====================
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
+
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('CustomerPhone') : CustomerPhone, ('GenderCT') : GenderCT, ('ProviderName') : ProviderName
-        , ('ProviderPhoneNumber') : ProviderPhoneNumber, ('Email') : Email, ('Fax') : Fax, ('GLType') : GLType3, ('Action') : ActionCT])
+        , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/GL Inquiry/GL Inquiry'), [('GLType') : GLType3, ('TicketID') : GlobalVariable.TicketIDRevisi
-        , ('NewMemberName') : null])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '3'])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : null, ('MemberStatus') : null
-        , ('MemberName') : null, ('FamilyPhoneNo') : null, ('ProductType') : null, ('GLType') : GLType3, ('DiagnosisStatus') : null
-        , ('DiagnosisID') : null, ('ClientName') : null, ('DoctorName') : null, ('TotalBilled') : TotalBilled, ('Rujuk') : null
-        , ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
+        , ('ProductType') : ProductType, ('GLType') : GLType3, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+        , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa_2, ('DiagnosisID') : DiagnosisID
+        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('SpecialConditionReason') : SpecialConditionReason
+        , ('RoomOptionAvailability') : RoomOptionAvailability, ('TotalBilled') : TotalBilled, ('NewDocument') : NewDocument
+        , ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL, ('Validasi') : Validasi, ('Phase') : '3'])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+        , ('ECAction2') : ECAction2, ('Comment') : Comment])
+
