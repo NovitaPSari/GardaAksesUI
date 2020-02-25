@@ -21,7 +21,7 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Heal
 
 WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Member Name'), MemberName)
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Member Name', [('MemberName') : MemberName]))	
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Choose - Member Name', [('MemberName') : MemberName]))	
 
 CustomKeywords.'gardaAkses.General.waitProcessingCommand'()
 
@@ -38,7 +38,7 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Heal
 
 //Need Follow Up
 if (NeedFollowUp == 'Yes') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Check Box - Need Follow Up'))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Check Box - Need Follow Up'))
 } else {
 	WebUI.delay(0)
 }
@@ -52,7 +52,7 @@ if (ActionAPTTO == 'Exit') {
 } else if (ActionAPTTO == 'Process') {
 	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
 	
-	CustomKeywords.'gardaAkses.GetTicketID.ProviderHealthAPPTO'()
+	CustomKeywords.'gardaAkses.GetTicketID.GetTicketNumber'()
 } else {
 	WebUI.delay(0)
 }

@@ -24,10 +24,10 @@ public class PopUp {
 
 	@Keyword
 	def TrayCTI () {
-		def PopUpTrayCTI = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Text - Tray CTI'), 5)
+		def PopUpTrayCTI = WebUI.waitForElementVisible(findTestObject('Pages/Web/GEN5/Home/Text - Tray CTI'), 5)
 
 		if (PopUpTrayCTI == true) {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button - OK'))
+			WebUI.click(findTestObject('Pages/Web/GEN5/Home/Button - OK'))
 		} else {
 			WebUI.delay(0)
 		}

@@ -17,34 +17,34 @@ import internal.GlobalVariable as GlobalVariable
 
 if (ServiceType == 'Inquiry') {
 	//Member Name
-	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Member Name'), MemberName)
+	WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Member Name'), MemberName)
 	
-	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Member Name'), MemberName)
+	WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Member Name'), MemberName)
 	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Member Name'))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Choose - Member Name'))
 	
 	//Provider Name
 	if (ContactLine == 'Customer' && Product == 'Health') {
-		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Provider Name'), ProviderName)
+		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Provider Name'), ProviderName)
 		
-		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Provider Name'), ProviderName)
+		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Provider Name'), ProviderName)
 		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Provider Name'))
+		WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Choose - Provider Name'))
 	} else {
 		WebUI.delay(0)
 	}
 	
 	//Sub Service Type
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Sub Service Type'))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Button - Sub Service Type'))
 	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
 	
 	//Remarks
-	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Remarks'), Remarks)
+	WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Remarks'), Remarks)
 	
 	//Need Follow Up
 	if (NeedFollowUp == 'Yes') {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Check Box - Need Follow Up'))
+		WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Check Box - Need Follow Up'))
 	} else {
 		WebUI.delay(0)
 	}
@@ -58,7 +58,7 @@ if (ServiceType == 'Inquiry') {
 	
 	//Process
 	if (Proses == 'Yes') {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Process'))
+		WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Button - Process'))
 	} else {
 		WebUI.delay(0)
 	}
@@ -67,23 +67,23 @@ if (ServiceType == 'Inquiry') {
 	
 } else if (ServiceType == 'Approval Tindakan/Terapi/Obat') {
 	//Member Name
-	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Member Name'), MemberName)
+	WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Member Name'), MemberName)
 	
-	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Member Name'), MemberName)
+	WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Member Name'), MemberName)
 	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Member Name'))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Choose - Member Name'))
 	
 	//Sub Service Type
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Sub Service Type'))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Button - Sub Service Type'))
 	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
 	
 	//Remarks
-	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Remarks'), Remarks)
+	WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Remarks'), Remarks)
 	
 	//Need Follow Up
 	if (NeedFollowUp == 'Yes') {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Check Box - Need Follow Up'))
+		WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Check Box - Need Follow Up'))
 	} else {
 		WebUI.delay(0)
 	}
@@ -97,7 +97,7 @@ if (ServiceType == 'Inquiry') {
 	
 	//Process
 	if (Proses == 'Yes') {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Process'))
+		WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Button - Process'))
 	} else {
 		WebUI.delay(0)
 	}

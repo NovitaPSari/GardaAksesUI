@@ -25,6 +25,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Pages/Web/Garda Akses/Frame</value>
+      <value>Object Repository/Pages/Web/GEN5/Frame</value>
    </webElementProperties>
 </WebElementEntity>

@@ -32,15 +32,15 @@ if (PopUpError == true) {
 }
 
 //Button Health
-def HealthNotCollapsed = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button - Health Not Collapsed'), 
+def HealthNotCollapsed = WebUI.verifyElementPresent(findTestObject('Pages/Web/GEN5/Home/Button - Health Not Collapsed'), 
     GlobalVariable.Delay0)
 
 if (HealthNotCollapsed == true) {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Health'))
+    WebUI.click(findTestObject('Pages/Web/GEN5/Home/Button Health'))
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create e-GL'))
+    WebUI.click(findTestObject('Pages/Web/GEN5/Home/Button Create e-GL'))
 } else {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create e-GL'))
+    WebUI.click(findTestObject('Pages/Web/GEN5/Home/Button Create e-GL'))
 }
 
 WebUI.delay(GlobalVariable.Delay6)
@@ -85,15 +85,15 @@ if (PopUpError4 == true) {
     WebUI.delay(0)
 }
 
-def GeneralNotCollapsed = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Home/Button - General Not Collapsed'), 
+def GeneralNotCollapsed = WebUI.verifyElementPresent(findTestObject('Pages/Web/GEN5/Home/Button - General Not Collapsed'), 
     GlobalVariable.Delay0)
 
 if (GeneralNotCollapsed == true) {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button General'))
+    WebUI.click(findTestObject('Pages/Web/GEN5/Home/Button General'))
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create Ticket'))
+    WebUI.click(findTestObject('Pages/Web/GEN5/Home/Button Create Ticket'))
 } else {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Home/Button Create Ticket'))
+    WebUI.click(findTestObject('Pages/Web/GEN5/Home/Button Create Ticket'))
 }
 
 WebUI.delay(GlobalVariable.Delay6)

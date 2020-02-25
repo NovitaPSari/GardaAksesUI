@@ -53,7 +53,7 @@ def GLType = 'Awal'
 def ActionCT = 'Next'
 
 //Inquiry//
-def MemberName = findTestData('MemberNoAll').getValue(1, 1)
+def MemberName = findTestData('MemberNameAll').getValue(1, 1)
 
 def ProviderName2 = 'OJKSH00001'
 
@@ -87,11 +87,11 @@ CustomKeywords.'querySQL.DefaultQuery.connectDB'('172.16.94.48', 'litt', 'sa', '
 CustomKeywords.'querySQL.DefaultQuery.execute'(queryContactName)
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'),
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'),
 	[('UserID') : UserID,
 		('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+WebUI.callTestCase(findTestCase('null'), [:])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType

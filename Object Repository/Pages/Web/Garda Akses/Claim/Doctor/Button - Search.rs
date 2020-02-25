@@ -6,12 +6,11 @@
    <elementGuidId>8e263b09-917f-4e69-b81e-861a03c491bc</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value>//*[@id=&quot;DoctorInfoPopUpSection-0&quot;]//button[text() = 'Search']</value>
+         <key>XPATH</key>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value></value>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;DoctorInfoPopUpSection-0&quot;]//button[text() = 'Search']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -28,6 +27,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Pages/Web/Garda Akses/Frame</value>
+      <value>Object Repository/Pages/Web/GEN5/Frame</value>
    </webElementProperties>
 </WebElementEntity>

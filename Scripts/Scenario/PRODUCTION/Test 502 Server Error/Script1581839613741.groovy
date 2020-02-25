@@ -20,7 +20,7 @@ def UserID = 'ANT'
 
 def Password = 'MHSUC33hkPmqhm0hsfzEIg=='
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
 for (def index : (1..2000)) {
 	WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Production/Checking Prod'), [:], FailureHandling.STOP_ON_FAILURE)

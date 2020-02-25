@@ -39,7 +39,7 @@ public class General {
 		//wait until element appear
 		//while(!WebUI.verifyElementClickable(objectToFind, FailureHandling.OPTIONAL)){}
 		//element appear but processing command too
-		WebUI.switchToFrame(findTestObject('Pages/Web/Garda Akses/Frame'), 5)
+		WebUI.switchToFrame(findTestObject('Pages/Web/GEN5/Frame'), 5)
 		WebDriver myDriver = DriverFactory.getWebDriver()
 		try
 		{
