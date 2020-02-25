@@ -19,7 +19,7 @@
    <testCaseLink>
       <guid>52e0403d-7e83-466f-8269-11d7afad59ed</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/Sprint 1 - Enhancement E-GL dan Create Tiket/008. Create Ticket - Provider Health Claim - Client Non E-GL - GL Awal - GL Lanjutan - GL Akhir - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
@@ -127,13 +127,13 @@
    <testCaseLink>
       <guid>72c83591-1f93-4bee-929a-b142b85bc9b0</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/Sprint 3 - Enhancement E-GL dan Create Ticket/008. Create Ticket - Provider Health Inquiry - Call</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>f2085e6a-4c9a-4ade-b256-fcc733f0318d</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/Sprint 3 - Enhancement E-GL dan Create Ticket/015. Create Ticket - Customer Health Inquiry - Call</testCaseId>
    </testCaseLink>
    <testCaseLink>

@@ -40,7 +40,7 @@ def ProviderName = 'OJKSH00001'
 def ActionCT = 'Next'
 
 //Inquiry//
-def MemberName = findTestData('MemberNoAll').getValue(1, 1)
+def MemberName = findTestData('MemberNameAll').getValue(1, 1)
 
 def SubServiceType = 'Approve Tindakan/Terapi/Obat'
 
@@ -59,9 +59,9 @@ def ECAction1 = 'Tidak'
 def ECAction2 = 'Puas'
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+WebUI.callTestCase(findTestCase('null'), [:])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), 
 	[('ContactLine') : ContactLine, 

@@ -28,11 +28,11 @@ public class Katalon {
 
 		WebUI.maximizeWindow()
 
-		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Login/Input - Username'), Username)
+		WebUI.setText(findTestObject('Pages/Web/GEN5/Login/Input - Username'), Username)
 
-		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Login/Input - Password'), Password)
+		WebUI.setText(findTestObject('Pages/Web/GEN5/Login/Input - Password'), Password)
 
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Login/Button - Masuk'))
+		WebUI.click(findTestObject('Pages/Web/GEN5/Login/Button - Masuk'))
 
 		WebUI.delay(GlobalVariable.Delay0)
 

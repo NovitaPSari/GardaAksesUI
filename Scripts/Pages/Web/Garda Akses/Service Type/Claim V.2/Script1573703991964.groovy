@@ -182,7 +182,7 @@ if (DiagnosisStatus != null) {
 
     WebDriver driver = DriverFactory.getWebDriver()
 
-    WebUI.switchToFrame(findTestObject('Object Repository/Pages/Web/Garda Akses/Frame'), 3)
+    WebUI.switchToFrame(findTestObject('Pages/Web/GEN5/Frame'), 3)
 
     WebElement diagnosis = driver.findElement(By.xpath('//*[@id="DiagnosisInfoPopUpSectionFullText-0"]/div[1]/div/div[3]/a2is-datatable/div[2]/div/table/tbody'))
 

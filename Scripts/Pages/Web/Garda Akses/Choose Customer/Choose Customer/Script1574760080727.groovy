@@ -16,8 +16,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 //Choose Customer 1
-//WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Button - X'))
-
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 1/Radio Button - Category', [('ChooseCategoryCustomer') : ChooseCategoryCustomer]))
 
 if (ActionCC1 == 'Next') {	
@@ -37,15 +35,15 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Custo
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Search'))
 
-def PopUpError = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Alert - Ooops'), GlobalVariable.Delay3)
+//def PopUpError = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Alert - Ooops'), GlobalVariable.Delay3)
 
-if (PopUpError == true) {
-	WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Ooops, something just went wrong/Button - Ignore'))
-	
-	WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Search'))
-} else {
-	WebUI.delay(0)
-}
+//if (PopUpError == true) {
+//	WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Ooops, something just went wrong/Button - Ignore'))
+//	
+//	WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Search'))
+//} else {
+//	WebUI.delay(0)
+//}
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 2/Button - Choose Customer'))
 
@@ -64,7 +62,7 @@ WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Choose Custo
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose - Policy Summary'))
 */
 
-WebUI.delay(GlobalVariable.Delay1)
+CustomKeywords.'com.keyword.GEN5.ProcessingCommand'()
 
 if (ActionCC3 == 'Finish') {
 	WebUI.click(findTestObject('Pages/Web/Garda Akses/Choose Customer/Choose Customer 3/Button - Finish'))

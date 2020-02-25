@@ -16,88 +16,43 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 //Member Name
-WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Member Name'), MemberName)
+WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Member Name'), MemberName)
 
-WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Member Name'), MemberName)
+WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Member Name'), MemberName)
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Member Name'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Choose - Member Name'))
 
 CustomKeywords.'gardaAkses.General.waitProcessingCommand'()
 
 //Provider Name
-if ((ContactLine == 'Customer') && (Product == 'Health')) {
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Provider Name'), 
-        ProviderName)
-
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Provider Name'), 
-        ProviderName)
-
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Provider Name'))
-} else {
-    WebUI.delay(0)
-}
 
 //Sub Service Type
 WebUI.delay(GlobalVariable.Delay1)
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Sub Service Type'))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Button - Sub Service Type'))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Choose - Sub Service Type', [('SubServiceType') : SubServiceType]))
 
 //Remarks
-WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Remarks'), Remarks)
+WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Remarks'), Remarks)
 
 //Need Follow Up
 if (NeedFollowUp == 'Yes') {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Check Box - Need Follow Up'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Check Box - Need Follow Up'))
 } else {
     WebUI.delay(0)
 }
 
 //Button Direction
-if (Action == 'Proses') {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Process'))
 
-    WebUI.delay(GlobalVariable.Delay1)
+if (ActionI == 'Exit') {
 
-    if (MultipleServiceType == 'Yes') {
-        def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
+} else if (ActionI == 'Back') {
 
-        GlobalVariable.TicketIDRevisi = result.substring(9, 17)
-
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-    } else {
-        def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Text - Ticket Number'))
-
-        GlobalVariable.TicketIDAwal = result.substring(9, 17)
-
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Button - OK'))
-    }
-    
-    //Exit Confirmation 1 - Apakah ada hal lain yang dapat dibantu, Pak/Bu?
-    if (ExitConfirmation1 == 'Yes') {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 Yes') //Exit Confirmation 2 - Sebelum mengakhiri percakapan, boleh kami dibantu untuk pertanyaan penutup yaitu Apakah Bapak/Ibu PUAS dengan informasi yang telah saya berikan?
-            )
-    } else {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 1 No'))
-
-        if (ExitConfirmation2 == 'Puas') {
-            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Puas'))
-        } else {
-            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 2 Tidak Puas'))
-
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Input - Exit Confirmation 3 Add Comment'), 
-                Comment)
-
-            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Exit Confirmation 3 Ok'))
-        }
-        
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
-
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
-    }
-} else if (Action == 'Back') {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Inquiry/Button - Back'))
+} else if (ActionI == 'Process') {
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
+	
+	CustomKeywords.'gardaAkses.GetTicketID.GetTicketNumber'(Phase)
 } else {
-    WebUI.delay(0)
+	WebUI.delay(0)
 }

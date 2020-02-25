@@ -6,12 +6,11 @@
    <elementGuidId>4ba64c42-32d9-4e02-b3ca-ab5e5dae7494</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value>//*[@id=&quot;FollowUpOutbound-0&quot;]//span[@class=&quot;glyphicon glyphicon-pencil&quot;]</value>
+         <key>XPATH</key>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value></value>
+         <key>BASIC</key>
+         <value>//*[@id=&quot;FollowUpOutbound-0&quot;]//span[@class=&quot;glyphicon glyphicon-pencil&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -28,6 +27,6 @@
       <matchCondition>equals</matchCondition>
       <name>ref_element</name>
       <type>Main</type>
-      <value>Object Repository/Pages/Web/Garda Akses/Frame</value>
+      <value>Object Repository/Pages/Web/GEN5/Frame</value>
    </webElementProperties>
 </WebElementEntity>

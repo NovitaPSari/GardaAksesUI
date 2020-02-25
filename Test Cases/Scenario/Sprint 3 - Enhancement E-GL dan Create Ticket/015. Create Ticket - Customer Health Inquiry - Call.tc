@@ -3,6 +3,6 @@
    <description></description>
    <name>015. Create Ticket - Customer Health Inquiry - Call</name>
    <tag></tag>
-   <comment></comment>
+   <comment>GlobalVariable.TicketID1</comment>
    <testCaseGuid>a9ebf5c3-dd12-4ba7-a91b-a8ecf90c07ea</testCaseGuid>
 </TestCaseEntity>

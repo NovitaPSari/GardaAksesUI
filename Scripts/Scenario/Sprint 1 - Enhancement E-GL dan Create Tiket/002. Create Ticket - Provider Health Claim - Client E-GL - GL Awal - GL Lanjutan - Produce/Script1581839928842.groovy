@@ -93,12 +93,12 @@ String ECAction2 = 'Puas'
 String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), 
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), 
 	[('UserID') : UserID
 		, ('Password') : Password])
 
 //==================== PHASE 1 ====================
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'), 
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), 
 	[('Menu') : Menu
 		, ('SubMenu') : SubMenu])
 
@@ -147,7 +147,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Co
 
 //==================== PHASE 2 ====================
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home'),
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'),
 	[('Menu') : Menu
 		, ('SubMenu') : SubMenu])
 

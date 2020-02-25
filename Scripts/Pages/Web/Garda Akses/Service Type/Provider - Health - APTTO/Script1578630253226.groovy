@@ -60,24 +60,24 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Heal
 
 //Need Follow Up
 if (NeedFollowUp == 'Yes') {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/APPTO/Check Box - Need Follow Up'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Check Box - Need Follow Up'))
 } else {
     WebUI.delay(0)
 }
 
 //Patient Phone Number
-WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Patient Phone Number'), 
-    PatientPhoneNumber)
+//WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Patient Phone Number'), 
+//    GlobalVariable.PhoneNumber)
 
-////Action
-//if (Action == 'Proses') {
-//    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
-//	
-//	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - OK'))
-//} else if (Action == 'Back') {
-//    WebUI.click()
-//} else if (Action == 'Exit') {
-//    WebUI.click()
-//} else {
-//	WebUI.delay(0)
-//}
+//Action
+if (ActionAPTTO == 'Process') {
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
+	
+	CustomKeywords.'gardaAkses.GetTicketID.GetTicketNumber'(Phase)
+} else if (ActionAPTTO == 'Back') {
+    WebUI.click()
+} else if (ActionAPTTO == 'Exit') {
+    WebUI.click()
+} else {
+	WebUI.delay(0)
+}

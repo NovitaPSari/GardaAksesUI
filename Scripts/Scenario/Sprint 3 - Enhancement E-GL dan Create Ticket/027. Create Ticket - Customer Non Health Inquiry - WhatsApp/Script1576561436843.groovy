@@ -98,9 +98,9 @@ CustomKeywords.'querySQL.DefaultQuery.connectDB'('172.16.94.48', 'litt', 'sa', '
 CustomKeywords.'querySQL.DefaultQuery.execute'(queryContactName)
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Login/Login'), [('UserID') : UserID, ('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Home/Home - Create Ticket'), [:])
+WebUI.callTestCase(findTestCase('null'), [:])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
@@ -115,7 +115,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Choose Customer/Choose Cu
 		('ActionCC2') : ActionCC2,
 		('ActionCC3') : ActionCC3 ])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Customer - Inquiry'), 
+WebUI.callTestCase(findTestCase('null'), 
 	['Product': ProductI,
 		'Categorys' : Category,
 		'FUStatus' : FUStatus,
