@@ -14,20 +14,24 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import com.keyword.GEN5
 
 //Member Name
 WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Member Name'), MemberName)
 
+WebUI.delay(GlobalVariable.Delay1)
+
 WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Input - Member Name'), MemberName)
+
+WebUI.delay(GlobalVariable.Delay1)
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Choose - Member Name'))
 
-CustomKeywords.'gardaAkses.General.waitProcessingCommand'()
+GEN5.ProcessingCommand()
 
 //Provider Name
 
 //Sub Service Type
-WebUI.delay(GlobalVariable.Delay1)
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Button - Sub Service Type'))
 
@@ -39,8 +43,6 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Heal
 //Need Follow Up
 if (NeedFollowUp == 'Yes') {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Check Box - Need Follow Up'))
-} else {
-    WebUI.delay(0)
 }
 
 //Button Direction
@@ -53,6 +55,4 @@ if (ActionI == 'Exit') {
 	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Process'))
 	
 	CustomKeywords.'gardaAkses.GetTicketID.GetTicketNumber'(Phase)
-} else {
-	WebUI.delay(0)
 }

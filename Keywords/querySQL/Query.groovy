@@ -32,4 +32,22 @@ public class Query {
 
 		defaultQuery.execute(queryContactName)
 	}
+	
+	@Keyword
+	def QueryNewMemberName () {
+		def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation GA\')+1 WHERE Name = \'Automation GA\''
+
+		defaultQuery.connectDB('172.16.94.48', 'litt', 'sa', 'Password95')
+
+		defaultQuery.execute(queryContactName)
+	}
+	
+	@Keyword
+	def QueryEmployeeID () {
+		def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'EmployeeID\')+1 WHERE Name = \'EmployeeID\''
+
+		defaultQuery.connectDB('172.16.94.48', 'litt', 'sa', 'Password95')
+
+		defaultQuery.execute(queryContactName)
+	}
 }

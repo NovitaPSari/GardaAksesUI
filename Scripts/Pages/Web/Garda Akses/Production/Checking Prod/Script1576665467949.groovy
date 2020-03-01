@@ -67,11 +67,11 @@ if (PopUpError3 == true) {
     WebUI.delay(0)
 }
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Cancel'))
+WebUI.click(findTestObject('null'))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Button - Close'))
+WebUI.click(findTestObject('null'))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/GL Inquiry/Please Confirm/Button - Yes, Close Application'))
+WebUI.click(findTestObject('null'))
 
 //Button General
 WebUI.delay(GlobalVariable.Delay6)

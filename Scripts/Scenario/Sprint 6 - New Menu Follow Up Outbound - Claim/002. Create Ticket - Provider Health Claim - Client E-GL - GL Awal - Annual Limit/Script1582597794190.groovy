@@ -48,11 +48,11 @@ String Phase = '1'
 //Claim
 String Member = 'Existing' //Member = Existing  / New / Check
 
-//String MemberName = findTestData('MemberNameClient').getValue(1, 1)
+String MemberName = '00091 - A/00136451 - ANANG MAZFUAD - PT Sahabat Finansial Keluarga'
 
-//String MemberName = '00091 - A/00136451 - ANANG MAZFUAD - PT Sahabat Finansial Keluarga'
+//String MemberName = '00003 - M/00080165 - MUHAMMAD KURNIAWAN - PT Sahabat Finansial Keluarga'
 
-String MemberName = '00003 - M/00080165 - MUHAMMAD KURNIAWAN - PT Sahabat Finansial Keluarga'
+//String MemberName = 'A/00192872'
 
 String ProductType = 'Inpatient'
 
@@ -66,9 +66,9 @@ String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
-String StatusDiagnosa = 'Initial Primary'
+ArrayList StatusDiagnosa = ['Initial Primary']
 
-String DiagnosisID = 'A09'
+ArrayList DiagnosisID = ['A09']
 
 String DoctorName = 'Automation Doctor - Me'
 

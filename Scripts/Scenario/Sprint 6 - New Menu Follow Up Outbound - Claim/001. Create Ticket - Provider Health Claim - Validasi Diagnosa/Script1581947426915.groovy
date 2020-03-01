@@ -50,7 +50,9 @@ String Phase = '1'
 //Claim
 String Member = 'Existing' //Member = Existing  / New / Check
 
-String MemberName = findTestData('MemberNameClient').getValue(1, 1)
+//String MemberName = findTestData('MemberNameClient').getValue(1, 1)
+
+String MemberName = '00030 - A/00102400 - AYUN YANTI, SE - PT SAHABAT FINANSIAL KELUARGA'
 
 String ProductType = 'Inpatient'
 
@@ -66,7 +68,7 @@ String SpecialConditionReason = ''
 
 String StatusDiagnosa = 'Initial Primary'
 
-String DiagnosisID = 'B00'
+String DiagnosisID = 'T80'
 
 String DoctorName = 'Automation Doctor - Me'
 

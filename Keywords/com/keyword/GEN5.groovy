@@ -43,27 +43,50 @@ import internal.GlobalVariable
 public class GEN5 extends UI {
 
 	@Keyword
-	public static def SideMenu (String sideMenu) {
+	public static def SideMenu (String ParentMenu, String ChildMenu) {
 		String FrameXpath = '/html/frameset/frame'
-		String CollapseXpath = '//button[text()=\''+ sideMenu +'\']//parent::div//parent::div[@aria-expanded=\'true\']'
-		String ParentXpath = '//button[text()=\''+ sideMenu +'\']//parent::div//parent::div//parent::div//div[@class=\'panel-heading\']'
-		String MenuXpath = '//button[text()=\''+ sideMenu +'\']'
+		String CollapseXpath = '//button[text()=\'' + ParentMenu + '\']/parent::*/following-sibling::*//*[text()=\'' + ChildMenu +'\']//ancestor::div[2][@aria-expanded=\'true\']'
+		String ParentXpath = '//button[text()=\'' + ParentMenu + '\']/parent::*/following-sibling::*//*[text()=\'' + ChildMenu +'\']//ancestor::div[2]/preceding-sibling::*/button'
+		String MenuXpath = '//button[text()=\'' + ParentMenu + '\']/parent::*/following-sibling::*//*[text()=\'' + ChildMenu +'\']'
 
 		WebUI.switchToDefaultContent()
 		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
-		boolean exist = WebUI.waitForElementPresent(newTestObject(CollapseXpath), 3, FailureHandling.OPTIONAL)
+		boolean exist = WebUI.waitForElementPresent(newTestObject(CollapseXpath), 1, FailureHandling.OPTIONAL)
 
 		while (exist == false) {
 			Click(newTestObject(ParentXpath))
-			exist = WebUI.waitForElementPresent(newTestObject(CollapseXpath), 3, FailureHandling.OPTIONAL)
+			exist = WebUI.waitForElementPresent(newTestObject(CollapseXpath), 1, FailureHandling.OPTIONAL)
 		}
 
 		Click(newTestObject(MenuXpath))
 		WebUI.switchToDefaultContent(FailureHandling.STOP_ON_FAILURE)
 
-		Sleep(2)
+		Sleep(1)
 		WebUI.switchToDefaultContent()
 	}
+
+	//	@Keyword
+	//	public static def SideMenu2 (String sideMenu) {
+	//		String FrameXpath = '/html/frameset/frame'
+	//		String CollapseXpath = '//button[text()=\''+ sideMenu +'\']//parent::div//parent::div[@aria-expanded=\'true\']'
+	//		String ParentXpath = '//button[text()=\''+ sideMenu +'\']//parent::div//parent::div//parent::div//div[@class=\'panel-heading\']'
+	//		String MenuXpath = '//button[text()=\''+ sideMenu +'\']'
+	//
+	//		WebUI.switchToDefaultContent()
+	//		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
+	//		boolean exist = WebUI.waitForElementPresent(newTestObject(CollapseXpath), 3, FailureHandling.OPTIONAL)
+	//
+	//		while (exist == false) {
+	//			Click(newTestObject(ParentXpath))
+	//			exist = WebUI.waitForElementPresent(newTestObject(CollapseXpath), 3, FailureHandling.OPTIONAL)
+	//		}
+	//
+	//		Click(newTestObject(MenuXpath))
+	//		WebUI.switchToDefaultContent(FailureHandling.STOP_ON_FAILURE)
+	//
+	//		Sleep(2)
+	//		WebUI.switchToDefaultContent()
+	//	}
 
 	@Keyword // By Arnold
 	public static def DatePicker(String DateNow, TestObject DatePickerDiv){
@@ -82,8 +105,8 @@ public class GEN5 extends UI {
 
 		String[] separateDiv = XpathTable.split('/')
 		String lostDiv = separateDiv[3].replace("div","")
-		String openBracket = lostDiv.replace("[","")
-		String closeBracket = openBracket.replace("]","")
+		String closeBracket = lostDiv.replace("[","").replace("]","")
+		//String closeBracket = openBracket.replace("]","")
 
 		int Div = closeBracket.toInteger()
 
@@ -105,13 +128,13 @@ public class GEN5 extends UI {
 
 		if (Tahun<headerTahun) {						//cari tahun ke belakang
 			while (Tahun!=headerTahun) {
-				Click(newTestObject(previousYear))
+				WebUI.click(newTestObject(previousYear))
 				headerTahun = WebUI.getText(newTestObject(YearXpath)).toInteger()
 			}
 
 		} else if (Tahun>headerTahun) {					//cari tahun ke depan
 			while(Tahun!=headerTahun){
-				Click(newTestObject(nextYear))
+				WebUI.click(newTestObject(nextYear))
 				headerTahun = WebUI.getText(newTestObject(YearXpath)).toInteger()
 			}
 		}
@@ -120,10 +143,10 @@ public class GEN5 extends UI {
 		String monthXpath = calendar + '/div[2]/table/tbody/tr//span[./text()=\''+Bulan+'\']'
 		String dateXpath = calendar + '/div[1]/table/tbody//td[./text()=\''+Tanggal+'\' and not(@class=\'day old\') and not(@class=\'day new\')]'
 
-		Click(newTestObject(monthXpath))				//klik bulan yang tersedia
+		WebUI.click(newTestObject(monthXpath))				//klik bulan yang tersedia
 		Sleep(1)
 
-		Click(newTestObject(dateXpath))					//klik tanggal yang ada
+		WebUI.click(newTestObject(dateXpath))				//klik tanggal yang ada
 		Sleep(1)
 
 		WebUI.switchToDefaultContent()
@@ -452,7 +475,7 @@ public class GEN5 extends UI {
 			KeywordUtil.logInfo('Processing Command pop up still displayed')
 			Sleep(2)
 
-			processing = WebUI.waitForElementPresent(newTestObject(xPath), 5, FailureHandling.STOP_ON_FAILURE)
+			processing = WebUI.waitForElementPresent(newTestObject(xPath), 2, FailureHandling.STOP_ON_FAILURE)
 		}
 		KeywordUtil.markPassed('Processing Command Pop Up has finished')
 		Sleep(1)
@@ -460,7 +483,7 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def CompareColumnToDatabase (TestObject tableXpath, String gridColumn, String url, String dbname, int totalRow, String queryTable, String getColumn) {
+	public static def CompareColumnToDatabase (TestObject tableXpath, String gridColumn, String url, String dbname, String queryTable, String getColumn) {
 		String FrameXpath = '/html/frameset/frame'
 		WebUI.switchToDefaultContent()
 		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
@@ -508,7 +531,7 @@ public class GEN5 extends UI {
 		WebUI.switchToDefaultContent()
 
 		int r
-		def database = getOneColumnDatabase(url, dbname, totalRow, queryTable, getColumn)
+		def database = getOneColumnDatabase(url, dbname, queryTable, getColumn)
 		for (r = 0 ; r < column.size() ; r++) {
 			int sum = r + 1
 
@@ -521,11 +544,12 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def CompareRowToDatabase (TestObject tableXpath, String columnHeader, String RowsValue, String url, String dbname, int totalColumn, String queryTable) {
+	public static def CompareRowToDatabase (TestObject tableXpath, String columnHeader, String RowsValue, String url, String dbname, String queryTable) {
 		WebDriver Driver = DriverFactory.getWebDriver()
 
+		String FrameXpath = '/html/frameset/frame'
 		WebUI.switchToDefaultContent()
-		WebUI.switchToFrame(findTestObject('Object Repository/GEN5/Frame Set'), 2)
+		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
 
 		TestObject tObj = tableXpath
 		String XpathTable = "${tObj.findPropertyValue('xpath')}"
@@ -586,7 +610,7 @@ public class GEN5 extends UI {
 		WebUI.switchToDefaultContent()
 
 		int r
-		def database =  getOneRowDatabase(url, dbname, totalColumn, queryTable)
+		def database =  getOneRowDatabase(url, dbname, queryTable)
 		for (r = 0 ; r < line.size() ; r++) {
 			int sum = r + 1
 
@@ -599,10 +623,10 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def InsertIntoDataHealth (String type, String AppName, String value) {
+	public static void InsertIntoDataHealth (String type, String AppName, String value) {
 		connectDB('172.16.94.48', 'LiTT', 'sa', 'Password95')
 
-		def Query = executeQuery('INSERT INTO dbo.DataHealth (Type,ApplicationName,value,RowStatus)VALUES(\''+ type +'\',\''+ AppName +'\',\''+ value +'\',0)')
+		def Query = execute('INSERT INTO dbo.DataHealth (Type,ApplicationName,value,RowStatus)VALUES(\''+ type +'\',\''+ AppName +'\',\''+ value +'\',0)')
 		KeywordUtil.markPassed('Data has been inserted into Database dbo.DataHealth')
 		closeDatabaseConnection()
 	}
@@ -622,7 +646,7 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def CompareFieldtoDatabase (ArrayList ObjRep, String url, String dbname, int totalColumn, String queryTable) {
+	public static void CompareFieldtoDatabase (ArrayList ObjRep, String url, String dbname, String queryTable) {
 		String FrameXpath = '/html/frameset/frame'
 		WebUI.switchToDefaultContent()
 		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
@@ -635,11 +659,11 @@ public class GEN5 extends UI {
 			collectData.add(WebUI.getAttribute(ObjRep[i], 'value', FailureHandling.STOP_ON_FAILURE))
 		}
 
-		ArrayList DBData = getOneRowDatabase(url, dbname, totalColumn, queryTable)
+		ArrayList DBData = getOneRowDatabase(url, dbname, queryTable)
 		List<String> Database = new ArrayList()
 
 		int x
-		for (x = 0 ; x < DBData.size() ; i++) {
+		for (x = 0 ; x < DBData.size() ; x++) {
 			Database.add(DBData[x].toString())
 		}
 
@@ -650,6 +674,88 @@ public class GEN5 extends UI {
 			} else {
 				KeywordUtil.markWarning('Field Value = \''+ collectData[a] + '\', value in database = \'' + DBData[a] + '\'')
 			}
+		}
+		WebUI.switchToDefaultContent()
+	}
+
+	@Keyword
+	public static def getPopUpText (TestObject TextOnPopup) {
+		String getText = WebUI.getText(TextOnPopup, FailureHandling.STOP_ON_FAILURE)
+		String[] separate = getText.split(" ")
+
+		if (getText.contains("Complaint")) {
+			String result = separate[-1]
+			return result
+
+		} else if (getText.contains("Tiket ID")) {
+			String result = separate[-2]
+			return result
+
+		} else if (getText.contains("Document")) {
+			List<String> sum = new ArrayList()
+			String[] result = getText.split(" : ")
+			String[] cut = result[1].split("\\.")
+
+			sum.add(cut[0])
+			sum.add(result[2])
+
+			return sum
+		}
+		//		return resultSet
+	}
+
+	@Keyword
+	public static def getArrayIcon (TestObject Object) {
+		WebDriver driver = DriverFactory.getWebDriver()
+
+		TestObject tObj = Object
+		String Xpath = "${tObj.findPropertyValue('xpath')}"
+
+		WebElement drivers = driver.findElement(By.xpath(Xpath))
+
+		List<WebElement> elementList=  drivers.findElements(By.className("style-card-view"))
+
+		ArrayList getValue = new ArrayList()
+		ArrayList finalValue = new ArrayList()
+
+		int i
+		for (i = 1 ; i <= elementList.size() ; i++) {
+			getValue.add(WebUI.getAttribute(newTestObject("("+Xpath + "/div[" + i + "]/div)[1]"), "id"))
+		}
+
+		int a
+		for (a = 0 ; a < getValue.size() ; a++) {
+			String result = getValue[a]
+			String[] separate = result.split('Type')
+
+			finalValue.add(separate[1])
+		}
+
+		return finalValue
+	}
+
+	@Keyword
+	public static void tickAllCheckboxInTable (TestObject Object) {
+		String FrameXpath = '/html/frameset/frame'
+		WebUI.switchToDefaultContent()
+		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
+
+		WebDriver driver = DriverFactory.getWebDriver()
+
+		TestObject tObj = Object
+		String Xpath = "${tObj.findPropertyValue('xpath')}"
+
+		String getXpath = Xpath + '/tbody'
+
+		WebElement table = driver.findElement(By.xpath(getXpath))
+		List<WebElement> row = table.findElements(By.tagName("tr"))
+
+		int i
+		int row_count = row.size()
+
+		for (i = 1 ; i <= row_count ; i++) {
+			String checkbox = Xpath + "//tr["+ i +"]//*[@type=\"checkbox\"]"
+			WebUI.click(newTestObject(checkbox))
 		}
 		WebUI.switchToDefaultContent()
 	}

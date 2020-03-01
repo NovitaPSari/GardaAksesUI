@@ -21,6 +21,8 @@ String UserID = 'DNS'
 String Password = 'Password95'
 
 //Home
+String Menu = 'General'
+
 String SubMenu = 'Create Ticket'
 
 //Create Ticket//
@@ -63,7 +65,7 @@ String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('SubMenu') : SubMenu])
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType

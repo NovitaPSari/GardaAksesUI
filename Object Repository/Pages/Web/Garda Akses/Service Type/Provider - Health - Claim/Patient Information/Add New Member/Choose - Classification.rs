@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//button[text() = '${Value}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;popUpAddNewMembership-0&quot;]/div[1]/div/div[1]/a2is-combo/div/div/div/div/button[${value}][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//button[text() = '${Value}']</value>
+      <value>//*[@id=&quot;popUpAddNewMembership-0&quot;]/div[1]/div/div[1]/a2is-combo/div/div/div/div/button[${value}]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

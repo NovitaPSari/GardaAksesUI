@@ -15,6 +15,8 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import com.keyword.GEN5
+
 //Login//
 String UserID = 'DNS'
 
@@ -40,7 +42,7 @@ String ServiceType = 'Claim'
 
 String InterruptedCall = 'No'
 
-String ProviderName = 'OJKSH00001'
+String ProviderName = 'OJKSH00001 - SILOAM HOSPITALS KEBON JERUK'
 
 String ActionCT = 'Next'
 
@@ -64,9 +66,9 @@ String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
-String StatusDiagnosa = 'Initial Primary'
+ArrayList StatusDiagnosa = ['Initial Primary']
 
-String DiagnosisID = 'A09'
+ArrayList DiagnosisID = ['A09 DIARRHOEA AND GASTROENTERITIS OF PRESUMED INFECTIOUS ORIGIN']
 
 String DoctorName = 'Automation Doctor - Me'
 
@@ -86,6 +88,8 @@ String DeleteDocument = 'No'
 
 String ActionGL = 'Process'
 
+String Validasi = GlobalVariable.ValidasiDijaminkan
+
 //Exit Confirmation
 String ECAction1 = 'Tidak'
 
@@ -94,55 +98,33 @@ String ECAction2 = 'Puas'
 String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), 
-	[('UserID') : UserID
-		, ('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
 //==================== PHASE 1 ====================
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), 
-	[('Menu') : Menu
-		, ('SubMenu') : SubMenu])
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), 
-	[('ContactLine') : ContactLine
-		, ('Product') : Product
-        , ('ChannelType') : ChannelType
-		, ('ContactName') : ContactName
-		, ('ContactType') : ContactType
-		, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall
-		, ('ProviderName') : ProviderName
-		, ('Action') : ActionCT])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+		, ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
 
 CustomKeywords.'querySQL.Query.QueryContactName'()
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), 
-	[('Phase') : '1'])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '1'])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), 
-	[('Member') : Member
-		, ('MemberName') : MemberName
-        , ('ProductType') : ProductType
-		, ('GLType') : GLType
-		, ('SpecialCondition') : SpecialCondition
-		, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
-		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
-		, ('StatusDiagnosa') : StatusDiagnosa
-        , ('DiagnosisID') : DiagnosisID
-		, ('DoctorName') : DoctorName
-		, ('Rujuk') : Rujuk
-		, ('Reason') : Reason
-		, ('SpecialCondition') : SpecialCondition
-		, ('SpecialConditionReason') : SpecialConditionReason
-		, ('RoomOptionAvailability') : RoomOptionAvailability
-		, ('TotalBilled') : TotalBilled		
-		, ('NewDocument') : NewDocument
-		, ('EditDocument') : EditDocument
-		, ('DeleteDocument') : DeleteDocument
-		, ('ActionGL') : ActionGL
-		, ('Phase') : '1'])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
+		, ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa, ('DiagnosisID') : DiagnosisID
+		, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('SpecialConditionReason') : SpecialConditionReason
+		, ('RoomOptionAvailability') : RoomOptionAvailability, ('TotalBilled') : TotalBilled, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument
+		, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL, ('Validasi') : Validasi, ('Phase') : '1'])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), 
-	[('ECAction1') : ECAction1
-        , ('ECAction2') : ECAction2
-		, ('Comment') : Comment])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+		, ('ECAction2') : ECAction2, ('Comment') : Comment])
+
+WebUI.comment(GlobalVariable.TicketID1)
+
+String URL = '172.16.94.70'
+String DB_Name = 'SEA'
+String Query = 'SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), \'-\', SPACE(1), RTRIM(LTRIM(MemberNo)), SPACE(1), \'-\', SPACE(1), RTRIM(MemberName), SPACE(1), \'-\', SPACE(1), RTRIM(ClientName))) AS MemberName, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + GlobalVariable.TicketID1 +'\' ORDER BY CreatedDate DESC'
+ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, MemberName, GlobalVariable.PhoneNumber, DoctorName]
+GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)

@@ -14,8 +14,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import com.keyword.GEN5
 
-CustomKeywords.'gardaAkses.General.waitProcessingCommand'()
+GEN5.ProcessingCommand()
 
 if (Phase == '1') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Button - New GL'))
@@ -24,7 +25,7 @@ if (Phase == '1') {
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Button - Search'))
 	
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No', [('Value') : GlobalVariable.TicketID1]), GlobalVariable.Delay5)
+	GEN5.ProcessingCommand()
 		
 	WebUI.doubleClick(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No', [('Value') : GlobalVariable.TicketID1]))
 } else if (Phase == '3') {
@@ -32,7 +33,7 @@ if (Phase == '1') {
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Button - Search'))
 	
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No', [('Value') : GlobalVariable.TicketID2]), GlobalVariable.Delay5)
+	GEN5.ProcessingCommand()
 	
 	WebUI.doubleClick(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No', [('Value') : GlobalVariable.TicketID2]))
 } else if (Phase == '4') {
@@ -40,7 +41,7 @@ if (Phase == '1') {
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Button - Search'))
 	
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No', [('Value') : GlobalVariable.TicketID3]), GlobalVariable.Delay5)
+	GEN5.ProcessingCommand()
 	
 	WebUI.doubleClick(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No', [('Value') : GlobalVariable.TicketID3]))
 } else if (Phase == '5') {
@@ -48,7 +49,7 @@ if (Phase == '1') {
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Button - Search'))
 	
-	WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No', [('Value') : GlobalVariable.TicketID4]), GlobalVariable.Delay5)
+	GEN5.ProcessingCommand()
 	
 	WebUI.doubleClick(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry/Select - Ticket No', [('Value') : GlobalVariable.TicketID4]))
 }

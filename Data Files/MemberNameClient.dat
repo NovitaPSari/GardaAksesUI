@@ -18,6 +18,7 @@
         c.MemberNo AS MemberNo ,
         c.NAME AS MemberName ,
         a.Name AS ClientName ,
+        a.ID AS ClientID ,
         NULL AS DataTerm ,
         'MEMBER' AS DataType ,
         'CREATEGL' AS DataModule ,
@@ -58,7 +59,8 @@ WHERE   B.PStatus &lt;> 'O'
 GROUP BY c.MemberNo ,
         c.Name ,
         c.EmpID ,
-        a.Name</query>
+        a.Name ,
+        a.ID</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>sa</user>

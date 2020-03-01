@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>005. Create Ticket - Provider Health Claim - Client Non E-GL - GL Akhir - NPNFU - Reject</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>230aa96e-c204-4083-9622-b9379fadb684</testCaseGuid>
-</TestCaseEntity>

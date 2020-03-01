@@ -14,10 +14,11 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.keyword.GEN5
 
 WebUI.waitForElementVisible(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Contact Line', [('Value') : ContactLine]), 20)
 
-CustomKeywords.'gardaAkses.General.waitProcessingCommand'()
+GEN5.ProcessingCommand()
 
 //Contact Line
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Contact Line', [('Value') : ContactLine]))
@@ -211,6 +212,8 @@ if (ContactLine == 'Provider') {
 	//Provider Name
 	if (ContactLine == 'Provider') {
 	    CustomKeywords.'gardaAkses.CreateTicket.ProviderName'(ProviderName)
+		
+		GEN5.ProcessingCommand()
 	} else {
 	    WebUI.delay(0)
 	}
