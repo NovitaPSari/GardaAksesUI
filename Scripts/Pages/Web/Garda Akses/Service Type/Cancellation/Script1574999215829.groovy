@@ -49,10 +49,10 @@ GlobalVariable.TicketIDAwal = result.substring(10, 18)
 
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Cancellation/Button - OK'))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Tidak Hal Lain Yang di Bantu'))
+WebUI.click(findTestObject('null'))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Puas'))
+WebUI.click(findTestObject('null'))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
+WebUI.click(findTestObject('null'))
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
+WebUI.click(findTestObject('null'))

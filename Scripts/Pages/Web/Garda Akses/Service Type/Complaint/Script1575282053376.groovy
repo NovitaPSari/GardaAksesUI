@@ -88,9 +88,9 @@ if (ButtonDirection == 'Save') {
 			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Inquiry/Button - Exit Confirmation 3 Ok'))
 		}
 		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
+		WebUI.click(findTestObject('null'))
 		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
+		WebUI.click(findTestObject('null'))
 	}
 } else if (ButtonDirection == 'Back') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Complaint/Button - Back'))

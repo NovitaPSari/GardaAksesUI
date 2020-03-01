@@ -15,7 +15,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.delay(GlobalVariable.Delay1)
+import com.keyword.GEN5
+
+GEN5.ProcessingCommand()
 
 //========== History & Membership ==========
 //========== Approval Tindakan/Terapi/Obat ==========
@@ -30,17 +32,10 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Heal
 
 WebUI.delay(GlobalVariable.Delay1)
 
-def MemberNameSuggestion = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Member Name', 
-        [('MemberName') : MemberName]), GlobalVariable.Delay1)
-
-if (MemberNameSuggestion == true) {
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Member Name', 
         [('MemberName') : MemberName]))
 
-WebUI.delay(GlobalVariable.Delay1)
-} else {
-	WebUI.delay(0)
-}
+GEN5.ProcessingCommand()
 
 //Sub Service Type
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Sub Service Type'))
@@ -61,8 +56,6 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Heal
 //Need Follow Up
 if (NeedFollowUp == 'Yes') {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Check Box - Need Follow Up'))
-} else {
-    WebUI.delay(0)
 }
 
 //Patient Phone Number
@@ -78,6 +71,4 @@ if (ActionAPTTO == 'Process') {
     WebUI.click()
 } else if (ActionAPTTO == 'Exit') {
     WebUI.click()
-} else {
-	WebUI.delay(0)
 }

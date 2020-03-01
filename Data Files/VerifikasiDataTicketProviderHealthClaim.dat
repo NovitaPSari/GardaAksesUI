@@ -10,7 +10,7 @@
    <driver>DBData</driver>
    <isInternalPath>false</isInternalPath>
    <password>UGFzc3dvcmQ5NQ==</password>
-   <query>SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), '-', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), '-', SPACE(1),  RTRIM(LTRIM(MemberNo)), SPACE(1), '-', SPACE(1), RTRIM(MemberName), SPACE(1), '-', SPACE(1), RTRIM(ClientName))) AS MemberName, GLType AS GLType, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = '_TicketID_'</query>
+   <query>SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), '-', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), '-', SPACE(1), RTRIM(LTRIM(MemberNo)), SPACE(1), '-', SPACE(1), RTRIM(MemberName), SPACE(1), '-', SPACE(1), RTRIM(ClientName))) AS MemberName, GLType AS GLType, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = '_TicketID_'</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>sa</user>

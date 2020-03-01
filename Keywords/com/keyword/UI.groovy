@@ -33,6 +33,7 @@ import org.openqa.selenium.By as By
 import com.kms.katalon.core.testobject.ConditionType
 import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.configuration.RunConfiguration
+import org.apache.commons.io.FileUtils
 
 import java.lang.Object
 import java.lang.Process
@@ -41,6 +42,10 @@ import java.sql.ResultSetMetaData
 
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
+
+import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.remote.DesiredCapabilities
 
 import internal.GlobalVariable
 
@@ -87,7 +92,7 @@ public class UI {
 
 	@Keyword
 	public static def countdbRow (String queryTable) {
-		def Query = GEN5.executeQuery(queryTable)
+		def Query = executeQuery(queryTable)
 		ArrayList countRow = new ArrayList()
 
 		while (Query.next()) {
@@ -156,14 +161,14 @@ public class UI {
 		closeDatabaseConnection()
 		return columnData
 	}
-	
+
 	@Keyword
 	public static def compareRowDBtoArray (String url, String dbname, String queryTable, ArrayList listData) {
 		ArrayList database = getOneRowDatabase(url, dbname, queryTable)
-		
+
 		int i
 		for (i = 1 ; i < listData.size() ; i++) {
-			if (database[i].toString().trim() == listData[i].toString.trim()) {
+			if (database[i] == listData[i]) {
 				KeywordUtil.markPassed("Value " + listData[i] +" from Array same with Database.")
 			} else {
 				KeywordUtil.markFailedAndStop("Value from Array = " + listData[i] + " has different Value from database = " + database[i])
@@ -204,6 +209,7 @@ public class UI {
 			WebUI.openBrowser(url)
 			KeywordUtil.markPassed("URL \'"+ url +"\' has opened.")
 		}
+		WebUI.maximizeWindow()
 	}
 
 	@Keyword
@@ -225,8 +231,8 @@ public class UI {
 		String objName = objGet.replace("'", "")
 
 		if (xpath != null || xpath != "") {
-			KeywordUtil.markPassed("Write text \'" + text + "\' on Text Area \'" + objName + "\'.")
 			WebUI.setText(xpath, text, FailureHandling.STOP_ON_FAILURE)
+			KeywordUtil.markPassed("Write text \'" + text + "\' on Text Area \'" + objName + "\'.")
 			Sleep(1)
 		} else {
 			KeywordUtil.markFailedAndStop("Text Area \'"+ objName +"\' is not found, Please recheck your xpath")
@@ -266,8 +272,8 @@ public class UI {
 		String objName = objGet.replace("'", "")
 
 		if (xpath != null || xpath != "") {
-			KeywordUtil.markPassed("Button \'"+ objName +"\' has been Clicked")
 			WebUI.click(xpath, FailureHandling.STOP_ON_FAILURE)
+			KeywordUtil.markPassed("Button \'"+ objName +"\' has been Clicked")
 			Sleep(1)
 		} else {
 			KeywordUtil.markFailedAndStop("Button \'"+ objName +"\' is not found, Please recheck your xpath")
@@ -283,8 +289,8 @@ public class UI {
 		String objName = objGet.replace("'", "")
 
 		if (xpath != null || xpath != "") {
-			KeywordUtil.markPassed("Double click on Button "+ objName)
 			WebUI.doubleClick(xpath, FailureHandling.STOP_ON_FAILURE)
+			KeywordUtil.markPassed("Double click on Button "+ objName)
 		} else {
 			KeywordUtil.markFailedAndStop("Button "+ objName +" is not found, Please recheck your xpath")
 		}
@@ -317,8 +323,8 @@ public class UI {
 		String objName = objGet.replace("'", "")
 
 		if (xpath != null || xpath != "") {
-			KeywordUtil.markPassed("Item "+ objName +" has been Hover")
 			WebUI.mouseOver(xpath, FailureHandling.STOP_ON_FAILURE)
+			KeywordUtil.markPassed("Item "+ objName +" has been Hover")
 		} else {
 			KeywordUtil.markFailedAndStop("Item "+ objName +" is not found, Please recheck your xpath")
 		}
@@ -673,5 +679,52 @@ public class UI {
 		workbook.write(outFile)
 		outFile.close()
 		KeywordUtil.markPassed('Text : \'' + value + '\' has inserted on Excel' )
+	}
+
+	@Keyword
+	public static def AccessURLwithPlugin (String url, String Plugin) {
+		System.setProperty("webdriver.chrome.driver", DriverFactory.getChromeDriverPath())
+		ChromeOptions options = new ChromeOptions();
+		String pluginPath = RunConfiguration.getProjectDir() + '/Plugins/' + Plugin
+		options.addExtensions(new File(pluginPath));
+		DesiredCapabilities capabilities = new DesiredCapabilities()
+		capabilities.setCapability(ChromeOptions.CAPABILITY, options)
+
+		ChromeDriver driver = new ChromeDriver(capabilities)
+
+		String fixUrl = url.toLowerCase()
+
+		if (fixUrl == "retail") {
+			driver.get('https://gen5-qc.asuransiastra.com/retail')
+			KeywordUtil.markPassed("URL \'https://gen5-qc.asuransiastra.com/retail\' has opened.")
+		} else if (fixUrl == "health") {
+			driver.get('https://gen5-qc.asuransiastra.com/health')
+			KeywordUtil.markPassed("URL \'https://gen5-qc.asuransiastra.com/health\' has opened.")
+		} else if (fixUrl == 'gardaakses') {
+			driver.get('https://gen5-qc.asuransiastra.com/gardaakses')
+			KeywordUtil.markPassed("URL \'https://gen5-qc.asuransiastra.com/gardaakses\' has opened.")
+		} else {
+			driver.get(url)
+			KeywordUtil.markPassed("URL \'"+ url +"\' has opened.")
+		}
+
+		WebDriver changeDriver = DriverFactory.changeWebDriver(driver)
+		WebUI.maximizeWindow()
+	}
+
+	@Keyword
+	public static def readQRCode() {
+		String upload = RunConfiguration.getProjectDir() + '/Plugins/OpenQRCode.exe'
+		Process runUpload = Runtime.getRuntime().exec(upload)
+
+		Sleep(18)
+		String locationFile = RunConfiguration.getProjectDir() + '/Plugins/QRCode.txt'
+		File file = new File(locationFile)
+		String text = FileUtils.readFileToString(file)
+
+		KeywordUtil.markPassed("QR Code value = " + text)
+
+		file.delete()
+		return text
 	}
 }

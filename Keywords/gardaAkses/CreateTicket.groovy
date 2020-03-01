@@ -28,10 +28,10 @@ public class CreateTicket {
 		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Create Ticket/Input - Contact Name'), ContactName)
 
 		def AutoComplete = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Create Ticket/Auto Complete - Contact Name'),
-				GlobalVariable.Delay1)
+				3)
 
 		if (AutoComplete == true) {
-			WebUI.delay(GlobalVariable.Delay0)
+			WebUI.delay(3)
 
 			WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Auto Complete - Contact Name'))
 		} else {
@@ -44,11 +44,11 @@ public class CreateTicket {
 
 		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
 
-		WebUI.delay(GlobalVariable.Delay1)
+		WebUI.delay(3)
 
 		WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Create Ticket/Input - Provider Name'), ProviderName)
 
-		WebUI.delay(GlobalVariable.Delay1)
+		WebUI.delay(3)
 
 		WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Auto Complete - Provider Name'))
 	}

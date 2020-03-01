@@ -16,4 +16,5 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import com.keyword.GEN5
 
-GEN5.SideMenu(SubMenu)
+GEN5.SideMenu(Menu, SubMenu)
+

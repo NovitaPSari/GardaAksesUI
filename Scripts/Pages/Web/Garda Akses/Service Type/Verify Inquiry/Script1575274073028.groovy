@@ -95,9 +95,9 @@ if (ButtonDirection == 'Back') {
 		WebUI.delay(0)
 	}
 	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
+	WebUI.click(findTestObject('null'))
 	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
+	WebUI.click(findTestObject('null'))
 } else {
 	WebUI.delay(0)
 }

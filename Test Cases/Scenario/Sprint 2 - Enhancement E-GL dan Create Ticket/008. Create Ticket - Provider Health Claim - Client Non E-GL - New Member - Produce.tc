@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>008. Create Ticket - Provider Health Claim - Client Non E-GL - New Member - Produce</name>
+   <tag></tag>
+   <comment>GlobalVariable.TicketID1</comment>
+   <testCaseGuid>d622149d-1759-4d32-be06-504039b0076d</testCaseGuid>
+</TestCaseEntity>

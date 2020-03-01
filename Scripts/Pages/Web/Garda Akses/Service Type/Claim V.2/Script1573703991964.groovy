@@ -23,15 +23,15 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 WebUI.delay(GlobalVariable.Delay2)
 
 //Popup Member Belum Termapping
-def InformationMember = WebUI.verifyElementPresent(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Information'), 
+def InformationMember = WebUI.verifyElementPresent(findTestObject('null'), 
     GlobalVariable.Delay1)
 
 if (InformationMember == true) {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - X'))
+    WebUI.click(findTestObject('null'))
 }
 
 //Patient Information
-WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Page Claim'), GlobalVariable.Delay1)
+WebUI.scrollToElement(findTestObject('null'), GlobalVariable.Delay1)
 
 //Member + MemberStatus
 if (Member == 'Existing') {
@@ -43,10 +43,10 @@ if (Member == 'Existing') {
 
     WebUI.delay(GlobalVariable.Delay0)
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Choose - Member', [('MemberName') : MemberName]))
+    WebUI.click(findTestObject('null', [('MemberName') : MemberName]))
 
     if (MemberStatus == 'Non Client') {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - X'))
+        WebUI.click(findTestObject('null'))
     }
     
     WebUI.delay(GlobalVariable.Delay3)
@@ -76,24 +76,24 @@ if (Member == 'Existing') {
     WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - Employee ID'), 
         EmployeeID)
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Date Picker'))
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Date Picker - DOB'))
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Month Year'))
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Year'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Prev Year'))
+    WebUI.click(findTestObject('null'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Prev Year'))
+    WebUI.click(findTestObject('null'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Button - Prev Year'))
+    WebUI.click(findTestObject('null'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Claim/Add New Member/Choose - Year', [('Year') : Year]))
+    WebUI.click(findTestObject('null', [('Year') : Year]))
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Choose - Month', 
             [('Month') : Month]))
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Add New Member/Choose - Date'))
+    WebUI.click(findTestObject('null'))
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Classification'))
 
@@ -106,7 +106,7 @@ if (Member == 'Existing') {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Submit'))
 
     if (MemberStatus == 'Non Client') {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - X'))
+        WebUI.click(findTestObject('null'))
     }
 } else if (Member == 'Check') {
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Button - Add New Member'))
@@ -122,7 +122,7 @@ if (Member == 'Existing') {
 
     WebUI.delay(GlobalVariable.Delay1)
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Add New Member/Button - X'))
+    WebUI.click(findTestObject('null'))
 } else {
     WebUI.delay(0)
 }
@@ -160,7 +160,7 @@ if (((GLType == 'Awal') || (GLType == 'Revisi')) || (GLType == 'Akhir')) {
 WebUI.delay(GlobalVariable.Delay2)
 
 if (DiagnosisStatus != null) {
-    WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Page Claim'), GlobalVariable.Delay1)
+    WebUI.scrollToElement(findTestObject('null'), GlobalVariable.Delay1)
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Button - Diagnosis'))
 
@@ -210,17 +210,17 @@ if (DiagnosisStatus != null) {
 }
 
 //Account Manager
-//def AccountManager = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Input - Account Manager'), GlobalVariable.Delay0)
+//def AccountManager = WebUI.verifyElementPresent(findTestObject('null'), GlobalVariable.Delay0)
 //if (AccountManager == true) {
 if (Status == 'Reject') {
     if ((ClientName == 'PT BANK PERMATA TBK') || (ClientName == 'ASURANSI ASTRA BUANA')) {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Account Manager'))
+        WebUI.click(findTestObject('null'))
 
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Account Manager/Choose - Account Manager'))
+        WebUI.click(findTestObject('null'))
 
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Account Manager/Button - Submit'))
+        WebUI.click(findTestObject('null'))
     } else if (ClientName == 'PT SHOWA INDONESIA MANUFACTURING') {
-        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Claim/Input - Account Manager'), 'Mba Mbe')
+        WebUI.setText(findTestObject('null'), 'Mba Mbe')
     }
 } else {
     WebUI.delay(0)
@@ -231,7 +231,7 @@ if (Status == 'Reject') {
 //}
 //Doctor
 if (DoctorName != null) {
-    WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Page Claim'), GlobalVariable.Delay1)
+    WebUI.scrollToElement(findTestObject('null'), GlobalVariable.Delay1)
 
     WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Doctor/Input - Doctor Name'), DoctorName)
 } else {
@@ -240,17 +240,17 @@ if (DoctorName != null) {
 
 //Rujuk + Reason
 if (Rujuk == 'Yes') {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Checkbox - Rujuk'))
+    WebUI.click(findTestObject('null'))
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Reason'))
+    WebUI.click(findTestObject('null'))
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Reason Rujuk/Choose - Reason'))
+    WebUI.click(findTestObject('null'))
 } else {
     WebUI.delay(0)
 }
 
 //Appropriate RB Class
-def AppropriateRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Appropriate RB Class'), 
+def AppropriateRBClass = WebUI.getAttribute(findTestObject('null'), 
     'value')
 
 if (AppropriateRBClass == '') {
@@ -264,7 +264,7 @@ if (AppropriateRBClass == '') {
 }
 
 //Treatment RB Class
-def TreatmentRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Text - Treatment RB Class'), 
+def TreatmentRBClass = WebUI.getAttribute(findTestObject('null'), 
     'value')
 
 if (TreatmentRBClass == '') {
@@ -279,7 +279,7 @@ if (TreatmentRBClass == '') {
 
 //NPNFU
 if (NPNFU == 'Yes') {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/CheckBox - Need Follow Up'))
+    WebUI.click(findTestObject('null'))
 } else {
     WebUI.delay(0)
 }
@@ -293,20 +293,20 @@ if (GLType == 'Akhir') {
 
 ////Status
 //if (Status == 'PreAdmission') {
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Pre-Admission'))
+//    WebUI.click(findTestObject('null'))
 //} else if (Status == 'InteruptedCall') {
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Interupted Call'))
+//    WebUI.click(findTestObject('null'))
 //} else if (Status == 'Reject') {
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Reject'))
+//    WebUI.click(findTestObject('null'))
 //} else if (Status == 'Process') {
 //    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'))
 //} else {
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Cancel'))
+//    WebUI.click(findTestObject('null'))
 //}
 //
 ////Validasi
 //if ((((Status == 'PreAdmission') || (Status == 'InteruptedCall')) || (Status == 'Reject')) || (Status == 'Process')) {
-//    WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Claim/Summary/Text - Status', [('Summary') : Summary]), 
+//    WebUI.verifyElementPresent(findTestObject('null', [('Summary') : Summary]), 
 //        GlobalVariable.Delay3)
 //
 //    WebUI.delay(GlobalVariable.Delay2)
@@ -379,21 +379,21 @@ if (GLType == 'Akhir') {
 //    }
 //    
 //    //		}
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Tidak Hal Lain Yang di Bantu'))
+//    WebUI.click(findTestObject('null'))
 //
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Puas'))
+//    WebUI.click(findTestObject('null'))
 //
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
+//    WebUI.click(findTestObject('null'))
 //
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
+//    WebUI.click(findTestObject('null'))
 //} else if ((Status == 'Reject') || (Status == 'PreAdmission')) {
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Tidak Hal Lain Yang di Bantu'))
+//    WebUI.click(findTestObject('null'))
 //
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Puas'))
+//    WebUI.click(findTestObject('null'))
 //
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Show Thanks'))
+//    WebUI.click(findTestObject('null'))
 //
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - Ok Close App'))
+//    WebUI.click(findTestObject('null'))
 //} else if (Member == 'Check') {
 //    WebUI.delay(0)
 //}
