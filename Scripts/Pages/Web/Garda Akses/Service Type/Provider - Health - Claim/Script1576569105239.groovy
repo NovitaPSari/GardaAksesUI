@@ -28,23 +28,8 @@ import com.keyword.UI
 
 def PopUpNonClient = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Text - Non Client'), 3)
 
-if (PopUpNonClient) {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Button - Close'))
-}
-
-if (Member == 'Existing') {
-	WebUI.comment(MemberName)
-	
-	CustomKeywords.'gardaAkses.CreateGL.InputMemberName'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Member'), 
-		MemberName) 
-	
-	def PopUpNonClient2 = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Text - Non Client'), 3)
-	
-	if (PopUpNonClient2) {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Button - Close'))
-	}
-		
-	
+if (Member == 'Existing') {	
+	CustomKeywords.'gardaAkses.CreateGL.InputMemberName'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Member'), MemberName) 			
 } else if (Member == 'New') {
 	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Button - Add New Member'))
 
