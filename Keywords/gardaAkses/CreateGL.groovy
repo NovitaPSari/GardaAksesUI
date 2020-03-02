@@ -40,13 +40,10 @@ public class CreateGL {
 			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Auto Complete - Member'))
 		}
 
-		def MemberBelumTerMapping = WebUI.verifyElementPresent(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Popup - Member Belum Ter-Mapping'),
-				3)
-
-		if (MemberBelumTerMapping == true) {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Claim/Button - X'))
-		} else {
-			WebUI.delay(0)
+		def PopUpNonClient = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Text - Non Client'), 3)
+	
+		if (PopUpNonClient) {
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Button - Close'))
 		}
 	}
 
