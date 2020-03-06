@@ -14,12 +14,12 @@
       <guid>ace5a80a-9592-4a9f-b305-801b524d2b44</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Scenario/Sprint 6 - New Menu Follow Up Outbound - Claim/001. Create Ticket - Provider Health Claim - Validasi Diagnosa</testCaseId>
+      <testCaseId>Test Cases/Scenario/Sprint 6 - New Menu Follow Up Outbound - Claim/002. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - Follow Up - Validasi Diagnosa</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>291f7a02-433e-49d7-a37d-ae38d862896d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Scenario/Sprint 6 - New Menu Follow Up Outbound - Claim/002. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - Annual Limit</testCaseId>
+      <testCaseId>Test Cases/Scenario/Sprint 6 - New Menu Follow Up Outbound - Claim/001. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - Follow Up - Annual Limit</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

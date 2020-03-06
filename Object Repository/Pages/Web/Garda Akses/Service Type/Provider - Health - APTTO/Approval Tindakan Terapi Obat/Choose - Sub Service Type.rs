@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;MedicoreSection1-0&quot;]//span[text() = &quot;Sub Service Type&quot;]/parent::label/parent::div/div/div/div/button[text() = '${SubServiceType}']</value>
+         <value>//*[@id=&quot;MedicoreSection1-0&quot;]//span[text() = &quot;Sub Service Type&quot;]/parent::label/parent::div/div/div/div/button[text() = '${value}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;MedicoreSection1-0&quot;]//span[text() = &quot;Sub Service Type&quot;]/parent::label/parent::div/div/div/div/button[text() = '${SubServiceType}']</value>
+      <value>//*[@id=&quot;MedicoreSection1-0&quot;]//span[text() = &quot;Sub Service Type&quot;]/parent::label/parent::div/div/div/div/button[text() = '${value}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

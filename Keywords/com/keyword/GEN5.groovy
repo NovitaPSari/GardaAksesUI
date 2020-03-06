@@ -43,7 +43,7 @@ import internal.GlobalVariable
 public class GEN5 extends UI {
 
 	@Keyword
-	public static def SideMenu (String ParentMenu, String ChildMenu) {
+	public static void SideMenu (String ParentMenu, String ChildMenu) {
 		String FrameXpath = '/html/frameset/frame'
 		String CollapseXpath = '//button[text()=\'' + ParentMenu + '\']/parent::*/following-sibling::*//*[text()=\'' + ChildMenu +'\']//ancestor::div[2][@aria-expanded=\'true\']'
 		String ParentXpath = '//button[text()=\'' + ParentMenu + '\']/parent::*/following-sibling::*//*[text()=\'' + ChildMenu +'\']//ancestor::div[2]/preceding-sibling::*/button'
@@ -89,7 +89,7 @@ public class GEN5 extends UI {
 	//	}
 
 	@Keyword // By Arnold
-	public static def DatePicker(String DateNow, TestObject DatePickerDiv){
+	public static void DatePicker(String DateNow, TestObject DatePickerDiv){
 		String[] SplitDate = DateNow.split('/')
 
 		if (SplitDate[0].startsWith('0')){
@@ -153,7 +153,7 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def getAllColumnValue (TestObject tableXpath, String gridColumn) {
+	public static ArrayList getAllColumnValue (TestObject tableXpath, String gridColumn) {
 		String FrameXpath = '/html/frameset/frame'
 		WebUI.switchToDefaultContent()
 		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
@@ -203,11 +203,12 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def getAllRowsValue (TestObject tableXpath, String columnHeader, String RowsValue) {
+	public static ArrayList getAllRowsValue (TestObject tableXpath, String columnHeader, String RowsValue) {
 		WebDriver Driver = DriverFactory.getWebDriver()
 
+		String FrameXpath = '/html/frameset/frame'
 		WebUI.switchToDefaultContent()
-		WebUI.switchToFrame(findTestObject('Object Repository/GEN5/Frame Set'), 2)
+		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
 
 		TestObject tObj = tableXpath
 		String XpathTable = "${tObj.findPropertyValue('xpath')}"
@@ -270,11 +271,12 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def CompareRowsValue (TestObject tableXpath, String columnHeader, String RowsValue, ArrayList RowsCompare) {
+	public static void CompareRowsValue (TestObject tableXpath, String columnHeader, String RowsValue, ArrayList RowsCompare) {
 		WebDriver Driver = DriverFactory.getWebDriver()
 
+		String FrameXpath = '/html/frameset/frame'
 		WebUI.switchToDefaultContent()
-		WebUI.switchToFrame(findTestObject('Object Repository/GEN5/Frame Set'), 2)
+		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
 
 		TestObject tObj = tableXpath
 		String XpathTable = "${tObj.findPropertyValue('xpath')}"
@@ -287,7 +289,6 @@ public class GEN5 extends UI {
 		WebElement tableBody = Driver.findElement(By.xpath(XpathTableBody))
 		WebElement tableRowBody = Driver.findElement(By.xpath(XpathTableRowBody))
 		WebElement BodyTable = Driver.findElement(By.xpath(XpathTable))
-
 
 		List<WebElement> body = BodyTable.findElements(By.tagName("tbody"))
 		List<WebElement> rows =  tableHead.findElements(By.tagName("th"))
@@ -325,7 +326,10 @@ public class GEN5 extends UI {
 							if (Lines.size() == 0) {
 								continue
 							} else {
-								line.add(Lines[x].getText())
+								boolean checkbox = Lines[x].findElement(By.tagName("input"))
+								if (!checkbox) {
+									line.add(Lines[x].getText())
+								}
 							}
 						}
 					}
@@ -336,8 +340,6 @@ public class GEN5 extends UI {
 
 		int r
 		for (r = 0 ; r < line.size() ; r++) {
-			int sum = r + 1
-
 			if (line[r].trim() == RowsCompare[r]) {
 				KeywordUtil.markPassed("Value of Column " + collsName[r] +" has same Value with array")
 			} else {
@@ -347,7 +349,7 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def CompareColumnsValue (TestObject tableXpath, String gridColumn, ArrayList CompareColumn) {
+	public static void CompareColumnsValue (TestObject tableXpath, String gridColumn, ArrayList CompareColumn) {
 		String FrameXpath = '/html/frameset/frame'
 		WebUI.switchToDefaultContent()
 		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
@@ -406,7 +408,7 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def ClickExpectedRow (TestObject tableXpath, String gridColumn, String columnValue) {
+	public static void ClickExpectedRow (TestObject tableXpath, String gridColumn, String columnValue) {
 		String FrameXpath = '/html/frameset/frame'
 		WebUI.switchToDefaultContent()
 		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
@@ -460,7 +462,7 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def ProcessingCommand () {
+	public static void ProcessingCommand () {
 		String FrameXpath = '/html/frameset/frame'
 		String xPath = '//div[contains(@id,"Blocker_Box") and not(contains(@style,"display: none"))]'
 
@@ -483,7 +485,7 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def CompareColumnToDatabase (TestObject tableXpath, String gridColumn, String url, String dbname, String queryTable, String getColumn) {
+	public static void CompareColumnToDatabase (TestObject tableXpath, String gridColumn, String url, String dbname, String queryTable, String getColumn) {
 		String FrameXpath = '/html/frameset/frame'
 		WebUI.switchToDefaultContent()
 		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
@@ -544,7 +546,7 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def CompareRowToDatabase (TestObject tableXpath, String columnHeader, String RowsValue, String url, String dbname, String queryTable) {
+	public static void CompareRowToDatabase (TestObject tableXpath, String columnHeader, String RowsValue, String url, String dbname, String queryTable) {
 		WebDriver Driver = DriverFactory.getWebDriver()
 
 		String FrameXpath = '/html/frameset/frame'
@@ -632,7 +634,7 @@ public class GEN5 extends UI {
 	}
 
 	@Keyword
-	public static def getDataFromDataHealth (String Parameter, String ParamValue, String Value) {
+	public static String getDataFromDataHealth (String Parameter, String ParamValue, String Value) {
 		connectDB('172.16.94.48', 'LiTT', 'sa', 'Password95')
 
 		def Query = executeQuery('SELECT TOP 1 * FROM DataHealth WHERE RowStatus = \'0\' and '+ Parameter +' = \''+ ParamValue +'\' ORDER BY id DESC')
@@ -702,36 +704,6 @@ public class GEN5 extends UI {
 			return sum
 		}
 		//		return resultSet
-	}
-
-	@Keyword
-	public static def getArrayIcon (TestObject Object) {
-		WebDriver driver = DriverFactory.getWebDriver()
-
-		TestObject tObj = Object
-		String Xpath = "${tObj.findPropertyValue('xpath')}"
-
-		WebElement drivers = driver.findElement(By.xpath(Xpath))
-
-		List<WebElement> elementList=  drivers.findElements(By.className("style-card-view"))
-
-		ArrayList getValue = new ArrayList()
-		ArrayList finalValue = new ArrayList()
-
-		int i
-		for (i = 1 ; i <= elementList.size() ; i++) {
-			getValue.add(WebUI.getAttribute(newTestObject("("+Xpath + "/div[" + i + "]/div)[1]"), "id"))
-		}
-
-		int a
-		for (a = 0 ; a < getValue.size() ; a++) {
-			String result = getValue[a]
-			String[] separate = result.split('Type')
-
-			finalValue.add(separate[1])
-		}
-
-		return finalValue
 	}
 
 	@Keyword

@@ -132,7 +132,10 @@ CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(
 
 //Treatment Period Start
 if (EditTreatmentPeriodStart == 'Yes') {
-	WebUI.click(null)
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Date Picker - Treatment Period Start'))
+	
+	GEN5.DatePicker(TreatmentPeriodStart, findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Date Picker - Treatment Period Start Month'))
+	
 }
 
 //Treatment Period End
@@ -233,35 +236,31 @@ if (Rujuk == 'Yes') {
 }
 
 //========== Room Information ==========
-////Appropriate RB Class
-//String getValueAppropriateRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Appropriate RB Class - Value'), 'value')
-//
-//if (getValueAppropriateRBClass != AppropriateRBClass) {
-//	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Look Up - Appropriate RB Class'))
-//	
-//	GEN5.ProcessingCommand()
-//	
-//	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Appropriate RB Class/Select - Appropriate RB Class', [('Value') : AppropriateRBClass]))
-//	
-//	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Appropriate RB Class/Button - Choose'))
-//} else {
-//	WebUI.delay(0)
-//}
-//
-////Treatment RB Class
-//String getValueTreatmentRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Treatment RB Class - Value'), 'value')
-//
-//if (getValueTreatmentRBClass != TreatmentRBClass) {
-//	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Look Up - Treatment RB Class'))
-//	
-//	GEN5.ProcessingCommand()
-//	
-//	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Treatment RB Class/Select - Treatment RB Class', [('Value') : TreatmentRBClass]))
-//	
-//	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Treatment RB Class/Button - Choose'))
-//} else {
-//	WebUI.delay(0)
-//}
+//Appropriate RB Class
+String getValueAppropriateRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Appropriate RB Class - Value'), 'value')
+
+if (getValueAppropriateRBClass != AppropriateRBClass) {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Look Up - Appropriate RB Class'))
+	
+	GEN5.ProcessingCommand()
+	
+	WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Appropriate RB Class/Select - Appropriate RB Class', [('Value') : AppropriateRBClass]))
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Appropriate RB Class/Button - Choose'))
+}
+
+//Treatment RB Class
+String getValueTreatmentRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Treatment RB Class - Value'), 'value')
+
+if (getValueTreatmentRBClass != TreatmentRBClass) {
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Look Up - Treatment RB Class'))
+	
+	GEN5.ProcessingCommand()
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Treatment RB Class/Select - Treatment RB Class', [('Value') : TreatmentRBClass]))
+	
+	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Treatment RB Class/Button - Choose'))
+}
 
 //Room Option / Availability
 CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(
@@ -315,8 +314,6 @@ if (ActionGL == 'Cancel') {
 	
 } else if (ActionGL == 'Process') {
 	WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'), 5)
-	
-	WebUI.delay(10)
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'))
 	

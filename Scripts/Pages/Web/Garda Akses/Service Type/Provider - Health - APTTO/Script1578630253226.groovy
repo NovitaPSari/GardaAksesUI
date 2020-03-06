@@ -32,8 +32,7 @@ WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Heal
 
 WebUI.delay(GlobalVariable.Delay1)
 
-WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Member Name', 
-        [('MemberName') : MemberName]))
+WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Member Name'))
 
 GEN5.ProcessingCommand()
 
@@ -41,7 +40,7 @@ GEN5.ProcessingCommand()
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Button - Sub Service Type'))
 
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Sub Service Type', 
-        [('SubServiceType') : SubServiceType]))
+        [('value') : SubServiceType]))
 
 WebUI.delay(GlobalVariable.Delay2)
 

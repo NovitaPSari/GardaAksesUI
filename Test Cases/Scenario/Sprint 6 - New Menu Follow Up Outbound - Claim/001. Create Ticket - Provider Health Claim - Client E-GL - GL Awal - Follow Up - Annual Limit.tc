@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>002. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - Annual Limit</name>
+   <name>001. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - Follow Up - Annual Limit</name>
    <tag></tag>
-   <comment></comment>
+   <comment>GlobalVariable.TicketID1</comment>
    <testCaseGuid>35ec290f-602d-4e41-b6a2-a36d0e7357d2</testCaseGuid>
 </TestCaseEntity>

@@ -32,7 +32,7 @@ public class Query {
 
 		defaultQuery.execute(queryContactName)
 	}
-	
+
 	@Keyword
 	def QueryNewMemberName () {
 		def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'Automation GA\')+1 WHERE Name = \'Automation GA\''
@@ -41,7 +41,7 @@ public class Query {
 
 		defaultQuery.execute(queryContactName)
 	}
-	
+
 	@Keyword
 	def QueryEmployeeID () {
 		def queryContactName = 'UPDATE GardaAkses_MasterID SET Number = (SELECT Number FROM GardaAkses_MasterID WHERE Name = \'EmployeeID\')+1 WHERE Name = \'EmployeeID\''
