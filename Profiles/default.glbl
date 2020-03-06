@@ -139,4 +139,14 @@
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Member belum terdaftar\'))]'</initValue>
       <name>ValidasiNewMember</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Perlu pengecekan terkait Annual Limit\'))]'</initValue>
+      <name>ValidasiAnnualLimit</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Terdapat dokumen mandatory yang belum dilengkapi (Form APS)\'))]'</initValue>
+      <name>ValidasiDocumentAPS</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

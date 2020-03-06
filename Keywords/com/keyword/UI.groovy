@@ -79,7 +79,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def countdbColumn (String queryTable) {
+	public static int countdbColumn (String queryTable) {
 		Statement stm = connection.createStatement()
 		ResultSet rs = stm.executeQuery(queryTable)
 
@@ -91,7 +91,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def countdbRow (String queryTable) {
+	public static int countdbRow (String queryTable) {
 		def Query = executeQuery(queryTable)
 		ArrayList countRow = new ArrayList()
 
@@ -105,19 +105,25 @@ public class UI {
 	}
 
 	@Keyword
-	public static def getValueDatabase (String url, String dbname, String queryTable, String ColumnName) {
+	public static String getValueDatabase (String url, String dbname, String queryTable, String ColumnName) {
 		connectDB(url, dbname, "sa", "Password95")
 		def Data = executeQuery(queryTable)
+		String result
 
-		Data.next()
-		String getData = Data.getString(ColumnName)
-
+		if (!(Data.next())) {
+			String hasil = null
+			
+			result = hasil
+		} else {
+			String getData = Data.getString(ColumnName)
+			result = getData
+		}
 		closeDatabaseConnection()
-		return getData.toString().trim()
+		return result.toString().trim()
 	}
 
 	@Keyword
-	public static def updateValueDatabase (String url, String dbname, String updateQuery) {
+	public static void updateValueDatabase (String url, String dbname, String updateQuery) {
 		connectDB(url, dbname, "sa", "Password95")
 
 		def Query2 = execute(updateQuery)
@@ -127,7 +133,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def getOneRowDatabase(String url, String dbname, String queryTable) {
+	public static ArrayList getOneRowDatabase(String url, String dbname, String queryTable) {
 		connectDB(url, dbname, "sa", "Password95")
 		ArrayList columnData = new ArrayList()
 
@@ -137,7 +143,7 @@ public class UI {
 
 		int i
 		for (i = 1 ; i <= countColumn ; i++) {
-			Object getData = Data.getObject(i)
+			Object getData = Data.getString(i)
 			columnData.add(getData.toString().trim())
 		}
 		closeDatabaseConnection()
@@ -145,7 +151,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def getOneColumnDatabase(String url, String dbname, String queryTable, String ColumnName) {
+	public static ArrayList getOneColumnDatabase(String url, String dbname, String queryTable, String ColumnName) {
 		connectDB(url, dbname, "sa", "Password95")
 		ArrayList columnData = new ArrayList()
 
@@ -163,11 +169,11 @@ public class UI {
 	}
 
 	@Keyword
-	public static def compareRowDBtoArray (String url, String dbname, String queryTable, ArrayList listData) {
+	public static void compareRowDBtoArray (String url, String dbname, String queryTable, ArrayList listData) {
 		ArrayList database = getOneRowDatabase(url, dbname, queryTable)
 
 		int i
-		for (i = 1 ; i < listData.size() ; i++) {
+		for (i = 0 ; i < listData.size() ; i++) {
 			if (database[i] == listData[i]) {
 				KeywordUtil.markPassed("Value " + listData[i] +" from Array same with Database.")
 			} else {
@@ -177,7 +183,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def closeDatabaseConnection() {
+	public static void closeDatabaseConnection() {
 		if(connection != null && !connection.isClosed()){
 			connection.close()
 		}
@@ -193,7 +199,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def AccessURL (String url) {
+	public static void AccessURL (String url) {
 		String fixUrl = url.toLowerCase()
 
 		if (fixUrl == "retail") {
@@ -213,7 +219,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def Sleep(int timeOut) {
+	public static void Sleep(int timeOut) {
 		if (timeOut == 0 || timeOut == null || timeOut == "") {
 			KeywordUtil.markWarning("Sleep time is unidentified")
 		} else {
@@ -223,7 +229,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def Write (TestObject xpath, String text) {
+	public static void Write (TestObject xpath, String text) {
 		String toString = xpath.toString()
 		String[] separate = toString.split(' ')
 		String[] getName = separate[separate.size()-1].split('/')
@@ -240,7 +246,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def WaitElement (TestObject xpath) {
+	public static void WaitElement (TestObject xpath) {
 		String toString = xpath.toString()
 		String[] separate = toString.split(' ')
 		String[] getName = separate[separate.size()-1].split('/')
@@ -264,7 +270,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def Click (TestObject xpath) {
+	public static void Click (TestObject xpath) {
 		String toString = xpath.toString()
 		String[] separate = toString.split(' ')
 		String[] getName = separate[separate.size()-1].split('/')
@@ -281,7 +287,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def DoubleClick (TestObject xpath) {
+	public static void DoubleClick (TestObject xpath) {
 		String toString = xpath.toString()
 		String[] separate = toString.split(' ')
 		String[] getName = separate[separate.size()-1].split('/')
@@ -297,7 +303,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def DragAndDrop (TestObject sourceXpath, TestObject destinationXpath) {
+	public static void DragAndDrop (TestObject sourceXpath, TestObject destinationXpath) {
 		if ((sourceXpath != null || sourceXpath != "") && (destinationXpath != null || destinationXpath != "")) {
 			KeywordUtil.markPassed("Drag and Drop has done successfully")
 			WebUI.dragAndDropToObject(sourceXpath, destinationXpath, FailureHandling.STOP_ON_FAILURE)
@@ -309,13 +315,13 @@ public class UI {
 	}
 
 	@Keyword
-	public static def Back () {
+	public static void Back () {
 		WebUI.back()
 		Sleep(1)
 	}
 
 	@Keyword
-	public static def HoverItem (TestObject xpath) {
+	public static void HoverItem (TestObject xpath) {
 		String toString = xpath.toString()
 		String[] separate = toString.split(' ')
 		String[] getName = separate[separate.size()-1].split('/')
@@ -331,7 +337,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def DeleteWrite (TestObject xpath, String text ) {
+	public static void DeleteWrite (TestObject xpath, String text ) {
 		String getValue = WebUI.getAttribute(xpath,'value', FailureHandling.OPTIONAL)
 		String getText = WebUI.getText(xpath, FailureHandling.OPTIONAL)
 		String getValue2
@@ -397,7 +403,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def SkipWrite (TestObject xpath, String text) {
+	public static void SkipWrite (TestObject xpath, String text) {
 		String getValue = WebUI.getAttribute(xpath, 'value', FailureHandling.OPTIONAL)
 		String getText = WebUI.getText(xpath, FailureHandling.OPTIONAL)
 
@@ -414,7 +420,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def ComboBoxSearch (TestObject Combo1, TestObject Combo2, String Value) {
+	public static void ComboBoxSearch (TestObject Combo1, TestObject Combo2, String Value) {
 		TestObject tObj = Combo2
 		String findXpath = "${tObj.findPropertyValue('xpath')}"
 		String children = '(' + findXpath + '//ancestor::*//*[contains(text(),\''+ Value + '\')])[1]'
@@ -441,7 +447,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def ComboBoxSearchSkip (TestObject comboOpen, TestObject comboSearch, String Value) {
+	public static void ComboBoxSearchSkip (TestObject comboOpen, TestObject comboSearch, String Value) {
 		String getValue = WebUI.getAttribute(comboOpen,'value', FailureHandling.OPTIONAL)
 		String getText = WebUI.getText(comboOpen, FailureHandling.OPTIONAL)
 
@@ -503,10 +509,10 @@ public class UI {
 	}
 
 	@Keyword
-	public static def ComboBox (TestObject Combo, String Value) {
+	public static void ComboBox (TestObject Combo, String Value) {
 		TestObject tObj = Combo
 		String findXpath = "${tObj.findPropertyValue('xpath')}"
-		String children = '(' +findXpath + '/following-sibling::*/*[text()=\''+ Value +'\'])[1]'
+		String children = '(' +findXpath + '//following-sibling::*/*[text()=\''+ Value +'\'])[1]'
 
 		if (Combo != null || Combo != "") {
 			Click(Combo)
@@ -522,7 +528,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def MultiSelectComboBox (TestObject Combo, String Value1, String Value2, String Value3, String Value4) {
+	public static void MultiSelectComboBox (TestObject Combo, String Value1, String Value2, String Value3, String Value4) {
 		if (Combo != null || Combo != "") {
 			Click(Combo)
 		} else {
@@ -567,9 +573,44 @@ public class UI {
 
 		Click(Combo)
 	}
+	
+	@Keyword
+	public static void CheckDisableandWrite (TestObject Xpath, String text) {
+		boolean getValue = WebUI.verifyElementHasAttribute(Xpath, "disabled", 1, FailureHandling.OPTIONAL)
+		
+		if (!getValue) {
+			boolean getAtt = WebUI.verifyElementHasAttribute(Xpath, "value", 1, FailureHandling.OPTIONAL)
+			if (getAtt) {
+				String getText = WebUI.getAttribute(Xpath, "value", FailureHandling.STOP_ON_FAILURE)
+				if (getText != text) {
+					WebUI.clearText(Xpath)
+					getText = WebUI.getAttribute(Xpath, "value", FailureHandling.STOP_ON_FAILURE)
+					
+					if (getText != text || getText != "" || getText != null) {
+						Write(Xpath, "")
+						getText = WebUI.getAttribute(Xpath, "value", FailureHandling.STOP_ON_FAILURE)
+						
+						if (getText != text || getText != "" || getText != null) {
+							int CharValue = getText.size()
+							
+							int i
+							for (i = 0 ; i < CharValue ; i++) {
+								WebUI.sendKeys(Xpath, Keys.chord(Keys.BACK_SPACE) )
+							}
+						}
+					}
+				}
+				
+			} else {
+				Write(Xpath, text)
+			}
+		} else {
+			KeywordUtil.markPassed("The Object is disable")
+		}
+	}
 
 	@Keyword
-	public static def RunningPhoneNumber (TestObject xpath) {
+	public static void RunningPhoneNumber (TestObject xpath) {
 		connectDB('172.16.94.48', 'LiTT', 'sa', 'Password95')
 		def Running = executeQuery('SELECT * FROM dbo.Otosales WHERE Parameters = \'Phone\'')
 
@@ -589,7 +630,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def UploadFile (String fileLocation, String pictureName) {
+	public static void UploadFile (String fileLocation, String pictureName) {
 		String locationFile = RunConfiguration.getProjectDir() + '/Plugins/FileLocation.txt'
 		File write = new File(locationFile)
 		String Location = fileLocation
@@ -611,7 +652,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def RunScheduler(String path){
+	public static void RunScheduler(String path){
 		String[] getObj = path.split("\\")
 		String objName = getObj[getObj.size()-1]
 
@@ -624,7 +665,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def WriteAllRowsXls (String path, int row ,ArrayList value) {
+	public static void WriteAllRowsXls (String path, int row ,ArrayList value) {
 		int i
 		int count = value.size()
 		ArrayList cellData = new ArrayList()
@@ -664,7 +705,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def WriteSingleCellXls (String path,int row, int column, def value) {
+	public static void WriteSingleCellXls (String path,int row, int column, def value) {
 		FileInputStream file = new FileInputStream (new File(path))
 		XSSFWorkbook workbook = new XSSFWorkbook(file)
 		XSSFSheet sheet = workbook.getSheetAt(0)
@@ -682,7 +723,7 @@ public class UI {
 	}
 
 	@Keyword
-	public static def AccessURLwithPlugin (String url, String Plugin) {
+	public static void AccessURLwithPlugin (String url, String Plugin) {
 		System.setProperty("webdriver.chrome.driver", DriverFactory.getChromeDriverPath())
 		ChromeOptions options = new ChromeOptions();
 		String pluginPath = RunConfiguration.getProjectDir() + '/Plugins/' + Plugin
@@ -713,15 +754,26 @@ public class UI {
 	}
 
 	@Keyword
-	public static def readQRCode() {
+	public static String readQRCode() {
 		String upload = RunConfiguration.getProjectDir() + '/Plugins/OpenQRCode.exe'
 		Process runUpload = Runtime.getRuntime().exec(upload)
 
-		Sleep(18)
 		String locationFile = RunConfiguration.getProjectDir() + '/Plugins/QRCode.txt'
 		File file = new File(locationFile)
-		String text = FileUtils.readFileToString(file)
+		boolean exist = FileUtils.waitFor(file, 1)
 
+		if (exist) {
+			file.delete()
+			exist = FileUtils.waitFor(file, 1)
+		}
+		
+		while (!exist) {
+			Sleep(2)
+			exist = FileUtils.waitFor(file, 1)
+		}
+		
+		Sleep(2)
+		String text = FileUtils.readFileToString(file)
 		KeywordUtil.markPassed("QR Code value = " + text)
 
 		file.delete()

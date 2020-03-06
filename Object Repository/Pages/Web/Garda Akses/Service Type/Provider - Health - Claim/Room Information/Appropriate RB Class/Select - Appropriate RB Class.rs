@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;ProviderRoomBoardAppropriateInfoPopUpSection-0&quot;]//span[text() = '${Value}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;ProviderRoomBoardAppropriateInfoPopUpSection-0&quot;]//span[contains(text(),'${Value}')][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;ProviderRoomBoardAppropriateInfoPopUpSection-0&quot;]//span[text() = '${Value}']</value>
+      <value>//*[@id=&quot;ProviderRoomBoardAppropriateInfoPopUpSection-0&quot;]//span[contains(text(),'${Value}')]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

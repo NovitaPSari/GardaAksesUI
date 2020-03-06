@@ -50,9 +50,9 @@ String Phase = '1'
 //Claim
 String Member = 'Existing' //Member = Existing  / New / Check
 
-//String MemberName = findTestData('MemberNameClient').getValue(1, 1)
+String MemberName = findTestData('MemberNameLineX').getValue(1, 1)
 
-String MemberName = '00030 - A/00102400 - AYUN YANTI, SE - PT SAHABAT FINANSIAL KELUARGA'
+//String MemberName = findTestData('MemberNameAsuransiAstraBuana').getValue(1, 1)
 
 String ProductType = 'Inpatient'
 
@@ -60,21 +60,29 @@ String GLType = 'Awal'
 
 String EditTreatmentPeriodStart = 'No'
 
+//String EditTreatmentPeriodStart = 'Yes'
+
+String TreatmentPeriodStart = '27/Feb/2020'
+
 String EditTreatmentPeriodEnd = 'No'
 
 String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
-String StatusDiagnosa = 'Initial Primary'
+ArrayList StatusDiagnosa = ['Initial Primary', 'Initial Secondary', 'Initial Secondary']
 
-String DiagnosisID = 'T80'
+ArrayList DiagnosisID = ['A09', 'T80', 'B20']
 
 String DoctorName = 'Automation Doctor - Me'
 
 String Rujuk = 'No'
 
 String Reason = ''
+
+String AppropriateRBClass = 'STANDARD'
+
+String TreatmentRBClass = 'STANDARD'
 
 String RoomOptionAvailability = 'On Plan'
 
@@ -84,11 +92,9 @@ String EditDocument = 'No'
 
 String DeleteDocument = 'No'
 
-//String ActionGL = 'Process'
+String ActionGL = 'Process'
 
-String ActionGL = 'Exit'
-
-String Validasi = GlobalVariable.ValidasiDijaminkan
+String Validasi = GlobalVariable.ValidasiDiagnosa
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'
@@ -138,6 +144,10 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('Reason') : Reason
 		, ('SpecialCondition') : SpecialCondition
 		, ('SpecialConditionReason') : SpecialConditionReason
+		
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass
+		
 		, ('RoomOptionAvailability') : RoomOptionAvailability
 		, ('NewDocument') : NewDocument
 		, ('EditDocument') : EditDocument
@@ -150,3 +160,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Co
 	[('ECAction1') : ECAction1
 		, ('ECAction2') : ECAction2
 		, ('Comment') : Comment])
+
+WebUI.comment(GlobalVariable.TicketID1)
+
+WebUI.comment(MemberName)

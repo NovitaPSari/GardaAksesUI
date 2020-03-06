@@ -52,13 +52,15 @@ String MemberName = '00091 - A/00136451 - ANANG MAZFUAD - PT Sahabat Finansial K
 
 //String MemberName = '00003 - M/00080165 - MUHAMMAD KURNIAWAN - PT Sahabat Finansial Keluarga'
 
-//String MemberName = 'A/00192872'
+//String MemberName = '00038 - L/00016180 - LIM BUI HO - PT Sahabat Finansial Keluarga'
 
 String ProductType = 'Inpatient'
 
 String GLType = 'Awal'
 
-String EditTreatmentPeriodStart = 'No'
+String EditTreatmentPeriodStart = 'Yes'
+
+String TreatmentPeriodStart = '23/Feb/2020'
 
 String EditTreatmentPeriodEnd = 'No'
 
@@ -76,7 +78,11 @@ String Rujuk = 'No'
 
 String Reason = ''
 
-String RoomOptionAvailability = 'On Plan'
+String AppropriateRBClass = 'STANDARD'
+
+String TreatmentRBClass = 'STANDARD'
+
+String RoomOptionAvailability = 'NAPS - Room Not Available'
 
 String NewDocument = 'No'
 
@@ -84,9 +90,9 @@ String EditDocument = 'No'
 
 String DeleteDocument = 'No'
 
-String ActionGL = 'Exit'
+String ActionGL = 'Process'
 
-String Validasi = GlobalVariable.ValidasiTidakDijaminkan
+String Validasi = GlobalVariable.ValidasiAnnualLimit
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'
@@ -128,6 +134,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('GLType') : GLType
 		, ('SpecialCondition') : SpecialCondition
 		, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+		, ('TreatmentPeriodStart') : TreatmentPeriodStart
 		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
 		, ('StatusDiagnosa') : StatusDiagnosa
         , ('DiagnosisID') : DiagnosisID
@@ -136,6 +143,10 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('Reason') : Reason
 		, ('SpecialCondition') : SpecialCondition
 		, ('SpecialConditionReason') : SpecialConditionReason
+		
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass
+		
 		, ('RoomOptionAvailability') : RoomOptionAvailability
 		, ('NewDocument') : NewDocument
 		, ('EditDocument') : EditDocument
@@ -148,3 +159,5 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Co
 	[('ECAction1') : ECAction1
         , ('ECAction2') : ECAction2
 		, ('Comment') : Comment])
+
+WebUI.comment(GlobalVariable.TicketID1)
