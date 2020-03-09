@@ -3,7 +3,6 @@
    <description></description>
    <name>002. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - NPNFU - Reject</name>
    <tag></tag>
-   <comment>GlobalVariable.TicketID1
-GlobalVariable.TicketID2</comment>
+   <comment>GlobalVariable.TicketID1</comment>
    <testCaseGuid>2a500fcd-0b20-4a4e-a558-f41e407e6718</testCaseGuid>
 </TestCaseEntity>

@@ -50,8 +50,6 @@ String Member = 'Existing' //Member = Existing  / New / Check
 
 String MemberName = findTestData('MemberNameClient').getValue(1, 1)
 
-//String MemberName = '12377 - C/9005 - C. M. DIAH WIDHIA - PT. ASTRA HONDA MOTOR - GOL. 4 UP'
-
 String ProductType = 'Inpatient'
 
 String GLType = 'Awal'
@@ -64,9 +62,9 @@ String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
-String StatusDiagnosa = 'Initial Primary'
+String StatusDiagnosa = ['Initial Primary']
 
-String DiagnosisID = 'S76'
+String DiagnosisID = ['A09']
 
 String DoctorName = 'Automation Doctor - Me'
 
@@ -146,3 +144,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Co
 	[('ECAction1') : ECAction1
         , ('ECAction2') : ECAction2
 		, ('Comment') : Comment])
+
+WebUI.comment(MemberName)
+
+WebUI.comment(GlobalVariable.TicketID1)

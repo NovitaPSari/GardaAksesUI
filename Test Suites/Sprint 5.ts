@@ -10,4 +10,10 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>ddced281-41d9-4c26-844d-2e15a0105450</testSuiteGuid>
+   <testCaseLink>
+      <guid>317024cc-bce8-4a1b-aca1-b0be2cc81c68</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Scenario/Sprint 5 - Enhancement Call History, Maintenance CCO Role/001. Create Ticket - Provider Health APTTO - Client E-GL - GL Awal - Follow Up - Annual Limit</testCaseId>
+   </testCaseLink>
 </TestSuiteEntity>

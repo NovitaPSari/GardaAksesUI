@@ -78,6 +78,10 @@ String Rujuk = 'No'
 
 String Reason = ''
 
+String AppropriateRBClass = 'BASIC'
+
+String TreatmentRBClass = 'BASIC'
+
 String RoomOptionAvailability = 'On Plan'
 
 String TotalBilled = '1000000'
@@ -90,7 +94,7 @@ String DeleteDocument = 'No'
 
 String ActionGL = 'Process'
 
-String Validasi = GlobalVariable.ValidasiDijaminkan
+ArrayList Validasi = [GlobalVariable.ValidasiDijaminkan]
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'
@@ -116,7 +120,13 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
         , ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
         , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa, ('DiagnosisID') : DiagnosisID
-        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('SpecialConditionReason') : SpecialConditionReason
+        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition
+		
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass
+		
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass, ('SpecialConditionReason') : SpecialConditionReason
         , ('RoomOptionAvailability') : RoomOptionAvailability, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument
         , ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL, ('Validasi') : Validasi, ('Phase') : '1'])
 
@@ -143,7 +153,13 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
         , ('ProductType') : ProductType, ('GLType') : GLType2, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
         , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa, ('DiagnosisID') : DiagnosisID
-        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('SpecialConditionReason') : SpecialConditionReason
+        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition
+		
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass
+		
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass, ('SpecialConditionReason') : SpecialConditionReason
         , ('RoomOptionAvailability') : RoomOptionAvailability, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument
         , ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL, ('Validasi') : Validasi, ('Phase') : '2'])
 
@@ -166,7 +182,13 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
         , ('ProductType') : ProductType, ('GLType') : GLType3, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
         , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa, ('DiagnosisID') : DiagnosisID
-        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('SpecialConditionReason') : SpecialConditionReason
+        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition
+		
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass
+		
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass, ('SpecialConditionReason') : SpecialConditionReason
         , ('RoomOptionAvailability') : RoomOptionAvailability, ('TotalBilled') : TotalBilled, ('NewDocument') : NewDocument
         , ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL, ('Validasi') : Validasi, ('Phase') : '3'])
 

@@ -97,7 +97,7 @@ for (i = 1; i < 5; i++) {
 	
 	String ActionGL = 'Process'
 	
-	String Validasi = GlobalVariable.ValidasiDocumentAPS
+	ArrayList Validasi = [GlobalVariable.ValidasiDocumentAPS]
 	
 	//Exit Confirmation
 	String ECAction1 = 'Tidak'
