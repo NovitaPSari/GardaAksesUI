@@ -89,18 +89,18 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 
 CustomKeywords.'querySQL.Query.QueryContactName'()
 
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO'), 
-//	[('MemberName') : MemberName
-//		,('SubServiceType') : SubServiceType
-//		, ('MedicalTreatment') : MedicalTreatment
-//		, ('Remarks') : Remarks
-//		, ('NeedFollowUp') : NeedFollowUp
-//		, ('ActionAPTTO') : ActionAPTTO
-//		, ('Phase') : '1'])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO'), 
+	[('MemberName') : MemberName
+		,('SubServiceType') : SubServiceType
+		, ('MedicalTreatment') : MedicalTreatment
+		, ('Remarks') : Remarks
+		, ('NeedFollowUp') : NeedFollowUp
+		, ('ActionAPTTO') : ActionAPTTO
+		, ('Phase') : '1'])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
         , ('ECAction2') : ECAction2, ('Comment') : Comment])
 
-WebUI.comment(GlobalVariable.TicketID1)
-
 WebUI.comment(MemberName)
+
+WebUI.comment(GlobalVariable.TicketID1)

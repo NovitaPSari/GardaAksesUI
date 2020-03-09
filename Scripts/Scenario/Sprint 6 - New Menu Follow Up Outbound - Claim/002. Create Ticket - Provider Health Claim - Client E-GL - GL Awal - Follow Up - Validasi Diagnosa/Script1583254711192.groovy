@@ -52,8 +52,6 @@ String Member = 'Existing' //Member = Existing  / New / Check
 
 String MemberName = findTestData('MemberNameLineX').getValue(1, 1)
 
-//String MemberName = findTestData('MemberNameAsuransiAstraBuana').getValue(1, 1)
-
 String ProductType = 'Inpatient'
 
 String GLType = 'Awal'
@@ -70,9 +68,9 @@ String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
-ArrayList StatusDiagnosa = ['Initial Primary', 'Initial Secondary', 'Initial Secondary']
+ArrayList StatusDiagnosa = ['Initial Primary', 'Initial Secondary']
 
-ArrayList DiagnosisID = ['A09', 'T80', 'B20']
+ArrayList DiagnosisID = ['A09', 'B00']
 
 String DoctorName = 'Automation Doctor - Me'
 
@@ -94,7 +92,7 @@ String DeleteDocument = 'No'
 
 String ActionGL = 'Process'
 
-String Validasi = GlobalVariable.ValidasiDiagnosa
+ArrayList Validasi = [GlobalVariable.ValidasiDiagnosa]
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'

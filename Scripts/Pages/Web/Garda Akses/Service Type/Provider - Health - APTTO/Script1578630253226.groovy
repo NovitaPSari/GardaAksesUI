@@ -42,8 +42,6 @@ WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Choose - Sub Service Type', 
         [('value') : SubServiceType]))
 
-WebUI.delay(GlobalVariable.Delay2)
-
 //Medical Treatment
 WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO/Approval Tindakan Terapi Obat/Input - Medical Treatment'), 
     MedicalTreatment)

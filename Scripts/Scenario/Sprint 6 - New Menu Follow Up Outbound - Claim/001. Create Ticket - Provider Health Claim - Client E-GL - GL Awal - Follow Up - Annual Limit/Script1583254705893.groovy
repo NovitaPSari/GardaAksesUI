@@ -92,7 +92,7 @@ String DeleteDocument = 'No'
 
 String ActionGL = 'Process'
 
-String Validasi = GlobalVariable.ValidasiAnnualLimit
+ArrayList Validasi = [GlobalVariable.ValidasiAnnualLimit]
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'

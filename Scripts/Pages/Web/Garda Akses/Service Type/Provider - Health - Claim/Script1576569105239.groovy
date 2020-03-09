@@ -317,7 +317,11 @@ if (ActionGL == 'Cancel') {
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'))
 	
-	WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', [('Value') : Validasi]))	
+	int Repeat = Validasi.size()
+	
+	for (i = 0; i < Repeat; i++) {
+		WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', [('Value') : Validasi[i]]))	
+	}
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
 	
@@ -325,7 +329,11 @@ if (ActionGL == 'Cancel') {
 } else if (ActionGL == 'Reject') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Reject'))
 	
-	WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', [('Value') : Validasi]))
+	int Repeat = Validasi.size()
+	
+	for (i = 0; i < Repeat; i++) {
+		WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', [('Value') : Validasi[i]]))	
+	}
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
 }

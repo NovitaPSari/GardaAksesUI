@@ -76,6 +76,10 @@ String Rujuk = 'No'
 
 String Reason = ''
 
+String AppropriateRBClass = 'STANDARD'
+
+String TreatmentRBClass = 'STANDARD'
+
 String RoomOptionAvailability = 'On Plan'
 
 String TotalBilled = '1000000'
@@ -88,7 +92,7 @@ String DeleteDocument = 'No'
 
 String ActionGL = 'Process'
 
-String Validasi = GlobalVariable.ValidasiDijaminkan
+ArrayList Validasi = [GlobalVariable.ValidasiDijaminkan]
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'
@@ -115,7 +119,9 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
 		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa, ('DiagnosisID') : DiagnosisID
 		, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('SpecialConditionReason') : SpecialConditionReason
-		, ('RoomOptionAvailability') : RoomOptionAvailability, ('TotalBilled') : TotalBilled, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument
+		
+, ('AppropriateRBClass') : AppropriateRBClass
+, ('TreatmentRBClass') : TreatmentRBClass, ('RoomOptionAvailability') : RoomOptionAvailability, ('TotalBilled') : TotalBilled, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument
 		, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL, ('Validasi') : Validasi, ('Phase') : '1'])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1

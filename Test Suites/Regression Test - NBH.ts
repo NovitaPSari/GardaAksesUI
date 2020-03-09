@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
    <description></description>
-   <name>Regression Test</name>
+   <name>Regression Test - NBH</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -13,7 +13,7 @@
    <testCaseLink>
       <guid>563d4726-860e-4360-825c-f4702ae12714</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/Sprint 1 - Enhancement E-GL dan Create Tiket/003. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - GL Lanjutan - GL Akhir - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>
