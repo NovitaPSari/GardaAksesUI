@@ -149,4 +149,29 @@
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Terdapat dokumen mandatory yang belum dilengkapi (Form APS)\'))]'</initValue>
       <name>ValidasiDocumentAPS</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>TrID1</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>TrID2</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>TrID3</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>TrID4</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>TrID5</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

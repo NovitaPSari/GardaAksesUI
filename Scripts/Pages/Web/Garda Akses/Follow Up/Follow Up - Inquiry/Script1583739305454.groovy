@@ -14,18 +14,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import com.keyword.GEN5
 
-WebUI.waitForElementPresent(findTestObject('Pages/Web/Garda Akses/Follow Up/Ticket Follow Up/Text - Response Time'), GlobalVariable.Delay5)
+GEN5.ProcessingCommand()
 
-def StatusNow = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Ticket Follow Up/Text - Status'))
-
-if (StatusNow == 'Available') {
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Follow Up/Ticket Follow Up/Button - Status'))
-
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Follow Up/Ticket Follow Up/Choose - Status', [('Status') : Status]))
-	
-	WebUI.delay(GlobalVariable.Delay5)
-} else {
-    WebUI.delay(0)
-}
-
+WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Button - Start'))

@@ -60,12 +60,14 @@ def NeedFollowUp = 'Yes'
 
 def PatientPhoneNumber = GlobalVariable.PhoneNumber
 
-def ActionST = 'Proses'
+def ActionAPTTO = 'Proses'
 
 //Exit Confirmation
 def ECAction1 = 'Tidak'
 
 def ECAction2 = 'Puas'
+
+String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
 //Home
 def Menu2 = 'General'
@@ -94,8 +96,6 @@ def RemarksFUA = 'Currently testing by Automation. Thanks. Regards - Me'
 
 def ActionAC = 'Save'
 
-////Query DB
-
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
@@ -109,44 +109,13 @@ CustomKeywords.'querySQL.Query.QueryContactName'()
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - APTTO'), [('MemberName') : MemberName
         , ('SubServiceType') : SubServiceType, ('MedicalTreatment') : MedicalTreatment, ('Remarks') : Remarks, ('NeedFollowUp') : NeedFollowUp
-        , ('PatientPhoneNumber') : PatientPhoneNumber, ('Action') : ActionST])
+        , ('PatientPhoneNumber') : PatientPhoneNumber, ('ActionAPTTO') : ActionAPTTO])
 
-//def TRID = findTestData('CheckTRID').getValue(1, 1)
-//
-//WebUI.comment(TRID)
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
-//        , ('ECAction2') : ECAction2])
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu2, ('SubMenu') : SubMenu2])
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Ticket Follow Up - Away'), [('Status') : StatusFUTA])
-//
-//DBData CheckPICTicket_1 = findTestData('Check PIC Ticket')
-//
-//CheckPICTicket_1.query = CheckPICTicket_1.query.replace('999', TRID)
-//
-//CheckPICTicket_1.fetchedData = CheckPICTicket_1.fetchData()
-//
-//def FollowUpTicketHistoryID = CheckPICTicket_1.getValue(1, 1)
-//
-//WebUI.comment(FollowUpTicketHistoryID)
-//
-//def UpdatePICTicket = ('UPDATE  ContactCenter.FollowUpTicketHistory SET UserID = \'DNS\' WHERE FollowUpTicketHistoryID = \'' + 
-//FollowUpTicketHistoryID) + '\''
-//
-//CustomKeywords.'querySQL.DefaultQuery.connectDB'('172.16.94.70', 'SEA', 'sa', 'Password95')
-//
-//CustomKeywords.'querySQL.DefaultQuery.execute'(UpdatePICTicket)
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Ticket Follow Up'), [('Status') : StatusFUT])
-//
-//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up APTTO'), 
-//	[('PIC') : PIC,
-//		('TRID') : TRID,
-//		('DoctorName') : DoctorName,
-//		('Confirmation') : Confirmation,
-//		('Mandatory') : Mandatory,
-//		('ConfirmationLetterType') : ConfirmationLetterType,
-//		('RemarksFUA') : RemarksFUA,
-//		('ActionAC') : ActionAC])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'),
+	[('ECAction1') : ECAction1
+		, ('ECAction2') : ECAction2
+		, ('Comment') : Comment])
+
+WebUI.comment(MemberName)
+
+WebUI.comment(GlobalVariable.TicketID1)

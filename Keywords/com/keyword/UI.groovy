@@ -112,7 +112,7 @@ public class UI {
 
 		if (!(Data.next())) {
 			String hasil = null
-			
+
 			result = hasil
 		} else {
 			String getData = Data.getString(ColumnName)
@@ -139,12 +139,15 @@ public class UI {
 
 		def Data = executeQuery(queryTable)
 		int countColumn = countdbColumn (queryTable)
-		Data.next()
 
-		int i
-		for (i = 1 ; i <= countColumn ; i++) {
-			Object getData = Data.getString(i)
-			columnData.add(getData.toString().trim())
+		if (!(Data.next())) {
+			columnData = null
+		} else {
+			int i
+			for (i = 1 ; i <= countColumn ; i++) {
+				Object getData = Data.getString(i)
+				columnData.add(getData.toString().trim())
+			}
 		}
 		closeDatabaseConnection()
 		return columnData
@@ -180,6 +183,47 @@ public class UI {
 				KeywordUtil.markFailedAndStop("Value from Array = " + listData[i] + " has different Value from database = " + database[i])
 			}
 		}
+	}
+
+	@Keyword
+	public static void CompareFieldtoDatabase (ArrayList ObjRep, String url, String dbname, String queryTable) {
+		int count = ObjRep.size()
+		List<String> collectData = new ArrayList()
+
+		int i
+		for (i = 0 ; i < count ; i++) {
+			collectData.add(WebUI.getAttribute(ObjRep[i], 'value', FailureHandling.STOP_ON_FAILURE))
+		}
+
+		ArrayList DBData = getOneRowDatabase(url, dbname, queryTable)
+		List<String> Database = new ArrayList()
+
+		int x
+		for (x = 0 ; x < DBData.size() ; x++) {
+			Database.add(DBData[x].toString())
+		}
+
+		int a
+		for (a = 0 ; a < count ; a++) {
+			if (collectData[a].trim() == Database[a].trim()) {
+				KeywordUtil.markPassed('Value \'' + collectData[a] + '\' from field, has same value in database ' + DBData[a] )
+			} else {
+				KeywordUtil.markWarning('Field Value = \''+ collectData[a] + '\', value in database = \'' + DBData[a] + '\'')
+			}
+		}
+	}
+
+	@Keyword
+	public static ArrayList getFieldsValue (ArrayList ObjRep) {
+		int count = ObjRep.size()
+		List<String> collectData = new ArrayList()
+
+		int i
+		for (i = 0 ; i < count ; i++) {
+			collectData.add(WebUI.getAttribute(ObjRep[i], 'value', FailureHandling.STOP_ON_FAILURE))
+		}
+
+		return collectData
 	}
 
 	@Keyword
@@ -352,21 +396,23 @@ public class UI {
 			if (checkValue) {
 				String getValueA = WebUI.getAttribute(newTestObject(childrenValue), 'value', FailureHandling.CONTINUE_ON_FAILURE)
 				getValue2 = getValueA
-			} else {
-				TestObject childText = xpath
-				String textXpath = "${childText.findPropertyValue('xpath')}"
-				String childrenText = textXpath + '//*[text()]'
-				String getTextA = WebUI.getText(newTestObject(childrenText), FailureHandling.CONTINUE_ON_FAILURE)
-
-				getText2 = getTextA
 			}
+			//			else {
+			//				TestObject childText = xpath
+			//				String textXpath = "${childText.findPropertyValue('xpath')}"
+			//				String childrenText = textXpath + '//*[text()]'
+			//				String getTextA = WebUI.getText(newTestObject(childrenText), FailureHandling.CONTINUE_ON_FAILURE)
+			//
+			//				getText2 = getTextA
+			//			}
 		}
 
 		if (getValue != "" || getValue != null || getValue2 != "" || getValue2 != null) {
 			KeywordUtil.markPassed('Text field contains ' + getValue)
-		} else if (getText != "" || getText != null || getText2 != "" || getText2 != null) {
-			KeywordUtil.markPassed('Text field contains ' + getText)
 		}
+		//		else if (getText != "" || getText != null || getText2 != "" || getText2 != null) {
+		//			KeywordUtil.markPassed('Text field contains ' + getText)
+		//		}
 
 		if (getValue != "" || getText != "" || getValue != null || getText != null || getValue2 != "" || getValue2 != null || getText2 != "" || getText2 != null) {
 			WebUI.clearText(xpath)
@@ -386,13 +432,13 @@ public class UI {
 					WebUI.sendKeys(xpath, Keys.chord(Keys.BACK_SPACE) )
 				}
 
-				if (getText != "" || getText != null || getText2 != "" || getText2 != null) {
-					int CharText = getText.length()
-					int a
-					for (a = 0 ; a < CharText ; a++) {
-						WebUI.sendKeys(xpath, Keys.chord(Keys.BACK_SPACE) )
-					}
-				}
+				//				if (getText != "" || getText != null || getText2 != "" || getText2 != null) {
+				//					int CharText = getText.length()
+				//					int a
+				//					for (a = 0 ; a < CharText ; a++) {
+				//						WebUI.sendKeys(xpath, Keys.chord(Keys.BACK_SPACE) )
+				//					}
+				//				}
 				KeywordUtil.markPassed('Existing text has been deleted, write text ' + text)
 				Write(xpath, text)
 			} else {
@@ -573,11 +619,11 @@ public class UI {
 
 		Click(Combo)
 	}
-	
+
 	@Keyword
 	public static void CheckDisableandWrite (TestObject Xpath, String text) {
 		boolean getValue = WebUI.verifyElementHasAttribute(Xpath, "disabled", 1, FailureHandling.OPTIONAL)
-		
+
 		if (!getValue) {
 			boolean getAtt = WebUI.verifyElementHasAttribute(Xpath, "value", 1, FailureHandling.OPTIONAL)
 			if (getAtt) {
@@ -585,14 +631,14 @@ public class UI {
 				if (getText != text) {
 					WebUI.clearText(Xpath)
 					getText = WebUI.getAttribute(Xpath, "value", FailureHandling.STOP_ON_FAILURE)
-					
+
 					if (getText != text || getText != "" || getText != null) {
 						Write(Xpath, "")
 						getText = WebUI.getAttribute(Xpath, "value", FailureHandling.STOP_ON_FAILURE)
-						
+
 						if (getText != text || getText != "" || getText != null) {
 							int CharValue = getText.size()
-							
+
 							int i
 							for (i = 0 ; i < CharValue ; i++) {
 								WebUI.sendKeys(Xpath, Keys.chord(Keys.BACK_SPACE) )
@@ -600,7 +646,6 @@ public class UI {
 						}
 					}
 				}
-				
 			} else {
 				Write(Xpath, text)
 			}
@@ -766,12 +811,12 @@ public class UI {
 			file.delete()
 			exist = FileUtils.waitFor(file, 1)
 		}
-		
+
 		while (!exist) {
 			Sleep(2)
 			exist = FileUtils.waitFor(file, 1)
 		}
-		
+
 		Sleep(2)
 		String text = FileUtils.readFileToString(file)
 		KeywordUtil.markPassed("QR Code value = " + text)
