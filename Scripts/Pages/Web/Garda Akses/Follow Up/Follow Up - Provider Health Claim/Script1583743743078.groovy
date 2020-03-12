@@ -14,50 +14,64 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import com.keyword.GEN5
+import com.keyword.GEN5 as GEN5
 
 //TrID
 if (Phase == '1') {
-	GlobalVariable.TrID1 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
+    GlobalVariable.TrID1 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
 } else if (Phase == '2') {
-	GlobalVariable.TrID2 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
+    GlobalVariable.TrID2 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
 } else if (Phase == '3') {
-	GlobalVariable.TrID3 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
+    GlobalVariable.TrID3 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
 } else if (Phase == '4') {
-	GlobalVariable.TrID4 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
+    GlobalVariable.TrID4 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
 } else if (Phase == '5') {
-	GlobalVariable.TrID5 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
-} 
+    GlobalVariable.TrID5 = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - TrID'))
+}
 
 //Contact Name
-String ContactNameFUExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - Contact Name'))
+String FUContactNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - Contact Name'))
 
-WebUI.verifyEqual(ContactName, ContactNameFUExist)
+WebUI.comment(FUContactName)
+
+WebUI.comment(FUContactNameExist)
+
+WebUI.verifyEqual(FUContactName, FUContactNameExist)
 
 //Client Name
-String ClientNameFUExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - Client Name'))
+String FUClientNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - Client Name'))
 
-WebUI.verifyEqual(ClientName, ContactNameFUExist)
+WebUI.comment(FUClientName)
+
+WebUI.comment(FUClientNameExist)
+
+WebUI.verifyEqual(FUClientName, FUClientNameExist)
 
 //Member Name 
-String MemberNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - Member Name'))
+String FUMemberNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Text - Member Name'))
 
-WebUI.verifyEqual(MemberName, MemberNameExist)
+WebUI.comment(FUMemberName)
+
+WebUI.comment(FUMemberNameExist)
+
+WebUI.verifyEqual(FUMemberName, FUMemberNameExist)
 
 //=== Guarantee Letter ===
-ButtonVerifyGL = WebUI.verifyElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Button - Verify'))
+boolean ButtonVerifyGL = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Button - Verify'), 
+    1, FailureHandling.OPTIONAL)
 
-if (!ButtonVerifyGL) {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Menu - Guarantee Letter'))
+if (!(ButtonVerifyGL)) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Menu - Guarantee Letter'))
 }
 
 //Member
-String MemberNameExist = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Patient Information/Input - Member'), 'value')
+String MemberNameExist = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Patient Information/Input - Member'), 
+    'value')
 
 WebUI.verifyEqual(MemberName, MemberNameExist)
 
 //Patient / Family Phone No
-String PatientFamilyPhoneNoExist = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Patient Information/Input - Patient Family Phone No'), ContactNameFUExist)
+String PatientFamilyPhoneNoExist = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Patient Information/Input - Patient Family Phone No'), 'value')
 
 WebUI.verifyEqual(GlobalVariable.PhoneNumber, PatientFamilyPhoneNoExist)
 
@@ -72,17 +86,20 @@ String GLTypeExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/G
 WebUI.verifyEqual(GLType, GLTypeExist)
 
 //Provider
-String ProviderExist = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Provider Information/Input - Provider'), 'value')
+String ProviderExist = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Provider Information/Input - Provider'), 
+    'value')
 
 WebUI.verifyEqual(Provider, ProviderExist)
 
 //Email
-String EmailExist = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Provider Information/Input - Email'), 'value')
+String EmailExist = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Provider Information/Input - Email'), 
+    'value')
 
 WebUI.verifyEqual(GlobalVariable.Email, EmailExist)
 
 //Phone
-String PhoneExist = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Provider Information/Input - Phone'), 'value')
+String PhoneExist = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Provider Information/Input - Phone'), 
+    'value')
 
 WebUI.verifyEqual(GlobalVariable.PhoneNumber, PhoneExist)
 
@@ -95,44 +112,83 @@ WebUI.verifyEqual(RoomOptionAvailability, RoomOptionAvailabilityExist)
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Button - Verify'))
 
 //=== Diagnosis Confirmation ===
-if (DiagnosisConfirmation == 'New' ) {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Button - New Diagnosis Confirmation'))
-	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Combo - PIC'))
-	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Combo List - PIC', [('value') : PIC]))
-	
-	GEN5.ProcessingCommand()
-	
-	if (PIC == 'Account Manager') {
-	
-	} else if (PIC == 'Contact Center') {
-	
-	} else if (PIC == 'Doctor') {
-	
-	} else if (PIC == 'Head Contact Center') {
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Combo - Head CCO'))
+if (DiagnosisConfirmation == 'New') {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Button - New Diagnosis Confirmation'))
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Combo - PIC'))
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Combo List - PIC', 
+            [('value') : PIC]))
+
+    GEN5.ProcessingCommand()
+
+    if (PIC == 'Account Manager') {
+    } else if (PIC == 'Provider' || PIC == 'Doctor' && DocTypeCL == 'Yes') {
 		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Combo List - Head CCO', [('value') : HeadCCO]))
 		
-		if (EditDateTimeConfirmation == 'Yes') {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Date Picker - Date Time Confirmation'))
-			
-			GEN5.DatePicker(DTC, null)
+    } else if (PIC == 'Contact Center') {
+	
+    } else if (PIC == 'Doctor') {
+		//Doctor Name
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Doctor Name'))
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Doctor Name', [('value') : DoctorName]))
+		
+		//Date Time Confirmation
+		
+		//Confirmation
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Confirmation'))
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Confirmation', [('value') : Confirmation]))
+		
+		//Channel
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Channel'))
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Channel', [('value') : Channel]))
+		
+		//Benefit Coverage
+		if (Confirmation != 'Need Confirmation Letter') {
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Benefit Coverage'))
+		
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Benefit Coverage', [('value') : BenefitCoverage]))
 		}
 		
-	} else if (PIC == 'Provider') {
+		//Remarks
+		if (Remarks == 'Yes' && Confirmation != 'Need Confirmation Letter') {
+			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Input - Remarks'), RemarksValue)
+		}
+		
+		//Documents
+		if (Confirmation == 'Need Confirmation Letter') {
+			if (Document == 'New') {
+				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Button - Document Create New'))
+				
+				WebUI.click(null)
+			}
+		}
+		
+		
+		
+		//Action Add Confirmation
+		if (ActionAC == 'Save') {
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Button - Save'))
+		} else if (ActionAC == 'Cancel') {
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Button - Cancel')) 
+		}
 	
-	}
-	 
-} else if (DiagnosisConfirmation == 'Edit' ) {
+    } else if (PIC == 'Head Contact Center') {
+        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Combo - Head CCO'))
 
-} else if (DiagnosisConfirmation == 'Delete' ) {
+        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Combo List - Head CCO', 
+                [('value') : HeadCCO]))
 
+        if (EditDateTimeConfirmation == 'Yes') {
+            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Date Picker - Date Time Confirmation'))
+
+            GEN5.DatePicker(DTC, null)
+        }
+    }
+} else if (DiagnosisConfirmation == 'Edit') {
+} else if (DiagnosisConfirmation == 'Delete') {
 }
-
-
-
-
-
 

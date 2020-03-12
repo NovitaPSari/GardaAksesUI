@@ -14,8 +14,41 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import com.keyword.GEN5
+import com.keyword.GEN5 as GEN5
 
 GEN5.ProcessingCommand()
 
-WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Button - Start'))
+boolean ButtonStart = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Button - Start'), 
+    1, FailureHandling.OPTIONAL)
+
+if (ButtonStart) {
+    //Contact Name
+    String FUContactNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Text - Contact Name'))
+
+    WebUI.comment(FUContactName)
+
+    WebUI.comment(FUContactNameExist)
+
+    WebUI.verifyEqual(FUContactName, FUContactNameExist)
+
+    //Client Name
+    String FUClientNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Text - Client Name'))
+
+    WebUI.comment(FUClientName)
+
+    WebUI.comment(FUClientNameExist)
+
+    WebUI.verifyEqual(FUClientName, FUClientNameExist)
+	
+    //Member Name
+    String FUMemberNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Text - Member Name'))
+
+    WebUI.comment(FUMemberName)
+
+    WebUI.comment(FUMemberNameExist)
+
+    WebUI.verifyEqual(FUMemberName, FUMemberNameExist)
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Button - Start'))
+}
+

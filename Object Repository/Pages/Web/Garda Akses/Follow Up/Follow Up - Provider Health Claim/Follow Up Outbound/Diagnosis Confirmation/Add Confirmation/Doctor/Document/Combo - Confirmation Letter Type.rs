@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Start</name>
+   <name>Combo - Confirmation Letter Type</name>
    <tag></tag>
-   <elementGuidId>3d2f9016-cbce-4e40-af0e-7f1caf04b3f6</elementGuidId>
+   <elementGuidId>607b3069-6bb4-44e9-865b-4d890ce3b8f1</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;sectionCurrentTicket-1&quot;]//button[text() = 'Start']</value>
+         <value>//*[@id=&quot;popUpAddDiagnosisCL-0&quot;]//span[text() = 'Confirmation Letter Type']/parent::label/following-sibling::div/div//span[@title=&quot;Please Select One&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;sectionCurrentTicket-1&quot;]//button[text() = 'Start']</value>
+      <value>//*[@id=&quot;popUpAddDiagnosisCL-0&quot;]//span[text() = 'Confirmation Letter Type']/parent::label/following-sibling::div/div//span[@title=&quot;Please Select One&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

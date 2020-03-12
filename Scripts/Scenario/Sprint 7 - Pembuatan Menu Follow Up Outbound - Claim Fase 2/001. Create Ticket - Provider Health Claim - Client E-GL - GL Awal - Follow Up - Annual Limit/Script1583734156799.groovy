@@ -41,7 +41,7 @@ String ServiceType = 'Claim'
 
 String InterruptedCall = 'No'
 
-String ProviderName = 'OJKSH00001'
+String ProviderName = 'OJKSH00001 - SILOAM HOSPITALS KEBON JERUK'
 
 String ActionCT = 'Next'
 
@@ -51,18 +51,18 @@ String Phase = '1'
 //Claim
 String Member = 'Existing' //Member = Existing  / New / Check
 
-String MemberName = '00091 - A/00136451 - ANANG MAZFUAD - PT Sahabat Finansial Keluarga'
+//String MemberName = '00091 - A/00136451 - ANANG MAZFUAD - PT Sahabat Finansial Keluarga'
 
-//String MemberName = '00003 - M/00080165 - MUHAMMAD KURNIAWAN - PT Sahabat Finansial Keluarga'
+//String MemberName = '00003 - M/00080165 - MUHAMMAD KURNIAWAN - PT SAHABAT FINANSIAL KELUARGA'
 
-//String MemberName = '00038 - L/00016180 - LIM BUI HO - PT Sahabat Finansial Keluarga'
+String MemberName = '00038 - L/00016180 - LIM BUI HO - PT SAHABAT FINANSIAL KELUARGA'
 String ProductType = 'Inpatient'
 
 String GLType = 'Awal'
 
-String EditTreatmentPeriodStart = 'Yes'
+String EditTreatmentPeriodStart = 'No'
 
-String TreatmentPeriodStart = '21/Feb/2020'
+String TreatmentPeriodStart = ''
 
 String EditTreatmentPeriodEnd = 'No'
 
@@ -113,6 +113,23 @@ String MenuFU = 'General'
 
 String SubMenuFU = 'Follow Up'
 
+//Follow Up
+String FUContactName = 'Siloam Hospitals Kebon Jeruk'
+
+String FUClientName = findTestData('MemberNameLineX').getValue(5, 1)
+
+String FUMemberName = findTestData('MemberNameLineX').getValue(4, 1)
+
+String DiagnosisConfirmation = 'New'
+
+String PIC = 'Head Contact Center'
+
+String HeadCCO = ''
+
+String EditDateTimeConfirmation = 'No'
+
+String DTC = null
+
 //Follow Up Inquiry
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -139,15 +156,19 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
         , ('ECAction2') : ECAction2, ('Comment') : Comment])
 
+WebUI.comment(MemberName)
+
+WebUI.comment(GlobalVariable.TicketID1)
+
 String URL = '172.16.94.70'
 
 String DB_Name = 'SEA'
 
-String Query = ('SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), \'-\', SPACE(1), RTRIM(LTRIM(MemberNo)), SPACE(1), \'-\', SPACE(1), RTRIM(MemberName), SPACE(1), \'-\', SPACE(1), RTRIM(ClientName))) AS MemberName, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + 
+String Query = ('SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), \'-\', SPACE(1), RTRIM(LTRIM(MemberNo)), SPACE(1), \'-\', SPACE(1), RTRIM(MemberName), SPACE(1), \'-\', SPACE(1), RTRIM(ClientName))) AS MemberName, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' +
 GlobalVariable.TicketID1) + '\' ORDER BY CreatedDate DESC'
 
 ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, MemberName
-    , GlobalVariable.PhoneNumber, DoctorName]
+	, GlobalVariable.PhoneNumber, DoctorName]
 
 GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
 
@@ -155,9 +176,18 @@ WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : Use
 
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : MenuFU, ('SubMenu') : SubMenuFU])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Inquiry'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Inquiry'),
+	[('FUContactName') : FUContactName
+		, ('FUClientName') : FUClientName
+		, ('FUMemberName') : FUMemberName])
 
-WebUI.comment(MemberName)
-
-WebUI.comment(GlobalVariable.TicketID1)
-
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim'),
+	[('Phase') : '1'
+		, ('FUContactName') : FUContactName
+		, ('FUClientName') : FUClientName
+		, ('FUMemberName') : FUMemberName
+		, ('MemberName') : MemberName
+		, ('ProductType') : ProductType
+		, ('GLType') : GLType
+		, ('Provider') : ProviderName
+		, ('RoomOptionAvailability') : RoomOptionAvailability])

@@ -114,9 +114,12 @@ if (Member == 'Existing') {
 }
 
 //Patient / Family Phone No
-CustomKeywords.'gardaAkses.General.UpdateFieldText'(
-	findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Patient, Family Phone No'), 
+CustomKeywords.'gardaAkses.General.UpdateFieldText'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Patient, Family Phone No'),
 	GlobalVariable.PhoneNumber)
+	 
+
+//GEN5.CheckDisableandWrite(
+	
 
 //Product Type
 CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(
@@ -268,20 +271,6 @@ CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(
 	findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Combo List - Room Option Availability', [('Value') : RoomOptionAvailability]), 
 	RoomOptionAvailability)
 
-////Appropriate RB Rate
-//CustomKeywords.'gardaAkses.General.UpdateFieldText'(
-//	findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Appropriate RB Rate'), 
-//	AppropriateRBRate)
-
-//GEN5.ProcessingCommand()
-
-////Treatment RB Rate
-//CustomKeywords.'gardaAkses.General.UpdateFieldText'(
-//	findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Treatment RB Rate'), 
-//	TreatmentRBRate)
-
-//GEN5.ProcessingCommand()
-
 //Total Billed
 if (GLType == 'Akhir') {
 	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Total Billed'), TotalBilled)
@@ -305,6 +294,8 @@ if (DeleteDocument == 'Yes') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Document Management/Button - Delete Document Management'))
 }
 
+
+
 //Action
 if (ActionGL == 'Cancel') {
 	
@@ -317,9 +308,9 @@ if (ActionGL == 'Cancel') {
 	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'))
 	
-	int Repeat = Validasi.size()
+	def Repeat = Validasi.size()
 	
-	for (i = 0; i < Repeat; i++) {
+	for (i = 1; i < Repeat; i++) {
 		WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', [('Value') : Validasi[i]]))	
 	}
 	
@@ -329,9 +320,9 @@ if (ActionGL == 'Cancel') {
 } else if (ActionGL == 'Reject') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Reject'))
 	
-	int Repeat = Validasi.size()
+	def Repeat = Validasi.size()
 	
-	for (i = 0; i < Repeat; i++) {
+	for (i = 1; i < Repeat; i++) {
 		WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', [('Value') : Validasi[i]]))	
 	}
 	

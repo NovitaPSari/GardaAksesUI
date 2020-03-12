@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Status</name>
+   <name>Date Picker - Date Time Confirmation</name>
    <tag></tag>
-   <elementGuidId>2eb002e4-bd02-405b-bd58-a40c044a547b</elementGuidId>
+   <elementGuidId>c8aa09a4-5ed1-451b-8a00-3498f32cfa00</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;FollowUp-0&quot;]/div[1]/div[1]/div[2]/a2is-combo-wide-dc/div[2]/div[1]/div/button[count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>//*[@id=&quot;DoctorDiagnosis&quot;]//span[text() = 'Date Time Confirmation']/parent::label/following-sibling::div/div/span[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;FollowUp-0&quot;]/div[1]/div[1]/div[2]/a2is-combo-wide-dc/div[2]/div[1]/div/button</value>
+      <value>//*[@id=&quot;DoctorDiagnosis&quot;]//span[text() = 'Date Time Confirmation']/parent::label/following-sibling::div/div/span</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

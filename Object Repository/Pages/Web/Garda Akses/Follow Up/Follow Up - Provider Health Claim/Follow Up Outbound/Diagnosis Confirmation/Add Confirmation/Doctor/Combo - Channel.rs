@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Text - Status</name>
+   <name>Combo - Channel</name>
    <tag></tag>
-   <elementGuidId>b4e35905-0ea6-4e4e-8603-ce2c1ef8c05b</elementGuidId>
+   <elementGuidId>d9bfc578-b34c-4b5c-a7e2-c94d3bd873c9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;FollowUp-0&quot;]/div[1]/div[1]/div[2]/a2is-combo-wide-dc/div[2]/div[1]/div/button/span[3]</value>
+         <value>//*[@id=&quot;DoctorDiagnosis&quot;]//span[text() = 'Channel']/parent::label/following-sibling::div/div//span[@title=&quot;Please Select One&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;FollowUp-0&quot;]/div[1]/div[1]/div[2]/a2is-combo-wide-dc/div[2]/div[1]/div/button/span[3]</value>
+      <value>//*[@id=&quot;DoctorDiagnosis&quot;]//span[text() = 'Channel']/parent::label/following-sibling::div/div//span[@title=&quot;Please Select One&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

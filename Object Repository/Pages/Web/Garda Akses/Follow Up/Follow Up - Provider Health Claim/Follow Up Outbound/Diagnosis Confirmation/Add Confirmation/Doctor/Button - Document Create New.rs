@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Choose - Status</name>
+   <name>Button - Document Create New</name>
    <tag></tag>
-   <elementGuidId>550470ce-c30b-4c1c-b3e4-a52d1531eaf0</elementGuidId>
+   <elementGuidId>7e93d44c-ae07-4007-b13d-aa34718da573</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;FollowUp-0&quot;]//button[text() = '${Status}']</value>
+         <value>//*[@id=&quot;DiagnosisCLTablePopUp&quot;]//span[@data-original-title=&quot;Create new&quot;][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;FollowUp-0&quot;]//button[text() = '${Status}']</value>
+      <value>//*[@id=&quot;DiagnosisCLTablePopUp&quot;]//span[@data-original-title=&quot;Create new&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

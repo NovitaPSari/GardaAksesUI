@@ -14,7 +14,8 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import com.keyword.GEN5
+import com.keyword.GEN5 as GEN5
+
 //Login//
 String UserID = 'DNS'
 
@@ -58,8 +59,6 @@ String GLType = 'Awal'
 
 String EditTreatmentPeriodStart = 'No'
 
-//String EditTreatmentPeriodStart = 'Yes'
-
 String TreatmentPeriodStart = '27/Feb/2020'
 
 String EditTreatmentPeriodEnd = 'No'
@@ -72,7 +71,7 @@ ArrayList StatusDiagnosa = ['Initial Primary', 'Initial Secondary']
 
 ArrayList DiagnosisID = ['A09', 'B00']
 
-String DoctorName = 'Automation Doctor - Me'
+String DoctorName = 'Irna Putri Perdana'
 
 String Rujuk = 'No'
 
@@ -112,73 +111,46 @@ String MenuFU = 'General'
 String SubMenuFU = 'Follow Up'
 
 //Follow Up 
-String ContactNameFU = ''
+String FUContactName = 'Siloam Hospitals Kebon Jeruk'
 
-String ClientName = ''
+String FUClientName = findTestData('MemberNameLineX').getValue(5, 1)
 
-String MemberName = ''
+String FUMemberName = findTestData('MemberNameLineX').getValue(4, 1)
 
-String ServiceType = ''
+String DiagnosisConfirmation = 'New'
 
+String PIC = 'Doctor'
 
+String EditDateTimeConfirmation = 'No'
+
+String DTC = null
+
+String Confirmation = ''
 
 //Script//
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'),
-	[('UserID') : UserID
-		, ('Password') : Password])
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
 //==================== PHASE 1 ====================
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'),
-	[('Menu') : Menu
-		, ('SubMenu') : SubMenu])
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
-	[('ContactLine') : ContactLine
-		, ('Product') : Product
-		, ('ChannelType') : ChannelType
-		, ('ContactName') : ContactName
-		, ('ContactType') : ContactType
-		, ('ServiceType') : ServiceType
-		, ('InterruptedCall') : InterruptedCall
-		, ('ProviderName') : ProviderName
-		, ('Action') : ActionCT])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+        , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
 
 CustomKeywords.'querySQL.Query.QueryContactName'()
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'),
-	[('Phase') : '1'])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '1'])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'),
-	[('Member') : Member
-		, ('MemberName') : MemberName
-		, ('ProductType') : ProductType
-		, ('GLType') : GLType
-		, ('SpecialCondition') : SpecialCondition
-		, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
-		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
-		, ('StatusDiagnosa') : StatusDiagnosa
-		, ('DiagnosisID') : DiagnosisID
-		, ('DoctorName') : DoctorName
-		, ('Rujuk') : Rujuk
-		, ('Reason') : Reason
-		, ('SpecialCondition') : SpecialCondition
-		, ('SpecialConditionReason') : SpecialConditionReason
-		
-		, ('AppropriateRBClass') : AppropriateRBClass
-		, ('TreatmentRBClass') : TreatmentRBClass
-		
-		, ('RoomOptionAvailability') : RoomOptionAvailability
-		, ('NewDocument') : NewDocument
-		, ('EditDocument') : EditDocument
-		, ('DeleteDocument') : DeleteDocument
-		, ('ActionGL') : ActionGL
-		, ('Validasi') : Validasi
-		, ('Phase') : '1'])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
+        , ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+        , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa, ('DiagnosisID') : DiagnosisID
+        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('SpecialConditionReason') : SpecialConditionReason
+        , ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass, ('RoomOptionAvailability') : RoomOptionAvailability
+        , ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL
+        , ('Validasi') : Validasi, ('Phase') : '1'])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'),
-	[('ECAction1') : ECAction1
-		, ('ECAction2') : ECAction2
-		, ('Comment') : Comment])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+        , ('ECAction2') : ECAction2, ('Comment') : Comment])
 
 WebUI.comment(MemberName)
 
@@ -200,4 +172,25 @@ WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : Use
 
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : MenuFU, ('SubMenu') : SubMenuFU])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Inquiry'), [:])
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Inquiry'), 
+	[('FUContactName') : FUContactName
+		, ('FUClientName') : FUClientName
+		, ('FUMemberName') : FUMemberName])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim'), 
+	[('Phase') : '1'
+		, ('FUContactName') : FUContactName
+		, ('FUClientName') : FUClientName
+		, ('FUMemberName') : FUMemberName
+		, ('MemberName') : MemberName
+		, ('ProductType') : ProductType
+		, ('GLType') : GLType
+		, ('Provider') : ProviderName
+		, ('RoomOptionAvailability') : RoomOptionAvailability
+		//=== Batas Default Variable Follow Up ===//
+		, ('DiagnosisConfirmation') : DiagnosisConfirmation
+		, ('PIC') : PIC
+		, ('DoctorName') : DoctorName
+		, ('EditDateTimeConfirmation') : EditDateTimeConfirmation
+		, ('DTC') : DTC])
+

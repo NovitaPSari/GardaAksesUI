@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>021. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - Follow Up - Validasi Diagnosa - Doctor - Need CL - SC - Produce</name>
+   <tag></tag>
+   <comment>MemberName
+GlobalVariable.TicketID1</comment>
+   <testCaseGuid>7449d8d8-6a98-4629-b566-4d9b324828c8</testCaseGuid>
+</TestCaseEntity>
