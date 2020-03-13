@@ -55,7 +55,7 @@ String NewMemberType = 'Employee'
 
 String NewMemberName = findTestData('NewMemberName').getValue(1, 1)
 
-String ClientName = findTestData('MemberNameNonClient').getValue(6, 1)
+String ClientName = findTestData('MemberNameClient').getValue(6, 1)
 
 String EmployeeID = findTestData('NewEmployeeID').getValue(1, 1)
 
@@ -84,6 +84,8 @@ String DoctorName = 'Automation Doctor - Me'
 String Rujuk = 'No'
 
 String Reason = ''
+
+String AccountManager = 'Automation NBH'
 
 String AppropriateRBClass = 'BASIC'
 
@@ -175,6 +177,7 @@ String URL = '172.16.94.70'
 String DB_Name = 'SEA'
 String Query = 'SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + GlobalVariable.TicketID1 +'\' ORDER BY CreatedDate DESC'
 ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, GlobalVariable.PhoneNumber, DoctorName]
+
 GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
 
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
