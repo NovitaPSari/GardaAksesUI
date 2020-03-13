@@ -55,7 +55,7 @@ String NewMemberType = 'Employee'
 
 String NewMemberName = findTestData('NewMemberName').getValue(1, 1)
 
-String ClientName = findTestData('MemberNameNonClient').getValue(6, 1)
+String ClientName = findTestData('MemberNameClient').getValue(6, 1)
 
 String EmployeeID = findTestData('NewEmployeeID').getValue(1, 1)
 
@@ -85,6 +85,8 @@ String Rujuk = 'No'
 
 String Reason = ''
 
+String AccountManager = 'Automation NBH'
+
 String AppropriateRBClass = 'BASIC'
 
 String TreatmentRBClass = 'BASIC'
@@ -101,14 +103,7 @@ String DeleteDocument = 'No'
 
 String ActionGL = 'Process'
 
-ArrayList Validasi = [GlobalVariable.ValidasiNewMember]
-
-//Phase 2
-String Member2 = 'Check New Member'
-
-String AccountManager = 'Automation NBH'
-
-ArrayList Validasi2 = [GlobalVariable.ValidasiDijaminkan]
+ArrayList Validasi = [GlobalVariable.ValidasiDijaminkan, GlobalVariable.ValidasiClientNonEGL]
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'
@@ -176,45 +171,3 @@ String DB_Name = 'SEA'
 String Query = 'SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + GlobalVariable.TicketID1 +'\' ORDER BY CreatedDate DESC'
 ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, GlobalVariable.PhoneNumber, DoctorName]
 GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
-
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-		, ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '2'])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'),
-	[('Member') : Member2
-		, ('ProductType') : ProductType
-		, ('GLType') : GLType
-		, ('SpecialCondition') : SpecialCondition
-		, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
-		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
-		, ('StatusDiagnosa') : StatusDiagnosaP
-		, ('DiagnosisID') : DiagnosisID
-		, ('DoctorName') : DoctorName
-		, ('Rujuk') : Rujuk
-		, ('Reason') : Reason
-		, ('SpecialCondition') : SpecialCondition
-		, ('SpecialConditionReason') : SpecialConditionReason
-		, ('AppropriateRBClass') : AppropriateRBClass
-		, ('TreatmentRBClass') : TreatmentRBClass
-		, ('RoomOptionAvailability') : RoomOptionAvailability
-		, ('NewDocument') : NewDocument
-		, ('EditDocument') : EditDocument
-		, ('DeleteDocument') : DeleteDocument
-		, ('AccountManager') : AccountManager
-		, ('ActionGL') : ActionGL
-		, ('Validasi') : Validasi2
-		, ('Phase') : '2'])
-
-WebUI.comment(GlobalVariable.TicketID2)
-
-String Query2 = 'SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + GlobalVariable.TicketID2 +'\' ORDER BY CreatedDate DESC'
-ArrayList VerifyTicket2 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID2, GlobalVariable.PhoneNumber, DoctorName]
-GEN5.compareRowDBtoArray(URL, DB_Name, Query2, VerifyTicket2)
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
-		, ('ECAction2') : ECAction2, ('Comment') : Comment])
