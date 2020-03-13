@@ -95,8 +95,23 @@
       <name>SocialMedia</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
+      <description></description>
+      <initValue>'//*[text() = \' telah diproses dan akan segera difollow-up oleh tim kami.\']'</initValue>
+      <name>SummaryNPNFU</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'//*[text() = \'Interrupted Call\']'</initValue>
+      <name>SummaryInterruptedCall</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'//b[text() = \'MANUAL REJECT\']'</initValue>
+      <name>SummaryManualReject</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
       <description>Popup Message Bila status Produce</description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), \'DIJAMINKAN\')]'</initValue>
+      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \'DIJAMINKAN\']'</initValue>
       <name>ValidasiDijaminkan</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -133,35 +148,5 @@
       <description></description>
       <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Terdapat dokumen mandatory yang belum dilengkapi (Form APS)\'))]'</initValue>
       <name>ValidasiDocumentAPS</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Transaksi ini merupakan Client Non e-GL\'))]'</initValue>
-      <name>ValidasiClientNonEGL</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>TrID1</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>TrID2</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>TrID3</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>TrID4</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>''</initValue>
-      <name>TrID5</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

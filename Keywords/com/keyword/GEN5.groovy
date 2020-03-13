@@ -326,7 +326,10 @@ public class GEN5 extends UI {
 							if (Lines.size() == 0) {
 								continue
 							} else {
-								line.add(Lines[x].getText())
+								boolean checkbox = Lines[x].findElement(By.tagName("input"))
+								if (!checkbox) {
+									line.add(Lines[x].getText())
+								}
 							}
 						}
 					}
@@ -453,77 +456,6 @@ public class GEN5 extends UI {
 						}
 					}
 				}
-			}
-		}
-		WebUI.switchToDefaultContent()
-	}
-	
-	@Keyword
-	public static void ClickExpectedRowWithNext (TestObject tableXpath, String gridColumn, String columnValue, TestObject ButtonNext) {
-		boolean found  = false
-		
-		while (!found) {
-			String FrameXpath = '/html/frameset/frame'
-			WebUI.switchToDefaultContent()
-			WebUI.switchToFrame(newTestObject(FrameXpath), 1)
-			WebDriver Driver = DriverFactory.getWebDriver()
-			
-			TestObject tObj = tableXpath
-			String XpathTable = "${tObj.findPropertyValue('xpath')}"
-			
-			String XpathTableRowBody = XpathTable + '/tbody'
-			String XpathTableHead = XpathTable + '/thead//tr'
-			String XpathTableBody = XpathTable + '/tbody//tr'
-			
-			WebElement tableHead = Driver.findElement(By.xpath(XpathTableHead))
-			WebElement tableBody = Driver.findElement(By.xpath(XpathTableBody))
-			WebElement tableRowBody = Driver.findElement(By.xpath(XpathTableRowBody))
-			
-			List<WebElement> rows =  tableHead.findElements(By.tagName("th"))
-			List<WebElement> baris =  tableBody.findElements(By.tagName("td"))
-			List<WebElement> rowBody = tableRowBody.findElements(By.tagName("tr"))
-			List<String> collsName = new ArrayList()
-			List<String> column = new ArrayList()
-			
-			int i = 0
-			for (i = 0 ; i < rows.size() ; i++){
-				ArrayList Colls = new ArrayList()
-				Colls = rows[i].findElements(By.tagName("span"))
-				if (Colls.size() == 0){
-					continue
-				} else {
-					collsName.add(Colls[0].getText())
-				}
-				
-				int a = 0
-				if (collsName[i] == gridColumn) {
-					for (a = 0 ; a < rowBody.size() ; a++) {
-						ArrayList Kolom = new ArrayList()
-						Kolom = rowBody[a].findElements(By.tagName("span"))
-						if (Kolom.size() == 0){
-							continue
-						} else {
-							column.add(Kolom[i].getText())
-							println (column[a])
-			
-							if (column[a].trim() == columnValue) { //1190022999
-								String xpathButton = XpathTableBody + '//span[normalize-space()=\'' + column[a] + '\']'
-								Click(newTestObject(xpathButton))
-								found  = true
-								
-								break
-							}
-						}
-					}
-				}
-				if (found == true) {
-					break
-				}
-			}
-			if (!found) {
-				WebUI.switchToDefaultContent()
-				WebUI.click(ButtonNext)
-				GEN5.ProcessingCommand()
 			}
 		}
 		WebUI.switchToDefaultContent()
@@ -713,6 +645,39 @@ public class GEN5 extends UI {
 		KeywordUtil.markPassed('Success get value \''+ Value + '\' from table dbo.DataHealth')
 		closeDatabaseConnection()
 		return getData
+	}
+
+	@Keyword
+	public static void CompareFieldtoDatabase (ArrayList ObjRep, String url, String dbname, String queryTable) {
+		String FrameXpath = '/html/frameset/frame'
+		WebUI.switchToDefaultContent()
+		WebUI.switchToFrame(newTestObject(FrameXpath), 1)
+
+		int count = ObjRep.size()
+		List<String> collectData = new ArrayList()
+
+		int i
+		for (i = 0 ; i < count ; i++) {
+			collectData.add(WebUI.getAttribute(ObjRep[i], 'value', FailureHandling.STOP_ON_FAILURE))
+		}
+
+		ArrayList DBData = getOneRowDatabase(url, dbname, queryTable)
+		List<String> Database = new ArrayList()
+
+		int x
+		for (x = 0 ; x < DBData.size() ; x++) {
+			Database.add(DBData[x].toString())
+		}
+
+		int a
+		for (a = 0 ; a < count ; a++) {
+			if (collectData[a].trim() == Database[a].trim()) {
+				KeywordUtil.markPassed('Value \'' + collectData[a] + '\' from field, has same value in database ' + DBData[a] )
+			} else {
+				KeywordUtil.markWarning('Field Value = \''+ collectData[a] + '\', value in database = \'' + DBData[a] + '\'')
+			}
+		}
+		WebUI.switchToDefaultContent()
 	}
 
 	@Keyword
