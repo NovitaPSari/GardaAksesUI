@@ -41,7 +41,7 @@ String ServiceType = 'Claim'
 
 String InterruptedCall = 'No'
 
-String ProviderName = 'OJKSH00001'
+String ProviderName = 'OJKSH00001 - SILOAM HOSPITALS KEBON JERUK'
 
 String ActionCT = 'Next'
 
@@ -85,6 +85,10 @@ String Rujuk = 'No'
 
 String Reason = ''
 
+String AppropriateRBClass = 'BASIC'
+
+String TreatmentRBClass = 'BASIC'
+
 String RoomOptionAvailability = 'On Plan'
 
 String TotalBilled = '1000000'
@@ -97,14 +101,14 @@ String DeleteDocument = 'No'
 
 String ActionGL = 'Process'
 
-String Validasi = GlobalVariable.ValidasiNewMember
+ArrayList Validasi = [GlobalVariable.ValidasiNewMember]
 
 //Phase 2
 String Member2 = 'Check New Member'
 
 String AccountManager = 'Automation NBH'
 
-String Validasi2 = GlobalVariable.ValidasiDijaminkan
+ArrayList Validasi2 = [GlobalVariable.ValidasiDijaminkan]
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'
@@ -127,7 +131,7 @@ CustomKeywords.'querySQL.Query.QueryContactName'()
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '1'])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'),
 	[('Member') : Member
 		, ('NewMemberType') : NewMemberType
 		, ('AccountManager') : AccountManager
@@ -148,6 +152,8 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('Reason') : Reason
 		, ('SpecialCondition') : SpecialCondition
 		, ('SpecialConditionReason') : SpecialConditionReason
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass
 		, ('RoomOptionAvailability') : RoomOptionAvailability
 		, ('NewDocument') : NewDocument
 		, ('EditDocument') : EditDocument
@@ -179,7 +185,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '2'])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), 
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'),
 	[('Member') : Member2
 		, ('ProductType') : ProductType
 		, ('GLType') : GLType
@@ -193,6 +199,8 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('Reason') : Reason
 		, ('SpecialCondition') : SpecialCondition
 		, ('SpecialConditionReason') : SpecialConditionReason
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass
 		, ('RoomOptionAvailability') : RoomOptionAvailability
 		, ('NewDocument') : NewDocument
 		, ('EditDocument') : EditDocument

@@ -3,6 +3,7 @@
    <description></description>
    <name>001. Create Ticket - Provider Health Claim - Client E-GL - New Member - Produce</name>
    <tag></tag>
-   <comment>GlobalVariable.TicketID1</comment>
+   <comment>GlobalVariable.TicketID1
+GlobalVariable.TicketID2</comment>
    <testCaseGuid>3d28745d-7f7f-4b1e-b077-8916e63bd047</testCaseGuid>
 </TestCaseEntity>
