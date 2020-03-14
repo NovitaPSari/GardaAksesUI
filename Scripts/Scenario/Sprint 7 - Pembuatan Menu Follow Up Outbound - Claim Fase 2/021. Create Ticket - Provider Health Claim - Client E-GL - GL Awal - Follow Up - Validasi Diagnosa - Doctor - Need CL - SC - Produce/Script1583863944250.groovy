@@ -79,7 +79,7 @@ String Reason = ''
 
 String AppropriateRBClass = 'STANDARD'
 
-String TreatmentRBClass = 'STANDARD'
+String TreatmentRBClass = 'SUITE ROOM'
 
 String RoomOptionAvailability = 'On Plan'
 
@@ -188,9 +188,9 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Pro
 		, ('Provider') : ProviderName
 		, ('RoomOptionAvailability') : RoomOptionAvailability
 		//=== Batas Default Variable Follow Up ===//
-		, ('DiagnosisConfirmation') : DiagnosisConfirmation
-		, ('PIC') : PIC
-		, ('DoctorName') : DoctorName
-		, ('EditDateTimeConfirmation') : EditDateTimeConfirmation
-		, ('DTC') : DTC])
-
+//		, ('DiagnosisConfirmation') : DiagnosisConfirmation
+//		, ('PIC') : PIC
+//		, ('DoctorName') : DoctorName
+//		, ('EditDateTimeConfirmation') : EditDateTimeConfirmation
+//		, ('DTC') : DTC
+		])

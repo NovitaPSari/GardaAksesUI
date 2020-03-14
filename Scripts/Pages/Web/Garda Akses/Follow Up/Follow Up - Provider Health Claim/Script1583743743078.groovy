@@ -112,83 +112,81 @@ WebUI.verifyEqual(RoomOptionAvailability, RoomOptionAvailabilityExist)
 WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Guarantee Letter/Button - Verify'))
 
 //=== Diagnosis Confirmation ===
-if (DiagnosisConfirmation == 'New') {
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Button - New Diagnosis Confirmation'))
-
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Combo - PIC'))
-
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Combo List - PIC', 
-            [('value') : PIC]))
-
-    GEN5.ProcessingCommand()
-
-    if (PIC == 'Account Manager') {
-    } else if (PIC == 'Provider' || PIC == 'Doctor' && DocTypeCL == 'Yes') {
-		
-		
-    } else if (PIC == 'Contact Center') {
-	
-    } else if (PIC == 'Doctor') {
-		//Doctor Name
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Doctor Name'))
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Doctor Name', [('value') : DoctorName]))
-		
-		//Date Time Confirmation
-		
-		//Confirmation
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Confirmation'))
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Confirmation', [('value') : Confirmation]))
-		
-		//Channel
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Channel'))
-		
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Channel', [('value') : Channel]))
-		
-		//Benefit Coverage
-		if (Confirmation != 'Need Confirmation Letter') {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Benefit Coverage'))
-		
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Benefit Coverage', [('value') : BenefitCoverage]))
-		}
-		
-		//Remarks
-		if (Remarks == 'Yes' && Confirmation != 'Need Confirmation Letter') {
-			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Input - Remarks'), RemarksValue)
-		}
-		
-		//Documents
-		if (Confirmation == 'Need Confirmation Letter') {
-			if (Document == 'New') {
-				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Button - Document Create New'))
-				
-				WebUI.click(null)
-			}
-		}
-		
-		
-		
-		//Action Add Confirmation
-		if (ActionAC == 'Save') {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Button - Save'))
-		} else if (ActionAC == 'Cancel') {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Button - Cancel')) 
-		}
-	
-    } else if (PIC == 'Head Contact Center') {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Combo - Head CCO'))
-
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Combo List - Head CCO', 
-                [('value') : HeadCCO]))
-
-        if (EditDateTimeConfirmation == 'Yes') {
-            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Date Picker - Date Time Confirmation'))
-
-            GEN5.DatePicker(DTC, null)
-        }
-    }
-} else if (DiagnosisConfirmation == 'Edit') {
-} else if (DiagnosisConfirmation == 'Delete') {
-}
+//if (DiagnosisConfirmation == 'New') {
+//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Button - New Diagnosis Confirmation'))
+//
+//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Combo - PIC'))
+//
+//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Combo List - PIC', 
+//            [('value') : PIC]))
+//
+//    GEN5.ProcessingCommand()
+//
+//    if (PIC == 'Account Manager') {
+//    } else if (PIC == 'Provider' || PIC == 'Doctor' && DocTypeCL == 'Yes') {
+//		
+//		
+//    } else if (PIC == 'Contact Center') {
+//	
+//    } else if (PIC == 'Doctor') {
+//		//Doctor Name
+//		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Doctor Name'))
+//		
+//		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Doctor Name', [('value') : DoctorName]))
+//		
+//		//Date Time Confirmation
+//		
+//		//Confirmation
+//		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Confirmation'))
+//		
+//		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Confirmation', [('value') : Confirmation]))
+//		
+//		//Channel
+//		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Channel'))
+//		
+//		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Channel', [('value') : Channel]))
+//		
+//		//Benefit Coverage
+//		if (Confirmation != 'Need Confirmation Letter') {
+//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo - Benefit Coverage'))
+//		
+//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Combo List - Benefit Coverage', [('value') : BenefitCoverage]))
+//		}
+//		
+//		//Remarks
+//		if (Remarks == 'Yes' && Confirmation != 'Need Confirmation Letter') {
+//			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Input - Remarks'), RemarksValue)
+//		}
+//		
+//		//Documents
+//		if (Confirmation == 'Need Confirmation Letter') {
+//			if (Document == 'New') {
+//				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Button - Document Create New'))
+//				
+//				WebUI.click(null)
+//			}
+//		}		
+//		
+//		//Action Add Confirmation
+//		if (ActionAC == 'Save') {
+//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Button - Save'))
+//		} else if (ActionAC == 'Cancel') {
+//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Doctor/Button - Cancel')) 
+//		}
+//	
+//    } else if (PIC == 'Head Contact Center') {
+//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Combo - Head CCO'))
+//
+//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Combo List - Head CCO', 
+//                [('value') : HeadCCO]))
+//
+//        if (EditDateTimeConfirmation == 'Yes') {
+//            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Head CCO/Date Picker - Date Time Confirmation'))
+//
+//            GEN5.DatePicker(DTC, null)
+//        }
+//    }
+//} else if (DiagnosisConfirmation == 'Edit') {
+//} else if (DiagnosisConfirmation == 'Delete') {
+//}
 
