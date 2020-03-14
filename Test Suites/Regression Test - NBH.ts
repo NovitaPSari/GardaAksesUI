@@ -79,7 +79,7 @@
    <testCaseLink>
       <guid>aa1815e6-9756-4a0f-a521-310b05a06293</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>false</isRun>
+      <isRun>true</isRun>
       <testCaseId>Test Cases/Scenario/Sprint 2 - Enhancement E-GL dan Create Ticket/008. Create Ticket - Provider Health Claim - Client Non E-GL - New Member - Produce</testCaseId>
    </testCaseLink>
    <testCaseLink>

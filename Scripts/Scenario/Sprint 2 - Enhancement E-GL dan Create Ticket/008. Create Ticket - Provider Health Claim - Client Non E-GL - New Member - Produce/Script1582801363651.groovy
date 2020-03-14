@@ -108,8 +108,6 @@ ArrayList Validasi = [GlobalVariable.ValidasiNewMember]
 //Phase 2
 String Member2 = 'Check New Member'
 
-String AccountManager = 'Automation NBH'
-
 ArrayList Validasi2 = [GlobalVariable.ValidasiDijaminkan]
 
 //Exit Confirmation
