@@ -89,7 +89,7 @@ String DeleteDocument = 'No'
 
 String ActionGL = 'Process'
 
-ArrayList Validasi = [GlobalVariable.ValidasiDijaminkan, GlobalVariable.ValidasiClientNonEGL]
+ArrayList Validasi = [GlobalVariable.ValidasiDijaminkan]
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'
