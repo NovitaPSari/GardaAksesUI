@@ -15,156 +15,154 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
+//Login//
+String UserID = 'DNS'
 
+String Password = 'Password95'
 
-for (i = 1; i < 5; i++) {
-	//Login//
-	String UserID = 'DNS'
-	
-	String Password = 'Password95'
-	
-	//Home
-	String Menu = 'General'
-	
-	String SubMenu = 'Create Ticket'
-	
-	//Create Ticket//
-	String ContactLine = 'Provider'
-	
-	String Product = 'Health'
-	
-	String ChannelType = 'Call'
-	
-	String ContactName = findTestData('ContactName').getValue(1, 1)
-	
-	String ContactType = 'Farmasi'
-	
-	String ServiceType = 'Claim'
-	
-	String InterruptedCall = 'No'
-	
-	String ProviderName = 'OJKSH00001'
-	
-	String ActionCT = 'Next'
-	
-	//Inquiry//
-	String Phase = '1'
-	
-	//Claim
-	String Member = 'Existing' //Member = Existing  / New / Check
-	
-	//String MemberName = findTestData('MemberNameBankPermata').getValue(1, 1)
-	
-	String MemberName = findTestData('MemberNameAsuransiAstraBuana').getValue(i, 1)
-	
-	String ProductType = 'Inpatient'
-	
-	String GLType = 'Awal'
-	
-	String EditTreatmentPeriodStart = 'No'
-	
-	//String EditTreatmentPeriodStart = 'Yes'
-	
-	String TreatmentPeriodStart = '27/Feb/2020'
-	
-	String EditTreatmentPeriodEnd = 'No'
-	
-	String SpecialCondition = 'No'
-	
-	String SpecialConditionReason = ''
-	
-	ArrayList StatusDiagnosa = ['Initial Primary']
-	
-	ArrayList DiagnosisID = ['A09']
-	
-	String DoctorName = 'Automation Doctor - Me'
-	
-	String Rujuk = 'No'
-	
-	String Reason = ''
-	
-	String AppropriateRBClass = 'STANDARD'
-	
-	String TreatmentRBClass = 'SUITE ROOM'
-	
-	String RoomOptionAvailability = 'APS'
-	
-	String NewDocument = 'No'
-	
-	String EditDocument = 'No'
-	
-	String DeleteDocument = 'No'
-	
-	String ActionGL = 'Process'
-	
-	ArrayList Validasi = [GlobalVariable.ValidasiDocumentAPS]
-	
-	//Exit Confirmation
-	String ECAction1 = 'Tidak'
-	
-	String ECAction2 = 'Puas'
-	
-	String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
-	
-	//Script//
-	WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'),
-		[('UserID') : UserID
-			, ('Password') : Password])
-	
-	//==================== PHASE 1 ====================
-	WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'),
-		[('Menu') : Menu
-			, ('SubMenu') : SubMenu])
-	
-	WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
-		[('ContactLine') : ContactLine
-			, ('Product') : Product
-			, ('ChannelType') : ChannelType
-			, ('ContactName') : ContactName
-			, ('ContactType') : ContactType
-			, ('ServiceType') : ServiceType
-			, ('InterruptedCall') : InterruptedCall
-			, ('ProviderName') : ProviderName
-			, ('Action') : ActionCT])
-	
-	CustomKeywords.'querySQL.Query.QueryContactName'()
-	
-	WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'),
-		[('Phase') : '1'])
-	
-	WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'),
-		[('Member') : Member
-			, ('MemberName') : MemberName
-			, ('ProductType') : ProductType
-			, ('GLType') : GLType
-			, ('SpecialCondition') : SpecialCondition
-			, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
-			, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
-			, ('StatusDiagnosa') : StatusDiagnosa
-			, ('DiagnosisID') : DiagnosisID
-			, ('DoctorName') : DoctorName
-			, ('Rujuk') : Rujuk
-			, ('Reason') : Reason
-			, ('SpecialCondition') : SpecialCondition
-			, ('SpecialConditionReason') : SpecialConditionReason
-			
-			, ('AppropriateRBClass') : AppropriateRBClass
-			, ('TreatmentRBClass') : TreatmentRBClass
-			
-			, ('RoomOptionAvailability') : RoomOptionAvailability
-			, ('NewDocument') : NewDocument
-			, ('EditDocument') : EditDocument
-			, ('DeleteDocument') : DeleteDocument
-			, ('ActionGL') : ActionGL
-			, ('Validasi') : Validasi
-			, ('Phase') : '1'])
-	
-	WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'),
-		[('ECAction1') : ECAction1
-			, ('ECAction2') : ECAction2
-			, ('Comment') : Comment])
-	
-	WebUI.comment(GlobalVariable.TicketID1)
-	
-	WebUI.comment(MemberName)
-}
+//Home
+String Menu = 'General'
+
+String SubMenu = 'Create Ticket'
+
+//Create Ticket//
+String ContactLine = 'Provider'
+
+String Product = 'Health'
+
+String ChannelType = 'Call'
+
+String ContactName = findTestData('ContactName').getValue(1, 1)
+
+String ContactType = 'Farmasi'
+
+String ServiceType = 'Claim'
+
+String InterruptedCall = 'No'
+
+String ProviderName = 'OJKSH00001'
+
+String ActionCT = 'Next'
+
+//Inquiry//
+String Phase = '1'
+
+//Claim
+String Member = 'Existing' //Member = Existing  / New / Check
+
+//String MemberName = findTestData('MemberNameBankPermata').getValue(1, 1)
+
+//String MemberName = findTestData('MemberNameAsuransiAstraBuana').getValue(1, 1)
+
+String MemberName = findTestData('MemberNameLineX').getValue(1, 1)
+
+String ProductType = 'Inpatient'
+
+String GLType = 'Awal'
+
+String EditTreatmentPeriodStart = 'No'
+
+//String EditTreatmentPeriodStart = 'Yes'
+
+String TreatmentPeriodStart = '27/Feb/2020'
+
+String EditTreatmentPeriodEnd = 'No'
+
+String SpecialCondition = 'No'
+
+String SpecialConditionReason = ''
+
+ArrayList StatusDiagnosa = ['Initial Primary', 'Initial Secondary', 'Initial Secondary']
+
+ArrayList DiagnosisID = ['A09', 'B20', 'B00']
+
+String DoctorName = 'Automation Doctor - Me'
+
+String Rujuk = 'No'
+
+String Reason = ''
+
+String AppropriateRBClass = 'STANDARD'
+
+String TreatmentRBClass = 'SUITE ROOM'
+
+String RoomOptionAvailability = 'APS'
+
+String NewDocument = 'No'
+
+String EditDocument = 'No'
+
+String DeleteDocument = 'No'
+
+String ActionGL = 'Process'
+
+ArrayList Validasi = [GlobalVariable.ValidasiDocumentAPS]
+
+//Exit Confirmation
+String ECAction1 = 'Tidak'
+
+String ECAction2 = 'Puas'
+
+String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
+
+//Script//
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'),
+	[('UserID') : UserID
+		, ('Password') : Password])
+
+//==================== PHASE 1 ====================
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'),
+	[('Menu') : Menu
+		, ('SubMenu') : SubMenu])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'),
+	[('ContactLine') : ContactLine
+		, ('Product') : Product
+		, ('ChannelType') : ChannelType
+		, ('ContactName') : ContactName
+		, ('ContactType') : ContactType
+		, ('ServiceType') : ServiceType
+		, ('InterruptedCall') : InterruptedCall
+		, ('ProviderName') : ProviderName
+		, ('Action') : ActionCT])
+
+CustomKeywords.'querySQL.Query.QueryContactName'()
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'),
+	[('Phase') : '1'])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'),
+	[('Member') : Member
+		, ('MemberName') : MemberName
+		, ('ProductType') : ProductType
+		, ('GLType') : GLType
+		, ('SpecialCondition') : SpecialCondition
+		, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
+		, ('StatusDiagnosa') : StatusDiagnosa
+		, ('DiagnosisID') : DiagnosisID
+		, ('DoctorName') : DoctorName
+		, ('Rujuk') : Rujuk
+		, ('Reason') : Reason
+		, ('SpecialCondition') : SpecialCondition
+		, ('SpecialConditionReason') : SpecialConditionReason
+		
+		, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass
+		
+		, ('RoomOptionAvailability') : RoomOptionAvailability
+		, ('NewDocument') : NewDocument
+		, ('EditDocument') : EditDocument
+		, ('DeleteDocument') : DeleteDocument
+		, ('ActionGL') : ActionGL
+		, ('Validasi') : Validasi
+		, ('Phase') : '1'])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'),
+	[('ECAction1') : ECAction1
+		, ('ECAction2') : ECAction2
+		, ('Comment') : Comment])
+
+WebUI.comment(GlobalVariable.TicketID1)
+
+WebUI.comment(MemberName)

@@ -91,4 +91,39 @@ public class GetTicketID {
 			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Button - Close'))
 		}
 	}
+	
+	@Keyword
+	def ProviderNonHealthClaim (String Phase) {
+		if (Phase == '1') {
+			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Text -Ticket ID'))
+
+			GlobalVariable.TicketID1 = result.substring(10, 18)
+
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Button - Close'))
+		} else if (Phase == '2') {
+			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Text -Ticket ID'))
+
+			GlobalVariable.TicketID2 = result.substring(10, 18)
+
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Button - Close'))
+		} else if (Phase == '3') {
+			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Text -Ticket ID'))
+
+			GlobalVariable.TicketID3 = result.substring(10, 18)
+
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Button - Close'))
+		} else if (Phase == '4') {
+			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Text -Ticket ID'))
+
+			GlobalVariable.TicketID4 = result.substring(10, 18)
+
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Button - Close'))
+		} else if (Phase == '5') {
+			def result = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Text -Ticket ID'))
+
+			GlobalVariable.TicketID5 = result.substring(10, 18)
+
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Ticket Created/Button - Close'))
+		}
+	}
 }
