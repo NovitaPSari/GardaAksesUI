@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Combo - PIC</name>
+   <name>Button - Upload</name>
    <tag></tag>
-   <elementGuidId>0cd42e3b-5511-409b-b767-2f2ebbd5100f</elementGuidId>
+   <elementGuidId>014d1573-f926-4dcf-944b-f48a610d8e06</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//*[@id=&quot;sectionPopUpDiagnosis&quot;]//button[text() = 'Upload']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title]</value>
+      <value>//*[@id=&quot;sectionPopUpDiagnosis&quot;]//button[text() = 'Upload']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

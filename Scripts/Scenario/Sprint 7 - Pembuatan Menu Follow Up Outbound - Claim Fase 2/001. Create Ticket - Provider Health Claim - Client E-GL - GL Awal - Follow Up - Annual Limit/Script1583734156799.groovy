@@ -49,13 +49,14 @@ String ActionCT = 'Next'
 String Phase = '1'
 
 //Claim
-String Member = 'Existing' //Member = Existing  / New / Check
+//String Member = 'Existing' //Member = Existing  / New / Check
 
 //String MemberName = '00091 - A/00136451 - ANANG MAZFUAD - PT Sahabat Finansial Keluarga'
 
 //String MemberName = '00003 - M/00080165 - MUHAMMAD KURNIAWAN - PT SAHABAT FINANSIAL KELUARGA'
 
 String MemberName = '00038 - L/00016180 - LIM BUI HO - PT SAHABAT FINANSIAL KELUARGA'
+
 String ProductType = 'Inpatient'
 
 String GLType = 'Awal'

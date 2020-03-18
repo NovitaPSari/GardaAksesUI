@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Combo - PIC</name>
+   <name>Text - Insert Successfully</name>
    <tag></tag>
-   <elementGuidId>0cd42e3b-5511-409b-b767-2f2ebbd5100f</elementGuidId>
+   <elementGuidId>3a68903c-8a5f-45d2-94ca-d2e4f72733ed</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//div[@id=&quot;D_a2is_Modal_Txt&quot; and text() = 'Insert Successfully']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title]</value>
+      <value>//div[@id=&quot;D_a2is_Modal_Txt&quot; and text() = 'Insert Successfully']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

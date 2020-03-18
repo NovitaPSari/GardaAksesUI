@@ -3,11 +3,6 @@
    <description></description>
    <name>Follow Up - Provider Health Claim</name>
    <tag></tag>
-   <comment>FUContactName
-FUContactNameExist
-FUClientName
-FUClientNameExist
-FUMemberName
-FUMemberNameExist</comment>
+   <comment></comment>
    <testCaseGuid>f292e5ec-1f8e-4877-ba7c-45e840a7f6d7</testCaseGuid>
 </TestCaseEntity>

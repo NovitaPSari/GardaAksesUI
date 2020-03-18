@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Combo - PIC</name>
+   <name>Button - Document Delete</name>
    <tag></tag>
-   <elementGuidId>0cd42e3b-5511-409b-b767-2f2ebbd5100f</elementGuidId>
+   <elementGuidId>36f6b38d-56b6-4a0b-ad5f-d62863d0bc9e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title]</value>
+      <value>//*[@id=&quot;DiagnosisDocumentNeededPopUp&quot;]//span[@data-original-title=&quot;Delete&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

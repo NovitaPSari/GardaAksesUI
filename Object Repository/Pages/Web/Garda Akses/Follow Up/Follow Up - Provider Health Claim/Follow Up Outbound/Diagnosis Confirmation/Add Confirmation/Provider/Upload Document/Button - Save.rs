@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Combo - PIC</name>
+   <name>Button - Save</name>
    <tag></tag>
-   <elementGuidId>0cd42e3b-5511-409b-b767-2f2ebbd5100f</elementGuidId>
+   <elementGuidId>c388bafc-bc8b-46a5-874f-568a57c2bee4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//*[@id=&quot;sectionPopUpDiagnosis&quot;]/div[2]/a2is-buttons/div/div/button[2][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title]</value>
+      <value>//*[@id=&quot;sectionPopUpDiagnosis&quot;]/div[2]/a2is-buttons/div/div/button[2]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
