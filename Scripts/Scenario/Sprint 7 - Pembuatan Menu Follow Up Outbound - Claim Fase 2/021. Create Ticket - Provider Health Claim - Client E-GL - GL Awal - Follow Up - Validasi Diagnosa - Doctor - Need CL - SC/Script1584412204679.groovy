@@ -35,7 +35,7 @@ String ChannelType = 'Call'
 
 String ContactName = findTestData('ContactName').getValue(1, 1)
 
-String ContactType = 'Farmasi'
+String ContactType = 'Lainnya'
 
 String ServiceType = 'Claim'
 
@@ -67,9 +67,9 @@ String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
-ArrayList StatusDiagnosa = ['Initial Primary', 'Initial Secondary']
+ArrayList StatusDiagnosa = ['Initial Primary']
 
-ArrayList DiagnosisID = ['A09', 'B00']
+ArrayList DiagnosisID = ['B00']
 
 String DoctorName = 'Irna Putri Perdana'
 
@@ -79,7 +79,7 @@ String Reason = ''
 
 String AppropriateRBClass = 'STANDARD'
 
-String TreatmentRBClass = 'SUITE ROOM'
+String TreatmentRBClass = 'STANDARD'
 
 String RoomOptionAvailability = 'On Plan'
 
@@ -117,15 +117,39 @@ String FUClientName = findTestData('MemberNameLineX').getValue(5, 1)
 
 String FUMemberName = findTestData('MemberNameLineX').getValue(4, 1)
 
+String Coverage = 'Covered'
+
 String DiagnosisConfirmation = 'New'
 
-String PIC = 'Doctor'
+ArrayList PIC = ['Provider', 'Doctor']
+
+ArrayList Confirmation = ['Document Received', 'Need Confirmation Letter']
+
+String Channel = 'Call'
+
+String Documents = 'New'
+
+String DocumentsType = 'Confirmation Letter'
+
+String DocumentsValidity = 'Dokumen Valid'
+
+String ConfirmationLetterType = 'SC'
+
+String FileDocument = 'File JPEG.jpeg' //Ambil value dari Nama file pada \\it-repository\ProjectDocuments\Katalon Garda Akses
 
 String EditDateTimeConfirmation = 'No'
 
 String DTC = null
 
-String Confirmation = ''
+String DocTypeCL = 'Yes'
+
+String Remarks = 'No'
+
+String RemarksValue = null
+
+String Mandatory = 'Yes'
+
+String ActionAC = 'Save'
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -188,9 +212,21 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Pro
 		, ('Provider') : ProviderName
 		, ('RoomOptionAvailability') : RoomOptionAvailability
 		//=== Batas Default Variable Follow Up ===//
-//		, ('DiagnosisConfirmation') : DiagnosisConfirmation
-//		, ('PIC') : PIC
-//		, ('DoctorName') : DoctorName
-//		, ('EditDateTimeConfirmation') : EditDateTimeConfirmation
-//		, ('DTC') : DTC
+		, ('Coverage') : Coverage
+		, ('DiagnosisConfirmation') : DiagnosisConfirmation
+		, ('PIC') : PIC
+		, ('Confirmation') : Confirmation
+		, ('Channel') : Channel
+		, ('Documents') : Documents
+		, ('DocumentsType') : DocumentsType
+		, ('DocumentsValidity') : DocumentsValidity
+		, ('FileDocument') : FileDocument
+		, ('DoctorName') : DoctorName
+		, ('EditDateTimeConfirmation') : EditDateTimeConfirmation
+		, ('DTC') : DTC
+		, ('Remarks') : Remarks
+		, ('RemarksValue') : RemarksValue
+		, ('ConfirmationLetterType') : ConfirmationLetterType
+		, ('Mandatory') : Mandatory
+		, ('ActionAC') : ActionAC
 		])

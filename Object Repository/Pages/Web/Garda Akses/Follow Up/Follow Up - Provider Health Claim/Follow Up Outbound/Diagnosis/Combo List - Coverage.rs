@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Combo - PIC</name>
+   <name>Combo List - Coverage</name>
    <tag></tag>
-   <elementGuidId>0cd42e3b-5511-409b-b767-2f2ebbd5100f</elementGuidId>
+   <elementGuidId>51bee30d-4cfc-44da-81a1-aa4521bc1b50</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//*[@id=&quot;CoverageSelectnonpopup0&quot;]/option[text() = '${value}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;DivNonTableDiagnosisConfirmation&quot;]//span[text() = 'PIC']/parent::label/following-sibling::div/div//span[@title]</value>
+      <value>//*[@id=&quot;CoverageSelectnonpopup0&quot;]/option[text() = '${value}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

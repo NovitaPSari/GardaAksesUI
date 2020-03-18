@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>021. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - Follow Up - Validasi Diagnosa - Doctor - Need CL - SC - Produce</name>
+   <name>021. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - Follow Up - Validasi Diagnosa - Doctor - Need CL - SC</name>
    <tag></tag>
    <comment>MemberName
 GlobalVariable.TicketID1</comment>

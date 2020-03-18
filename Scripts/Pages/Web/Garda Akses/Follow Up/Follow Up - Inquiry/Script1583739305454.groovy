@@ -21,34 +21,27 @@ GEN5.ProcessingCommand()
 boolean ButtonStart = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Button - Start'), 
     1, FailureHandling.OPTIONAL)
 
-if (ButtonStart) {
-    //Contact Name
-    String FUContactNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Text - Contact Name'))
-
-    WebUI.comment(FUContactName)
-
-    WebUI.comment(FUContactNameExist)
-
-    WebUI.verifyEqual(FUContactName, FUContactNameExist)
-
-    //Client Name
-    String FUClientNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Text - Client Name'))
-
-    WebUI.comment(FUClientName)
-
-    WebUI.comment(FUClientNameExist)
-
-    WebUI.verifyEqual(FUClientName, FUClientNameExist)
+	int i = 1
 	
-    //Member Name
-    String FUMemberNameExist = WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Text - Member Name'))
+	while (i <= 5) {	
+		if (!ButtonStart) {
+			String CheckTrID = 'SELECT TOP 1 TrID, TicketNo, Doctor FROM CONTACTCENTER.eGLGardaAkses WHERE TicketNo = \'' + GlobalVariable.TicketID1 + '\' ORDER BY CreatedDate DESC'
+				
+			String TrID = GEN5.getValueDatabase("172.16.94.70", "SEA", CheckTrID, "TrID")
+			
+			WebUI.comment(TrID)
+			
+			QueryUpdatePIC = 'UPDATE ContactCenter.FollowUpTicketHistory SET UserID = \'LKT\' WHERE TrID IN (\''+ TrID + '\')'	
+			
+			GEN5.updateValueDatabase("172.16.94.70", "SEA", QueryUpdatePIC)
+			
+			WebUI.delay(GlobalVariable.Delay2)
+			
+			ButtonStart = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Button - Start'),
+				1, FailureHandling.OPTIONAL)
+		}
+		i++
+	}
 
-    WebUI.comment(FUMemberName)
-
-    WebUI.comment(FUMemberNameExist)
-
-    WebUI.verifyEqual(FUMemberName, FUMemberNameExist)
-
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Button - Start'))
-}
+WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up Inquiry/Button - Start'), FailureHandling.OPTIONAL)
 
