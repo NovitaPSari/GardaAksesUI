@@ -194,7 +194,7 @@ for (i = 0; i < PICSize; i++) {
 				if (DocumentsType == 'Confirmation Letter') {
 					WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Provider/Upload Document/Combo - Confirmation Letter Type'))
 					
-					WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Provider/Upload Document/Combo List Search - Confirmation Letter Type'), ConfirmationLetterType)
+					WebUI.setText(findTestObject('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Provider/Upload Document/Combo List Src- Confirm Letter Type'), ConfirmationLetterType)
 					
 					WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim/Follow Up Outbound/Diagnosis Confirmation/Add Confirmation/Provider/Upload Document/Combo List - Confirmation Letter Type', [('value') : ConfirmationLetterType]))
 				}

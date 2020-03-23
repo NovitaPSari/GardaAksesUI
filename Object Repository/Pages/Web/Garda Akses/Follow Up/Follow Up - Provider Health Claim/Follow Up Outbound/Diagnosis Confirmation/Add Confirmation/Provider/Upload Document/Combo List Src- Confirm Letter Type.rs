@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Combo List Search - Confirmation Letter Type</name>
+   <name>Combo List Src- Confirm Letter Type</name>
    <tag></tag>
    <elementGuidId>84d836f7-be3b-4158-a4d4-67e598c57c4f</elementGuidId>
    <selectorCollection>
