@@ -68,9 +68,11 @@ String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
+ArrayList Diagnosis = ['New']
+
 ArrayList StatusDiagnosa = ['Initial Primary']
 
-ArrayList DiagnosisID = ['A09 DIARRHOEA AND GASTROENTERITIS OF PRESUMED INFECTIOUS ORIGIN']
+ArrayList DiagnosisID = ['O80']
 
 String DoctorName = 'Automation Doctor - Me'
 

@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;SC1PA1-0&quot;]/div[1]/div[1]/a2is-combo-wide-dc[1]/div[2]/div[1]/div/button</value>
+         <value>//*[@id=&quot;SC1PA1-0&quot;]//span[text() = 'Channel Type*']/parent::label/following-sibling::div/div/button[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -20,7 +20,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;SC1PA1-0&quot;]/div[1]/div[1]/a2is-combo-wide-dc[1]/div[2]/div[1]/div/button</value>
+      <value>//*[@id=&quot;SC1PA1-0&quot;]//span[text() = 'Channel Type*']/parent::label/following-sibling::div/div/button</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

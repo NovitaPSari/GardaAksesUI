@@ -173,7 +173,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 WebUI.callTestCase(findTestCase('null'), [('GLType') : GLType, ('TicketID') : null
 		, ('NewMemberName') : null])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : Member, ('MemberStatus') : MemberStatus
+WebUI.callTestCase(findTestCase('null'), [('Member') : Member, ('MemberStatus') : MemberStatus
 		, ('MemberName') : MemberName, ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType
 		, ('DiagnosisStatus') : DiagnosisStatus, ('DiagnosisID') : DiagnosisID, ('DoctorName') : DoctorName, ('Rujuk') : null
 		, ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
@@ -187,7 +187,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 WebUI.callTestCase(findTestCase('null'), [('GLType') : GLType3, ('TicketID') : GlobalVariable.TicketIDAwal
 		, ('NewMemberName') : null])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : null, ('MemberStatus') : null
+WebUI.callTestCase(findTestCase('null'), [('Member') : null, ('MemberStatus') : null
 		, ('MemberName') : null, ('FamilyPhoneNo') : null, ('ProductType') : null, ('GLType') : GLType3, ('DiagnosisStatus') : null
 		, ('DiagnosisID') : null, ('ClientName') : null, ('DoctorName') : null, ('TotalBilled') : TotalBilled, ('Rujuk') : null
 		, ('NPNFU') : null, ('Status') : Status, ('Summary') : Summary, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])

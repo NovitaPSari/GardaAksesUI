@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>046. Crte Tic - Prov Health Claim - Clnt E-GL - GL Awl - Fol Up - Val Per Excess</name>
-   <tag></tag>
-   <comment>GlobalVariable.TicketID1</comment>
-   <testCaseGuid>39bb1cec-03cc-4b66-bbd6-124b5be074e0</testCaseGuid>
-</TestCaseEntity>

@@ -10,7 +10,7 @@
    <driver>DBData</driver>
    <isInternalPath>false</isInternalPath>
    <password>UGFzc3dvcmQ5NQ==</password>
-   <query>UPDATE  ContactCenter.FollowUpTicketHistory SET UserID = 'DNS' WHERE FollowUpTicketHistoryID IN ( '_FollowUpTicketHistoryID_')</query>
+   <query>UPDATE ContactCenter.FollowUpTicketHistory SET UserID = 'LKT' WHERE TrID IN ( TrID )</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>sa</user>

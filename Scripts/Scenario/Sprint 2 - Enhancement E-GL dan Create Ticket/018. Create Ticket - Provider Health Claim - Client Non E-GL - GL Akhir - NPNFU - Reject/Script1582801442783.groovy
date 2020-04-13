@@ -162,7 +162,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 WebUI.callTestCase(findTestCase('null'), [('GLType') : GLType, ('TicketID') : null
         , ('NewMemberName') : null])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : Member2, ('NewMemberType') : NewMemberType
+WebUI.callTestCase(findTestCase('null'), [('Member') : Member2, ('NewMemberType') : NewMemberType
         , ('NewMemberName') : NewMemberName, ('ClientName') : ClientName, ('EmployeeID') : EmployeeID, ('Year') : Year, ('Month') : Month
         , ('Classification') : Classification, ('Gender') : Gender, ('MemberStatus') : MemberStatus, ('MemberName') : MemberName
         , ('FamilyPhoneNo') : FamilyPhoneNo, ('ProductType') : ProductType, ('GLType') : GLType3, ('DiagnosisStatus') : DiagnosisStatus
@@ -178,7 +178,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 WebUI.callTestCase(findTestCase('null'), [('TicketID') : GlobalVariable.TicketIDAwal
         , ('GLType') : GLType2, ('Member') : Member])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : Member3, ('MemberStatus') : null
+WebUI.callTestCase(findTestCase('null'), [('Member') : Member3, ('MemberStatus') : null
         , ('NewMemberName') : NewMemberName, ('MemberName') : null, ('FamilyPhoneNo') : null, ('ProductType') : null, ('GLType') : null
         , ('DiagnosisStatus') : null, ('DiagnosisID') : null, ('DoctorName') : null, ('ClientName') : ClientName, ('Rujuk') : null
         , ('NPNFU') : null, ('Status') : Status2, ('Summary') : Summary2, ('Validasi') : Validasi, ('InterruptedCall') : InterruptedCall])
@@ -192,7 +192,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 WebUI.callTestCase(findTestCase('null'), [('TicketID') : GlobalVariable.TicketIDAwal
         , ('GLType') : GLType2, ('Member') : Member])
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Claim V.2'), [('Member') : Member3, ('MemberStatus') : null
+WebUI.callTestCase(findTestCase('null'), [('Member') : Member3, ('MemberStatus') : null
         , ('NewMemberName') : NewMemberName, ('MemberName') : null, ('FamilyPhoneNo') : null, ('ProductType') : null, ('GLType') : null
         , ('DiagnosisStatus') : null, ('DiagnosisID') : null, ('DoctorName') : null, ('Rujuk') : null, ('NPNFU') : null, ('Status') : null
         , ('Summary') : null, ('Validasi') : null, ('InterruptedCall') : InterruptedCall])

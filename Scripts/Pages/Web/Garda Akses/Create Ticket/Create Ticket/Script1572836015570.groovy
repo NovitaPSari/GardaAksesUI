@@ -12,7 +12,6 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.keyword.GEN5
 
@@ -23,8 +22,12 @@ GEN5.ProcessingCommand()
 //Contact Line
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Contact Line', [('Value') : ContactLine]))
 
+GEN5.ProcessingCommand()
+
 //Product
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Radio Button - Product', [('Value') : Product]))
+
+GEN5.ProcessingCommand()
 
 //Channel Type
 WebUI.click(findTestObject('Pages/Web/Garda Akses/Create Ticket/Combo - Channel Type'))

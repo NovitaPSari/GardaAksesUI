@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>BASIC</key>
-         <value>//span[text() = 'Service Type*']//parent::label//parent::div//div//button//span[text() = 'Please select....']</value>
+         <value>//span[text() = 'Service Type*']//parent::label//parent::div//div//button[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -20,7 +20,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//span[text() = 'Service Type*']//parent::label//parent::div//div//button//span[text() = 'Please select....']</value>
+      <value>//span[text() = 'Service Type*']//parent::label//parent::div//div//button</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

@@ -96,47 +96,47 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description>Popup Message Bila status Produce</description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), \'DIJAMINKAN\')]'</initValue>
+      <initValue>'DIJAMINKAN'</initValue>
       <name>ValidasiDijaminkan</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \' TIDAK DIJAMINKAN\']'</initValue>
+      <initValue>'TIDAK DIJAMINKAN'</initValue>
       <name>ValidasiTidakDijaminkan</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), \'Diagnosa butuh konfirmasi dokter.\')]'</initValue>
+      <initValue>'Diagnosa butuh konfirmasi dokter.'</initValue>
       <name>ValidasiDiagnosa</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]/b[text() = \'PRE-ADMISSION\']'</initValue>
+      <initValue>'PRE-ADMISSION'</initValue>
       <name>ValidasiPreAdmission</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), \'MANUAL REJECT\')]'</initValue>
+      <initValue>'MANUAL REJECT'</initValue>
       <name>ValidasiReject</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Member belum terdaftar\'))]'</initValue>
+      <initValue>'Member belum terdaftar'</initValue>
       <name>ValidasiNewMember</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Perlu pengecekan terkait Annual Limit\'))]'</initValue>
+      <initValue>'Perlu pengecekan terkait Annual Limit'</initValue>
       <name>ValidasiAnnualLimit</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Terdapat dokumen mandatory yang belum dilengkapi (Form APS)\'))]'</initValue>
+      <initValue>'Terdapat dokumen mandatory yang belum dilengkapi (Form APS)'</initValue>
       <name>ValidasiDocumentAPS</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'//*[@id=&quot;divBodyModalGLCreated&quot;]//*[contains(text(), (\'Transaksi ini merupakan Client Non e-GL\'))]'</initValue>
+      <initValue>'Transaksi ini merupakan Client Non e-GL'</initValue>
       <name>ValidasiClientNonEGL</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

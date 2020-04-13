@@ -10,7 +10,7 @@
    <driver>DBData</driver>
    <isInternalPath>false</isInternalPath>
    <password>UGFzc3dvcmQ5NQ==</password>
-   <query>SELECT  *
+   <query>SELECT  TOP 100 *
 FROM    profile
 WHERE   id NOT IN ( SELECT  id
                     FROM    provider )

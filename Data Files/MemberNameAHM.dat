@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataFileEntity>
+   <description></description>
+   <name>MemberNameAHM</name>
+   <tag></tag>
+   <containsHeaders>true</containsHeaders>
+   <csvSeperator></csvSeperator>
+   <dataFileGUID>0dd4f875-6e0d-487a-b864-cc8c0551f420</dataFileGUID>
+   <dataSourceUrl>jdbc:sqlserver://172.16.94.70;databaseName=SEA</dataSourceUrl>
+   <driver>DBData</driver>
+   <isInternalPath>false</isInternalPath>
+   <password>UGFzc3dvcmQ5NQ==</password>
+   <query>SELECT TOP 100 UPPER(CONCAT(RTRIM(pm.EmpID), SPACE(1), '-', SPACE(1), RTRIM(LTRIM(pm.MemberNo)), SPACE(1), '-', SPACE(1), RTRIM(pm.Name), SPACE(1), '-', SPACE(1), RTRIM(prof.Name))) AS DataDescription , pm.EmpID AS EmployeeID , pm.MemberNo AS MemberNo , pm.NAME AS MemberName , prof.Name AS ClientName , prof.ID AS ClientID FROM    policy_member pm JOIN policy p ON pm.pno = p.pno JOIN policy_member_plan pmp ON pm.pno = pmp.pno AND pm.classno = pmp.classno AND pm.membership = pmp.membership AND pm.mno = pmp.mno JOIN pplan pp ON pmp.pplan = pp.pplan JOIN product prd ON pp.productid = prd.productid JOIN profile prof ON p.clientid = prof.ID WHERE   p.clientid IN ( 'CJKPA0045' ) AND GETDATE() BETWEEN pm.pdate AND pm.ppdate AND pmp.excludef = 0 AND GETDATE() BETWEEN p.effectivedate AND p.renewaldate AND prd.producttype IN ( 'MA' ) GROUP BY p.ClientID , p.maxchild , pm.ClassNo , pm.EmpID , pm.Membership , pm.MemberNo , pm.Name , prd.ProductType , PDate , PPDate , prof.Name , prof.id ORDER BY p.clientid , pm.classno , pm.empid DESC , pm.membership</query>
+   <secureUserAccount>true</secureUserAccount>
+   <sheetName></sheetName>
+   <user>sa</user>
+   <usingGlobalDBSetting>false</usingGlobalDBSetting>
+</DataFileEntity>

@@ -10,7 +10,7 @@
    <driver>DBData</driver>
    <isInternalPath>false</isInternalPath>
    <password>UGFzc3dvcmQ5NQ==</password>
-   <query>SELECT TOP 1 * FROM dbo.Policy</query>
+   <query>SELECT TOP 100 * FROM dbo.Policy</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>sa</user>

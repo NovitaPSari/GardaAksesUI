@@ -64,9 +64,25 @@ String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
+ArrayList Diagnosis = ['New']
+
 ArrayList StatusDiagnosa = ['Initial Primary']
 
-ArrayList DiagnosisID = ['A09 DIARRHOEA AND GASTROENTERITIS OF PRESUMED INFECTIOUS ORIGIN']
+ArrayList DiagnosisID = ['A09']
+
+String Gravida = '1'
+
+String Partus = '0'
+
+String Abortus = '0'
+
+String GestationalAge = '28'
+
+String RemarksDiagnosa = 'Testing Diagnosis - Katalon'
+
+String DiagnosisQuestion = 'Kepala bayi masih diatas PAP pada BSC 1x'
+
+String RemarksDiagnosis = 'Testing Additional Info - Katalon'
 
 String DoctorName = 'Automation Doctor - Me'
 
@@ -79,6 +95,8 @@ String AppropriateRBClass = 'BASIC'
 String TreatmentRBClass = 'BASIC'
 
 String RoomOptionAvailability = 'On Plan'
+
+String PackagePrice = '100000'
 
 String TotalBilled = '1000000'
 
@@ -114,17 +132,15 @@ CustomKeywords.'querySQL.Query.QueryContactName'()
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '1'])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
-		, ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
-		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('StatusDiagnosa') : StatusDiagnosa, ('DiagnosisID') : DiagnosisID
-		, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition
-		
-		, ('AppropriateRBClass') : AppropriateRBClass
-		, ('TreatmentRBClass') : TreatmentRBClass
-		
-		, ('AppropriateRBClass') : AppropriateRBClass
-		, ('TreatmentRBClass') : TreatmentRBClass, ('SpecialConditionReason') : SpecialConditionReason
-		, ('RoomOptionAvailability') : RoomOptionAvailability, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument
-		, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL, ('Validasi') : Validasi, ('Phase') : '1'])
+        , ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+        , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('Diagnosis') : Diagnosis, ('StatusDiagnosa') : StatusDiagnosa
+        , ('DiagnosisID') : DiagnosisID, ('Gravida') : Gravida, ('Partus') : Partus, ('Abortus') : Abortus, ('GestationalAge') : GestationalAge
+        , ('RemarksDiagnosa') : RemarksDiagnosa, ('DiagnosisQuestion') : DiagnosisQuestion, ('RemarksDiagnosis') : RemarksDiagnosis
+        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('AppropriateRBClass') : AppropriateRBClass
+        , ('TreatmentRBClass') : TreatmentRBClass, ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass
+        , ('SpecialConditionReason') : SpecialConditionReason, ('RoomOptionAvailability') : RoomOptionAvailability, ('PackagePrice') : PackagePrice
+        , ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL
+        , ('Validasi') : Validasi, ('Phase') : '1'])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
 		, ('ECAction2') : ECAction2, ('Comment') : Comment])

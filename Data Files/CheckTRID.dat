@@ -10,7 +10,7 @@
    <driver>DBData</driver>
    <isInternalPath>false</isInternalPath>
    <password>UGFzc3dvcmQ5NQ==</password>
-   <query>SELECT top 10 * FROM [CONTACTCENTER].[FollowUpTicket] ORDER BY CreatedDate DESC</query>
+   <query>SELECT TrID, TicketNo, Doctor FROM CONTACTCENTER.eGLGardaAkses WHERE TicketNo = '_TicketNumber_ ' ORDER BY CreatedDate DESC</query>
    <secureUserAccount>true</secureUserAccount>
    <sheetName></sheetName>
    <user>sa</user>

@@ -12,16 +12,29 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.keyword.GEN5 as GEN5
 
 WebUI.openBrowser(GlobalVariable.URLGardaAksesQC)
 
 WebUI.maximizeWindow()
+
+def YourConnectionIsNotPrivate = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/GEN5/Login/Text - Your connection is not private'), 
+    1)
+
+if (YourConnectionIsNotPrivate) {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/GEN5/Login/Button - Advance'))
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/GEN5/Login/Button - Proceed'))
+}
+
+WebUI.waitForPageLoad(GlobalVariable.Delay1)
 
 WebUI.setText(findTestObject('Pages/Web/GEN5/Login/Input - Username'), UserID)
 
 WebUI.setText(findTestObject('Pages/Web/GEN5/Login/Input - Password'), Password)
 
 WebUI.click(findTestObject('Pages/Web/GEN5/Login/Button - Masuk'))
+
+GEN5.ProcessingCommand()
 

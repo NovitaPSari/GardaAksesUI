@@ -76,7 +76,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 
 CustomKeywords.'querySQL.Query.QueryContactName'()
 
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Approval Tindakan Terapi Obat'), 
+WebUI.callTestCase(findTestCase('null'), 
 	[('ServiceType') : ServiceType, 
 		('MemberName') : MemberName, 
 		('SubServiceType') : SubServiceType, 

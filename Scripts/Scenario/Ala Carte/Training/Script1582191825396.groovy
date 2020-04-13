@@ -16,7 +16,7 @@ import internal.GlobalVariable as GlobalVariable
 import com.keyword.UI
 
 /*
-String NameGA = findTestData('Training Batch 2').getValue(1, 3) 
+String NameGA = findTestData('null').getValue(1, 3) 
 String EmployeeID = findTestData('Training Katalon 2').getva
 //Yang pertama Colom, yang kedua row berapa.
 

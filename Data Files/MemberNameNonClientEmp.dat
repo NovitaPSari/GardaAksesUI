@@ -10,7 +10,7 @@
    <driver>DBData</driver>
    <isInternalPath>false</isInternalPath>
    <password>UGFzc3dvcmQ5NQ==</password>
-   <query>SELECT TOP 1
+   <query>SELECT TOP 100
         UPPER(CONCAT(RTRIM(c.EmpID), SPACE(1), '-', SPACE(1),
                      RTRIM(LTRIM(c.MemberNo)), SPACE(1), '-', SPACE(1),
                      RTRIM(c.Name), SPACE(1), '-', SPACE(1), RTRIM(a.Name))) AS DataDescription ,
