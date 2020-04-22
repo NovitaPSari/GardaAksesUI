@@ -141,6 +141,11 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>'Jumlah kehamilan/kelahiran/anak butuh konfirmasi'</initValue>
+      <name>ValidasiEligibility</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>''</initValue>
       <name>TrID1</name>
    </GlobalVariableEntity>
