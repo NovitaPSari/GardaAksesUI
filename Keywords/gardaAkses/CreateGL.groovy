@@ -41,7 +41,7 @@ public class CreateGL {
 		}
 
 		def PopUpNonClient = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Text - Non Client'), 3)
-	
+
 		if (PopUpNonClient) {
 			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Button - Close'))
 		}
