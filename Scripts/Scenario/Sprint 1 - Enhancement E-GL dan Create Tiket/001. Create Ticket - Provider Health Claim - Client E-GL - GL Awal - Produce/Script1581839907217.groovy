@@ -50,7 +50,9 @@ String Phase = '1'
 //Claim
 String Member = 'Existing' //Member = Existing  / New / Check
 
-String MemberName = findTestData('MemberNameClient').getValue(1, 1)
+//String MemberName = findTestData('MemberNameClient').getValue(1, 1)
+
+String MemberName = findTestData('MemberNameAsuransiAstraBuana').getValue(1, 1)
 
 String ProductType = 'Inpatient'
 
@@ -130,6 +132,8 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 CustomKeywords.'querySQL.Query.QueryContactName'()
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '1'])
+
+WebUI.comment(MemberName)
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
         , ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart

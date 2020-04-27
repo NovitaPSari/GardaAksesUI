@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Radio Button - Yes</name>
+   <name>Combo List - Treatment</name>
    <tag></tag>
-   <elementGuidId>bbbc5d9b-db58-4fcd-ab1f-142c02873204</elementGuidId>
+   <elementGuidId>36ea2aad-a17e-4e51-875e-65f0e0510f5f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//input[@type = 'radio' and @value='1'])[${Value}][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//button[text() = '${value}']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//input[@type = 'radio' and @value='1'])[${Value}]</value>
+      <value>//button[text() = '${value}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
