@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Button - Ya</name>
+   <name>Combo List - Maternity Treatment</name>
    <tag></tag>
-   <elementGuidId>18b71c85-c847-4239-acda-3a37a8ea0613</elementGuidId>
+   <elementGuidId>e1b84688-21e6-4c49-88eb-6303d02b65ef</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//button[@id=&quot;needOtherHelp&quot; and text() = 'Ya'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//*[@id=&quot;TreatmentInformation-0&quot;]//button[text() = '${Value}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//button[@id=&quot;needOtherHelp&quot; and text() = 'Ya']</value>
+      <value>//*[@id=&quot;TreatmentInformation-0&quot;]//button[text() = '${Value}']</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

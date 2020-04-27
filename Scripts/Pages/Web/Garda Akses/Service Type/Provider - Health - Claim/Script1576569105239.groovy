@@ -274,11 +274,11 @@ for (i = 0; i < RepeatDiagnosa; i++) {
 //Remarks
 //Passed Away
 
-//Treatment
+//Maternity Treatment
 if (ProductType == 'Maternity') {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo - Treatment'))
-	
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo List - Treatment', [('value') : Treatment]))
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo - Maternity Treatment'))
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo List - Maternity Treatment', [('Value') : MaternityTreatment]))
 }
 
 //Doctor
@@ -364,35 +364,35 @@ if (DeleteDocument == 'Yes') {
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Document Management/Button - Delete Document Management'))
 }
 
-////Action
-//if (ActionGL == 'Cancel') {
-//} else if (ActionGL == 'Interupted Call') {
-//} else if (ActionGL == 'Pre-Admission') {
-//} else if (ActionGL == 'Process') {
-//    WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'),
-//        5)
-//
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'))
-//
-//    def Repeat = Validasi.size()
-//
-//    for (i = 1; i < Repeat; i++) {
-//        WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi',
-//                [('Value') : Validasi[i]]))
-//    }
-//
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
-//
-//    CustomKeywords.'gardaAkses.GetTicketID.ProviderHealthClaim'(Phase)
-//} else if (ActionGL == 'Reject') {
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Reject'))
-//
-//    def Repeat = Validasi.size()
-//
-//    for (i = 1; i < Repeat; i++) {
-//        WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi',
-//                [('Value') : Validasi[i]]))
-//    }
-//
-//    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
-//}
+//Action
+if (ActionGL == 'Cancel') {
+} else if (ActionGL == 'Interupted Call') {
+} else if (ActionGL == 'Pre-Admission') {
+} else if (ActionGL == 'Process') {
+    WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'),
+        5)
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'))
+
+    def Repeat = Validasi.size()
+
+    for (i = 1; i < Repeat; i++) {
+        WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi',
+                [('Value') : Validasi[i]]))
+    }
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
+
+    CustomKeywords.'gardaAkses.GetTicketID.ProviderHealthClaim'(Phase)
+} else if (ActionGL == 'Reject') {
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Reject'))
+
+    def Repeat = Validasi.size()
+
+    for (i = 1; i < Repeat; i++) {
+        WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi',
+                [('Value') : Validasi[i]]))
+    }
+
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
+}
