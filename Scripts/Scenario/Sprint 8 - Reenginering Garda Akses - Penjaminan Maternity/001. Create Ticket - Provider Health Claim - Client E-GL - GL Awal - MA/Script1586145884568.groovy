@@ -39,7 +39,7 @@ String ServiceType = 'Claim'
 
 String InterruptedCall = 'No'
 
-String ProviderName = 'OJKSH00001 - SILOAM HOSPITALS KEBON JERUK'
+String ProviderName = 'OJKSH00001 SILOAM HOSPITALS KEBON JERUK'
 
 String ActionCT = 'Next'
 
@@ -51,7 +51,7 @@ String Member = 'Existing' //Member = Existing  / New / Check
 
 //String MemberName = findTestData('MemberNameClientMA').getValue(1, 1)
 
-String MemberName = 'M/43673'
+String MemberName = '40272 - C/00012704 - CHAIRUN NISA - PT. ASTRA HONDA MOTOR - GOL. 1-3'
 
 String ProductType = 'Maternity'
 
@@ -85,7 +85,7 @@ String DiagnosisQuestion = 'Kepala bayi masih diatas PAP pada BSC 1x'
 
 String RemarksDiagnosis = 'Testing Additional Info - Katalon'
 
-String Treatment = 'Normal Doctor'
+String MaternityTreatment = 'Normal Doctor'
 
 String DoctorName = 'Automation Doctor - Me'
 
@@ -141,7 +141,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
         , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('Diagnosis') : Diagnosis, ('StatusDiagnosa') : StatusDiagnosa
         , ('DiagnosisID') : DiagnosisID, ('Gravida') : Gravida, ('Partus') : Partus, ('Abortus') : Abortus, ('GestationalAge') : GestationalAge
         , ('RemarksDiagnosa') : RemarksDiagnosa, ('DiagnosisQuestion') : DiagnosisQuestion, ('RemarksDiagnosis') : RemarksDiagnosis
-        , ('Treatment') : Treatment, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('AppropriateRBClass') : AppropriateRBClass
+        , ('MaternityTreatment') : MaternityTreatment, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('AppropriateRBClass') : AppropriateRBClass
         , ('TreatmentRBClass') : TreatmentRBClass, ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass
         , ('SpecialConditionReason') : SpecialConditionReason, ('RoomOptionAvailability') : RoomOptionAvailability, ('PackagePrice') : PackagePrice
         , ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL

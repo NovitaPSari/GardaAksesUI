@@ -167,37 +167,42 @@ public class GEN5 extends UI {
 		String XpathTableBody = XpathTable + '/tbody//tr'
 
 		WebElement tableHead = Driver.findElement(By.xpath(XpathTableHead))
-		WebElement tableBody = Driver.findElement(By.xpath(XpathTableBody))
-		WebElement tableRowBody = Driver.findElement(By.xpath(XpathTableRowBody))
-
 		List<WebElement> rows =  tableHead.findElements(By.tagName("th"))
-		List<WebElement> baris =  tableBody.findElements(By.tagName("td"))
-		List<WebElement> rowBody = tableRowBody.findElements(By.tagName("tr"))
 
 		List<String> collsName = new ArrayList()
 		List<String> column = new ArrayList()
 
-		int i
-		for (i = 0 ; i < rows.size() ; i++){
-			List<WebElement> Colls = rows[i].findElements(By.tagName("span"))
-			if (Colls.size() == 0){
-				continue
-			} else {
-				collsName.add(Colls[0].getText())
-			}
-
-			int a
-			if (collsName[i] == gridColumn) {
-				for (a = 0 ; a < rowBody.size() ; a++) {
-					List<WebElement> Kolom = rowBody[a].findElements(By.tagName("span"))
-					if (Kolom.size() == 0){
-						continue
-					} else {
-						column.add(Kolom[i].getText())
+//		if (tableBody != null) {
+			int i
+			for (i = 0 ; i < rows.size() ; i++){
+				List<WebElement> Colls = rows[i].findElements(By.tagName("span"))
+				if (Colls.size() == 0){
+					continue
+				} else {
+					collsName.add(Colls[0].getText())
+				}
+				WebElement tableBody = Driver.findElement(By.xpath(XpathTableBody))
+				WebElement tableRowBody = Driver.findElement(By.xpath(XpathTableRowBody))
+				
+				List<WebElement> baris =  tableBody.findElements(By.tagName("td"))
+				List<WebElement> rowBody = tableRowBody.findElements(By.tagName("tr"))
+   
+				int a
+				if (collsName[i] == gridColumn) {
+					for (a = 0 ; a < rowBody.size() ; a++) {
+						List<WebElement> Kolom = rowBody[a].findElements(By.tagName("span"))
+						if (Kolom.size() == 0){
+							continue
+						} else {
+							column.add(Kolom[i].getText())
+						}
 					}
 				}
 			}
-		}
+//		} 
+//	else {
+//			column = null
+//		}
 		WebUI.switchToDefaultContent()
 		return column
 	}
@@ -213,9 +218,9 @@ public class GEN5 extends UI {
 		TestObject tObj = tableXpath
 		String XpathTable = "${tObj.findPropertyValue('xpath')}"
 
-		String XpathTableRowBody = XpathTable + '/tbody'
-		String XpathTableHead = XpathTable + '/thead//tr'
-		String XpathTableBody = XpathTable + '/tbody//tr'
+		String XpathTableRowBody = XpathTable + '//tbody'
+		String XpathTableHead = XpathTable + '//thead//tr'
+		String XpathTableBody = XpathTable + '//tbody//tr'
 
 		WebElement tableHead = Driver.findElement(By.xpath(XpathTableHead))
 		WebElement tableBody = Driver.findElement(By.xpath(XpathTableBody))
@@ -232,24 +237,28 @@ public class GEN5 extends UI {
 		List<String> collsName = new ArrayList()
 		List<String> column = new ArrayList()
 		List<String> line = new ArrayList()
+		int index = 0
 
 		int i
 		for (i = 0 ; i < rows.size() ; i++){
 			List<WebElement> Colls = rows[i].findElements(By.tagName("span"))
 			if (Colls.size() == 0){
-				continue
+				collsName.add('')
+				index += 1
+				//				continue
 			} else {
 				collsName.add(Colls[0].getText())
 			}
 
 			int a
+
 			if (collsName[i] == columnHeader) {
 				for (a = 0 ; a < rowBody.size() ; a++) {
 					List<WebElement> Kolom = rowBody[a].findElements(By.tagName("span"))
 					if (Kolom.size() == 0){
 						continue
 					} else {
-						column.add(Kolom[i].getText())
+						column.add(Kolom[i-index].getText())
 					}
 
 					int x
@@ -299,12 +308,15 @@ public class GEN5 extends UI {
 		List<String> collsName = new ArrayList()
 		List<String> column = new ArrayList()
 		List<String> line = new ArrayList()
+		int index = 0
 
 		int i
 		for (i = 0 ; i < rows.size() ; i++){
 			List<WebElement> Colls = rows[i].findElements(By.tagName("span"))
 			if (Colls.size() == 0){
-				continue
+				collsName.add('')
+				index += 1
+				//				continue
 			} else {
 				collsName.add(Colls[0].getText())
 			}
@@ -316,7 +328,7 @@ public class GEN5 extends UI {
 					if (Kolom.size() == 0){
 						continue
 					} else {
-						column.add(Kolom[i].getText())
+						column.add(Kolom[i-index].getText())
 					}
 
 					int x
@@ -428,12 +440,15 @@ public class GEN5 extends UI {
 
 		List<String> collsName = new ArrayList()
 		List<String> column = new ArrayList()
+		int index = 0
 
 		int i
 		for (i = 0 ; i < rows.size() ; i++){
 			List<WebElement> Colls = rows[i].findElements(By.tagName("span"))
 			if (Colls.size() == 0){
-				continue
+				collsName.add('')
+				index += 1
+				//				continue
 			} else {
 				collsName.add(Colls[0].getText())
 			}
@@ -445,7 +460,7 @@ public class GEN5 extends UI {
 					if (Kolom.size() == 0){
 						continue
 					} else {
-						column.add(Kolom[i].getText())
+						column.add(Kolom[i-index].getText())
 
 						if (column[a] == columnValue) {
 							String xpathButton = XpathTableBody + '//span[text()=\'' + column[a] + '\']'
@@ -457,44 +472,47 @@ public class GEN5 extends UI {
 		}
 		WebUI.switchToDefaultContent()
 	}
-	
+
 	@Keyword
 	public static void ClickExpectedRowWithNext (TestObject tableXpath, String gridColumn, String columnValue, TestObject ButtonNext) {
 		boolean found  = false
-		
+
 		while (!found) {
 			String FrameXpath = '/html/frameset/frame'
 			WebUI.switchToDefaultContent()
 			WebUI.switchToFrame(newTestObject(FrameXpath), 1)
 			WebDriver Driver = DriverFactory.getWebDriver()
-			
+
 			TestObject tObj = tableXpath
 			String XpathTable = "${tObj.findPropertyValue('xpath')}"
-			
+
 			String XpathTableRowBody = XpathTable + '/tbody'
 			String XpathTableHead = XpathTable + '/thead//tr'
 			String XpathTableBody = XpathTable + '/tbody//tr'
-			
+
 			WebElement tableHead = Driver.findElement(By.xpath(XpathTableHead))
 			WebElement tableBody = Driver.findElement(By.xpath(XpathTableBody))
 			WebElement tableRowBody = Driver.findElement(By.xpath(XpathTableRowBody))
-			
+
 			List<WebElement> rows =  tableHead.findElements(By.tagName("th"))
 			List<WebElement> baris =  tableBody.findElements(By.tagName("td"))
 			List<WebElement> rowBody = tableRowBody.findElements(By.tagName("tr"))
 			List<String> collsName = new ArrayList()
 			List<String> column = new ArrayList()
-			
+			int index = 0
+
 			int i = 0
 			for (i = 0 ; i < rows.size() ; i++){
 				ArrayList Colls = new ArrayList()
 				Colls = rows[i].findElements(By.tagName("span"))
 				if (Colls.size() == 0){
-					continue
+					collsName.add('')
+					index += 1
+					//					continue
 				} else {
 					collsName.add(Colls[0].getText())
 				}
-				
+
 				int a = 0
 				if (collsName[i] == gridColumn) {
 					for (a = 0 ; a < rowBody.size() ; a++) {
@@ -503,14 +521,13 @@ public class GEN5 extends UI {
 						if (Kolom.size() == 0){
 							continue
 						} else {
-							column.add(Kolom[i].getText())
-							println (column[a])
-			
+							column.add(Kolom[i-index].getText())
+
 							if (column[a].trim() == columnValue) { //1190022999
 								String xpathButton = XpathTableBody + '//span[normalize-space()=\'' + column[a] + '\']'
 								Click(newTestObject(xpathButton))
 								found  = true
-								
+
 								break
 							}
 						}
