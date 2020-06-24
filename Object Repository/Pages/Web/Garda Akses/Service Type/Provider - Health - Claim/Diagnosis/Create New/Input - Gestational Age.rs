@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'Gestational Age']/parent::label/following-sibling::a2is-textbox-nc//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//*[@id=&quot;DiagnosisInfoPopUpSectionFullText.GestationalAge&quot;]/div/div/div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'Gestational Age']/parent::label/following-sibling::a2is-textbox-nc//input</value>
+      <value>//*[@id=&quot;DiagnosisInfoPopUpSectionFullText.GestationalAge&quot;]/div/div/div/input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

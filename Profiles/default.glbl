@@ -169,4 +169,9 @@
       <initValue>''</initValue>
       <name>TrID5</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Medical Treatment Memerlukan Konfirmasi Tim Garda Medika\r\nMedical Treatment : cesar\r\n\r\nBilled : 12.000.000'</initValue>
+      <name>ValidasiMedicalTreatment</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

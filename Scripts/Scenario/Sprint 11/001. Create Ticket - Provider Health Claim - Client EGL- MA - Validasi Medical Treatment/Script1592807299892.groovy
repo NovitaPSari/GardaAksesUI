@@ -15,9 +15,9 @@ import internal.GlobalVariable as GlobalVariable
 import com.keyword.GEN5 as GEN5
 
 //Login//
-String UserID = 'DNS'
+String UserID = 'LKT'
 
-String Password = 'Password95'
+String Password = 'P@ssw0rd'
 
 //Home
 String Menu = 'General'
@@ -39,7 +39,7 @@ String ServiceType = 'Claim'
 
 String InterruptedCall = 'No'
 
-String ProviderName = 'OJKSH00001 - SILOAM HOSPITALS KEBON JERUK'
+String ProviderName = 'OJKSH00001 SILOAM HOSPITALS KEBON JERUK'
 
 String ActionCT = 'Next'
 
@@ -49,16 +49,15 @@ String Phase = '1'
 //Claim
 String Member = 'Existing' //Member = Existing  / New / Check
 
-//String MemberName = findTestData('MemberNameClientMA').getValue(1, 1)  //Biar berubah-ubah, ambil dari DB
-String MemberName = '1011230 - D/00064431 - DINI LESTARI - PT HONDA LOCK INDONESIA'
+String MemberName = findTestData('MemberNameBankPermataMA').getValue(1, 1)
 
-String ProductType = 'Maternity'
+//String MemberName = '40272 - C/00012704 - CHAIRUN NISA - PT. ASTRA HONDA MOTOR - GOL. 1-3'
+
+String ProductType = 'Maternity (Persalinan)'
 
 String GLType = 'Awal'
 
-String EditTreatmentPeriodStart = 'Yes'
-
-String TreatmentPeriodStart = '1/Jan/2020'
+String EditTreatmentPeriodStart = 'No'
 
 String EditTreatmentPeriodEnd = 'No'
 
@@ -68,31 +67,41 @@ String SpecialConditionReason = ''
 
 ArrayList Diagnosis = ['New']
 
-ArrayList StatusDiagnosa = ['Initial Primary']
+ArrayList StatusDiagnosa = ['Initial Primary (Diagnosa Utama)']
 
 ArrayList DiagnosisID = ['O82']
 
 String Gravida = '1'
 
-String Partus = '4'
+String Partus = '0'
 
-String Abortus = '2'
+String Abortus = '0'
 
-String GestationalAge = '20'
+String GestationalAge = '34'
 
-String RemarksDiagnosa = 'Testing Eligibility MA - Katalon'
+String RemarksDiagnosa = 'Testing Diagnosis - Katalon'
 
 String DiagnosisQuestion = 'Kepala bayi masih diatas PAP pada BSC 1x'
 
 String RemarksDiagnosis = 'Testing Additional Info - Katalon'
 
-String MaternityTreatment = 'Caesarean Delivery'
+String MaternityTreatment = 'Persalinan Caesar'
 
 String DoctorName = 'Automation Doctor - Me'
 
 String Rujuk = 'No'
 
 String Reason = ''
+
+ArrayList MTTindakanMedis = ['New']
+
+ArrayList MTDiagnosis = ['SINGLE DELIVERY BY CAESAREAN SECTION']
+
+ArrayList MedicalTreatment = ['']
+
+String UnregisteredMT = 'tindakan tambahan caesar'
+
+String Billed = '15000000'
 
 String AppropriateRBClass = 'BASIC'
 
@@ -104,6 +113,8 @@ String PackagePrice = '100000'
 
 String TotalBilled = '1000000'
 
+String NeedFollowUp = 'No'
+
 String NewDocument = 'No'
 
 String EditDocument = 'No'
@@ -112,7 +123,7 @@ String DeleteDocument = 'No'
 
 String ActionGL = 'Process'
 
-ArrayList Validasi = [GlobalVariable.ValidasiEligibility]
+ArrayList Validasi = [GlobalVariable.ValidasiMedicalTreatment]
 
 //Exit Confirmation
 String ECAction1 = 'Tidak'
@@ -121,11 +132,40 @@ String ECAction2 = 'Puas'
 
 String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
+//Login
+String UserIDFU = 'LKT'
+
+String PasswordFU = 'P@ssw0rd'
+
+//Home
+String MenuFU = 'General'
+
+String SubMenuFU = 'Follow Up'
+
+//Follow Up
+String FUContactName = 'Siloam Hospitals Kebon Jeruk'
+
+String FUClientName = findTestData('MemberNameLineX').getValue(5, 1)
+
+String FUMemberName = findTestData('MemberNameLineX').getValue(4, 1)
+
+String DiagnosisConfirmation = 'New'
+
+String PIC = 'Doctor'
+
+String EditDateTimeConfirmation = 'No'
+
+String DTC = null
+
+String Confirmation = ''
+
+
+
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
 
 //==================== PHASE 1 ====================
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu], null)
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
         , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
@@ -139,11 +179,12 @@ WebUI.comment(MemberName)
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
         , ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
-        , ('TreatmentPeriodStart') : TreatmentPeriodStart, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('Diagnosis') : Diagnosis
-        , ('StatusDiagnosa') : StatusDiagnosa, ('DiagnosisID') : DiagnosisID, ('Gravida') : Gravida, ('Partus') : Partus
-        , ('Abortus') : Abortus, ('GestationalAge') : GestationalAge, ('RemarksDiagnosa') : RemarksDiagnosa, ('DiagnosisQuestion') : DiagnosisQuestion
-        , ('RemarksDiagnosis') : RemarksDiagnosis, ('MaternityTreatment') : MaternityTreatment, ('DoctorName') : DoctorName
-        , ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('AppropriateRBClass') : AppropriateRBClass
+        , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('Diagnosis') : Diagnosis, ('StatusDiagnosa') : StatusDiagnosa
+        , ('DiagnosisID') : DiagnosisID, ('Gravida') : Gravida, ('Partus') : Partus, ('Abortus') : Abortus, ('GestationalAge') : GestationalAge
+        , ('RemarksDiagnosa') : RemarksDiagnosa, ('DiagnosisQuestion') : DiagnosisQuestion, ('RemarksDiagnosis') : RemarksDiagnosis
+        , ('MaternityTreatment') : MaternityTreatment, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition
+		, ('MTTindakanMedis') : MTTindakanMedis, ('MTDiagnosis') : MTDiagnosis, ('MedicalTreatment') : MedicalTreatment, ('UnregisteredMT') : UnregisteredMT, ('Billed') : Billed
+		, ('AppropriateRBClass') : AppropriateRBClass
         , ('TreatmentRBClass') : TreatmentRBClass, ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass
         , ('SpecialConditionReason') : SpecialConditionReason, ('RoomOptionAvailability') : RoomOptionAvailability, ('PackagePrice') : PackagePrice
         , ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL
@@ -166,3 +207,29 @@ ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVaria
 
 GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
 
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserIDFU, ('Password') : PasswordFU])
+
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : MenuFU, ('SubMenu') : SubMenuFU])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Inquiry'),
+	[('FUContactName') : FUContactName
+		, ('FUClientName') : FUClientName
+		, ('FUMemberName') : FUMemberName])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim'),
+	[('Phase') : '1'
+		, ('FUContactName') : FUContactName
+		, ('FUClientName') : FUClientName
+		, ('FUMemberName') : FUMemberName
+		, ('MemberName') : MemberName
+		, ('ProductType') : ProductType
+		, ('GLType') : GLType
+		, ('Provider') : ProviderName
+		, ('RoomOptionAvailability') : RoomOptionAvailability
+		//=== Batas Default Variable Follow Up ===//
+//		, ('DiagnosisConfirmation') : DiagnosisConfirmation
+//		, ('PIC') : PIC
+//		, ('DoctorName') : DoctorName
+//		, ('EditDateTimeConfirmation') : EditDateTimeConfirmation
+//		, ('DTC') : DTC
+		])

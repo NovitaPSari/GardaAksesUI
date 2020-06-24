@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;RoomInformation-0&quot;]//span[text() = 'Treatment RB Class']//parent::label//parent::div//div//input</value>
+         <value>//*[@id=&quot;RoomInformation-0&quot;]//span[text() = 'Treatment RB Class (Ruang Kelas Perawatan)']//parent::label//parent::div//div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;RoomInformation-0&quot;]//span[text() = 'Treatment RB Class']//parent::label//parent::div//div//input</value>
+      <value>//*[@id=&quot;RoomInformation-0&quot;]//span[text() = 'Treatment RB Class (Ruang Kelas Perawatan)']//parent::label//parent::div//div//input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

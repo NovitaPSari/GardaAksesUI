@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Combo - Maternity Treatment</name>
+   <name>Button - Create New</name>
    <tag></tag>
-   <elementGuidId>0573daa9-729d-45a5-aeba-9f025893facb</elementGuidId>
+   <elementGuidId>b5035b70-b6cf-4b03-a1ac-c94656b27fb3</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;textareaContainer&quot;]//span[text() = 'Maternity Treatment ']/parent::label/parent::div/div/div/button[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//*[@id=&quot;MedicalTreatmentInformation-0&quot;]//span[@data-original-title=&quot;Create new&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;textareaContainer&quot;]//span[text() = 'Maternity Treatment ']/parent::label/parent::div/div/div/button</value>
+      <value>//*[@id=&quot;MedicalTreatmentInformation-0&quot;]//span[@data-original-title=&quot;Create new&quot;]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
