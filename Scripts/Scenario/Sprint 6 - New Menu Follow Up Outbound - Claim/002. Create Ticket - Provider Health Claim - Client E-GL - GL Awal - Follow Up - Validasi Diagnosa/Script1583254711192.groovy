@@ -50,7 +50,7 @@ String Phase = '1'
 //Claim
 String Member = 'Existing' //Member = Existing  / New / Check
 
-String MemberName = findTestData('MemberNameLineX').getValue(1, 1)
+String MemberName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(1, 1)
 
 String ProductType = 'Inpatient'
 
