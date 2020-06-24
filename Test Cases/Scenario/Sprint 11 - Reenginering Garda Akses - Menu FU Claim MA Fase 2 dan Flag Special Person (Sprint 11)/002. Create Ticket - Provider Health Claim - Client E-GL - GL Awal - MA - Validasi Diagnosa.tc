@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>002. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - MA - Follow Up - Validasi Diagnosa</name>
+   <name>002. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - MA - Validasi Diagnosa</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>1bd46a68-2ada-4d98-a5ed-38bcc3fca04e</testCaseGuid>
