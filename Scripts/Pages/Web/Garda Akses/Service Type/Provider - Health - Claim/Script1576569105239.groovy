@@ -60,9 +60,9 @@ if (Member == 'Existing') {
         WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - Employee ID'), 
             EmployeeID)
 
-//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Date Picker - DOB'))
+        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Date Picker - DOB'))
 
-//        GEN5.DatePicker(DOB, findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Date Picker - DOB Month'))
+        GEN5.DatePicker(DOB, findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Date Picker - DOB Month'))
 
         WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Classification'))
 
@@ -171,21 +171,16 @@ for (i = 0; i < RepeatDiagnosa; i++) {
                 [('value') : StatusDiagnosa[i]]))
 
         //ID/Name Diagnosa
-        def SuggestionDiagnosa = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Auto Complete - ID or Name', 
-                [('value') : DiagnosisID[i]]), 1)
+        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'),
+			DiagnosisID[i])
 
-        while (!(SuggestionDiagnosa)) {
-            WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'), 
-                DiagnosisID[i])
-
-            WebUI.delay(GlobalVariable.Delay1)
-
-            SuggestionDiagnosa = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Auto Complete - ID or Name', 
-                    [('value') : DiagnosisID[i]]), 1)
-        }
+		WebUI.delay(GlobalVariable.Delay1)
+		
+		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'),
+			DiagnosisID[i])
+		
+		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Auto Complete - ID or Name'))
         
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Auto Complete - ID or Name', 
-                [('value') : DiagnosisID[i]]))
 
         //Gravida
         if (ProductType == 'Maternity (Persalinan)') {
