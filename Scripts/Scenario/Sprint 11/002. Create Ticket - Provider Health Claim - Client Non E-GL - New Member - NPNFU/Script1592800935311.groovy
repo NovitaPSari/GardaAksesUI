@@ -41,7 +41,9 @@ String ServiceType = 'Claim'
 
 String InterruptedCall = 'No'
 
-String ProviderName = 'OJKSH00001 - SILOAM HOSPITALS KEBON JERUK'
+String ProviderName = 'OJKSH00001 SILOAM HOSPITALS KEBON JERUK'
+
+String ValidasiProviderName = 'OJKSH00001 - SILOAM HOSPITALS KEBON JERUK'
 
 String ActionCT = 'Next'
 
@@ -55,15 +57,15 @@ String NewMemberType = 'Employee'
 
 String NewMemberName = findTestData('NewMemberName').getValue(1, 1)
 
-String ClientName = 'Ardendi Jaya Sentosa'
+String ClientName = 'PT ASTRA INTERNATIONAL Tbk - ISUZU'
 
 String EmployeeID = findTestData('NewEmployeeID').getValue(1, 1)
 
-String DOB = '01/Aug/1988'
+String DOB = '01/Aug/2019'
 
 String Gender = 'Female'
 
-String ProductType = 'Maternity'
+String ProductType = 'Maternity (Persalinan)'
 
 String GLType = 'Awal'
 
@@ -75,9 +77,27 @@ String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
-ArrayList StatusDiagnosaP = ['Initial Primary']
+ArrayList Diagnosis = ['New']
 
-ArrayList DiagnosisID = ['A09']
+ArrayList StatusDiagnosaP = ['Initial Primary (Diagnosa Utama)']
+
+ArrayList DiagnosisID = ['O80 SINGLE SPONTANEOUS DELIVERY/NORMAL DELIVERY']
+
+String Gravida = '1'
+
+String Partus = '1'
+
+String Abortus = '1'
+
+String GestationalAge = '20'
+
+String RemarksDiagnosa = 'Testing New Member MA Client Non E-GL - Katalon'
+
+String DiagnosisQuestion = ''
+
+String RemarksDiagnosis = ''
+
+String MaternityTreatment = 'Persalinan Normal dengan Dokter'
 
 String DoctorName = 'Automation Doctor - Me'
 
@@ -85,13 +105,13 @@ String Rujuk = 'No'
 
 String Reason = ''
 
-String AccountManager = 'Automation NBH'
-
 String AppropriateRBClass = 'BASIC'
 
 String TreatmentRBClass = 'BASIC'
 
 String RoomOptionAvailability = 'On Plan'
+
+String PackagePrice = '1000000'
 
 String TotalBilled = '1000000'
 
@@ -105,8 +125,12 @@ String ActionGL = 'Process'
 
 ArrayList Validasi = [GlobalVariable.ValidasiNewMember]
 
+String NeedFU = 'Ya'
+
 ////Phase 2
 //String Member2 = 'Check New Member'
+//
+//String AccountManager = 'Automation NBH'
 //
 //ArrayList Validasi2 = [GlobalVariable.ValidasiDijaminkan]
 
@@ -134,7 +158,6 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'),
 	[('Member') : Member
 		, ('NewMemberType') : NewMemberType
-		, ('AccountManager') : AccountManager
 		, ('NewMemberName') : NewMemberName
 		, ('ClientName') : ClientName
 		, ('EmployeeID') : EmployeeID
@@ -145,8 +168,17 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('SpecialCondition') : SpecialCondition
 		, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
 		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
+		, ('Diagnosis') : Diagnosis
 		, ('StatusDiagnosa') : StatusDiagnosaP
 		, ('DiagnosisID') : DiagnosisID
+		, ('Gravida') : Gravida
+		, ('Partus') : Partus
+		, ('Abortus') : Abortus
+		, ('GestationalAge') : GestationalAge
+        , ('RemarksDiagnosa') : RemarksDiagnosa
+		, ('DiagnosisQuestion') : DiagnosisQuestion
+		, ('RemarksDiagnosis') : RemarksDiagnosis
+		, ('MaternityTreatment') : MaternityTreatment
 		, ('DoctorName') : DoctorName
 		, ('Rujuk') : Rujuk
 		, ('Reason') : Reason
@@ -155,11 +187,13 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('AppropriateRBClass') : AppropriateRBClass
 		, ('TreatmentRBClass') : TreatmentRBClass
 		, ('RoomOptionAvailability') : RoomOptionAvailability
+		, ('PackagePrice') : PackagePrice
 		, ('NewDocument') : NewDocument
 		, ('EditDocument') : EditDocument
 		, ('DeleteDocument') : DeleteDocument
 		, ('ActionGL') : ActionGL
 		, ('Validasi') : Validasi
+		, ('NeedFU') : NeedFU
 		, ('Phase') : '1'])
 
 WebUI.comment(GlobalVariable.TicketID1)
@@ -169,53 +203,53 @@ CustomKeywords.'querySQL.Query.QueryContactName'()
 CustomKeywords.'querySQL.Query.QueryEmployeeID'()
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
-		, ('ECAction2') : ECAction2, ('Comment') : Comment])
+        , ('ECAction2') : ECAction2, ('Comment') : Comment])
 
 String URL = '172.16.94.70'
 String DB_Name = 'SEA'
 String Query = 'SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + GlobalVariable.TicketID1 +'\' ORDER BY CreatedDate DESC'
-ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, GlobalVariable.PhoneNumber, DoctorName]
-
+ArrayList VerifyTicket1 = [ValidasiProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, GlobalVariable.PhoneNumber, DoctorName]
 GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
 
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-		, ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '2'])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'),
-	[('Member') : Member2
-		, ('ProductType') : ProductType
-		, ('GLType') : GLType
-		, ('SpecialCondition') : SpecialCondition
-		, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
-		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
-		, ('StatusDiagnosa') : StatusDiagnosaP
-		, ('DiagnosisID') : DiagnosisID
-		, ('DoctorName') : DoctorName
-		, ('Rujuk') : Rujuk
-		, ('Reason') : Reason
-		, ('SpecialCondition') : SpecialCondition
-		, ('SpecialConditionReason') : SpecialConditionReason
-		, ('AppropriateRBClass') : AppropriateRBClass
-		, ('TreatmentRBClass') : TreatmentRBClass
-		, ('RoomOptionAvailability') : RoomOptionAvailability
-		, ('NewDocument') : NewDocument
-		, ('EditDocument') : EditDocument
-		, ('DeleteDocument') : DeleteDocument
-		, ('AccountManager') : AccountManager
-		, ('ActionGL') : ActionGL
-		, ('Validasi') : Validasi2
-		, ('Phase') : '2'])
-
-WebUI.comment(GlobalVariable.TicketID2)
-
-String Query2 = 'SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + GlobalVariable.TicketID2 +'\' ORDER BY CreatedDate DESC'
-ArrayList VerifyTicket2 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID2, GlobalVariable.PhoneNumber, DoctorName]
-GEN5.compareRowDBtoArray(URL, DB_Name, Query2, VerifyTicket2)
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
-		, ('ECAction2') : ECAction2, ('Comment') : Comment])
+//Phase 2
+//WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+//		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+//		, ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '2'])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'),
+//	[('Member') : Member2
+//		, ('ProductType') : ProductType
+//		, ('GLType') : GLType
+//		, ('SpecialCondition') : SpecialCondition
+//		, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+//		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
+//		, ('StatusDiagnosa') : StatusDiagnosaP
+//		, ('DiagnosisID') : DiagnosisID
+//		, ('DoctorName') : DoctorName
+//		, ('Rujuk') : Rujuk
+//		, ('Reason') : Reason
+//		, ('SpecialCondition') : SpecialCondition
+//		, ('SpecialConditionReason') : SpecialConditionReason
+//		, ('AppropriateRBClass') : AppropriateRBClass
+//		, ('TreatmentRBClass') : TreatmentRBClass
+//		, ('RoomOptionAvailability') : RoomOptionAvailability
+//		, ('NewDocument') : NewDocument
+//		, ('EditDocument') : EditDocument
+//		, ('DeleteDocument') : DeleteDocument
+//		, ('AccountManager') : AccountManager
+//		, ('ActionGL') : ActionGL
+//		, ('Validasi') : Validasi2
+//		, ('Phase') : '2'])
+//
+//WebUI.comment(GlobalVariable.TicketID2)
+//
+//String Query2 = 'SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + GlobalVariable.TicketID2 +'\' ORDER BY CreatedDate DESC'
+//ArrayList VerifyTicket2 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID2, GlobalVariable.PhoneNumber, DoctorName]
+//GEN5.compareRowDBtoArray(URL, DB_Name, Query2, VerifyTicket2)
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+//		, ('ECAction2') : ECAction2, ('Comment') : Comment])
