@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>001. Create Ticket - Provider Health Claim - Client E-GL - GL Awal - Validasi Diagnosa</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>a1871f25-6b02-41cb-9092-129d0bf7110d</testCaseGuid>
+</TestCaseEntity>

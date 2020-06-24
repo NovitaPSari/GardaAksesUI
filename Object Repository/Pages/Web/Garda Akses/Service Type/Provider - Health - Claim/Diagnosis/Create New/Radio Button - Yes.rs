@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>(//*[@id=&quot;DiagnosisInfoPopUpSectionFullText-0&quot;]//input[@value=&quot;1&quot;])[${Value}][count(. | //*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/Garda Akses/Frame'])]</value>
+         <value>(//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//input[@type = 'radio' and @value='1'])[${Value}][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>(//*[@id=&quot;DiagnosisInfoPopUpSectionFullText-0&quot;]//input[@value=&quot;1&quot;])[${Value}]</value>
+      <value>(//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//input[@type = 'radio' and @value='1'])[${Value}]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

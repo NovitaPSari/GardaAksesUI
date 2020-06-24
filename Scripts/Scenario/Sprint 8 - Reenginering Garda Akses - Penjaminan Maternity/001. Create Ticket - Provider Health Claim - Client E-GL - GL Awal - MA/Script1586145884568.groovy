@@ -39,7 +39,7 @@ String ServiceType = 'Claim'
 
 String InterruptedCall = 'No'
 
-String ProviderName = 'OJKSH00001 - SILOAM HOSPITALS KEBON JERUK'
+String ProviderName = 'OJKSH00001 SILOAM HOSPITALS KEBON JERUK'
 
 String ActionCT = 'Next'
 
@@ -49,9 +49,9 @@ String Phase = '1'
 //Claim
 String Member = 'Existing' //Member = Existing  / New / Check
 
-String MemberName = findTestData('MemberNameClientMA').getValue(1, 1)
+//String MemberName = findTestData('MemberNameClientMA').getValue(1, 1)
 
-//String MemberName = 'A/00115545 - ALIEFA FAAZA F'
+String MemberName = '40272 - C/00012704 - CHAIRUN NISA - PT. ASTRA HONDA MOTOR - GOL. 1-3'
 
 String ProductType = 'Maternity'
 
@@ -69,21 +69,23 @@ ArrayList Diagnosis = ['New']
 
 ArrayList StatusDiagnosa = ['Initial Primary']
 
-ArrayList DiagnosisID = ['O82']
+ArrayList DiagnosisID = ['O80']
 
-String Gravida = '1'
+String Gravida = '2'
 
-String Partus = '0'
+String Partus = '2'
 
-String Abortus = '0'
+String Abortus = '1'
 
-String GestationalAge = '28'
+String GestationalAge = '0'
 
 String RemarksDiagnosa = 'Testing Diagnosis - Katalon'
 
 String DiagnosisQuestion = 'Kepala bayi masih diatas PAP pada BSC 1x'
 
 String RemarksDiagnosis = 'Testing Additional Info - Katalon'
+
+String MaternityTreatment = 'Normal Doctor'
 
 String DoctorName = 'Automation Doctor - Me'
 
@@ -139,7 +141,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
         , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('Diagnosis') : Diagnosis, ('StatusDiagnosa') : StatusDiagnosa
         , ('DiagnosisID') : DiagnosisID, ('Gravida') : Gravida, ('Partus') : Partus, ('Abortus') : Abortus, ('GestationalAge') : GestationalAge
         , ('RemarksDiagnosa') : RemarksDiagnosa, ('DiagnosisQuestion') : DiagnosisQuestion, ('RemarksDiagnosis') : RemarksDiagnosis
-        , ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('AppropriateRBClass') : AppropriateRBClass
+        , ('MaternityTreatment') : MaternityTreatment, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('AppropriateRBClass') : AppropriateRBClass
         , ('TreatmentRBClass') : TreatmentRBClass, ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass
         , ('SpecialConditionReason') : SpecialConditionReason, ('RoomOptionAvailability') : RoomOptionAvailability, ('PackagePrice') : PackagePrice
         , ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL
@@ -162,3 +164,29 @@ ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVaria
 
 GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
 
+//===== Phase 2 =====
+WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
+		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+		, ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '1'])
+
+WebUI.comment(MemberName)
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
+		, ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('Diagnosis') : Diagnosis, ('StatusDiagnosa') : StatusDiagnosa
+		, ('DiagnosisID') : DiagnosisID, ('Gravida') : Gravida, ('Partus') : Partus, ('Abortus') : Abortus, ('GestationalAge') : GestationalAge
+		, ('RemarksDiagnosa') : RemarksDiagnosa, ('DiagnosisQuestion') : DiagnosisQuestion, ('RemarksDiagnosis') : RemarksDiagnosis
+		, ('Treatment') : Treatment, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition, ('AppropriateRBClass') : AppropriateRBClass
+		, ('TreatmentRBClass') : TreatmentRBClass, ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass
+		, ('SpecialConditionReason') : SpecialConditionReason, ('RoomOptionAvailability') : RoomOptionAvailability, ('PackagePrice') : PackagePrice
+		, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL
+		, ('Validasi') : Validasi, ('Phase') : '2'])
+
+WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+		, ('ECAction2') : ECAction2, ('Comment') : Comment])
+
+WebUI.comment(GlobalVariable.TicketID2)

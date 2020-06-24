@@ -48,7 +48,7 @@ String ActionCT = 'Next'
 String Phase = '1'
 
 //Approval Tindakan/Terapi/Obat
-String MemberName = findTestData('MemberNameLineX').getValue(1, 1)
+String MemberName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(1, 1)
 
 String SubServiceType = 'Approve Tindakan/Terapi/Obat'
 						 

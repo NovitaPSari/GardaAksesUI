@@ -111,9 +111,9 @@ String SubMenuFU = 'Follow Up'
 //Follow Up 
 String FUContactName = 'Siloam Hospitals Kebon Jeruk'
 
-String FUClientName = findTestData('MemberNameLineX').getValue(5, 1)
+String FUClientName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(5, 1)
 
-String FUMemberName = findTestData('MemberNameLineX').getValue(4, 1)
+String FUMemberName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(4, 1)
 
 String DiagnosisConfirmation = 'New'
 

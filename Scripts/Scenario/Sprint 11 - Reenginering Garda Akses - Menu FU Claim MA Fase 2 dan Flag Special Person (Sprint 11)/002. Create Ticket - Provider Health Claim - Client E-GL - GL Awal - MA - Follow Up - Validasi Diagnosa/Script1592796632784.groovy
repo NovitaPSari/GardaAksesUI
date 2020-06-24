@@ -36,7 +36,9 @@ String ChannelType = 'Call'
 
 //String ContactName = findTestData('ContactName').getValue(1, 1)
 
-String ContactName = 'FU Diagnosa CCO 5'
+String ContactName = 'FU Diagnosa CCO 3 MA'
+
+//String ContactName = 'Req Mba Mbe'
 
 String ContactType = 'Lainnya'
 
@@ -58,11 +60,11 @@ String Member = 'Existing' //Member = Existing  / New / Check
 
 //ArrayList MemberNameDB = GEN5.getOneColumnDatabase('172.16.94.70', 'SEA', QueryMember, 'DataDescription')
 
-String MemberName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(1, 1)
+String MemberName = findTestData('MemberNameSahabatFinansialKeluargaMA').getValue(1, 1)
 
 //String MemberName = MembesrNameDB[i]
 
-String ProductType = 'Inpatient (Rawat Inap)'
+String ProductType = 'Maternity (Persalinan)'
 
 String GLType = 'Awal'
 
@@ -113,56 +115,56 @@ String ECAction2 = 'Puas'
 
 String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
-//Login
-String UserIDFU = 'LSO'
-
-String PasswordFU = 'P@ssw0rd'
-
-//Home
-String MenuFU = 'General'
-
-String SubMenuFU = 'Follow Up'
-
-//Follow Up 
-String FUContactName = 'Siloam Hospitals Kebon Jeruk'
-
-String FUClientName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(5, 1)
-
-String FUMemberName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(4, 1)
-
-String Coverage = 'Covered'
-
-String DiagnosisConfirmation = 'New'
-
-ArrayList PIC = ['Provider', 'Doctor']
-
-ArrayList Confirmation = ['Document Received', 'Need Confirmation Letter']
-
-String Channel = 'Call'
-
-String Documents = 'New'
-
-String DocumentsType = 'Confirmation Letter'
-
-String DocumentsValidity = 'Dokumen Valid'
-
-String ConfirmationLetterType = 'SC'
-
-String FileDocument = 'File JPEG.jpeg' //Ambil value dari Nama file pada \\it-repository\ProjectDocuments\Katalon Garda Akses
-
-String EditDateTimeConfirmation = 'No'
-
-String DTC = null
-
-String DocTypeCL = 'Yes'
-
-String Remarks = 'No'
-
-String RemarksValue = null
-
-String Mandatory = 'Yes'
-
-ArrayList ValidasiFU = [GlobalVariable.ValidasiDijaminkan]
+////Login
+//String UserIDFU = 'LSO'
+//
+//String PasswordFU = 'P@ssw0rd'
+//
+////Home
+//String MenuFU = 'General'
+//
+//String SubMenuFU = 'Follow Up'
+//
+////Follow Up 
+//String FUContactName = 'Siloam Hospitals Kebon Jeruk'
+//
+//String FUClientName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(5, 1)
+//
+//String FUMemberName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(4, 1)
+//
+//String Coverage = 'Covered'
+//
+//String DiagnosisConfirmation = 'New'
+//
+//ArrayList PIC = ['Provider', 'Doctor']
+//
+//ArrayList Confirmation = ['Document Received', 'Need Confirmation Letter']
+//
+//String Channel = 'Call'
+//
+//String Documents = 'New'
+//
+//String DocumentsType = 'Confirmation Letter'
+//
+//String DocumentsValidity = 'Dokumen Valid'
+//
+//String ConfirmationLetterType = 'SC'
+//
+//String FileDocument = 'File JPEG.jpeg' //Ambil value dari Nama file pada \\it-repository\ProjectDocuments\Katalon Garda Akses
+//
+//String EditDateTimeConfirmation = 'No'
+//
+//String DTC = null
+//
+//String DocTypeCL = 'Yes'
+//
+//String Remarks = 'No'
+//
+//String RemarksValue = null
+//
+//String Mandatory = 'Yes'
+//
+//ArrayList ValidasiFU = [GlobalVariable.ValidasiDijaminkan]
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -174,7 +176,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Tick
 , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
 , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
 
-CustomKeywords.'querySQL.Query.QueryContactName'()
+//CustomKeywords.'querySQL.Query.QueryContactName'()
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim Inquiry'), [('Phase') : '1'])
 
@@ -185,68 +187,6 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 , ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass, ('RoomOptionAvailability') : RoomOptionAvailability
 , ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL
 , ('Validasi') : Validasi, ('Phase') : '1'])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
-, ('ECAction2') : ECAction2, ('Comment') : Comment])
-
-WebUI.comment(MemberName)
-
-WebUI.comment(GlobalVariable.TicketID1)
-
-String URL = '172.16.94.70'
-
-String DB_Name = 'SEA'
-
-String Query = ('SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), \'-\', SPACE(1), RTRIM(LTRIM(MemberNo)), SPACE(1), \'-\', SPACE(1), RTRIM(MemberName), SPACE(1), \'-\', SPACE(1), RTRIM(ClientName))) AS MemberName, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + 
-GlobalVariable.TicketID1) + '\' ORDER BY CreatedDate DESC'
-
-ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, MemberName
-    , GlobalVariable.PhoneNumber, DoctorName]
-
-GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
-
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserIDFU, ('Password') : PasswordFU])
-
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : MenuFU, ('SubMenu') : SubMenuFU])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Inquiry'), 
-	[('FUContactName') : FUContactName
-	, ('FUClientName') : FUClientName
-	, ('FUMemberName') : FUMemberName])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim'), 
-	[('UserID') : UserIDFU
-	, ('Password') : PasswordFU
-	, ('Menu') : MenuFU
-	, ('SubMenu') : SubMenuFU
-	, ('FUContactName') : FUContactName
-	, ('FUClientName') : FUClientName
-	, ('FUMemberName') : FUMemberName
-	, ('Phase') : '1'
-	, ('FUContactName') : FUContactName
-	, ('FUClientName') : FUClientName
-	, ('FUMemberName') : FUMemberName
-	, ('MemberName') : MemberName
-	, ('ProductType') : ProductType
-	, ('GLType') : GLType
-	, ('Provider') : ProviderName
-	, ('RoomOptionAvailability') : RoomOptionAvailability
-	//=== Batas Default Variable Follow Up ===//
-	, ('Coverage') : Coverage
-	, ('DiagnosisConfirmation') : DiagnosisConfirmation
-	, ('PIC') : PIC
-	, ('Confirmation') : Confirmation
-	, ('Channel') : Channel
-	, ('Documents') : Documents
-	, ('DocumentsType') : DocumentsType
-	, ('DocumentsValidity') : DocumentsValidity
-	, ('FileDocument') : FileDocument
-	, ('DoctorName') : DoctorName
-	, ('EditDateTimeConfirmation') : EditDateTimeConfirmation
-	, ('DTC') : DTC
-	, ('Remarks') : Remarks
-	, ('RemarksValue') : RemarksValue
-	, ('ConfirmationLetterType') : ConfirmationLetterType
-	, ('Mandatory') : Mandatory
-	, ('Validasi') : ValidasiFU
-])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+//, ('ECAction2') : ECAction2, ('Comment') : Comment])

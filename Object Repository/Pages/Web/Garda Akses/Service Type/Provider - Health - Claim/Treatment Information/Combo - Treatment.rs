@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Combo List - Maternity Treatment</name>
+   <name>Combo - Treatment</name>
    <tag></tag>
-   <elementGuidId>e1b84688-21e6-4c49-88eb-6303d02b65ef</elementGuidId>
+   <elementGuidId>f5f0aade-cda0-4a90-8ff5-762a087d4d51</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;TreatmentInformation-0&quot;]//button[text() = '${value}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//span[text() = 'Maternity Treatment']/parent::label/following-sibling::div/div/button[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;TreatmentInformation-0&quot;]//button[text() = '${value}']</value>
+      <value>//span[text() = 'Maternity Treatment']/parent::label/following-sibling::div/div/button</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
