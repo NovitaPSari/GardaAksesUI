@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>/html/body/div[8]/div/div[1]/table/thead/tr[1]/th[2]</value>
+         <value>/html/body/div[9]/div/div[1]/table/tbody/tr[3]/td[5][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html/body/div[8]/div/div[1]/table/thead/tr[1]/th[2]</value>
+      <value>/html/body/div[9]/div/div[1]/table/tbody/tr[3]/td[5]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

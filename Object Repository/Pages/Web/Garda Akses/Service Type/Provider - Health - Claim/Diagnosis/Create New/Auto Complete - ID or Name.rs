@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name (Kode / Nama Diagnosa)']/parent::label/following-sibling::div//input[@value = //*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name']/parent::label/following-sibling::div//input[@value = '${value}'][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//*[@id=&quot;DiagnosisInfoPopUpSectionFullText.DiagnosisInfoautocomplete-list&quot;]/div[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name (Kode / Nama Diagnosa)']/parent::label/following-sibling::div//input[@value = //*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name']/parent::label/following-sibling::div//input[@value = '${value}']</value>
+      <value>//*[@id=&quot;DiagnosisInfoPopUpSectionFullText.DiagnosisInfoautocomplete-list&quot;]/div</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
