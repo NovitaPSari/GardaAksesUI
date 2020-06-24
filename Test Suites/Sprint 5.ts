@@ -14,6 +14,6 @@
       <guid>317024cc-bce8-4a1b-aca1-b0be2cc81c68</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Scenario/Sprint 5 - Enhancement Call History, Maintenance CCO Role/001. Create Ticket - Provider Health APTTO - Client E-GL - GL Awal - Follow Up - Annual Limit</testCaseId>
+      <testCaseId>Test Cases/Scenario/Sprint 5/001. Create Ticket - Provider Health APTTO - Client E-GL - GL Awal - Follow Up - Annual Limit</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

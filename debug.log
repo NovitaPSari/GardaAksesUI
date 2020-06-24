@@ -1,2 +1,4 @@
 [1127/152407.591:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
 [1230/133705.275:ERROR:prune_crash_reports.cc(35)] PruneCrashReportDatabase: Failed to get pending reports
+[0527/233127.994:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0527/233128.009:ERROR:exception_snapshot_win.cc(98)] thread ID 55988 not found in process

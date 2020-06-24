@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>026. Create Ticket - Customer Non Health Inquiry - Call</name>
+   <tag></tag>
+   <comment>GlobalVariable.TicketID1</comment>
+   <testCaseGuid>5ac70846-29b2-4639-a95d-96b6152aea21</testCaseGuid>
+</TestCaseEntity>
