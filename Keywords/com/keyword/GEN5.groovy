@@ -499,7 +499,8 @@ public class GEN5 extends UI {
 			List<WebElement> rowBody = tableRowBody.findElements(By.tagName("tr"))
 			List<String> collsName = new ArrayList()
 			List<String> column = new ArrayList()
-			int index = 0
+      
+      int index = 0
 
 			int i = 0
 			for (i = 0 ; i < rows.size() ; i++){
@@ -521,7 +522,9 @@ public class GEN5 extends UI {
 						if (Kolom.size() == 0){
 							continue
 						} else {
-							column.add(Kolom[i-index].getText())
+              
+              column.add(Kolom[i].getText())
+							println (column[a])
 
 							if (column[a].trim() == columnValue) { //1190022999
 								String xpathButton = XpathTableBody + '//span[normalize-space()=\'' + column[a] + '\']'
