@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Input - ID Diagnosa</name>
+   <name>Combo - MTDiagnosis</name>
    <tag></tag>
-   <elementGuidId>dd099798-8d41-4adc-8683-af05008dbe23</elementGuidId>
+   <elementGuidId>ae47c13f-24dd-45a2-a758-e49394f7fa06</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-
-         <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name (Kode / Nama Diagnosa)']/parent::label/following-sibling::div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
-
+         <value>//*[@id=&quot;MedicalTreatmentInfoPopUpSection-0&quot;]//span[text() = 'Diagnosis']/parent::label/following-sibling::div/div/button</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -19,9 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-
-      <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name (Kode / Nama Diagnosa)']/parent::label/following-sibling::div//input</value>
-
+      <value>//*[@id=&quot;MedicalTreatmentInfoPopUpSection-0&quot;]//span[text() = 'Diagnosis']/parent::label/following-sibling::div/div/button</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
