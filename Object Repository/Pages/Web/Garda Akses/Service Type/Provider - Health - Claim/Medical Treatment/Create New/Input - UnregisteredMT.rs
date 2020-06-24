@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Input - ID Diagnosa</name>
+   <name>Input - UnregisteredMT</name>
    <tag></tag>
-   <elementGuidId>dd099798-8d41-4adc-8683-af05008dbe23</elementGuidId>
+   <elementGuidId>a62b1bb7-25b6-4875-bac0-c04d4ed0d3a2</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-
-         <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name (Kode / Nama Diagnosa)']/parent::label/following-sibling::div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
-
+         <value>//*[@id=&quot;txbUnregisteredMT&quot;]//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -19,9 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-
-      <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name (Kode / Nama Diagnosa)']/parent::label/following-sibling::div//input</value>
-
+      <value>//*[@id=&quot;txbUnregisteredMT&quot;]//input</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

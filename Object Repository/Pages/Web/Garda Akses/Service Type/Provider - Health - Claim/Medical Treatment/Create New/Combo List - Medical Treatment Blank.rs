@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Input - ID Diagnosa</name>
+   <name>Combo List - Medical Treatment Blank</name>
    <tag></tag>
-   <elementGuidId>dd099798-8d41-4adc-8683-af05008dbe23</elementGuidId>
+   <elementGuidId>9c3689cc-db93-46e4-8250-e5f5be7e3616</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-
-         <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name (Kode / Nama Diagnosa)']/parent::label/following-sibling::div//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
-
+         <value>//*[@id=&quot;select2-1d12-results&quot;]/li[1][count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -19,9 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-
-      <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'ID/Name (Kode / Nama Diagnosa)']/parent::label/following-sibling::div//input</value>
-
+      <value>//*[@id=&quot;select2-1d12-results&quot;]/li[1]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
