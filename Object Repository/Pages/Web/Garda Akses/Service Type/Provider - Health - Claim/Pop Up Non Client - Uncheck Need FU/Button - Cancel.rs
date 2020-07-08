@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Input - Gestational Age</name>
+   <name>Button - Cancel</name>
    <tag></tag>
-   <elementGuidId>7d2acde3-a2a7-41e6-a9f5-fb34db6ef14a</elementGuidId>
+   <elementGuidId>f371a311-2461-47f4-b344-ca1cdc3eabd8</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-
-         <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'Gestational Age']/parent::label/parent::div/following-sibling::a2is-textbox-nc//input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
-
+         <value>//*[@id=&quot;PageContainer&quot;]/a2is-popup[7]/div/div[2]/div/div[1]/button[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -19,9 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-
-      <value>//*[@id=&quot;popUpDiagnosisInfoFullText-0&quot;]//span[text() = 'Gestational Age']/parent::label/parent::div/following-sibling::a2is-textbox-nc//input</value>
-
+      <value>//*[@id=&quot;PageContainer&quot;]/a2is-popup[7]/div/div[2]/div/div[1]/button</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>

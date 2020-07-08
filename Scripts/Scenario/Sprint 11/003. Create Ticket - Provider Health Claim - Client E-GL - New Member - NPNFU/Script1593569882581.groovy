@@ -43,6 +43,8 @@ String InterruptedCall = 'No'
 
 String ProviderName = 'OJKSH00001 SILOAM HOSPITALS KEBON JERUK'
 
+String ValidasiProviderName = 'OJKSH00001 - SILOAM HOSPITALS KEBON JERUK'
+
 String ActionCT = 'Next'
 
 //Inquiry//
@@ -55,11 +57,11 @@ String NewMemberType = 'Employee'
 
 String NewMemberName = findTestData('NewMemberName').getValue(1, 1)
 
-String ClientName = 'Ardendi Jaya Sentosa'
+String ClientName = 'PT Ardendi Jaya Sentosa'
 
 String EmployeeID = findTestData('NewEmployeeID').getValue(1, 1)
 
-String DOB = '01/Aug/1988'
+String DOB = '01/Aug/2019'
 
 String Gender = 'Female'
 
@@ -75,9 +77,11 @@ String SpecialCondition = 'No'
 
 String SpecialConditionReason = ''
 
-ArrayList StatusDiagnosaP = ['Initial Primary']
+ArrayList Diagnosis = ['New']
 
-ArrayList DiagnosisID = ['O80']
+ArrayList StatusDiagnosaP = ['Initial Primary (Diagnosa Utama)']
+
+ArrayList DiagnosisID = ['O80 SINGLE SPONTANEOUS DELIVERY/NORMAL DELIVERY']
 
 String Gravida = '1'
 
@@ -87,7 +91,13 @@ String Abortus = '1'
 
 String GestationalAge = '20'
 
-String RemarksDiagnosa = 'Testing Eligibility MA - Katalon'
+String RemarksDiagnosa = 'Testing New Member MA Client E-GL - Katalon'
+
+String DiagnosisQuestion = ''
+
+String RemarksDiagnosis = ''
+
+String MaternityTreatment = 'Persalinan Normal dengan Dokter'
 
 String DoctorName = 'Automation Doctor - Me'
 
@@ -100,6 +110,8 @@ String AppropriateRBClass = 'BASIC'
 String TreatmentRBClass = 'BASIC'
 
 String RoomOptionAvailability = 'On Plan'
+
+String PackagePrice = '1000000'
 
 String TotalBilled = '1000000'
 
@@ -158,8 +170,17 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('SpecialCondition') : SpecialCondition
 		, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
 		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd
+		, ('Diagnosis') : Diagnosis
 		, ('StatusDiagnosa') : StatusDiagnosaP
 		, ('DiagnosisID') : DiagnosisID
+		, ('Gravida') : Gravida
+		, ('Partus') : Partus
+		, ('Abortus') : Abortus
+		, ('GestationalAge') : GestationalAge
+        , ('RemarksDiagnosa') : RemarksDiagnosa
+		, ('DiagnosisQuestion') : DiagnosisQuestion
+		, ('RemarksDiagnosis') : RemarksDiagnosis
+		, ('MaternityTreatment') : MaternityTreatment
 		, ('DoctorName') : DoctorName
 		, ('Rujuk') : Rujuk
 		, ('Reason') : Reason
@@ -168,6 +189,7 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 		, ('AppropriateRBClass') : AppropriateRBClass
 		, ('TreatmentRBClass') : TreatmentRBClass
 		, ('RoomOptionAvailability') : RoomOptionAvailability
+		, ('PackagePrice') : PackagePrice
 		, ('NewDocument') : NewDocument
 		, ('EditDocument') : EditDocument
 		, ('DeleteDocument') : DeleteDocument
@@ -182,14 +204,15 @@ CustomKeywords.'querySQL.Query.QueryContactName'()
 CustomKeywords.'querySQL.Query.QueryEmployeeID'()
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
-		, ('ECAction2') : ECAction2, ('Comment') : Comment])
+        , ('ECAction2') : ECAction2, ('Comment') : Comment])
 
 String URL = '172.16.94.70'
 String DB_Name = 'SEA'
 String Query = 'SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + GlobalVariable.TicketID1 +'\' ORDER BY CreatedDate DESC'
-ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, GlobalVariable.PhoneNumber, DoctorName]
+ArrayList VerifyTicket1 = [ValidasiProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, GlobalVariable.PhoneNumber, DoctorName]
 GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
 
+//Phase 2
 //WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 //
 //WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
