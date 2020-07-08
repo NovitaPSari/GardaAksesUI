@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>002. NBH Sprint 11 - 2</name>
+   <name>008. Create Ticket - Provider Health Claim - Client Non E-GL - Diagnosis - NPNFU</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>7cbe7af4-9af3-47e9-8195-b6afcce047b6</testCaseGuid>

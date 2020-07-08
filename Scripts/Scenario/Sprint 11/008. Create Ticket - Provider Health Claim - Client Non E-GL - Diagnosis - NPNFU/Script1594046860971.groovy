@@ -2,7 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+//import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -12,7 +12,7 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+//import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import com.keyword.GEN5 as GEN5
 import com.keyword.UI as UI
@@ -34,7 +34,11 @@ String Product = 'Health'
 
 String ChannelType = 'Call'
 
-String ContactName = findTestData('ContactName').getValue(1, 1)
+//String ContactName = findTestData('ContactName').getValue(1, 1)
+
+String ContactName = 'FU Diagnosa CCO 3 MA'
+
+//String ContactName = 'Req Mba Mbe'
 
 String ContactType = 'Lainnya'
 
@@ -56,11 +60,11 @@ String Member = 'Existing' //Member = Existing  / New / Check
 
 //ArrayList MemberNameDB = GEN5.getOneColumnDatabase('172.16.94.70', 'SEA', QueryMember, 'DataDescription')
 
-String MemberName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(1, 1)
+String MemberName = findTestData('MemberNameSahabatFinansialKeluargaMA').getValue(1, 1)
 
 //String MemberName = MembesrNameDB[i]
 
-String ProductType = 'Inpatient (Rawat Inap)'
+String ProductType = 'Maternity (Persalinan)'
 
 String GLType = 'Awal'
 
@@ -111,7 +115,56 @@ String ECAction2 = 'Puas'
 
 String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
-ArrayList ValidasiFU = [GlobalVariable.ValidasiDijaminkan]
+////Login
+//String UserIDFU = 'LSO'
+//
+//String PasswordFU = 'P@ssw0rd'
+//
+////Home
+//String MenuFU = 'General'
+//
+//String SubMenuFU = 'Follow Up'
+//
+////Follow Up 
+//String FUContactName = 'Siloam Hospitals Kebon Jeruk'
+//
+//String FUClientName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(5, 1)
+//
+//String FUMemberName = findTestData('MemberNameSahabatFinansialKeluarga').getValue(4, 1)
+//
+//String Coverage = 'Covered'
+//
+//String DiagnosisConfirmation = 'New'
+//
+//ArrayList PIC = ['Provider', 'Doctor']
+//
+//ArrayList Confirmation = ['Document Received', 'Need Confirmation Letter']
+//
+//String Channel = 'Call'
+//
+//String Documents = 'New'
+//
+//String DocumentsType = 'Confirmation Letter'
+//
+//String DocumentsValidity = 'Dokumen Valid'
+//
+//String ConfirmationLetterType = 'SC'
+//
+//String FileDocument = 'File JPEG.jpeg' //Ambil value dari Nama file pada \\it-repository\ProjectDocuments\Katalon Garda Akses
+//
+//String EditDateTimeConfirmation = 'No'
+//
+//String DTC = null
+//
+//String DocTypeCL = 'Yes'
+//
+//String Remarks = 'No'
+//
+//String RemarksValue = null
+//
+//String Mandatory = 'Yes'
+//
+//ArrayList ValidasiFU = [GlobalVariable.ValidasiDijaminkan]
 
 //Script//
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserID, ('Password') : Password])
@@ -134,6 +187,6 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 , ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass, ('RoomOptionAvailability') : RoomOptionAvailability
 , ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL
 , ('Validasi') : Validasi, ('Phase') : '1'])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
-, ('ECAction2') : ECAction2, ('Comment') : Comment])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
+//, ('ECAction2') : ECAction2, ('Comment') : Comment])

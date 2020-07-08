@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>001. NBH Sprint 11 - 1</name>
+   <name>007. Create Ticket - Provider Health Claim - Client E-GL - Diagnosis - NPNFU</name>
    <tag></tag>
-   <comment></comment>
+   <comment>MemberName
+GlobalVariable.TicketID1</comment>
    <testCaseGuid>13dd641b-6494-4e58-9b63-decfddc9bd4c</testCaseGuid>
 </TestCaseEntity>

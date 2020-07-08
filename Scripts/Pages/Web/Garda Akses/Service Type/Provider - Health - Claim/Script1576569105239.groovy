@@ -179,7 +179,14 @@ for (i = 0; i < RepeatDiagnosa; i++) {
 		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'),
 			DiagnosisID[i])
 		
+		WebUI.delay(GlobalVariable.Delay1)
+		
+		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'),
+			DiagnosisID[i])
+		
 		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Auto Complete - ID or Name'))
+		
+		
         
 
         //Gravida
@@ -287,56 +294,56 @@ if (Rujuk == 'Yes') {
 }
 
 //======================= Medical Treatment ============
-int RepeatMedicalTreatment = MedicalTreatment.size()
-
-for (i = 0; i < RepeatMedicalTreatment; i++) {
-    if ((MTTindakanMedis[i]) == 'New') {
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Button - Create New'))
-
-        //Diagnosis
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - MTDiagnosis'))
-
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo List - MTDiagnosis', 
-                [('value') : MTDiagnosis[i]]))
-
-		//Medical Treatment		
-		if ((MedicalTreatment[i] == 'Curretage '))
-		{
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
-			
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo List - Medical Treatment',
-				[('value') : MedicalTreatment[i]]))
-			
-			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - Billed'),
-				Billed)
-		}
-		else 
-		{
-
-		    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
-			
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
-        //unregistered
-
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/CheckBox - UnregisteredMT'))
-
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - UnregisteredMT'), 
-                UnregisteredMT)
-			
-			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - Billed'),
-				Billed)
-		}	
-          
-            
-        
-        GEN5.ProcessingCommand()
-
-        //Action Add Medical Treatment
-        WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Button - Save'))
-    } else if ((MTTindakanMedis[i]) == 'Edit') {
-    } else if ((MTTindakanMedis[i]) == 'Delete') {
-    }
-}
+//int RepeatMedicalTreatment = MedicalTreatment.size()
+//
+//for (i = 0; i < RepeatMedicalTreatment; i++) {
+//    if ((MTTindakanMedis[i]) == 'New') {
+//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Button - Create New'))
+//
+//        //Diagnosis
+//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - MTDiagnosis'))
+//
+//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo List - MTDiagnosis', 
+//                [('value') : MTDiagnosis[i]]))
+//
+//		//Medical Treatment		
+//		if ((MedicalTreatment[i] == 'Curretage '))
+//		{
+//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
+//			
+//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo List - Medical Treatment',
+//				[('value') : MedicalTreatment[i]]))
+//			
+//			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - Billed'),
+//				Billed)
+//		}
+//		else 
+//		{
+//
+//		    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
+//			
+//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
+//        //unregistered
+//
+//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/CheckBox - UnregisteredMT'))
+//
+//            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - UnregisteredMT'), 
+//                UnregisteredMT)
+//			
+//			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - Billed'),
+//				Billed)
+//		}	
+//          
+//            
+//        
+//        GEN5.ProcessingCommand()
+//
+//        //Action Add Medical Treatment
+//        WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Button - Save'))
+//    } else if ((MTTindakanMedis[i]) == 'Edit') {
+//    } else if ((MTTindakanMedis[i]) == 'Delete') {
+//    }
+//}
 
 //=======================================================
 //========== Room Information ==========
@@ -387,8 +394,9 @@ if (GLType == 'Akhir') {
         TotalBilled)
 }
 
+if (NeedFollowUp == 'Yes') {
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/CheckBox - Need Follow Up'))
-
+}
 
 //========== Document Management ==========
 //New Document
