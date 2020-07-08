@@ -132,32 +132,32 @@ String ECAction2 = 'Puas'
 
 String Comment = 'Currently testing by Automation. Thanks. Regards - Me'
 
-//Login
-String UserIDFU = 'LKT'
-
-String PasswordFU = 'P@ssw0rd'
-
-//Home
-String MenuFU = 'General'
-
-String SubMenuFU = 'Follow Up'
-
-//Follow Up
-String FUContactName = 'Siloam Hospitals Kebon Jeruk'
-
-String FUClientName = findTestData('MemberNameLineX').getValue(5, 1)
-
-String FUMemberName = findTestData('MemberNameLineX').getValue(4, 1)
-
-String DiagnosisConfirmation = 'New'
-
-String PIC = 'Doctor'
-
-String EditDateTimeConfirmation = 'No'
-
-String DTC = null
-
-String Confirmation = ''
+////Login
+//String UserIDFU = 'LKT'
+//
+//String PasswordFU = 'P@ssw0rd'
+//
+////Home
+//String MenuFU = 'General'
+//
+//String SubMenuFU = 'Follow Up'
+//
+////Follow Up
+//String FUContactName = 'Siloam Hospitals Kebon Jeruk'
+//
+//String FUClientName = findTestData('MemberNameLineX').getValue(5, 1)
+//
+//String FUMemberName = findTestData('MemberNameLineX').getValue(4, 1)
+//
+//String DiagnosisConfirmation = 'New'
+//
+//String PIC = 'Doctor'
+//
+//String EditDateTimeConfirmation = 'No'
+//
+//String DTC = null
+//
+//String Confirmation = ''
 
 
 
@@ -195,41 +195,41 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Co
 
 WebUI.comment(GlobalVariable.TicketID1)
 
-String URL = '172.16.94.70'
-
-String DB_Name = 'SEA'
-
-String Query = ('SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), \'-\', SPACE(1), RTRIM(LTRIM(MemberNo)), SPACE(1), \'-\', SPACE(1), RTRIM(MemberName), SPACE(1), \'-\', SPACE(1), RTRIM(ClientName))) AS MemberName, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + 
-GlobalVariable.TicketID1) + '\' ORDER BY CreatedDate DESC'
-
-ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, MemberName
-    , GlobalVariable.PhoneNumber, DoctorName]
-
-GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
-
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserIDFU, ('Password') : PasswordFU])
-
-WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : MenuFU, ('SubMenu') : SubMenuFU])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Inquiry'),
-	[('FUContactName') : FUContactName
-		, ('FUClientName') : FUClientName
-		, ('FUMemberName') : FUMemberName])
-
-WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim'),
-	[('Phase') : '1'
-		, ('FUContactName') : FUContactName
-		, ('FUClientName') : FUClientName
-		, ('FUMemberName') : FUMemberName
-		, ('MemberName') : MemberName
-		, ('ProductType') : ProductType
-		, ('GLType') : GLType
-		, ('Provider') : ProviderName
-		, ('RoomOptionAvailability') : RoomOptionAvailability
+//String URL = '172.16.94.70'
+//
+//String DB_Name = 'SEA'
+//
+//String Query = ('SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), \'-\', SPACE(1), RTRIM(LTRIM(MemberNo)), SPACE(1), \'-\', SPACE(1), RTRIM(MemberName), SPACE(1), \'-\', SPACE(1), RTRIM(ClientName))) AS MemberName, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + 
+//GlobalVariable.TicketID1) + '\' ORDER BY CreatedDate DESC'
+//
+//ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, MemberName
+//    , GlobalVariable.PhoneNumber, DoctorName]
+//
+//GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : UserIDFU, ('Password') : PasswordFU])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : MenuFU, ('SubMenu') : SubMenuFU])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Inquiry'),
+//	[('FUContactName') : FUContactName
+//		, ('FUClientName') : FUClientName
+//		, ('FUMemberName') : FUMemberName])
+//
+//WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Follow Up/Follow Up - Provider Health Claim'),
+//	[('Phase') : '1'
+//		, ('FUContactName') : FUContactName
+//		, ('FUClientName') : FUClientName
+//		, ('FUMemberName') : FUMemberName
+//		, ('MemberName') : MemberName
+//		, ('ProductType') : ProductType
+//		, ('GLType') : GLType
+//		, ('Provider') : ProviderName
+//		, ('RoomOptionAvailability') : RoomOptionAvailability
 		//=== Batas Default Variable Follow Up ===//
 //		, ('DiagnosisConfirmation') : DiagnosisConfirmation
 //		, ('PIC') : PIC
 //		, ('DoctorName') : DoctorName
 //		, ('EditDateTimeConfirmation') : EditDateTimeConfirmation
 //		, ('DTC') : DTC
-		])
+//		])

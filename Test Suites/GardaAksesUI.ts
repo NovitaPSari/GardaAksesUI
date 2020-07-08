@@ -13,25 +13,25 @@
    <testCaseLink>
       <guid>607d6602-de61-4b44-a1c0-55d1375e20f6</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/Sprint 11/001. Create Ticket - Provider Health Claim - Client EGL- MA - Validasi Medical Treatment</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>2f7c365f-3efa-4683-a83a-c7e075026302</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/Sprint 11/002. Create Ticket - Provider Health Claim - Client Non EGL- MA - Validasi Medical Treatment</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>060b46e1-005a-4d8c-818e-6ec25acf61b6</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/Sprint 11/003. Create Ticket - Provider Health Claim - Client E-GL - New Member - NPNFU</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>d1c7c36e-a35b-4862-b873-00c5682bea52</guid>
       <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
+      <isRun>false</isRun>
       <testCaseId>Test Cases/Scenario/Sprint 11/004. Create Ticket - Provider Health Claim - Client Non E-GL - New Member - NPNFU</testCaseId>
    </testCaseLink>
    <testCaseLink>
