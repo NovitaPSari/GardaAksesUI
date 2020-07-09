@@ -24,11 +24,11 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 //========== Patient Information ==========
 //Member
-def PopUpNonClient = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Text - Non Client'),
+def PopUpNonClient = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Text - Non Client'), 
     3)
 
 if (Member == 'Existing') {
-    CustomKeywords.'gardaAkses.CreateGL.InputMemberName'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Member'),
+    CustomKeywords.'gardaAkses.CreateGL.InputMemberName'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Member'), 
         MemberName //		=== Ambil Classification paling rendah ===
         //		=== END ===
         //WRITE YOUR CODE HERE//
@@ -38,31 +38,31 @@ if (Member == 'Existing') {
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - New Member Type'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Choose - New Member Type',
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Choose - New Member Type', 
             [('Value') : NewMemberType]))
 
     if (NewMemberType == 'Employee') {
-        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - New Member Name'),
+        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - New Member Name'), 
             NewMemberName)
 
-        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - Client Name'),
+        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - Client Name'), 
             ClientName)
 
         WebUI.delay(5)
 
-        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - Client Name'),
+        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - Client Name'), 
             ClientName)
 
         WebUI.delay(5)
 
         WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Choose - Client Name'))
 
-        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - Employee ID'),
+        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - Employee ID'), 
             EmployeeID)
 
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Date Picker - DOB'))
+//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Date Picker - DOB'))
 
-        GEN5.DatePicker(DOB, findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Date Picker - DOB Month'))
+//        GEN5.DatePicker(DOB, findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Date Picker - DOB Month'))
 
         WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Classification'))
 
@@ -80,51 +80,50 @@ if (Member == 'Existing') {
 
         println(SelectClassificationList)
 
-        WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Choose - Classification',
+        WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Choose - Classification', 
                 [('value') : SelectClassificationList]))
 
-        WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Gender',
+        WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Gender', 
                 [('Value') : Gender]))
 
         WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Button - Submit'))
 
+        def PopUpNonClient3 = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Text - Non Client'), 
+            3)
+
+        if (PopUpNonClient3) {
+            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Button - Close'))
+        }
+        
+        GlobalVariable.NewMemberName = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - New Member Name'), 
+            'value')
     } else if (NewMemberType == 'Spouse') {
     } else if (NewMemberType == 'Child') {
     }
 } else if (Member == 'Check New Member') {
-    def ExistingNewMemberName = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - New Member Name'),
+    def ExistingNewMemberName = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - New Member Name'), 
         'value')
 
     WebUI.verifyMatch(ExistingNewMemberName, GlobalVariable.NewMemberName, false)
 } else if (Member == 'Check Member') {
-    def ExistingMemberName = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Member'),
+    def ExistingMemberName = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Member'), 
         'value')
 
     WebUI.verifyMatch(ExistingMemberName, MemberName, false)
 }
 
-def PopUpNonClient3 = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Text - Non Client'),
-	3)
-
-if (PopUpNonClient3) {
-	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client/Button - Close'))
-}
-
-GlobalVariable.NewMemberName = WebUI.getAttribute(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Add New Member/Input - New Member Name'),
-	'value')
-
 //Patient / Family Phone No
-CustomKeywords.'gardaAkses.General.UpdateFieldText'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Patient, Family Phone No'),
+CustomKeywords.'gardaAkses.General.UpdateFieldText'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Input - Patient, Family Phone No'), 
     GlobalVariable.PhoneNumber)
 
 //Product Type
-CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Button - Product Type'),
-    findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Choose - Product Type',
+CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Button - Product Type'), 
+    findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Choose - Product Type', 
         [('Value') : ProductType]), ProductType)
 
 //GL Type
-CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Button - GL Type'),
-    findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Choose - GL Type',
+CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Button - GL Type'), 
+    findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Choose - GL Type', 
         [('Value') : GLType]), GLType)
 
 //Treatment Period Start
@@ -145,19 +144,18 @@ if (SpecialCondition == 'Yes') {
 
     WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Button - Reason Special Condition'))
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Choose - Reason Special Condition',
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Patient Information/Choose - Reason Special Condition', 
             [('ReasonSpecialCondition') : ReasonSpecialCondition]))
 }
 
 //========== Provider Information ==========
-def ProviderName = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Provider Information/Input - Provider Name'),
+def ProviderName = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Provider Information/Input - Provider Name'), 
     'value')
 
 if ((ProviderName == '') || (ProviderName == null)) {
 }
 
 //================= Diagnosis =================
-
 //Diagnosis
 //===New===
 int RepeatDiagnosa = DiagnosisID.size()
@@ -169,63 +167,52 @@ for (i = 0; i < RepeatDiagnosa; i++) {
         //Status
         WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Combo - Status'))
 
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Combo List - Status',
+        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Combo List - Status', 
                 [('value') : StatusDiagnosa[i]]))
 
-
         //ID/Name Diagnosa
-        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'),
-            DiagnosisID[i])
+        def SuggestionDiagnosa = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Auto Complete - ID or Name', 
+                [('value') : DiagnosisID[i]]), 1)
 
-        WebUI.delay(GlobalVariable.Delay1)
+        while (!(SuggestionDiagnosa)) {
+            WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'), 
+                DiagnosisID[i])
+
+            WebUI.delay(GlobalVariable.Delay1)
+
+            SuggestionDiagnosa = WebUI.waitForElementVisible(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Auto Complete - ID or Name', 
+                    [('value') : DiagnosisID[i]]), 1)
+        }
         
-        WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'),
-            DiagnosisID[i])
-
-		WebUI.delay(GlobalVariable.Delay1)
-
-		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'),
-			DiagnosisID[i])
-
-		WebUI.delay(GlobalVariable.Delay1)
-
-		WebUI.setText(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - ID Diagnosa'),
-			DiagnosisID[i])
-
-		WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Auto Complete - ID or Name'))
-
-
-
-GEN5.ProcessingCommand()
-
+        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Auto Complete - ID or Name', 
+                [('value') : DiagnosisID[i]]))
 
         //Gravida
         if (ProductType == 'Maternity (Persalinan)') {
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Gravida'),
+            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Gravida'), 
                 Gravida)
         }
-
+        
         //Partus
         if (ProductType == 'Maternity (Persalinan)') {
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Partus'),
+            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Partus'), 
                 Partus)
         }
-
+        
         //Abortus
         if (ProductType == 'Maternity (Persalinan)') {
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Abortus'),
+            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Abortus'), 
                 Abortus)
         }
-
-        //Gestational Age (Usia Kandungan)
-
+        
+        //Gestational Age
         if (ProductType == 'Maternity (Persalinan)') {
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Gestational Age'),
+            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Gestational Age'), 
                 GestationalAge)
         }
-
+        
         //Remarks Diagnosis
-        WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Remarks'),
+        WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Remarks'), 
             RemarksDiagnosa)
 
         GEN5.ProcessingCommand()
@@ -234,62 +221,15 @@ GEN5.ProcessingCommand()
         if ((DiagnosisID[i]) == 'O82') {
             WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Combo - Diagnosis Question'))
 
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Diagnosis Question'),
+            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Diagnosis Question'), 
                 DiagnosisQuestion)
 
-            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Combo List - Diagnosis Question',
+            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Combo List - Diagnosis Question', 
                     [('value') : DiagnosisQuestion]))
 
             WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Button - Select Diagnosis Question'))
         }
-
-        //Additional Info
-        WebDriver driver = DriverFactory.getWebDriver()
-
-        WebUI.switchToFrame(findTestObject('Pages/Web/GEN5/Frame'), 1)
-
-        WebElement diagnosis = driver.findElement(By.xpath('//*[@id="popUpDiagnosisInfoFullText-0"]/div[1]/div/div/div[6]/a2is-datatable/div[2]/div/table/tbody'))
-
-		List<WebElement> additional_info = diagnosis.findElements(By.tagName('tr'))
-
-		WebUI.switchToDefaultContent()
-
-        int yes = additional_info.size()
-
-        int i = 1
-
-        for (a = 1; a <= yes; a++) {
-            WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Radio Button - Yes',
-                    [('Value') : a]), FailureHandling.OPTIONAL)
-
-             WebUI.delay(1)
-        }
-
-        //        //Remarks Diagnosis
-        //        WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Remarks Diagnosis Question', [('value') : DiagnosisQuestion]), RemarksDiagnosis)
-        //Delete Diagnosis Question
-        //Action Add Diagnosis
-        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Button - Submit'))
-    } else if ((Diagnosis[i]) == 'Edit') {
-    } else if ((Diagnosis[i]) == 'Delete') {
-    }
-}
-
-        GEN5.ProcessingCommand()
-
-        //Diagnosis Question
-        if ((DiagnosisID[i]) == 'O82') {
-            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Combo - Diagnosis Question'))
-
-            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Diagnosis Question'),
-                DiagnosisQuestion)
-
-            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Combo List - Diagnosis Question',
-                    [('value') : DiagnosisQuestion]))
-
-            WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Button - Select Diagnosis Question'))
-        }
-
+        
         //Additional Info
         WebDriver driver = DriverFactory.getWebDriver()
 
@@ -306,12 +246,12 @@ GEN5.ProcessingCommand()
         int i = 1
 
         for (a = 1; a <= yes; a++) {
-            WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Radio Button - Yes',
+            WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Radio Button - Yes', 
                     [('Value') : a]), FailureHandling.OPTIONAL)
 
             WebUI.delay(1)
         }
-
+        
         //        //Remarks Diagnosis
         //        WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Diagnosis/Create New/Input - Remarks Diagnosis Question', [('value') : DiagnosisQuestion]), RemarksDiagnosis)
         //Delete Diagnosis Question
@@ -323,23 +263,22 @@ GEN5.ProcessingCommand()
 }
 
 //Remarks
-//=============================================
 //========== Treatment Information ==========
 //Maternity Treatment
 if (ProductType == 'Maternity (Persalinan)') {
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo - Maternity Treatment'))
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo List - Maternity Treatment',
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo List - Maternity Treatment', 
             [('value') : MaternityTreatment]))
 }
 
 //Doctor
-CustomKeywords.'gardaAkses.General.UpdateFieldText'(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Input - Doctor'),
+CustomKeywords.'gardaAkses.General.UpdateFieldText'(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Input - Doctor'), 
     DoctorName)
 
 //Account Manager
 if (Member == 'Check New Member') {
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Input - Account Manager'),
+    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Input - Account Manager'), 
         AccountManager)
 }
 
@@ -347,66 +286,103 @@ if (Member == 'Check New Member') {
 if (Rujuk == 'Yes') {
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo - Reason'))
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo List - Reason',
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Treatment Information/Combo List - Reason', 
             [('Value') : ReasonReferral]))
 }
 
+//Family Planning
+//======================= Family Planning ============
+if (AddFP == 'Yes') {
+	
+	int RepeatFamilyPlanning = FamilyPlanning.size()
+	
+	for (i = 0; i < RepeatFamilyPlanning; i++) {
+		if ((FamilyPlanningItem[i]) == 'New') {
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Family Planning Item/Button - Create New'))
+	
+			//Diagnosis
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Family Planning Item/Create New/Combo - FPItem'))
+	
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Family Planning Item/Create New/Combo List - FPItem',
+					[('value') : FamilyPlanning[i]]))
+			
+			
+			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Family Planning Item/Create New/Input - FPBilled'),
+				FPBilled)
+			
+			GEN5.ProcessingCommand()
+	
+			//Action Add Medical Treatment
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Family Planning Item/Create New/Button - Save'))
+		}  else if ((FamilyPlanningItem[i]) == 'Delete') {
+	}		
+	
+	}
+}
+
+
+//FP
+
 //======================= Medical Treatment ============
-//int RepeatMedicalTreatment = MedicalTreatment.size()
-//
-//for (i = 0; i < RepeatMedicalTreatment; i++) {
-//    if ((MTTindakanMedis[i]) == 'New') {
-//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Button - Create New'))
-//
-//        //Diagnosis
-//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - MTDiagnosis'))
-//
-//        WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo List - MTDiagnosis',
-//                [('value') : MTDiagnosis[i]]))
-//
-//		//Medical Treatment
-//		if ((MedicalTreatment[i] == 'Curretage '))
-//		{
-//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
-//
-//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo List - Medical Treatment',
-//				[('value') : MedicalTreatment[i]]))
-//
-//			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - Billed'),
-//				Billed)
-//		}
-//		else
-//		{
-//
-//		    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
-//
-//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
-//        //unregistered
-//
-//			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/CheckBox - UnregisteredMT'))
-//
-//            WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - UnregisteredMT'),
-//                UnregisteredMT)
-//
-//			WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - Billed'),
-//				Billed)
-//		}
-//
-//
-//
-//        GEN5.ProcessingCommand()
-//
-//        //Action Add Medical Treatment
-//        WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Button - Save'))
-//    } else if ((MTTindakanMedis[i]) == 'Edit') {
-//    } else if ((MTTindakanMedis[i]) == 'Delete') {
-//    }
-//}
+if (AddMedicalTreatment == 'Yes') {
+	
+	int RepeatMedicalTreatment = MedicalTreatment.size()
+	
+	for (i = 0; i < RepeatMedicalTreatment; i++) {
+		if ((MTTindakanMedis[i]) == 'New') {
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Button - Create New'))
+	
+			//Diagnosis
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - MTDiagnosis'))
+	
+			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo List - MTDiagnosis',
+					[('value') : MTDiagnosis[i]]))
+	
+			//Medical Treatment
+			if ((MedicalTreatment[i] == 'Curretage '))
+			{
+				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
+				
+				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo List - Medical Treatment',
+					[('value') : MedicalTreatment[i]]))
+				
+				WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - Billed'),
+					Billed)
+			}
+			else
+			{
+	
+				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
+				
+				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Combo - Medical Treatment'))
+			//unregistered
+	
+				WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/CheckBox - UnregisteredMT'))
+	
+				WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - UnregisteredMT'),
+					UnregisteredMT)
+				
+				WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Input - Billed'),
+					Billed)
+			}
+			  
+				
+			
+			GEN5.ProcessingCommand()
+	
+			//Action Add Medical Treatment
+			WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Medical Treatment/Create New/Button - Save'))
+		} else if ((MTTindakanMedis[i]) == 'Edit') {
+		} else if ((MTTindakanMedis[i]) == 'Delete') {
+		}		
+	
+	}
+}
 
 //=======================================================
 //========== Room Information ==========
 //Appropriate RB Class
-String getValueAppropriateRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Appropriate RB Class - Value'),
+String getValueAppropriateRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Appropriate RB Class - Value'), 
     'value')
 
 if (getValueAppropriateRBClass != AppropriateRBClass) {
@@ -414,14 +390,14 @@ if (getValueAppropriateRBClass != AppropriateRBClass) {
 
     GEN5.ProcessingCommand()
 
-    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Appropriate RB Class/Select - Appropriate RB Class',
+    WebUI.click(findTestObject('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Appropriate RB Class/Select - Appropriate RB Class', 
             [('Value') : AppropriateRBClass]))
 
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Appropriate RB Class/Button - Choose'))
 }
 
-//Treatment RB Class (Ruang Kelas Perawatan)
-String getValueTreatmentRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Treatment RB Class - Value'),
+//Treatment RB Class
+String getValueTreatmentRBClass = WebUI.getAttribute(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Treatment RB Class - Value'), 
     'value')
 
 if (getValueTreatmentRBClass != TreatmentRBClass) {
@@ -429,33 +405,34 @@ if (getValueTreatmentRBClass != TreatmentRBClass) {
 
     GEN5.ProcessingCommand()
 
-    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Treatment RB Class/Select - Treatment RB Class',
+    WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Treatment RB Class/Select - Treatment RB Class', 
             [('Value') : TreatmentRBClass]))
 
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Treatment RB Class/Button - Choose'))
 }
 
 //Room Option / Availability
-CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Combo - Room Option Availability'),
-    findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Combo List - Room Option Availability',
+CustomKeywords.'gardaAkses.General.UpdateFieldCombo'(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Combo - Room Option Availability'), 
+    findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Combo List - Room Option Availability', 
         [('Value') : RoomOptionAvailability]), RoomOptionAvailability)
 
 //Package Price
 if (ProductType == 'Maternity (Persalinan)') {
-
-	WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Package Price'), PackagePrice)
+    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Package Price'), 
+        PackagePrice)
 }
 
 //Total Billed
 if (GLType == 'Akhir') {
-    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Total Billed'),
+    WebUI.setText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Room Information/Input - Total Billed'), 
         TotalBilled)
 }
 
-if (NeedFollowUp == 'Yes') {
+if (IsNeedFU == 'Yes')	{
+	
 	WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/CheckBox - Need Follow Up'))
-}
 
+}
 //========== Document Management ==========
 //New Document
 if (NewDocument == 'Yes') {
@@ -479,29 +456,18 @@ if (ActionGL == 'Cancel') {
 } else if (ActionGL == 'Interupted Call') {
 } else if (ActionGL == 'Pre-Admission') {
 } else if (ActionGL == 'Process') {
-    WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'),
+    WebUI.scrollToElement(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'), 
         5)
 
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Process'))
 
-	//Pop Up Client Non GL - Need FU
-	if (PopUpNonClient == true || PopUpNonClient3 == true) {
-		if (NeedFU == 'Ya') {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client - Uncheck Need FU/Button - Ya'))
-		} else if (NeedFU == 'Tidak') {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client - Uncheck Need FU/Button - Tidak'))
-		} else if (NeedFU == 'Cancel') {
-			WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Pop Up Non Client - Uncheck Need FU/Button - Cancel'))
-		}
-	}
-
     def Repeat = Validasi.size()
 
     for (i = 1; i < Repeat; i++) {
-        WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi',
+        WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', 
                 [('Value') : Validasi[i]]))
     }
-
+    
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
 
     CustomKeywords.'gardaAkses.GetTicketID.ProviderHealthClaim'(Phase)
@@ -511,9 +477,9 @@ if (ActionGL == 'Cancel') {
     def Repeat = Validasi.size()
 
     for (i = 1; i < Repeat; i++) {
-        WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi',
+        WebUI.getText(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Text - Validasi', 
                 [('Value') : Validasi[i]]))
     }
-
+    
     WebUI.click(findTestObject('Object Repository/Pages/Web/Garda Akses/Service Type/Provider - Health - Claim/Button - Close'))
 }

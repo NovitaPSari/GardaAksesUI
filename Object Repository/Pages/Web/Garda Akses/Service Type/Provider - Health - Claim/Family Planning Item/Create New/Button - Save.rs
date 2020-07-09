@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>Input - Gestational Age</name>
+   <name>Button - Save</name>
    <tag></tag>
-   <elementGuidId>7d2acde3-a2a7-41e6-a9f5-fb34db6ef14a</elementGuidId>
+   <elementGuidId>2406219f-e85d-4128-898e-41bf84c1c913</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value>//*[@id=&quot;DiagnosisInfoPopUpSectionFullText.GestationalAge&quot;]/div/div/div/input[count(. | //*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame']) = count(//*[@ref_element = 'Object Repository/Pages/Web/GEN5/Frame'])]</value>
+         <value>//*[@id=&quot;FamilyPlanningInfoPopUpSection-0&quot;]/div[1]/div/div[2]/a2is-buttons/div/div/button[2]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>BASIC</selectorMethod>
@@ -17,7 +17,7 @@
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>//*[@id=&quot;DiagnosisInfoPopUpSectionFullText.GestationalAge&quot;]/div/div/div/input</value>
+      <value>//*[@id=&quot;FamilyPlanningInfoPopUpSection-0&quot;]/div[1]/div/div[2]/a2is-buttons/div/div/button[2]</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
