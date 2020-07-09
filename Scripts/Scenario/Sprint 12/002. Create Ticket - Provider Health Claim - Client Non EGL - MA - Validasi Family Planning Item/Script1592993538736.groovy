@@ -2,6 +2,7 @@ import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+//import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -11,6 +12,7 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+//import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import com.keyword.GEN5 as GEN5
 
@@ -49,7 +51,7 @@ String Phase = '1'
 //Claim
 String Member = 'Existing' //Member = Existing  / New / Check
 
-String MemberName = findTestData('MemberNameBankPermataMA').getValue(1, 1)
+String MemberName = findTestData('MemberNameNonClientMA').getValue(1, 1)
 
 //String MemberName = '40272 - C/00012704 - CHAIRUN NISA - PT. ASTRA HONDA MOTOR - GOL. 1-3'
 
@@ -93,6 +95,10 @@ String Rujuk = 'No'
 
 String Reason = ''
 
+//Medical Treatment
+
+String AddMedicalTreatment = ''
+
 ArrayList MTTindakanMedis = ['New']
 
 ArrayList MTDiagnosis = ['SINGLE DELIVERY BY CAESAREAN SECTION']
@@ -102,6 +108,18 @@ ArrayList MedicalTreatment = ['']
 String UnregisteredMT = 'tindakan tambahan caesar'
 
 String Billed = '15000000'
+
+//Family Planning Item
+
+String AddFP = 'Yes'
+
+ArrayList FamilyPlanningItem = ['New']
+
+ArrayList FamilyPlanning = ['IUD / SPIRAL / AKDR']
+
+String FPBilled = '300000'
+
+//room
 
 String AppropriateRBClass = 'BASIC'
 
@@ -113,7 +131,7 @@ String PackagePrice = '100000'
 
 String TotalBilled = '1000000'
 
-String NeedFollowUp = 'No'
+String IsNeedFU = 'Yes'
 
 String NewDocument = 'No'
 
@@ -143,21 +161,21 @@ String MenuFU = 'General'
 String SubMenuFU = 'Follow Up'
 
 //Follow Up
-String FUContactName = 'Siloam Hospitals Kebon Jeruk'
-
-String FUClientName = findTestData('MemberNameLineX').getValue(5, 1)
-
-String FUMemberName = findTestData('MemberNameLineX').getValue(4, 1)
-
-String DiagnosisConfirmation = 'New'
-
-String PIC = 'Doctor'
-
-String EditDateTimeConfirmation = 'No'
-
-String DTC = null
-
-String Confirmation = ''
+//String FUContactName = 'Siloam Hospitals Kebon Jeruk'
+//
+//String FUClientName = findTestData('MemberNameLineX').getValue(5, 1)
+//
+//String FUMemberName = findTestData('MemberNameLineX').getValue(4, 1)
+//
+//String DiagnosisConfirmation = 'New'
+//
+//String PIC = 'Doctor'
+//
+//String EditDateTimeConfirmation = 'No'
+//
+//String DTC = null
+//
+//String Confirmation = ''
 
 
 
@@ -168,8 +186,8 @@ WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Login/Login'), [('UserID') : Use
 WebUI.callTestCase(findTestCase('Pages/Web/GEN5/Home/Home'), [('Menu') : Menu, ('SubMenu') : SubMenu])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Create Ticket/Create Ticket'), [('ContactLine') : ContactLine, ('Product') : Product
-        , ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
-        , ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
+		, ('ChannelType') : ChannelType, ('ContactName') : ContactName, ('ContactType') : ContactType, ('ServiceType') : ServiceType
+		, ('InterruptedCall') : InterruptedCall, ('ProviderName') : ProviderName, ('Action') : ActionCT])
 
 CustomKeywords.'querySQL.Query.QueryContactName'()
 
@@ -178,20 +196,21 @@ WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - H
 WebUI.comment(MemberName)
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Service Type/Provider - Health - Claim'), [('Member') : Member, ('MemberName') : MemberName
-        , ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
-        , ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('Diagnosis') : Diagnosis, ('StatusDiagnosa') : StatusDiagnosa
-        , ('DiagnosisID') : DiagnosisID, ('Gravida') : Gravida, ('Partus') : Partus, ('Abortus') : Abortus, ('GestationalAge') : GestationalAge
-        , ('RemarksDiagnosa') : RemarksDiagnosa, ('DiagnosisQuestion') : DiagnosisQuestion, ('RemarksDiagnosis') : RemarksDiagnosis
-        , ('MaternityTreatment') : MaternityTreatment, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition
-		, ('MTTindakanMedis') : MTTindakanMedis, ('MTDiagnosis') : MTDiagnosis, ('MedicalTreatment') : MedicalTreatment, ('UnregisteredMT') : UnregisteredMT, ('Billed') : Billed
+		, ('ProductType') : ProductType, ('GLType') : GLType, ('SpecialCondition') : SpecialCondition, ('EditTreatmentPeriodStart') : EditTreatmentPeriodStart
+		, ('EditTreatmentPeriodEnd') : EditTreatmentPeriodEnd, ('Diagnosis') : Diagnosis, ('StatusDiagnosa') : StatusDiagnosa
+		, ('DiagnosisID') : DiagnosisID, ('Gravida') : Gravida, ('Partus') : Partus, ('Abortus') : Abortus, ('GestationalAge') : GestationalAge
+		, ('RemarksDiagnosa') : RemarksDiagnosa, ('DiagnosisQuestion') : DiagnosisQuestion, ('RemarksDiagnosis') : RemarksDiagnosis
+		, ('MaternityTreatment') : MaternityTreatment, ('DoctorName') : DoctorName, ('Rujuk') : Rujuk, ('Reason') : Reason, ('SpecialCondition') : SpecialCondition
+		, ('AddMedicalTreatment'): AddMedicalTreatment, ('MTTindakanMedis') : MTTindakanMedis, ('MTDiagnosis') : MTDiagnosis, ('MedicalTreatment') : MedicalTreatment, ('UnregisteredMT') : UnregisteredMT, ('Billed') : Billed
+		, ('AddFP'): AddFP, ('FamilyPlanningItem') : FamilyPlanningItem,('FamilyPlanning') : FamilyPlanning , ('FPBilled') : FPBilled
 		, ('AppropriateRBClass') : AppropriateRBClass
-        , ('TreatmentRBClass') : TreatmentRBClass, ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass
-        , ('SpecialConditionReason') : SpecialConditionReason, ('RoomOptionAvailability') : RoomOptionAvailability, ('PackagePrice') : PackagePrice
-        , ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL
-        , ('Validasi') : Validasi, ('Phase') : '1'])
+		, ('TreatmentRBClass') : TreatmentRBClass, ('AppropriateRBClass') : AppropriateRBClass, ('TreatmentRBClass') : TreatmentRBClass
+		, ('SpecialConditionReason') : SpecialConditionReason, ('RoomOptionAvailability') : RoomOptionAvailability, ('PackagePrice') : PackagePrice
+		, ('IsNeedFU'): IsNeedFU, ('NewDocument') : NewDocument, ('EditDocument') : EditDocument, ('DeleteDocument') : DeleteDocument, ('ActionGL') : ActionGL
+		, ('Validasi') : Validasi, ('Phase') : '1'])
 
 WebUI.callTestCase(findTestCase('Pages/Web/Garda Akses/Exit Confirmation/Exit Confirmation'), [('ECAction1') : ECAction1
-        , ('ECAction2') : ECAction2, ('Comment') : Comment])
+		, ('ECAction2') : ECAction2, ('Comment') : Comment])
 
 WebUI.comment(GlobalVariable.TicketID1)
 
@@ -199,11 +218,11 @@ String URL = '172.16.94.70'
 
 String DB_Name = 'SEA'
 
-String Query = ('SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), \'-\', SPACE(1), RTRIM(LTRIM(MemberNo)), SPACE(1), \'-\', SPACE(1), RTRIM(MemberName), SPACE(1), \'-\', SPACE(1), RTRIM(ClientName))) AS MemberName, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' + 
+String Query = ('SELECT UPPER(CONCAT(RTRIM(ProviderID), SPACE(1), \'-\', SPACE(1), RTRIM(( ProviderName )))) AS ProviderName, ProviderPhoneNo AS ProviderPhoneNo, ProviderEmail AS ProviderEmail, TicketNo AS TicketNo, UPPER(CONCAT(RTRIM(EmpID), SPACE(1), \'-\', SPACE(1), RTRIM(LTRIM(MemberNo)), SPACE(1), \'-\', SPACE(1), RTRIM(MemberName), SPACE(1), \'-\', SPACE(1), RTRIM(ClientName))) AS MemberName, FamilyPhone AS FamilyPhone, Doctor AS Doctor FROM CONTACTCENTER.TempGL WHERE TicketNo = \'' +
 GlobalVariable.TicketID1) + '\' ORDER BY CreatedDate DESC'
 
 ArrayList VerifyTicket1 = [ProviderName, GlobalVariable.PhoneNumber, GlobalVariable.Email, GlobalVariable.TicketID1, MemberName
-    , GlobalVariable.PhoneNumber, DoctorName]
+	, GlobalVariable.PhoneNumber, DoctorName]
 
 GEN5.compareRowDBtoArray(URL, DB_Name, Query, VerifyTicket1)
 
